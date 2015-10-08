@@ -1,0 +1,170 @@
+#!/bin/bash
+
+# script to download Apache Apex and Malhar code repositories and build them
+
+# quit if any command fails
+set -e
+
+# function that takes a two arguments: the first should be a git repository and the
+# second the branch name; it then checks out the specified branch, builds it and installs
+# artifacts in local repository (typically ~/.m2/repository)
+#
+build ( ) {
+    pushd $1 &> /dev/null
+    git checkout $2
+    mvn clean install -DskipTests
+    popd &> /dev/null
+}
+
+# check if argument command exists in PATH
+check_command ( ) {
+    # check if command $1 exists (the '&& :' prevents script from exiting if command fails)
+    type $1 > /dev/null 2>&1 && :
+    if  [[ $? != 0 ]]; then
+        echo "Error: $1 command not found"
+        exit 1
+    fi
+}
+
+check_maven ( ) {
+    # check if mvn command exists
+    check_command mvn
+
+    # mvn exists; get version. The output looks like this:
+    # --------------------------------------------------
+    # Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T04:57:37-07:00)
+    # Maven home: /home/ram/Software/apache-maven-3.3.3
+    # Java version: 1.7.0_80, vendor: Oracle Corporation
+    # Java home: /home/ram/Software/java/jdk1.7.0_80/jre
+    # Default locale: en_US, platform encoding: UTF-8
+    # OS name: "linux", version: "3.16.0-50-generic", arch: "amd64", family: "unix"
+    # --------------------------------------------------
+    #
+
+    line=$(mvn --version 2>&1)
+    version=$(mvn --version 2>&1 | awk -F ' ' '/Apache Maven/ {print $3}')
+    echo "mvn version = $version"                      # "3.3.3"
+    IFS=. read major minor extra <<< "$version"
+
+    if [[ "$major" -lt 3 ]]; then
+        echo "Error: Your maven version is too old: $version"
+        exit 1
+    fi
+
+    [[ "$major" -gt 3 ]] && return
+    [[ "$minor" -gt 0 ]] && return
+    [[ "$extra" -gt 4 ]] && return
+
+    echo "Error: Your maven version is too old: $version"
+    exit 1
+
+}
+
+check_git ( ) {
+    # check if git command exists
+    check_command git
+
+    # git exists
+    line=$("git" --version 2>&1)                      # "git version 1.9.1"
+    IFS=' ' read ignore1 ignore2 version <<< $line
+    echo "git version = $version"                     # "1.9.1"
+    IFS=. read major minor extra <<< "$version"
+    # should now have: major = 1, minor = 9, extra = 1
+
+    if [[ "$major" -lt 1 ]]; then
+        echo "Error: Your git version is too old: $version"
+        exit 1
+    fi
+
+    if [[ "$major" -gt 1 ]]; then                     # we should be OK
+        return
+    fi
+
+    # just check minor version for now
+    if [[ "$minor" -lt 7 ]]; then
+        echo "Error: git minor version too low: $minor"
+        exit 1
+    fi
+}
+
+# check that we have a recent version of git
+check_java ( ) {
+    # check if javac exists
+    check_command javac
+
+    # javac exists
+    line=$("javac" -version 2>&1)                     # "javac 1.7.0_79"
+    IFS=' ' read ignore cversion <<< $line
+    echo "javac cversion = $cversion"                 # "1.7.0_79"
+    IFS=. read cmajor cminor cextra <<< "$cversion"
+    # should now have: cmajor = 1, cminor = 7, cextra = 0_79
+
+    if [[ "$cmajor" -lt 1 ]]; then
+        echo "Error: Your java version is too old: $cversion"
+        exit 1
+    fi
+
+    if [[ "$cmajor" -eq 1 ]]; then
+        # just check minor version for now
+        if [[ "$cminor" -lt 7 ]]; then
+            echo "Error: Java minor version too low: $cminor"
+            exit 1
+        fi
+    fi
+
+    # check if java exists
+    check_command java
+
+    # java exists
+    version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
+    echo "java version = $version"
+    IFS=. read major minor extra <<< "$version"
+
+    # major versions must match
+    if [[ "$cmajor" != $major ]]; then
+        echo "Error: javac major version = $cmajor != $major = java major version"
+        exit 1
+    fi
+
+    # minor versions must match
+    if [[ "$cminor" != $minor ]]; then
+        echo "Error: javac minor version = $cminor != $minor = java minor version"
+        exit 1
+    fi
+
+    if [[ "$major" -lt 1 ]]; then
+        echo "Error: Your java version is too old: $version"
+        exit 1
+    fi
+
+    if [[ "$major" -eq 1 ]]; then
+        # just check minor version for now
+        if [[ "$minor" -lt 7 ]]; then
+            echo "Error: Java minor version too low: $minor"
+            exit 1
+        fi
+    fi
+}
+
+check_git
+check_java
+check_maven
+
+# raise maven memory options
+export MAVEN_OPTS="-Xms1024m -Xmx2000m -XX:PermSize=1024m"
+
+echo "Cloning repos"
+prefix="https://github.com/apache"
+
+# until malhar 3.2 is released, we need to use release-3.2 of core instead of devel-3
+repos=(incubator-apex-core incubator-apex-malhar)
+branches=(release-3.2 devel-3)
+for i in $(seq 0 $((${#repos[@]} - 1))); do
+    repo=${repos[$i]} branch=${branches[$i]}      # repo/branch pair
+    echo "Cloning $repo"
+    git clone $prefix/$repo
+    echo "Building branch $branch of $repo"
+    build $repo $branch
+done
+
+echo "Build completed"
