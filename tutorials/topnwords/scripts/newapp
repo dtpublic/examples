@@ -1,0 +1,15 @@
+#!/bin/bash
+# script to create a new project
+ 
+name=myapexapp
+version=3.1.1
+
+mvn archetype:generate \
+-DarchetypeRepository=https://www.datatorrent.com/maven/content/repositories/releases \
+-DarchetypeGroupId=com.datatorrent \
+-DarchetypeArtifactId=apex-app-archetype \
+-DarchetypeVersion=$version  \
+-DgroupId=com.example \
+-Dpackage=com.example.$name \
+-DartifactId=$name \
+-Dversion=1.0-SNAPSHOT
