@@ -1,0 +1,68 @@
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<configuration>
+  <!-- SortedWordCount -->
+
+  <!-- for debugging -->
+  <!--
+  <property>
+    <name>dt.attr.CONTAINER_JVM_OPTIONS</name>
+    <value>-Dlog4j.configuration=my_log4j.properties</value>
+  </property>
+  -->
+
+  <!-- regular expression for word separator -->
+  <property>
+    <name>dt.application.SortedWordCount.operator.wordReader.nonWordStr</name>
+    <value>[\p{Punct}\s]+</value>
+  </property>
+
+  <!-- monitored input directory -->
+  <property>
+    <name>dt.application.SortedWordCount.operator.lineReader.directory</name>
+    <value>/tmp/test/input-dir</value>
+  </property>
+
+  <!-- output directory for word counts -->
+  <property>
+    <name>dt.application.SortedWordCount.operator.wcWriter.filePath</name>
+    <value>/tmp/test/output-dir</value>
+  </property>
+
+  <!-- App Master memory -->
+  <property>
+    <name>dt.attr.MASTER_MEMORY_MB</name>
+    <value>1024</value>
+  </property>
+
+  <!-- Memory for all operators -->
+  <property>
+    <name>dt.application.*.operator.*.attr.MEMORY_MB</name>
+    <value>128</value>
+  </property>
+
+  <!-- Memory for buffer server -->
+  <property>
+    <name>dt.application.SortedWordCount.operator.*.port.*.attr.BUFFER_MEMORY_MB</name>
+    <value>128</value>
+  </property>
+
+</configuration>
