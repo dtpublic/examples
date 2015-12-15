@@ -158,7 +158,7 @@ prefix="https://github.com/apache"
 
 # until malhar 3.2 is released, we need to use release-3.2 of core instead of devel-3
 repos=(incubator-apex-core incubator-apex-malhar)
-branches=(release-3.2 devel-3)
+branches=(release-3.2 release-3.2)
 for i in $(seq 0 $((${#repos[@]} - 1))); do
     repo=${repos[$i]} branch=${branches[$i]}      # repo/branch pair
     echo "Cloning $repo"

@@ -2,7 +2,7 @@
 # script to create a new project
  
 # change project name and archetype version as needed
-name=test
+name=myapexapp
 version=3.2.0-incubating
 
 mvn archetype:generate \
