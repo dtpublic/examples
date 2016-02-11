@@ -1,0 +1,34 @@
+{
+    "separator": ",",
+    "quoteChar":"\"",
+    "fields": [
+        {
+            "name": "time",
+            "type": "Long"
+        },
+        {
+            "name": "errorCode",
+            "type": "String"
+        },
+        {
+            "name": "model",
+            "type": "String"
+        },
+        {
+            "name": "gear",
+            "type": "Integer"
+        },
+        {
+            "name": "temperature",
+            "type": "Double"
+        },
+        {
+            "name": "speed",
+            "type": "Double"
+        },
+        {
+            "name": "rpm",
+            "type": "Double"
+        }
+    ]
+}

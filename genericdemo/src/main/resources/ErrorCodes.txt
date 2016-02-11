@@ -1,0 +1,2328 @@
+{"errorCode":"B0004","description":"PCM Discrete Input Speed Signal Not Present"}
+{"errorCode":"B0005","description":"In Park Switch Circuit Malfunction"}
+{"errorCode":"B0016","description":"RF/Passenger Frontal Deployment Loop (Single Stage or Stage 1) Resistance Low"}
+{"errorCode":"B0017","description":"RF/Passenger Frontal Deployment Loop (Single Stage or Stage 1) Open"}
+{"errorCode":"B0018","description":"RF/Passenger Frontal Deployment Loop (Single Stage or Stage 1) Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0022","description":"LF/Driver Frontal Deployment Loop (Single Stage or Stage 1) Resistance Low"}
+{"errorCode":"B0024","description":"LF/Driver Frontal Deployment Loop (Single Stage or Stage 1) Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0026","description":"LF/Driver Frontal Deployment Loop (Single Stage or Stage 1) Open"}
+{"errorCode":"B0028","description":"RF/Passenger Side Deployment Loop Resistance Low"}
+{"errorCode":"B0029","description":"RF/Passenger Side Deployment Loop Open"}
+{"errorCode":"B0030","description":"RF/Passenger Side Deployment Loop Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0035","description":"ADS Closed/Shorted to Ground"}
+{"errorCode":"B0036","description":"ADS Open/Missing/Shorted to Battery"}
+{"errorCode":"B0037","description":"AUX switch closed/shorted to ground"}
+{"errorCode":"B0038","description":"AUX switch open/shorted to battery"}
+{"errorCode":"B0040","description":"LF/Driver Side Deployment Loop Resistance Low"}
+{"errorCode":"B0041","description":"LF/Driver Side Deployment Loop Open"}
+{"errorCode":"B0045","description":"LF Side Deploy Loop Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0051","description":"Deployment Commanded"}
+{"errorCode":"B0053","description":"Deployment Commanded with Loop Malfunctions Present"}
+{"errorCode":"B0057","description":"RF/Passenger Pretensioner Deployment Loop Resistance Low"}
+{"errorCode":"B0058","description":"RF/Passenger Pretensioner Deployment Loop Open"}
+{"errorCode":"B0059","description":"RF/Passenger Pretensioner Deployment Loop Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0064","description":"LF/Driver Pretensioner Deployment Loop Resistance Low"}
+{"errorCode":"B0065","description":"LF/Driver Pretensioner Deployment Loop Open"}
+{"errorCode":"B0066","description":"LF/Driver Pretensioner Deployment Loop Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0073","description":"Supplemental Deployment Loop #1 Resistance Low"}
+{"errorCode":"B0074","description":"Supplemental Deployment Loop #1 Open"}
+{"errorCode":"B0075","description":"Supplemental Deployment Loop #1 Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0077","description":"LF/Driver SIS Malfunction"}
+{"errorCode":"B0078","description":"RF/Passenger SIS Malfunction"}
+{"errorCode":"B0079","description":"Incorrect LF/Driver SIS Installed"}
+{"errorCode":"B0080","description":"Discard LF/Driver SIS"}
+{"errorCode":"B0081","description":"Incorrect RF/Passenger SIS Installed"}
+{"errorCode":"B0082","description":"Discard RF/Passenger SIS"}
+{"errorCode":"B0086","description":"Supplemental Deployment Loop #2 Resistance Low"}
+{"errorCode":"B0087","description":"Supplemental Deployment Loop #2 Open"}
+{"errorCode":"B0088","description":"Supplemental Deployment Loop #2 Short to Ground/Voltage Out of Range"}
+{"errorCode":"B0090","description":"Active switch voltage out of range"}
+{"errorCode":"B0091","description":"Active switch: wrong state"}
+{"errorCode":"B0092","description":"PPS passenger detection error"}
+{"errorCode":"B0093","description":"PPS/CPS self-test malfunction"}
+{"errorCode":"B0094","description":"CPS childseat detection error"}
+{"errorCode":"B0095","description":"SDM-PPS/CPS mismatch malfunction"}
+{"errorCode":"B0126","description":"Right Panel Discharge Temperature Fault"}
+{"errorCode":"B0131","description":"Right Heater Discharge Temperature Fault"}
+{"errorCode":"B0159","description":"Outside Air Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"B0164","description":"Passenger Compartment Temperature Sensor #1 (Single Sensor or LH) Circuit Range/Performance"}
+{"errorCode":"B0169","description":"In-car Temp Sensor Failure (passenger -not used)"}
+{"errorCode":"B0174","description":"Output Air Temperature Sensor #1 (Upper; Single or LH) Circuit Range/Performance"}
+{"errorCode":"B0179","description":"Output Air Temperature Sensor #2 (Lower; Single or LH) Circuit Range/Performance"}
+{"errorCode":"B0184","description":"Solar Load Sensor #1 CKT Range"}
+{"errorCode":"B0189","description":"Solar Load Sensor #2 CKT Range"}
+{"errorCode":"B0248","description":"Mode Door Inoperative Error"}
+{"errorCode":"B0249","description":"Heater/Defrost/AC Door Range Error"}
+{"errorCode":"B0268","description":"A/I Door Inoperative Error"}
+{"errorCode":"B0269","description":"Air Inlet Door Range Error"}
+{"errorCode":"B0408","description":"Temperature Control #1 (Main/Front) Circuit Malfunction"}
+{"errorCode":"B0409","description":"Air Mix Door #1 Range Error"}
+{"errorCode":"B0419","description":"Air Mix Door #2 Range Error"}
+{"errorCode":"B0423","description":"Air Mix Door #2 Inoperative Error"}
+{"errorCode":"B0428","description":"Air Mix Door #3 Inoperative Error"}
+{"errorCode":"B0429","description":"Temperature Control #3 Rear Circuit Range/Performance"}
+{"errorCode":"B0510","description":"RH Panel Discharge Temp Sensor Failure"}
+{"errorCode":"B0515","description":"RH Heater Discharge Temp Sensor Failure"}
+{"errorCode":"B0520","description":"Rear Discharge Temp Sensor Failure"}
+{"errorCode":"B0530","description":"Fuel Level Sensor Stuck"}
+{"errorCode":"B0532","description":"Fuel Sensor Shorted To Ground"}
+{"errorCode":"B0533","description":"Fuel Sensor Open/Shorted To B+"}
+{"errorCode":"B0688","description":"Security System Indicator Circuit High"}
+{"errorCode":"B0768","description":"Service Indicator Circuit High"}
+{"errorCode":"B0846","description":"+5 Volt Reference Out of Range"}
+{"errorCode":"B0856","description":"Battery 2 Out of Range"}
+{"errorCode":"P0001","description":"Fuel Volume Regulator Control Circuit/Open"}
+{"errorCode":"P0002","description":"Fuel Volume Regulator Control Circuit Range/Performance"}
+{"errorCode":"P0003","description":"Fuel Volume Regulator Control Circuit Low"}
+{"errorCode":"P0004","description":"Fuel Volume Regulator Control Circuit High"}
+{"errorCode":"P0005","description":"Fuel Shutoff Valve A Control Circuit/Open"}
+{"errorCode":"P0006","description":"Fuel Shutoff Valve A Control Circuit Low"}
+{"errorCode":"P0007","description":"Fuel Shutoff Valve A Control Circuit High"}
+{"errorCode":"P0008","description":"Engine Position System Performance"}
+{"errorCode":"P0009","description":"Engine Position System Performance"}
+{"errorCode":"P0010","description":"A Camshaft Position Actuator Circuit"}
+{"errorCode":"P0011","description":"A Camshaft Position - Timing Over-Advanced or System Performance"}
+{"errorCode":"P0012","description":"A Camshaft Position - Timing Over-Retarded"}
+{"errorCode":"P0013","description":"B Camshaft Position - Actuator Circuit"}
+{"errorCode":"P0014","description":"B Camshaft Position - Timing Over-Advanced or System Performance"}
+{"errorCode":"P0015","description":"B Camshaft Position - Timing Over-Retarded"}
+{"errorCode":"P0016","description":"Crankshaft Position - Camshaft Position Correlation"}
+{"errorCode":"P0017","description":"Crankshaft Position - Camshaft Position Correlation"}
+{"errorCode":"P0018","description":"Crankshaft Position - Camshaft Position Correlation"}
+{"errorCode":"P0019","description":"Crankshaft Position - Camshaft Position Correlation"}
+{"errorCode":"P0020","description":"A Camshaft Position Actuator Circuit"}
+{"errorCode":"P0021","description":"A Camshaft Position - Timing Over-Advanced or System Performance"}
+{"errorCode":"P0022","description":"A Camshaft Position - Timing Over-Retarded"}
+{"errorCode":"P0023","description":"B Camshaft Position - Actuator Circuit"}
+{"errorCode":"P0024","description":"B Camshaft Position - Timing Over-Advanced or System Performance"}
+{"errorCode":"P0025","description":"B Camshaft Position - Timing Over-Retarded"}
+{"errorCode":"P0026","description":"Intake Valve Control Solenoid Circuit Range/Performance"}
+{"errorCode":"P0027","description":"Exhaust Valve Control Solenoid Circuit Range/Performance"}
+{"errorCode":"P0028","description":"Intake Valve Control Solenoid Circuit Range/Performance"}
+{"errorCode":"P0029","description":"Exhaust Valve Control Solenoid Circuit Range/Performance"}
+{"errorCode":"P0030","description":"HO2S Heater Control Circuit"}
+{"errorCode":"P0031","description":"HO2S Heater Control Circuit Low"}
+{"errorCode":"P0032","description":"HO2S Heater Control Circuit High"}
+{"errorCode":"P0033","description":"Turbo Charger Bypass Valve Control Circuit"}
+{"errorCode":"P0034","description":"Turbo Charger Bypass Valve Control Circuit Low"}
+{"errorCode":"P0035","description":"Turbo Charger Bypass Valve Control Circuit High"}
+{"errorCode":"P0036","description":"HO2S Heater Control Circuit"}
+{"errorCode":"P0037","description":"HO2S Heater Control Circuit Low"}
+{"errorCode":"P0038","description":"HO2S Heater Control Circuit High"}
+{"errorCode":"P0039","description":"Turbo/Super Charger Bypass Valve Control Circuit Range/Performance"}
+{"errorCode":"P0040","description":"O2 Sensor Signals Swapped Bank 1 Sensor 1/ Bank 2 Sensor 1"}
+{"errorCode":"P0041","description":"O2 Sensor Signals Swapped Bank 1 Sensor 2/ Bank 2 Sensor 2"}
+{"errorCode":"P0042","description":"HO2S Heater Control Circuit"}
+{"errorCode":"P0043","description":"HO2S Heater Control Circuit Low"}
+{"errorCode":"P0044","description":"HO2S Heater Control Circuit High"}
+{"errorCode":"P0045","description":"Turbo/Super Charger Boost Control Solenoid Circuit/Open"}
+{"errorCode":"P0046","description":"Turbo/Super Charger Boost Control Solenoid Circuit Range/Performance"}
+{"errorCode":"P0047","description":"Turbo/Super Charger Boost Control Solenoid Circuit Low"}
+{"errorCode":"P0048","description":"Turbo/Super Charger Boost Control Solenoid Circuit High"}
+{"errorCode":"P0049","description":"Turbo/Super Charger Turbine Overspeed"}
+{"errorCode":"P0050","description":"HO2S Heater Control Circuit"}
+{"errorCode":"P0051","description":"HO2S Heater Control Circuit Low"}
+{"errorCode":"P0052","description":"HO2S Heater Control Circuit High"}
+{"errorCode":"P0053","description":"HO2S Heater Resistance"}
+{"errorCode":"P0054","description":"HO2S Heater Resistance"}
+{"errorCode":"P0055","description":"HO2S Heater Resistance"}
+{"errorCode":"P0056","description":"HO2S Heater Control Circuit"}
+{"errorCode":"P0057","description":"HO2S Heater Control Circuit Low"}
+{"errorCode":"P0058","description":"HO2S Heater Control Circuit High"}
+{"errorCode":"P0059","description":"HO2S Heater Resistance"}
+{"errorCode":"P0060","description":"HO2S Heater Resistance"}
+{"errorCode":"P0061","description":"HO2S Heater Resistance"}
+{"errorCode":"P0062","description":"HO2S Heater Control Circuit"}
+{"errorCode":"P0063","description":"HO2S Heater Control Circuit Low"}
+{"errorCode":"P0064","description":"HO2S Heater Control Circuit High"}
+{"errorCode":"P0065","description":"Air Assisted Injector Control Range/Performance"}
+{"errorCode":"P0066","description":"Air Assisted Injector Control Circuit or Circuit Low"}
+{"errorCode":"P0067","description":"Air Assisted Injector Control Circuit High"}
+{"errorCode":"P0068","description":"MAP/MAF - Throttle Position Correlation"}
+{"errorCode":"P0069","description":"Manifold Absolute Pressure - Barometric Pressure Correlation"}
+{"errorCode":"P0070","description":"Ambient Air Temperature Sensor Circuit"}
+{"errorCode":"P0071","description":"Ambient Air Temperature Sensor Range/Performance"}
+{"errorCode":"P0072","description":"Ambient Air Temperature Sensor Circuit Low"}
+{"errorCode":"P0073","description":"Ambient Air Temperature Sensor Circuit High"}
+{"errorCode":"P0074","description":"Ambient Air Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P0075","description":"Intake Valve Control Solenoid Circuit"}
+{"errorCode":"P0076","description":"Intake Valve Control Solenoid Circuit Low"}
+{"errorCode":"P0077","description":"Intake Valve Control Solenoid Circuit High"}
+{"errorCode":"P0078","description":"Exhaust Valve Control Solenoid Circuit"}
+{"errorCode":"P0079","description":"Exhaust Valve Control Solenoid Circuit Low"}
+{"errorCode":"P0080","description":"Exhaust Valve Control Solenoid Circuit High"}
+{"errorCode":"P0081","description":"Intake Valve Control Solenoid Circuit"}
+{"errorCode":"P0082","description":"Intake Valve Control Solenoid Circuit Low"}
+{"errorCode":"P0083","description":"Intake Valve Control Solenoid Circuit High"}
+{"errorCode":"P0084","description":"Exhaust Valve Control Solenoid Circuit"}
+{"errorCode":"P0085","description":"Exhaust Valve Control Solenoid Circuit Low"}
+{"errorCode":"P0086","description":"Exhaust Valve Control Solenoid Circuit High"}
+{"errorCode":"P0087","description":"Fuel Rail/System Pressure - Too Low"}
+{"errorCode":"P0088","description":"Fuel Rail/System Pressure - Too High"}
+{"errorCode":"P0089","description":"Fuel Pressure Regulator 1 Performance"}
+{"errorCode":"P0090","description":"Fuel Pressure Regulator 1 Control Circuit"}
+{"errorCode":"P0091","description":"Fuel Pressure Regulator 1 Control Circuit Low"}
+{"errorCode":"P0092","description":"Fuel Pressure Regulator 1 Control Circuit High"}
+{"errorCode":"P0093","description":"Fuel System Leak Detected - Large Leak"}
+{"errorCode":"P0094","description":"Fuel System Leak Detected - Small Leak"}
+{"errorCode":"P0095","description":"Intake Air Temperature Sensor 2 Circuit"}
+{"errorCode":"P0096","description":"Intake Air Temperature Sensor 2 Circuit Range/Performance"}
+{"errorCode":"P0097","description":"Intake Air Temperature Sensor 2 Circuit Low"}
+{"errorCode":"P0098","description":"Intake Air Temperature Sensor 2 Circuit High"}
+{"errorCode":"P0099","description":"Intake Air Temperature Sensor 2 Circuit Intermittent/Erratic"}
+{"errorCode":"P0100","description":"Mass or Volume Air Flow Circuit"}
+{"errorCode":"P0101","description":"Mass or Volume Air Flow Circuit Range/Performance"}
+{"errorCode":"P0102","description":"Mass or Volume Air Flow Circuit Low Input"}
+{"errorCode":"P0103","description":"Mass or Volume Air Flow Circuit High Input"}
+{"errorCode":"P0104","description":"Mass or Volume Air Flow Circuit Intermittent"}
+{"errorCode":"P0105","description":"Manifold Absolute Pressure/Barometric Pressure Circuit"}
+{"errorCode":"P0106","description":"Manifold Absolute Pressure/Barometric Pressure Circuit Range/Performance"}
+{"errorCode":"P0107","description":"Manifold Absolute Pressure/Barometric Pressure Circuit Low Input"}
+{"errorCode":"P0108","description":"Manifold Absolute Pressure/Barometric Pressure Circuit High Input"}
+{"errorCode":"P0109","description":"Manifold Absolute Pressure/Barometric Pressure Circuit Intermittent"}
+{"errorCode":"P0110","description":"Intake Air Temperature Sensor 1 Circuit"}
+{"errorCode":"P0111","description":"Intake Air Temperature Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0112","description":"Intake Air Temperature Sensor 1 Circuit Low"}
+{"errorCode":"P0113","description":"Intake Air Temperature Sensor 1 Circuit High"}
+{"errorCode":"P0114","description":"Intake Air Temperature Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0115","description":"Engine Coolant Temperature Circuit"}
+{"errorCode":"P0116","description":"Engine Coolant Temperature Circuit Range/Performance"}
+{"errorCode":"P0117","description":"Engine Coolant Temperature Circuit Low"}
+{"errorCode":"P0118","description":"Engine Coolant Temperature Circuit High"}
+{"errorCode":"P0119","description":"Engine Coolant Temperature Circuit Intermittent"}
+{"errorCode":"P0120","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit"}
+{"errorCode":"P0121","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0122","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0123","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0124","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0125","description":"Insufficient Coolant Temperature for Closed Loop Fuel Control"}
+{"errorCode":"P0126","description":"Insufficient Coolant Temperature for Stable Operation"}
+{"errorCode":"P0127","description":"Intake Air Temperature Too High"}
+{"errorCode":"P0128","description":"Coolant Thermostat (Coolant Temperature Below Thermostat Regulating Temperature)"}
+{"errorCode":"P0129","description":"Barometric Pressure Too Low"}
+{"errorCode":"P0130","description":"O2 Sensor Circuit"}
+{"errorCode":"P0131","description":"O2 Sensor Circuit Low Voltage"}
+{"errorCode":"P0132","description":"O2 Sensor Circuit High Voltage"}
+{"errorCode":"P0133","description":"O2 Sensor Circuit Slow Response"}
+{"errorCode":"P0134","description":"O2 Sensor Circuit No Activity Detected"}
+{"errorCode":"P0135","description":"O2 Sensor Heater Circuit"}
+{"errorCode":"P0136","description":"O2 Sensor Circuit"}
+{"errorCode":"P0137","description":"O2 Sensor Circuit Low Voltage"}
+{"errorCode":"P0138","description":"O2 Sensor Circuit High Voltage"}
+{"errorCode":"P0139","description":"O2 Sensor Circuit Slow Response"}
+{"errorCode":"P0140","description":"O2 Sensor Circuit No Activity Detected"}
+{"errorCode":"P0141","description":"O2 Sensor Heater Circuit"}
+{"errorCode":"P0142","description":"O2 Sensor Circuit"}
+{"errorCode":"P0143","description":"O2 Sensor Circuit Low Voltage"}
+{"errorCode":"P0144","description":"O2 Sensor Circuit High Voltage"}
+{"errorCode":"P0145","description":"O2 Sensor Circuit Slow Response"}
+{"errorCode":"P0146","description":"O2 Sensor Circuit No Activity Detected"}
+{"errorCode":"P0147","description":"O2 Sensor Heater Circuit"}
+{"errorCode":"P0148","description":"Fuel Delivery Error"}
+{"errorCode":"P0149","description":"Fuel Timing Error"}
+{"errorCode":"P0150","description":"O2 Sensor Circuit"}
+{"errorCode":"P0151","description":"O2 Sensor Circuit Low Voltage"}
+{"errorCode":"P0152","description":"O2 Sensor Circuit High Voltage"}
+{"errorCode":"P0153","description":"O2 Sensor Circuit Slow Response"}
+{"errorCode":"P0154","description":"O2 Sensor Circuit No Activity Detected"}
+{"errorCode":"P0155","description":"O2 Sensor Heater Circuit"}
+{"errorCode":"P0156","description":"O2 Sensor Circuit"}
+{"errorCode":"P0157","description":"O2 Sensor Circuit Low Voltage"}
+{"errorCode":"P0158","description":"O2 Sensor Circuit High Voltage"}
+{"errorCode":"P0159","description":"O2 Sensor Circuit Slow Response"}
+{"errorCode":"P0160","description":"O2 Sensor Circuit No Activity Detected"}
+{"errorCode":"P0161","description":"O2 Sensor Heater Circuit"}
+{"errorCode":"P0162","description":"O2 Sensor Circuit"}
+{"errorCode":"P0163","description":"O2 Sensor Circuit Low Voltage"}
+{"errorCode":"P0164","description":"O2 Sensor Circuit High Voltage"}
+{"errorCode":"P0165","description":"O2 Sensor Circuit Slow Response"}
+{"errorCode":"P0166","description":"O2 Sensor Circuit No Activity Detected"}
+{"errorCode":"P0167","description":"O2 Sensor Heater Circuit"}
+{"errorCode":"P0168","description":"Fuel Temperature Too High"}
+{"errorCode":"P0169","description":"Incorrect Fuel Composition"}
+{"errorCode":"P0170","description":"Fuel Trim"}
+{"errorCode":"P0171","description":"System Too Lean"}
+{"errorCode":"P0172","description":"System Too Rich"}
+{"errorCode":"P0173","description":"Fuel Trim"}
+{"errorCode":"P0174","description":"System Too Lean"}
+{"errorCode":"P0175","description":"System Too Rich"}
+{"errorCode":"P0176","description":"Fuel Composition Sensor Circuit"}
+{"errorCode":"P0177","description":"Fuel Composition Sensor Circuit Range/Performance"}
+{"errorCode":"P0178","description":"Fuel Composition Sensor Circuit Low"}
+{"errorCode":"P0179","description":"Fuel Composition Sensor Circuit High"}
+{"errorCode":"P0180","description":"Fuel Temperature Sensor A Circuit"}
+{"errorCode":"P0181","description":"Fuel Temperature Sensor A Circuit Range/Performance"}
+{"errorCode":"P0182","description":"Fuel Temperature Sensor A Circuit Low"}
+{"errorCode":"P0183","description":"Fuel Temperature Sensor A Circuit High"}
+{"errorCode":"P0184","description":"Fuel Temperature Sensor A Circuit Intermittent"}
+{"errorCode":"P0185","description":"Fuel Temperature Sensor B Circuit"}
+{"errorCode":"P0186","description":"Fuel Temperature Sensor B Circuit Range/Performance"}
+{"errorCode":"P0187","description":"Fuel Temperature Sensor B Circuit Low"}
+{"errorCode":"P0188","description":"Fuel Temperature Sensor B Circuit High"}
+{"errorCode":"P0189","description":"Fuel Temperature Sensor B Circuit Intermittent"}
+{"errorCode":"P0190","description":"Fuel Rail Pressure Sensor Circuit"}
+{"errorCode":"P0191","description":"Fuel Rail Pressure Sensor Circuit Range/Performance"}
+{"errorCode":"P0192","description":"Fuel Rail Pressure Sensor Circuit Low"}
+{"errorCode":"P0193","description":"Fuel Rail Pressure Sensor Circuit High"}
+{"errorCode":"P0194","description":"Fuel Rail Pressure Sensor Circuit Intermittent"}
+{"errorCode":"P0195","description":"Engine Oil Temperature Sensor"}
+{"errorCode":"P0196","description":"Engine Oil Temperature Sensor Range/Performance"}
+{"errorCode":"P0197","description":"Engine Oil Temperature Sensor Low"}
+{"errorCode":"P0198","description":"Engine Oil Temperature Sensor High"}
+{"errorCode":"P0199","description":"Engine Oil Temperature Sensor Intermittent"}
+{"errorCode":"P0200","description":"Injector Circuit/Open"}
+{"errorCode":"P0201","description":"Injector Circuit/Open - Cylinder 1"}
+{"errorCode":"P0202","description":"Injector Circuit/Open - Cylinder 2"}
+{"errorCode":"P0203","description":"Injector Circuit/Open - Cylinder 3"}
+{"errorCode":"P0204","description":"Injector Circuit/Open - Cylinder 4"}
+{"errorCode":"P0205","description":"Injector Circuit/Open - Cylinder 5"}
+{"errorCode":"P0206","description":"Injector Circuit/Open - Cylinder 6"}
+{"errorCode":"P0207","description":"Injector Circuit/Open - Cylinder 7"}
+{"errorCode":"P0208","description":"Injector Circuit/Open - Cylinder 8"}
+{"errorCode":"P0209","description":"Injector Circuit/Open - Cylinder 9"}
+{"errorCode":"P0210","description":"Injector Circuit/Open - Cylinder 10"}
+{"errorCode":"P0211","description":"Injector Circuit/Open - Cylinder 11"}
+{"errorCode":"P0212","description":"Injector Circuit/Open - Cylinder 12"}
+{"errorCode":"P0213","description":"Cold Start Injector 1"}
+{"errorCode":"P0214","description":"Cold Start Injector 2"}
+{"errorCode":"P0215","description":"Engine Shutoff Solenoid"}
+{"errorCode":"P0216","description":"Injector/Injection Timing Control Circuit"}
+{"errorCode":"P0217","description":"Engine Coolant Over Temperature Condition"}
+{"errorCode":"P0218","description":"Transmission Fluid Over Temperature Condition"}
+{"errorCode":"P0219","description":"Engine Overspeed Condition"}
+{"errorCode":"P0220","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit"}
+{"errorCode":"P0221","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0222","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0223","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0224","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0225","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit"}
+{"errorCode":"P0226","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0227","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0228","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0229","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0230","description":"Fuel Pump Primary Circuit"}
+{"errorCode":"P0231","description":"Fuel Pump Secondary Circuit Low"}
+{"errorCode":"P0232","description":"Fuel Pump Secondary Circuit High"}
+{"errorCode":"P0233","description":"Fuel Pump Secondary Circuit Intermittent"}
+{"errorCode":"P0234","description":"Turbo/Super Charger Overboost Condition"}
+{"errorCode":"P0235","description":"Turbo/Super Charger Boost Sensor 1 Circuit"}
+{"errorCode":"P0236","description":"Turbo/Super Charger Boost Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0237","description":"Turbo/Super Charger Boost Sensor 1 Circuit Low"}
+{"errorCode":"P0238","description":"Turbo/Super Charger Boost Sensor 1 Circuit High"}
+{"errorCode":"P0239","description":"Turbo/Super Charger Boost Sensor 1 Circuit"}
+{"errorCode":"P0240","description":"Turbo/Super Charger Boost Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0241","description":"Turbo/Super Charger Boost Sensor 1 Circuit Low"}
+{"errorCode":"P0242","description":"Turbo/Super Charger Boost Sensor 1 Circuit High"}
+{"errorCode":"P0243","description":"Turbo/Super Charger Wastegate Solenoid 1"}
+{"errorCode":"P0244","description":"Turbo/Super Charger Wastegate Solenoid 1 Range/Performance"}
+{"errorCode":"P0245","description":"Turbo/Super Charger Wastegate Solenoid 1 Low"}
+{"errorCode":"P0246","description":"Turbo/Super Charger Wastegate Solenoid 1 High"}
+{"errorCode":"P0247","description":"Turbo/Super Charger Wastegate Solenoid 1"}
+{"errorCode":"P0248","description":"Turbo/Super Charger Wastegate Solenoid 1 Range/Performance"}
+{"errorCode":"P0249","description":"Turbo/Super Charger Wastegate Solenoid 1 Low"}
+{"errorCode":"P0250","description":"Turbo/Super Charger Wastegate Solenoid 1 High"}
+{"errorCode":"P0251","description":"Injection Pump Fuel Metering Control 1 (Cam/Rotor/Injector)"}
+{"errorCode":"P0252","description":"Injection Pump Fuel Metering Control 1 Range/Performance (Cam/Rotor/Injector)"}
+{"errorCode":"P0253","description":"Injection Pump Fuel Metering Control 1 Low (Cam/Rotor/Injector)"}
+{"errorCode":"P0254","description":"Injection Pump Fuel Metering Control 1 High (Cam/Rotor/Injector)"}
+{"errorCode":"P0255","description":"Injection Pump Fuel Metering Control 1 Intermittent (Cam/Rotor/Injector)"}
+{"errorCode":"P0256","description":"Injection Pump Fuel Metering Control 1 (Cam/Rotor/Injector)"}
+{"errorCode":"P0257","description":"Injection Pump Fuel Metering Control 1 Range/Performance (Cam/Rotor/Injector)"}
+{"errorCode":"P0258","description":"Injection Pump Fuel Metering Control 1 Low (Cam/Rotor/Injector)"}
+{"errorCode":"P0259","description":"Injection Pump Fuel Metering Control 1 High (Cam/Rotor/Injector)"}
+{"errorCode":"P0260","description":"Injection Pump Fuel Metering Control 1 Intermittent (Cam/Rotor/Injector)"}
+{"errorCode":"P0261","description":"Cylinder 1 Injector Circuit Low"}
+{"errorCode":"P0262","description":"Cylinder 1 Injector Circuit High"}
+{"errorCode":"P0263","description":"Cylinder 1 Contribution/Balance"}
+{"errorCode":"P0264","description":"Cylinder 2 Injector Circuit Low"}
+{"errorCode":"P0265","description":"Cylinder 2 Injector Circuit High"}
+{"errorCode":"P0266","description":"Cylinder 2 Contribution/Balance"}
+{"errorCode":"P0267","description":"Cylinder 3 Injector Circuit Low"}
+{"errorCode":"P0268","description":"Cylinder 3 Injector Circuit High"}
+{"errorCode":"P0269","description":"Cylinder 3 Contribution/Balance"}
+{"errorCode":"P0270","description":"Cylinder 4 Injector Circuit Low"}
+{"errorCode":"P0271","description":"Cylinder 4 Injector Circuit High"}
+{"errorCode":"P0272","description":"Cylinder 4 Contribution/Balance"}
+{"errorCode":"P0273","description":"Cylinder 5 Injector Circuit Low"}
+{"errorCode":"P0274","description":"Cylinder 5 Injector Circuit High"}
+{"errorCode":"P0275","description":"Cylinder 5 Contribution/Balance"}
+{"errorCode":"P0276","description":"Cylinder 6 Injector Circuit Low"}
+{"errorCode":"P0277","description":"Cylinder 6 Injector Circuit High"}
+{"errorCode":"P0278","description":"Cylinder 6 Contribution/Balance"}
+{"errorCode":"P0279","description":"Cylinder 7 Injector Circuit Low"}
+{"errorCode":"P0280","description":"Cylinder 7 Injector Circuit High"}
+{"errorCode":"P0281","description":"Cylinder 7 Contribution/Balance"}
+{"errorCode":"P0282","description":"Cylinder 8 Injector Circuit Low"}
+{"errorCode":"P0283","description":"Cylinder 8 Injector Circuit High"}
+{"errorCode":"P0284","description":"Cylinder 8 Contribution/Balance"}
+{"errorCode":"P0285","description":"Cylinder 9 Injector Circuit Low"}
+{"errorCode":"P0286","description":"Cylinder 9 Injector Circuit High"}
+{"errorCode":"P0287","description":"Cylinder 9 Contribution/Balance"}
+{"errorCode":"P0288","description":"Cylinder 10 Injector Circuit Low"}
+{"errorCode":"P0289","description":"Cylinder 10 Injector Circuit High"}
+{"errorCode":"P0290","description":"Cylinder 10 Contribution/Balance"}
+{"errorCode":"P0291","description":"Cylinder 11 Injector Circuit Low"}
+{"errorCode":"P0292","description":"Cylinder 11 Injector Circuit High"}
+{"errorCode":"P0293","description":"Cylinder 11 Contribution/Balance"}
+{"errorCode":"P0294","description":"Cylinder 12 Injector Circuit Low"}
+{"errorCode":"P0295","description":"Cylinder 12 Injector Circuit High"}
+{"errorCode":"P0296","description":"Cylinder 12 Contribution/Balance"}
+{"errorCode":"P0297","description":"Vehicle Overspeed Condition"}
+{"errorCode":"P0298","description":"Engine Oil Over Temperature"}
+{"errorCode":"P0299","description":"Turbo/Super Charger Underboost"}
+{"errorCode":"P0300","description":"Random/Multiple Cylinder Misfire Detected"}
+{"errorCode":"P0301","description":"Cylinder 1 Misfire Detected"}
+{"errorCode":"P0302","description":"Cylinder 2 Misfire Detected"}
+{"errorCode":"P0303","description":"Cylinder 3 Misfire Detected"}
+{"errorCode":"P0304","description":"Cylinder 4 Misfire Detected"}
+{"errorCode":"P0305","description":"Cylinder 5 Misfire Detected"}
+{"errorCode":"P0306","description":"Cylinder 6 Misfire Detected"}
+{"errorCode":"P0307","description":"Cylinder 7 Misfire Detected"}
+{"errorCode":"P0308","description":"Cylinder 8 Misfire Detected"}
+{"errorCode":"P0309","description":"Cylinder 9 Misfire Detected"}
+{"errorCode":"P0310","description":"Cylinder 10 Misfire Detected"}
+{"errorCode":"P0311","description":"Cylinder 11 Misfire Detected"}
+{"errorCode":"P0312","description":"Cylinder 12 Misfire Detected"}
+{"errorCode":"P0313","description":"Misfire Detected with Low Fuel"}
+{"errorCode":"P0314","description":"Single Cylinder Misfire (Cylinder not Specified)"}
+{"errorCode":"P0315","description":"Crankshaft Position System Variation Not Learned"}
+{"errorCode":"P0316","description":"Engine Misfire Detected on Startup (First 1000 Revolutions)"}
+{"errorCode":"P0317","description":"Rough Road Hardware Not Present"}
+{"errorCode":"P0318","description":"Rough Road Sensor 1 Signal Circuit"}
+{"errorCode":"P0319","description":"Rough Road Sensor 1"}
+{"errorCode":"P0320","description":"Ignition/Distributor Engine Speed Input Circuit"}
+{"errorCode":"P0321","description":"Ignition/Distributor Engine Speed Input Circuit Range/Performance"}
+{"errorCode":"P0322","description":"Ignition/Distributor Engine Speed Input Circuit No Signal"}
+{"errorCode":"P0323","description":"Ignition/Distributor Engine Speed Input Circuit Intermittent"}
+{"errorCode":"P0324","description":"Knock Control System Error"}
+{"errorCode":"P0325","description":"Knock Sensor 1 Circuit"}
+{"errorCode":"P0326","description":"Knock Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0327","description":"Knock Sensor 1 Circuit Low"}
+{"errorCode":"P0328","description":"Knock Sensor 1 Circuit High"}
+{"errorCode":"P0329","description":"Knock Sensor 1 Circuit Input Intermittent"}
+{"errorCode":"P0330","description":"Knock Sensor 2 Circuit"}
+{"errorCode":"P0331","description":"Knock Sensor 2 Circuit Range/Performance"}
+{"errorCode":"P0332","description":"Knock Sensor 2 Circuit Low"}
+{"errorCode":"P0333","description":"Knock Sensor 2 Circuit High"}
+{"errorCode":"P0334","description":"Knock Sensor 2 Circuit Input Intermittent"}
+{"errorCode":"P0335","description":"Crankshaft Position Sensor 1 Circuit"}
+{"errorCode":"P0336","description":"Crankshaft Position Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0337","description":"Crankshaft Position Sensor 1 Circuit Low"}
+{"errorCode":"P0338","description":"Crankshaft Position Sensor 1 Circuit High"}
+{"errorCode":"P0339","description":"Crankshaft Position Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0340","description":"Camshaft Position Sensor 1 Circuit"}
+{"errorCode":"P0341","description":"Camshaft Position Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0342","description":"Camshaft Position Sensor 1 Circuit Low"}
+{"errorCode":"P0343","description":"Camshaft Position Sensor 1 Circuit High"}
+{"errorCode":"P0344","description":"Camshaft Position Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0345","description":"Camshaft Position Sensor 1 Circuit"}
+{"errorCode":"P0346","description":"Camshaft Position Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0347","description":"Camshaft Position Sensor 1 Circuit Low"}
+{"errorCode":"P0348","description":"Camshaft Position Sensor 1 Circuit High"}
+{"errorCode":"P0349","description":"Camshaft Position Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0350","description":"Ignition Coil Primary/Secondary Circuit"}
+{"errorCode":"P0351","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0352","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0353","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0354","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0355","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0356","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0357","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0358","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0359","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0360","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0361","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0362","description":"Ignition Coil 1 Primary/Secondary Circuit"}
+{"errorCode":"P0363","description":"Misfire Detected - Fueling Disabled"}
+{"errorCode":"P0364","description":"Reserved"}
+{"errorCode":"P0365","description":"Camshaft Position Sensor 1 Circuit"}
+{"errorCode":"P0366","description":"Camshaft Position Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0367","description":"Camshaft Position Sensor 1 Circuit Low"}
+{"errorCode":"P0368","description":"Camshaft Position Sensor 1 Circuit High"}
+{"errorCode":"P0369","description":"Camshaft Position Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0370","description":"Timing Reference High Resolution Signal 1"}
+{"errorCode":"P0371","description":"Timing Reference High Resolution Signal 1 Too Many Pulses"}
+{"errorCode":"P0372","description":"Timing Reference High Resolution Signal 1 Too Few Pulses"}
+{"errorCode":"P0373","description":"Timing Reference High Resolution Signal 1 Intermittent/Erratic Pulses"}
+{"errorCode":"P0374","description":"Timing Reference High Resolution Signal 1 No Pulse"}
+{"errorCode":"P0375","description":"Timing Reference High Resolution Signal 1"}
+{"errorCode":"P0376","description":"Timing Reference High Resolution Signal 1 Too Many Pulses"}
+{"errorCode":"P0377","description":"Timing Reference High Resolution Signal 1 Too Few Pulses"}
+{"errorCode":"P0378","description":"Timing Reference High Resolution Signal 1 Intermittent/Erratic Pulses"}
+{"errorCode":"P0379","description":"Timing Reference High Resolution Signal 1 No Pulses"}
+{"errorCode":"P0380","description":"Glow Plug/Heater Circuit 1"}
+{"errorCode":"P0381","description":"Glow Plug/Heater Indicator Circuit"}
+{"errorCode":"P0382","description":"Glow Plug/Heater Circuit 1"}
+{"errorCode":"P0383","description":"Reserved by SAE J2012"}
+{"errorCode":"P0384","description":"Reserved by SAE J2012"}
+{"errorCode":"P0385","description":"Crankshaft Position Sensor 1 Circuit"}
+{"errorCode":"P0386","description":"Crankshaft Position Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0387","description":"Crankshaft Position Sensor 1 Circuit Low"}
+{"errorCode":"P0388","description":"Crankshaft Position Sensor 1 Circuit High"}
+{"errorCode":"P0389","description":"Crankshaft Position Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0390","description":"Camshaft Position Sensor 1 Circuit"}
+{"errorCode":"P0391","description":"Camshaft Position Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0392","description":"Camshaft Position Sensor 1 Circuit Low"}
+{"errorCode":"P0393","description":"Camshaft Position Sensor 1 Circuit High"}
+{"errorCode":"P0394","description":"Camshaft Position Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0400","description":"Exhaust Gas Recirculation Flow"}
+{"errorCode":"P0401","description":"Exhaust Gas Recirculation Flow Insufficient Detected"}
+{"errorCode":"P0402","description":"Exhaust Gas Recirculation Flow Excessive Detected"}
+{"errorCode":"P0403","description":"Exhaust Gas Recirculation Control Circuit"}
+{"errorCode":"P0404","description":"Exhaust Gas Recirculation Control Circuit Range/Performance"}
+{"errorCode":"P0405","description":"Exhaust Gas Recirculation Sensor 1 Circuit Low"}
+{"errorCode":"P0406","description":"Exhaust Gas Recirculation Sensor 1 Circuit High"}
+{"errorCode":"P0407","description":"Exhaust Gas Recirculation Sensor 1 Circuit Low"}
+{"errorCode":"P0408","description":"Exhaust Gas Recirculation Sensor 1 Circuit High"}
+{"errorCode":"P0409","description":"Exhaust Gas Recirculation Sensor 1 Circuit"}
+{"errorCode":"P0410","description":"Secondary Air Injection System"}
+{"errorCode":"P0411","description":"Secondary Air Injection System Incorrect Flow Detected"}
+{"errorCode":"P0412","description":"Secondary Air Injection System Switching Valve 1 Circuit"}
+{"errorCode":"P0413","description":"Secondary Air Injection System Switching Valve 1 Circuit Open"}
+{"errorCode":"P0414","description":"Secondary Air Injection System Switching Valve 1 Circuit Shorted"}
+{"errorCode":"P0415","description":"Secondary Air Injection System Switching Valve 1 Circuit"}
+{"errorCode":"P0416","description":"Secondary Air Injection System Switching Valve 1 Circuit Open"}
+{"errorCode":"P0417","description":"Secondary Air Injection System Switching Valve 1 Circuit Shorted"}
+{"errorCode":"P0418","description":"Secondary Air Injection System Control 1 Circuit"}
+{"errorCode":"P0419","description":"Secondary Air Injection System Control 1 Circuit"}
+{"errorCode":"P0420","description":"Catalyst System Efficiency Below Threshold"}
+{"errorCode":"P0421","description":"Warm Up Catalyst Efficiency Below Threshold"}
+{"errorCode":"P0422","description":"Main Catalyst Efficiency Below Threshold"}
+{"errorCode":"P0423","description":"Heated Catalyst Efficiency Below Threshold"}
+{"errorCode":"P0424","description":"Heated Catalyst Temperature Below Threshold"}
+{"errorCode":"P0425","description":"Catalyst Temperature Sensor"}
+{"errorCode":"P0426","description":"Catalyst Temperature Sensor Range/Performance"}
+{"errorCode":"P0427","description":"Catalyst Temperature Sensor Low"}
+{"errorCode":"P0428","description":"Catalyst Temperature Sensor High"}
+{"errorCode":"P0429","description":"Catalyst Heater Control Circuit"}
+{"errorCode":"P0430","description":"Catalyst System Efficiency Below Threshold"}
+{"errorCode":"P0431","description":"Warm Up Catalyst Efficiency Below Threshold"}
+{"errorCode":"P0432","description":"Main Catalyst Efficiency Below Threshold"}
+{"errorCode":"P0433","description":"Heated Catalyst Efficiency Below Threshold"}
+{"errorCode":"P0434","description":"Heated Catalyst Temperature Below Threshold"}
+{"errorCode":"P0435","description":"Catalyst Temperature Sensor"}
+{"errorCode":"P0436","description":"Catalyst Temperature Sensor Range/Performance"}
+{"errorCode":"P0437","description":"Catalyst Temperature Sensor Low"}
+{"errorCode":"P0438","description":"Catalyst Temperature Sensor High"}
+{"errorCode":"P0439","description":"Catalyst Heater Control Circuit"}
+{"errorCode":"P0440","description":"Evaporative Emission System"}
+{"errorCode":"P0441","description":"Evaporative Emission System Incorrect Purge Flow"}
+{"errorCode":"P0442","description":"Evaporative Emission System Leak Detected (small leak)"}
+{"errorCode":"P0443","description":"Evaporative Emission System Purge Control Valve Circuit"}
+{"errorCode":"P0444","description":"Evaporative Emission System Purge Control Valve Circuit Open"}
+{"errorCode":"P0445","description":"Evaporative Emission System Purge Control Valve Circuit Shorted"}
+{"errorCode":"P0446","description":"Evaporative Emission System Vent Control Circuit"}
+{"errorCode":"P0447","description":"Evaporative Emission System Vent Control Circuit Open"}
+{"errorCode":"P0448","description":"Evaporative Emission System Vent Control Circuit Shorted"}
+{"errorCode":"P0449","description":"Evaporative Emission System Vent Valve/Solenoid Circuit"}
+{"errorCode":"P0450","description":"Evaporative Emission System Pressure Sensor/Switch"}
+{"errorCode":"P0451","description":"Evaporative Emission System Pressure Sensor/Switch Range/Performance"}
+{"errorCode":"P0452","description":"Evaporative Emission System Pressure Sensor/Switch Low"}
+{"errorCode":"P0453","description":"Evaporative Emission System Pressure Sensor/Switch High"}
+{"errorCode":"P0454","description":"Evaporative Emission System Pressure Sensor/Switch Intermittent"}
+{"errorCode":"P0455","description":"Evaporative Emission System Leak Detected (large leak)"}
+{"errorCode":"P0456","description":"Evaporative Emission System Leak Detected (very small leak)"}
+{"errorCode":"P0457","description":"Evaporative Emission System Leak Detected (fuel cap loose/off)"}
+{"errorCode":"P0458","description":"Evaporative Emission System Purge Control Valve Circuit Low"}
+{"errorCode":"P0459","description":"Evaporative Emission System Purge Control Valve Circuit High"}
+{"errorCode":"P0460","description":"Fuel Level Sensor 1 Circuit"}
+{"errorCode":"P0461","description":"Fuel Level Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0462","description":"Fuel Level Sensor 1 Circuit Low"}
+{"errorCode":"P0463","description":"Fuel Level Sensor 1 Circuit High"}
+{"errorCode":"P0464","description":"Fuel Level Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0465","description":"EVAP Purge Flow Sensor Circuit"}
+{"errorCode":"P0466","description":"EVAP Purge Flow Sensor Circuit Range/Performance"}
+{"errorCode":"P0467","description":"EVAP Purge Flow Sensor Circuit Low"}
+{"errorCode":"P0468","description":"EVAP Purge Flow Sensor Circuit High"}
+{"errorCode":"P0469","description":"EVAP Purge Flow Sensor Circuit Intermittent"}
+{"errorCode":"P0470","description":"Exhaust Pressure Sensor"}
+{"errorCode":"P0471","description":"Exhaust Pressure Sensor Range/Performance"}
+{"errorCode":"P0472","description":"Exhaust Pressure Sensor Low"}
+{"errorCode":"P0473","description":"Exhaust Pressure Sensor High"}
+{"errorCode":"P0474","description":"Exhaust Pressure Sensor Intermittent"}
+{"errorCode":"P0475","description":"Exhaust Pressure Control Valve"}
+{"errorCode":"P0476","description":"Exhaust Pressure Control Valve Range/Performance"}
+{"errorCode":"P0477","description":"Exhaust Pressure Control Valve Low"}
+{"errorCode":"P0478","description":"Exhaust Pressure Control Valve High"}
+{"errorCode":"P0479","description":"Exhaust Pressure Control Valve Intermittent"}
+{"errorCode":"P0480","description":"Fan 1 Control Circuit"}
+{"errorCode":"P0481","description":"Fan 2 Control Circuit"}
+{"errorCode":"P0482","description":"Fan 3 Control Circuit"}
+{"errorCode":"P0483","description":"Fan Rationality Check"}
+{"errorCode":"P0484","description":"Fan Circuit Over Current"}
+{"errorCode":"P0485","description":"Fan Power/Ground Circuit"}
+{"errorCode":"P0486","description":"Exhaust Gas Recirculation Sensor 1 Circuit"}
+{"errorCode":"P0487","description":"Exhaust Gas Recirculation Throttle Position Control Circuit"}
+{"errorCode":"P0488","description":"Exhaust Gas Recirculation Throttle Position Control Range/Performance"}
+{"errorCode":"P0489","description":"Exhaust Gas Recirculation Control Circuit Low"}
+{"errorCode":"P0490","description":"Exhaust Gas Recirculation Control Circuit High"}
+{"errorCode":"P0491","description":"Secondary Air Injection System Insufficient Flow"}
+{"errorCode":"P0492","description":"Secondary Air Injection System Insufficient Flow"}
+{"errorCode":"P0493","description":"Fan Overspeed"}
+{"errorCode":"P0494","description":"Fan Speed Low"}
+{"errorCode":"P0495","description":"Fan Speed High"}
+{"errorCode":"P0496","description":"Evaporative Emission System High Purge Flow"}
+{"errorCode":"P0497","description":"Evaporative Emission System Low Purge Flow"}
+{"errorCode":"P0498","description":"Evaporative Emission System Vent Valve Control Circuit Low"}
+{"errorCode":"P0499","description":"Evaporative Emission System Vent Valve Control Circuit High"}
+{"errorCode":"P0500","description":"Vehicle Speed Sensor 1"}
+{"errorCode":"P0501","description":"Vehicle Speed Sensor 1 Range/Performance"}
+{"errorCode":"P0502","description":"Vehicle Speed Sensor 1 Circuit Low Input"}
+{"errorCode":"P0503","description":"Vehicle Speed Sensor 1 Intermittent/Erratic/High"}
+{"errorCode":"P0504","description":"Brake Switch 1/1 Correlation"}
+{"errorCode":"P0505","description":"Idle Air Control System"}
+{"errorCode":"P0506","description":"Idle Air Control System RPM Lower Than Expected"}
+{"errorCode":"P0507","description":"Idle Air Control System RPM Higher Than Expected"}
+{"errorCode":"P0508","description":"Idle Air Control System Circuit Low"}
+{"errorCode":"P0509","description":"Idle Air Control System Circuit High"}
+{"errorCode":"P0510","description":"Closed Throttle Position Switch"}
+{"errorCode":"P0511","description":"Idle Air Control Circuit"}
+{"errorCode":"P0512","description":"Starter Request Circuit"}
+{"errorCode":"P0513","description":"Incorrect Immobilizer Key"}
+{"errorCode":"P0514","description":"Battery Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P0515","description":"Battery Temperature Sensor Circuit"}
+{"errorCode":"P0516","description":"Battery Temperature Sensor Circuit Low"}
+{"errorCode":"P0517","description":"Battery Temperature Sensor Circuit High"}
+{"errorCode":"P0518","description":"Idle Air Control Circuit Intermittent"}
+{"errorCode":"P0519","description":"Idle Air Control System Performance"}
+{"errorCode":"P0520","description":"Engine Oil Pressure Sensor/Switch Circuit"}
+{"errorCode":"P0521","description":"Engine Oil Pressure Sensor/Switch Range/Performance"}
+{"errorCode":"P0522","description":"Engine Oil Pressure Sensor/Switch Low Voltage"}
+{"errorCode":"P0523","description":"Engine Oil Pressure Sensor/Switch High Voltage"}
+{"errorCode":"P0524","description":"Engine Oil Pressure Too Low"}
+{"errorCode":"P0525","description":"Cruise Control Servo Control Circuit Range/Performance"}
+{"errorCode":"P0526","description":"Fan Speed Sensor Circuit"}
+{"errorCode":"P0527","description":"Fan Speed Sensor Circuit Range/Performance"}
+{"errorCode":"P0528","description":"Fan Speed Sensor Circuit No Signal"}
+{"errorCode":"P0529","description":"Fan Speed Sensor Circuit Intermittent"}
+{"errorCode":"P0530","description":"A/C Refrigerant Pressure Sensor 1 Circuit"}
+{"errorCode":"P0531","description":"A/C Refrigerant Pressure Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0532","description":"A/C Refrigerant Pressure Sensor 1 Circuit Low"}
+{"errorCode":"P0533","description":"A/C Refrigerant Pressure Sensor 1 Circuit High"}
+{"errorCode":"P0534","description":"Air Conditioner Refrigerant Charge Loss"}
+{"errorCode":"P0535","description":"A/C Evaporator Temperature Sensor Circuit"}
+{"errorCode":"P0536","description":"A/C Evaporator Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P0537","description":"A/C Evaporator Temperature Sensor Circuit Low"}
+{"errorCode":"P0538","description":"A/C Evaporator Temperature Sensor Circuit High"}
+{"errorCode":"P0539","description":"A/C Evaporator Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P0540","description":"Intake Air Heater 1 Circuit"}
+{"errorCode":"P0541","description":"Intake Air Heater 1 Circuit Low"}
+{"errorCode":"P0542","description":"Intake Air Heater 1 Circuit High"}
+{"errorCode":"P0543","description":"Intake Air Heater 1 Circuit Open"}
+{"errorCode":"P0544","description":"Exhaust Gas Temperature Sensor Circuit"}
+{"errorCode":"P0545","description":"Exhaust Gas Temperature Sensor Circuit Low"}
+{"errorCode":"P0546","description":"Exhaust Gas Temperature Sensor Circuit High"}
+{"errorCode":"P0547","description":"Exhaust Gas Temperature Sensor Circuit"}
+{"errorCode":"P0548","description":"Exhaust Gas Temperature Sensor Circuit Low"}
+{"errorCode":"P0549","description":"Exhaust Gas Temperature Sensor Circuit High"}
+{"errorCode":"P0550","description":"Power Steering Pressure Sensor/Switch Circuit"}
+{"errorCode":"P0551","description":"Power Steering Pressure Sensor/Switch Circuit Range/Performance"}
+{"errorCode":"P0552","description":"Power Steering Pressure Sensor/Switch Circuit Low Input"}
+{"errorCode":"P0553","description":"Power Steering Pressure Sensor/Switch Circuit High Input"}
+{"errorCode":"P0554","description":"Power Steering Pressure Sensor/Switch Circuit Intermittent"}
+{"errorCode":"P0555","description":"Brake Booster Pressure Sensor Circuit"}
+{"errorCode":"P0556","description":"Brake Booster Pressure Sensor Circuit Range/Performance"}
+{"errorCode":"P0557","description":"Brake Booster Pressure Sensor Circuit Low Input"}
+{"errorCode":"P0558","description":"Brake Booster Pressure Sensor Circuit High Input"}
+{"errorCode":"P0559","description":"Brake Booster Pressure Sensor Circuit Intermittent"}
+{"errorCode":"P0560","description":"System Voltage"}
+{"errorCode":"P0561","description":"System Voltage Unstable"}
+{"errorCode":"P0562","description":"System Voltage Low"}
+{"errorCode":"P0563","description":"System Voltage High"}
+{"errorCode":"P0564","description":"Cruise Control Multi-Function Input 1 Circuit"}
+{"errorCode":"P0565","description":"Cruise Control On Signal"}
+{"errorCode":"P0566","description":"Cruise Control Off Signal"}
+{"errorCode":"P0567","description":"Cruise Control Resume Signal"}
+{"errorCode":"P0568","description":"Cruise Control Set Signal"}
+{"errorCode":"P0569","description":"Cruise Control Coast Signal"}
+{"errorCode":"P0570","description":"Cruise Control Accelerate Signal"}
+{"errorCode":"P0571","description":"Brake Switch 1 Circuit"}
+{"errorCode":"P0572","description":"Brake Switch 1 Circuit Low"}
+{"errorCode":"P0573","description":"Brake Switch 1 Circuit High"}
+{"errorCode":"P0574","description":"Cruise Control System - Vehicle Speed Too High"}
+{"errorCode":"P0575","description":"Cruise Control Input Circuit"}
+{"errorCode":"P0576","description":"Cruise Control Input Circuit Low"}
+{"errorCode":"P0577","description":"Cruise Control Input Circuit High"}
+{"errorCode":"P0578","description":"Cruise Control Multi-Function Input 1 Circuit Stuck"}
+{"errorCode":"P0579","description":"Cruise Control Multi-Function Input 1 Circuit Range/Performance"}
+{"errorCode":"P0580","description":"Cruise Control Multi-Function Input 1 Circuit Low"}
+{"errorCode":"P0581","description":"Cruise Control Multi-Function Input 1 Circuit High"}
+{"errorCode":"P0582","description":"Cruise Control Vacuum Control Circuit/Open"}
+{"errorCode":"P0583","description":"Cruise Control Vacuum Control Circuit Low"}
+{"errorCode":"P0584","description":"Cruise Control Vacuum Control Circuit High"}
+{"errorCode":"P0585","description":"Cruise Control Multi-Function Input 1/1 Correlation"}
+{"errorCode":"P0586","description":"Cruise Control Vent Control Circuit/Open"}
+{"errorCode":"P0587","description":"Cruise Control Vent Control Circuit Low"}
+{"errorCode":"P0588","description":"Cruise Control Vent Control Circuit High"}
+{"errorCode":"P0589","description":"Cruise Control Multi-Function Input 1 Circuit"}
+{"errorCode":"P0590","description":"Cruise Control Multi-Function Input 1 Circuit Stuck"}
+{"errorCode":"P0591","description":"Cruise Control Multi-Function Input 1 Circuit Range/Performance"}
+{"errorCode":"P0592","description":"Cruise Control Multi-Function Input 1 Circuit Low"}
+{"errorCode":"P0593","description":"Cruise Control Multi-Function Input 1 Circuit High"}
+{"errorCode":"P0594","description":"Cruise Control Servo Control Circuit/Open"}
+{"errorCode":"P0595","description":"Cruise Control Servo Control Circuit Low"}
+{"errorCode":"P0596","description":"Cruise Control Servo Control Circuit High"}
+{"errorCode":"P0597","description":"Thermostat Heater Control Circuit/Open"}
+{"errorCode":"P0598","description":"Thermostat Heater Control Circuit Low"}
+{"errorCode":"P0599","description":"Thermostat Heater Control Circuit High"}
+{"errorCode":"P0600","description":"Serial Communication Link"}
+{"errorCode":"P0601","description":"Internal Control Module Memory Check Sum Error"}
+{"errorCode":"P0602","description":"Control Module Programming Error"}
+{"errorCode":"P0603","description":"Internal Control Module Keep Alive Memory (KAM) Error"}
+{"errorCode":"P0604","description":"Internal Control Module Random Access Memory (RAM) Error"}
+{"errorCode":"P0605","description":"Internal Control Module Read Only Memory (ROM) Error"}
+{"errorCode":"P0606","description":"ECM/PCM Processor"}
+{"errorCode":"P0607","description":"Control Module Performance"}
+{"errorCode":"P0608","description":"Control Module VSS Output 1"}
+{"errorCode":"P0609","description":"Control Module VSS Output 1"}
+{"errorCode":"P0610","description":"Control Module Vehicle Options Error"}
+{"errorCode":"P0611","description":"Fuel Injector Control Module Performance"}
+{"errorCode":"P0612","description":"Fuel Injector Control Module Relay Control"}
+{"errorCode":"P0613","description":"TCM Processor"}
+{"errorCode":"P0614","description":"ECM / TCM Incompatible"}
+{"errorCode":"P0615","description":"Starter Relay Circuit"}
+{"errorCode":"P0616","description":"Starter Relay Circuit Low"}
+{"errorCode":"P0617","description":"Starter Relay Circuit High"}
+{"errorCode":"P0618","description":"Alternative Fuel Control Module KAM Error"}
+{"errorCode":"P0619","description":"Alternative Fuel Control Module RAM/ROM Error"}
+{"errorCode":"P0620","description":"Generator Control Circuit"}
+{"errorCode":"P0621","description":"Generator Lamp/L Terminal Circuit"}
+{"errorCode":"P0622","description":"Generator Field/F Terminal Circuit"}
+{"errorCode":"P0623","description":"Generator Lamp Control Circuit"}
+{"errorCode":"P0624","description":"Fuel Cap Lamp Control Circuit"}
+{"errorCode":"P0625","description":"Generator Field/F Terminal Circuit Low"}
+{"errorCode":"P0626","description":"Generator Field/F Terminal Circuit High"}
+{"errorCode":"P0627","description":"Fuel Pump 1 Control Circuit /Open"}
+{"errorCode":"P0628","description":"Fuel Pump 1 Control Circuit Low"}
+{"errorCode":"P0629","description":"Fuel Pump 1 Control Circuit High"}
+{"errorCode":"P0630","description":"VIN Not Programmed or Incompatible - ECM/PCM"}
+{"errorCode":"P0631","description":"VIN Not Programmed or Incompatible - TCM"}
+{"errorCode":"P0632","description":"Odometer Not Programmed - ECM/PCM"}
+{"errorCode":"P0633","description":"Immobilizer Key Not Programmed - ECM/PCM"}
+{"errorCode":"P0634","description":"PCM/ECM/TCM Internal Temperature Too High"}
+{"errorCode":"P0635","description":"Power Steering Control Circuit"}
+{"errorCode":"P0636","description":"Power Steering Control Circuit Low"}
+{"errorCode":"P0637","description":"Power Steering Control Circuit High"}
+{"errorCode":"P0638","description":"Throttle Actuator Control Range/Performance"}
+{"errorCode":"P0639","description":"Throttle Actuator Control Range/Performance"}
+{"errorCode":"P0640","description":"Intake Air Heater Control Circuit"}
+{"errorCode":"P0641","description":"Sensor Reference Voltage 1 Circuit/Open"}
+{"errorCode":"P0642","description":"Sensor Reference Voltage 1 Circuit Low"}
+{"errorCode":"P0643","description":"Sensor Reference Voltage 1 Circuit High"}
+{"errorCode":"P0644","description":"Driver Display Serial Communication Circuit"}
+{"errorCode":"P0645","description":"A/C Clutch Relay Control Circuit"}
+{"errorCode":"P0646","description":"A/C Clutch Relay Control Circuit Low"}
+{"errorCode":"P0647","description":"A/C Clutch Relay Control Circuit High"}
+{"errorCode":"P0648","description":"Immobilizer Lamp Control Circuit"}
+{"errorCode":"P0649","description":"Speed Control Lamp Control Circuit"}
+{"errorCode":"P0650","description":"Malfunction Indicator Lamp (MIL) Control Circuit"}
+{"errorCode":"P0651","description":"Sensor Reference Voltage 1 Circuit/Open"}
+{"errorCode":"P0652","description":"Sensor Reference Voltage 1 Circuit Low"}
+{"errorCode":"P0653","description":"Sensor Reference Voltage 1 Circuit High"}
+{"errorCode":"P0654","description":"Engine RPM Output Circuit"}
+{"errorCode":"P0655","description":"Engine Hot Lamp Output Control Circuit"}
+{"errorCode":"P0656","description":"Fuel Level Output Circuit"}
+{"errorCode":"P0657","description":"Actuator Supply Voltage 1 Circuit/Open"}
+{"errorCode":"P0658","description":"Actuator Supply Voltage 1 Circuit Low"}
+{"errorCode":"P0659","description":"Actuator Supply Voltage 1 Circuit High"}
+{"errorCode":"P0660","description":"Intake Manifold Tuning Valve Control Circuit/Open"}
+{"errorCode":"P0661","description":"Intake Manifold Tuning Valve Control Circuit Low"}
+{"errorCode":"P0662","description":"Intake Manifold Tuning Valve Control Circuit High"}
+{"errorCode":"P0663","description":"Intake Manifold Tuning Valve Control Circuit/Open"}
+{"errorCode":"P0664","description":"Intake Manifold Tuning Valve Control Circuit Low"}
+{"errorCode":"P0665","description":"Intake Manifold Tuning Valve Control Circuit High"}
+{"errorCode":"P0666","description":"PCM/ECM/TCM Internal Temperature Sensor Circuit"}
+{"errorCode":"P0667","description":"PCM/ECM/TCM Internal Temperature Sensor Range/Performance"}
+{"errorCode":"P0668","description":"PCM/ECM/TCM Internal Temperature Sensor Circuit Low"}
+{"errorCode":"P0669","description":"PCM/ECM/TCM Internal Temperature Sensor Circuit High"}
+{"errorCode":"P0670","description":"Glow Plug Module Control Circuit"}
+{"errorCode":"P0671","description":"Cylinder 1 Glow Plug Circuit"}
+{"errorCode":"P0672","description":"Cylinder 2 Glow Plug Circuit"}
+{"errorCode":"P0673","description":"Cylinder 3 Glow Plug Circuit"}
+{"errorCode":"P0674","description":"Cylinder 4 Glow Plug Circuit"}
+{"errorCode":"P0675","description":"Cylinder 5 Glow Plug Circuit"}
+{"errorCode":"P0676","description":"Cylinder 6 Glow Plug Circuit"}
+{"errorCode":"P0677","description":"Cylinder 7 Glow Plug Circuit"}
+{"errorCode":"P0678","description":"Cylinder 8 Glow Plug Circuit"}
+{"errorCode":"P0679","description":"Cylinder 9 Glow Plug Circuit"}
+{"errorCode":"P0680","description":"Cylinder 10 Glow Plug Circuit"}
+{"errorCode":"P0681","description":"Cylinder 11 Glow Plug Circuit"}
+{"errorCode":"P0682","description":"Cylinder 12 Glow Plug Circuit"}
+{"errorCode":"P0683","description":"Glow Plug Control Module to PCM Communication Circuit"}
+{"errorCode":"P0684","description":"Glow Plug Control Module to PCM Communication Circuit Range/Performance"}
+{"errorCode":"P0685","description":"ECM/PCM Power Relay Control Circuit /Open"}
+{"errorCode":"P0686","description":"ECM/PCM Power Relay Control Circuit Low"}
+{"errorCode":"P0687","description":"ECM/PCM Power Relay Control Circuit High"}
+{"errorCode":"P0688","description":"ECM/PCM Power Relay Sense Circuit /Open"}
+{"errorCode":"P0689","description":"ECM/PCM Power Relay Sense Circuit Low"}
+{"errorCode":"P0690","description":"ECM/PCM Power Relay Sense Circuit High"}
+{"errorCode":"P0691","description":"Fan 1 Control Circuit Low"}
+{"errorCode":"P0692","description":"Fan 1 Control Circuit High"}
+{"errorCode":"P0693","description":"Fan 2 Control Circuit Low"}
+{"errorCode":"P0694","description":"Fan 2 Control Circuit High"}
+{"errorCode":"P0695","description":"Fan 3 Control Circuit Low"}
+{"errorCode":"P0696","description":"Fan 3 Control Circuit High"}
+{"errorCode":"P0697","description":"Sensor Reference Voltage 1 Circuit/Open"}
+{"errorCode":"P0698","description":"Sensor Reference Voltage 1 Circuit Low"}
+{"errorCode":"P0699","description":"Sensor Reference Voltage 1 Circuit High"}
+{"errorCode":"P0700","description":"Transmission Control System (MIL Request)"}
+{"errorCode":"P0701","description":"Transmission Control System Range/Performance"}
+{"errorCode":"P0702","description":"Transmission Control System Electrical"}
+{"errorCode":"P0703","description":"Brake Switch 1 Circuit"}
+{"errorCode":"P0704","description":"Clutch Switch Input Circuit Malfunction"}
+{"errorCode":"P0705","description":"Transmission Range Sensor Circuit Malfunction (PRNDL Input)"}
+{"errorCode":"P0706","description":"Transmission Range Sensor Circuit Range/Performance"}
+{"errorCode":"P0707","description":"Transmission Range Sensor Circuit Low"}
+{"errorCode":"P0708","description":"Transmission Range Sensor Circuit High"}
+{"errorCode":"P0709","description":"Transmission Range Sensor Circuit Intermittent"}
+{"errorCode":"P0710","description":"Transmission Fluid Temperature Sensor 1 Circuit"}
+{"errorCode":"P0711","description":"Transmission Fluid Temperature Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0712","description":"Transmission Fluid Temperature Sensor 1 Circuit Low"}
+{"errorCode":"P0713","description":"Transmission Fluid Temperature Sensor 1 Circuit High"}
+{"errorCode":"P0714","description":"Transmission Fluid Temperature Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0715","description":"Input/Turbine Speed Sensor 1 Circuit"}
+{"errorCode":"P0716","description":"Input/Turbine Speed Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0717","description":"Input/Turbine Speed Sensor 1 Circuit No Signal"}
+{"errorCode":"P0718","description":"Input/Turbine Speed Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0719","description":"Brake Switch 1 Circuit Low"}
+{"errorCode":"P0720","description":"Output Speed Sensor Circuit"}
+{"errorCode":"P0721","description":"Output Speed Sensor Circuit Range/Performance"}
+{"errorCode":"P0722","description":"Output Speed Sensor Circuit No Signal"}
+{"errorCode":"P0723","description":"Output Speed Sensor Circuit Intermittent"}
+{"errorCode":"P0724","description":"Brake Switch 1 Circuit High"}
+{"errorCode":"P0725","description":"Engine Speed Input Circuit"}
+{"errorCode":"P0726","description":"Engine Speed Input Circuit Range/Performance"}
+{"errorCode":"P0727","description":"Engine Speed Input Circuit No Signal"}
+{"errorCode":"P0728","description":"Engine Speed Input Circuit Intermittent"}
+{"errorCode":"P0729","description":"Gear 6 Incorrect Ratio"}
+{"errorCode":"P0730","description":"Incorrect Gear Ratio"}
+{"errorCode":"P0731","description":"Gear 1 Incorrect Ratio"}
+{"errorCode":"P0732","description":"Gear 2 Incorrect Ratio"}
+{"errorCode":"P0733","description":"Gear 3 Incorrect Ratio"}
+{"errorCode":"P0734","description":"Gear 4 Incorrect Ratio"}
+{"errorCode":"P0735","description":"Gear 5 Incorrect Ratio"}
+{"errorCode":"P0736","description":"Reverse Incorrect Ratio"}
+{"errorCode":"P0737","description":"TCM Engine Speed Output Circuit"}
+{"errorCode":"P0738","description":"TCM Engine Speed Output Circuit Low"}
+{"errorCode":"P0739","description":"TCM Engine Speed Output Circuit High"}
+{"errorCode":"P0740","description":"Torque Converter Clutch Circuit/Open"}
+{"errorCode":"P0741","description":"Torque Converter Clutch Circuit Performance or Stuck Off"}
+{"errorCode":"P0742","description":"Torque Converter Clutch Circuit Stuck On"}
+{"errorCode":"P0743","description":"Torque Converter Clutch Circuit Electrical"}
+{"errorCode":"P0744","description":"Torque Converter Clutch Circuit Intermittent"}
+{"errorCode":"P0745","description":"Pressure Control Solenoid 1"}
+{"errorCode":"P0746","description":"Pressure Control Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P0747","description":"Pressure Control Solenoid 1 Stuck On"}
+{"errorCode":"P0748","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P0749","description":"Pressure Control Solenoid 1 Intermittent"}
+{"errorCode":"P0750","description":"Shift Solenoid 1"}
+{"errorCode":"P0751","description":"Shift Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P0752","description":"Shift Solenoid 1 Stuck On"}
+{"errorCode":"P0753","description":"Shift Solenoid 1 Electrical"}
+{"errorCode":"P0754","description":"Shift Solenoid 1 Intermittent"}
+{"errorCode":"P0755","description":"Shift Solenoid 1"}
+{"errorCode":"P0756","description":"Shift Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P0757","description":"Shift Solenoid 1 Stuck On"}
+{"errorCode":"P0758","description":"Shift Solenoid 1 Electrical"}
+{"errorCode":"P0759","description":"Shift Solenoid 1 Intermittent"}
+{"errorCode":"P0760","description":"Shift Solenoid 1"}
+{"errorCode":"P0761","description":"Shift Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P0762","description":"Shift Solenoid 1 Stuck On"}
+{"errorCode":"P0763","description":"Shift Solenoid 1 Electrical"}
+{"errorCode":"P0764","description":"Shift Solenoid 1 Intermittent"}
+{"errorCode":"P0765","description":"Shift Solenoid 1"}
+{"errorCode":"P0766","description":"Shift Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P0767","description":"Shift Solenoid 1 Stuck On"}
+{"errorCode":"P0768","description":"Shift Solenoid 1 Electrical"}
+{"errorCode":"P0769","description":"Shift Solenoid 1 Intermittent"}
+{"errorCode":"P0770","description":"Shift Solenoid 1"}
+{"errorCode":"P0771","description":"Shift Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P0772","description":"Shift Solenoid 1 Stuck On"}
+{"errorCode":"P0773","description":"Shift Solenoid 1 Electrical"}
+{"errorCode":"P0774","description":"Shift Solenoid 1 Intermittent"}
+{"errorCode":"P0775","description":"Pressure Control Solenoid 1"}
+{"errorCode":"P0776","description":"Pressure Control Solenoid 1 Performance or Stuck off"}
+{"errorCode":"P0777","description":"Pressure Control Solenoid 1 Stuck On"}
+{"errorCode":"P0778","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P0779","description":"Pressure Control Solenoid 1 Intermittent"}
+{"errorCode":"P0780","description":"Shift Error"}
+{"errorCode":"P0781","description":"1-2 Shift"}
+{"errorCode":"P0782","description":"2-3 Shift"}
+{"errorCode":"P0783","description":"3-4 Shift"}
+{"errorCode":"P0784","description":"4-5 Shift"}
+{"errorCode":"P0785","description":"Shift/Timing Solenoid"}
+{"errorCode":"P0786","description":"Shift/Timing Solenoid Range/Performance"}
+{"errorCode":"P0787","description":"Shift/Timing Solenoid Low"}
+{"errorCode":"P0788","description":"Shift/Timing Solenoid High"}
+{"errorCode":"P0789","description":"Shift/Timing Solenoid Intermittent"}
+{"errorCode":"P0790","description":"Normal/Performance Switch Circuit"}
+{"errorCode":"P0791","description":"Intermediate Shaft Speed Sensor 1 Circuit"}
+{"errorCode":"P0792","description":"Intermediate Shaft Speed Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P0793","description":"Intermediate Shaft Speed Sensor 1 Circuit No Signal"}
+{"errorCode":"P0794","description":"Intermediate Shaft Speed Sensor 1 Circuit Intermittent"}
+{"errorCode":"P0795","description":"Pressure Control Solenoid 1"}
+{"errorCode":"P0796","description":"Pressure Control Solenoid 1 Performance or Stuck off"}
+{"errorCode":"P0797","description":"Pressure Control Solenoid 1 Stuck On"}
+{"errorCode":"P0798","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P0799","description":"Pressure Control Solenoid 1 Intermittent"}
+{"errorCode":"P0800","description":"Transfer Case Control System (MIL Request)"}
+{"errorCode":"P0801","description":"Reverse Inhibit Control Circuit"}
+{"errorCode":"P0802","description":"Transmission Control System MIL Request Circuit/Open"}
+{"errorCode":"P0803","description":"1-4 Upshift (Skip Shift) Solenoid Control Circuit"}
+{"errorCode":"P0804","description":"1-4 Upshift (Skip Shift) Lamp Control Circuit"}
+{"errorCode":"P0805","description":"Clutch Position Sensor Circuit"}
+{"errorCode":"P0806","description":"Clutch Position Sensor Circuit Range/Performance"}
+{"errorCode":"P0807","description":"Clutch Position Sensor Circuit Low"}
+{"errorCode":"P0808","description":"Clutch Position Sensor Circuit High"}
+{"errorCode":"P0809","description":"Clutch Position Sensor Circuit Intermittent"}
+{"errorCode":"P0810","description":"Clutch Position Control Error"}
+{"errorCode":"P0811","description":"Excessive Clutch Slippage"}
+{"errorCode":"P0812","description":"Reverse Input Circuit"}
+{"errorCode":"P0813","description":"Reverse Output Circuit"}
+{"errorCode":"P0814","description":"Transmission Range Display Circuit"}
+{"errorCode":"P0815","description":"Upshift Switch Circuit"}
+{"errorCode":"P0816","description":"Downshift Switch Circuit"}
+{"errorCode":"P0817","description":"Starter Disable Circuit"}
+{"errorCode":"P0818","description":"Driveline Disconnect Switch Input Circuit"}
+{"errorCode":"P0819","description":"Up and Down Shift Switch to Transmission Range Correlation"}
+{"errorCode":"P0820","description":"Gear Lever X-Y Position Sensor Circuit"}
+{"errorCode":"P0821","description":"Gear Lever X Position Circuit"}
+{"errorCode":"P0822","description":"Gear Lever Y Position Circuit"}
+{"errorCode":"P0823","description":"Gear Lever X Position Circuit Intermittent"}
+{"errorCode":"P0824","description":"Gear Lever Y Position Circuit Intermittent"}
+{"errorCode":"P0825","description":"Gear Lever Push-Pull Switch (Shift Anticipate)"}
+{"errorCode":"P0826","description":"Up and Down Shift Switch Circuit"}
+{"errorCode":"P0827","description":"Up and Down Shift Switch Circuit Low"}
+{"errorCode":"P0828","description":"Up and Down Shift Switch Circuit High"}
+{"errorCode":"P0829","description":"5-6 Shift"}
+{"errorCode":"P0830","description":"Clutch Pedal Switch 1 Circuit"}
+{"errorCode":"P0831","description":"Clutch Pedal Switch 1 Circuit Low"}
+{"errorCode":"P0832","description":"Clutch Pedal Switch 1 Circuit High"}
+{"errorCode":"P0833","description":"Clutch Pedal Switch 1 Circuit"}
+{"errorCode":"P0834","description":"Clutch Pedal Switch 1 Circuit Low"}
+{"errorCode":"P0835","description":"Clutch Pedal Switch 1 Circuit High"}
+{"errorCode":"P0836","description":"Four Wheel Drive (4WD) Switch Circuit"}
+{"errorCode":"P0837","description":"Four Wheel Drive (4WD) Switch Circuit Range/Performance"}
+{"errorCode":"P0838","description":"Four Wheel Drive (4WD) Switch Circuit Low"}
+{"errorCode":"P0839","description":"Four Wheel Drive (4WD) Switch Circuit High"}
+{"errorCode":"P0840","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit"}
+{"errorCode":"P0841","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0842","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0843","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0844","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0845","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit"}
+{"errorCode":"P0846","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0847","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0848","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0849","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0850","description":"Park/Neutral Switch Input Circuit"}
+{"errorCode":"P0851","description":"Park/Neutral Switch Input Circuit Low"}
+{"errorCode":"P0852","description":"Park/Neutral Switch Input Circuit High"}
+{"errorCode":"P0853","description":"Drive Switch Input Circuit"}
+{"errorCode":"P0854","description":"Drive Switch Input Circuit Low"}
+{"errorCode":"P0855","description":"Drive Switch Input Circuit High"}
+{"errorCode":"P0856","description":"Traction Control Input Signal"}
+{"errorCode":"P0857","description":"Traction Control Input Signal Range/Performance"}
+{"errorCode":"P0858","description":"Traction Control Input Signal Low"}
+{"errorCode":"P0859","description":"Traction Control Input Signal High"}
+{"errorCode":"P0860","description":"Gear Shift Module Communication Circuit"}
+{"errorCode":"P0861","description":"Gear Shift Module Communication Circuit Low"}
+{"errorCode":"P0862","description":"Gear Shift Module Communication Circuit High"}
+{"errorCode":"P0863","description":"TCM Communication Circuit"}
+{"errorCode":"P0864","description":"TCM Communication Circuit Range/Performance"}
+{"errorCode":"P0865","description":"TCM Communication Circuit Low"}
+{"errorCode":"P0866","description":"TCM Communication Circuit High"}
+{"errorCode":"P0867","description":"Transmission Fluid Pressure"}
+{"errorCode":"P0868","description":"Transmission Fluid Pressure Low"}
+{"errorCode":"P0869","description":"Transmission Fluid Pressure High"}
+{"errorCode":"P0870","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit"}
+{"errorCode":"P0871","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0872","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0873","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0874","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0875","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit"}
+{"errorCode":"P0876","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0877","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0878","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0879","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0880","description":"TCM Power Input Signal"}
+{"errorCode":"P0881","description":"TCM Power Input Signal Range/Performance"}
+{"errorCode":"P0882","description":"TCM Power Input Signal Low"}
+{"errorCode":"P0883","description":"TCM Power Input Signal High"}
+{"errorCode":"P0884","description":"TCM Power Input Signal Intermittent"}
+{"errorCode":"P0885","description":"TCM Power Relay Control Circuit/Open"}
+{"errorCode":"P0886","description":"TCM Power Relay Control Circuit Low"}
+{"errorCode":"P0887","description":"TCM Power Relay Control Circuit High"}
+{"errorCode":"P0888","description":"TCM Power Relay Sense Circuit"}
+{"errorCode":"P0889","description":"TCM Power Relay Sense Circuit Range/Performance"}
+{"errorCode":"P0890","description":"TCM Power Relay Sense Circuit Low"}
+{"errorCode":"P0891","description":"TCM Power Relay Sense Circuit High"}
+{"errorCode":"P0892","description":"TCM Power Relay Sense Circuit Intermittent"}
+{"errorCode":"P0893","description":"Multiple Gears Engaged"}
+{"errorCode":"P0894","description":"Transmission Component Slipping"}
+{"errorCode":"P0895","description":"Shift Time Too Short"}
+{"errorCode":"P0896","description":"Shift Time Too Long"}
+{"errorCode":"P0897","description":"Transmission Fluid Deteriorated"}
+{"errorCode":"P0898","description":"Transmission Control System MIL Request Circuit Low"}
+{"errorCode":"P0899","description":"Transmission Control System MIL Request Circuit High"}
+{"errorCode":"P0900","description":"Clutch Actuator Circuit/Open"}
+{"errorCode":"P0901","description":"Clutch Actuator Circuit Range/Performance"}
+{"errorCode":"P0902","description":"Clutch Actuator Circuit Low"}
+{"errorCode":"P0903","description":"Clutch Actuator Circuit High"}
+{"errorCode":"P0904","description":"Gate Select Position Circuit"}
+{"errorCode":"P0905","description":"Gate Select Position Circuit Range/Performance"}
+{"errorCode":"P0906","description":"Gate Select Position Circuit Low"}
+{"errorCode":"P0907","description":"Gate Select Position Circuit High"}
+{"errorCode":"P0908","description":"Gate Select Position Circuit Intermittent"}
+{"errorCode":"P0909","description":"Gate Select Control Error"}
+{"errorCode":"P0910","description":"Gate Select Actuator Circuit/Open"}
+{"errorCode":"P0911","description":"Gate Select Actuator Circuit Range/Performance"}
+{"errorCode":"P0912","description":"Gate Select Actuator Circuit Low"}
+{"errorCode":"P0913","description":"Gate Select Actuator Circuit High"}
+{"errorCode":"P0914","description":"Gear Shift Position Circuit"}
+{"errorCode":"P0915","description":"Gear Shift Position Circuit Range/Performance"}
+{"errorCode":"P0916","description":"Gear Shift Position Circuit Low"}
+{"errorCode":"P0917","description":"Gear Shift Position Circuit High"}
+{"errorCode":"P0918","description":"Gear Shift Position Circuit Intermittent"}
+{"errorCode":"P0919","description":"Gear Shift Position Control Error"}
+{"errorCode":"P0920","description":"Gear Shift Forward Actuator Circuit/Open"}
+{"errorCode":"P0921","description":"Gear Shift Forward Actuator Circuit Range/Performance"}
+{"errorCode":"P0922","description":"Gear Shift Forward Actuator Circuit Low"}
+{"errorCode":"P0923","description":"Gear Shift Forward Actuator Circuit High"}
+{"errorCode":"P0924","description":"Gear Shift Reverse Actuator Circuit/Open"}
+{"errorCode":"P0925","description":"Gear Shift Reverse Actuator Circuit Range/Performance"}
+{"errorCode":"P0926","description":"Gear Shift Reverse Actuator Circuit Low"}
+{"errorCode":"P0927","description":"Gear Shift Reverse Actuator Circuit High"}
+{"errorCode":"P0928","description":"Gear Shift Lock Solenoid Control Circuit/Open"}
+{"errorCode":"P0929","description":"Gear Shift Lock Solenoid Control Circuit Range/Performance"}
+{"errorCode":"P0930","description":"Gear Shift Lock Solenoid Control Circuit Low"}
+{"errorCode":"P0931","description":"Gear Shift Lock Solenoid Control Circuit High"}
+{"errorCode":"P0932","description":"Hydraulic Pressure Sensor Circuit"}
+{"errorCode":"P0933","description":"Hydraulic Pressure Sensor Range/Performance"}
+{"errorCode":"P0934","description":"Hydraulic Pressure Sensor Circuit Low"}
+{"errorCode":"P0935","description":"Hydraulic Pressure Sensor Circuit High"}
+{"errorCode":"P0936","description":"Hydraulic Pressure Sensor Circuit Intermittent"}
+{"errorCode":"P0937","description":"Hydraulic Oil Temperature Sensor Circuit"}
+{"errorCode":"P0938","description":"Hydraulic Oil Temperature Sensor Range/Performance"}
+{"errorCode":"P0939","description":"Hydraulic Oil Temperature Sensor Circuit Low"}
+{"errorCode":"P0940","description":"Hydraulic Oil Temperature Sensor Circuit High"}
+{"errorCode":"P0941","description":"Hydraulic Oil Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P0942","description":"Hydraulic Pressure Unit"}
+{"errorCode":"P0943","description":"Hydraulic Pressure Unit Cycling Period Too Short"}
+{"errorCode":"P0944","description":"Hydraulic Pressure Unit Loss of Pressure"}
+{"errorCode":"P0945","description":"Hydraulic Pump Relay Circuit/Open"}
+{"errorCode":"P0946","description":"Hydraulic Pump Relay Circuit Range/Performance"}
+{"errorCode":"P0947","description":"Hydraulic Pump Relay Circuit Low"}
+{"errorCode":"P0948","description":"Hydraulic Pump Relay Circuit High"}
+{"errorCode":"P0949","description":"Auto Shift Manual Adaptive Learning Not Complete"}
+{"errorCode":"P0950","description":"Auto Shift Manual Control Circuit"}
+{"errorCode":"P0951","description":"Auto Shift Manual Control Circuit Range/Performance"}
+{"errorCode":"P0952","description":"Auto Shift Manual Control Circuit Low"}
+{"errorCode":"P0953","description":"Auto Shift Manual Control Circuit High"}
+{"errorCode":"P0954","description":"Auto Shift Manual Control Circuit Intermittent"}
+{"errorCode":"P0955","description":"Auto Shift Manual Mode Circuit"}
+{"errorCode":"P0956","description":"Auto Shift Manual Mode Circuit Range/Performance"}
+{"errorCode":"P0957","description":"Auto Shift Manual Mode Circuit Low"}
+{"errorCode":"P0958","description":"Auto Shift Manual Mode Circuit High"}
+{"errorCode":"P0959","description":"Auto Shift Manual Mode Circuit Intermittent"}
+{"errorCode":"P0960","description":"Pressure Control Solenoid 1 Control Circuit/Open"}
+{"errorCode":"P0961","description":"Pressure Control Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0962","description":"Pressure Control Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0963","description":"Pressure Control Solenoid 1 Control Circuit High"}
+{"errorCode":"P0964","description":"Pressure Control Solenoid 1 Control Circuit/Open"}
+{"errorCode":"P0965","description":"Pressure Control Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0966","description":"Pressure Control Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0967","description":"Pressure Control Solenoid 1 Control Circuit High"}
+{"errorCode":"P0968","description":"Pressure Control Solenoid 1 Control Circuit/Open"}
+{"errorCode":"P0969","description":"Pressure Control Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0970","description":"Pressure Control Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0971","description":"Pressure Control Solenoid 1 Control Circuit High"}
+{"errorCode":"P0972","description":"Shift Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0973","description":"Shift Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0974","description":"Shift Solenoid 1 Control Circuit High"}
+{"errorCode":"P0975","description":"Shift Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0976","description":"Shift Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0977","description":"Shift Solenoid 1 Control Circuit High"}
+{"errorCode":"P0978","description":"Shift Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0979","description":"Shift Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0980","description":"Shift Solenoid 1 Control Circuit High"}
+{"errorCode":"P0981","description":"Shift Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0982","description":"Shift Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0983","description":"Shift Solenoid 1 Control Circuit High"}
+{"errorCode":"P0984","description":"Shift Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0985","description":"Shift Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0986","description":"Shift Solenoid 1 Control Circuit High"}
+{"errorCode":"P0987","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit"}
+{"errorCode":"P0988","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0989","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0990","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0991","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0992","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit"}
+{"errorCode":"P0993","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P0994","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Low"}
+{"errorCode":"P0995","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit High"}
+{"errorCode":"P0996","description":"Transmission Fluid Pressure Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P0997","description":"Shift Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P0998","description":"Shift Solenoid 1 Control Circuit Low"}
+{"errorCode":"P0999","description":"Shift Solenoid 1 Control Circuit High"}
+{"errorCode":"P0A00","description":"Motor Electronics Coolant Temperature Sensor Circuit"}
+{"errorCode":"P0A01","description":"Motor Electronics Coolant Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P0A02","description":"Motor Electronics Coolant Temperature Sensor Circuit Low"}
+{"errorCode":"P0A03","description":"Motor Electronics Coolant Temperature Sensor Circuit High"}
+{"errorCode":"P0A04","description":"Motor Electronics Coolant Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P0A05","description":"Motor Electronics Coolant Pump Control Circuit/Open"}
+{"errorCode":"P0A06","description":"Motor Electronics Coolant Pump Control Circuit Low"}
+{"errorCode":"P0A07","description":"Motor Electronics Coolant Pump Control Circuit High"}
+{"errorCode":"P0A08","description":"DC/DC Converter Status Circuit"}
+{"errorCode":"P0A09","description":"DC/DC Converter Status Circuit Low Input"}
+{"errorCode":"P0A10","description":"DC/DC Converter Status Circuit High Input"}
+{"errorCode":"P0A11","description":"DC/DC Converter Enable Circuit/Open"}
+{"errorCode":"P0A12","description":"DC/DC Converter Enable Circuit Low"}
+{"errorCode":"P0A13","description":"DC/DC Converter Enable Circuit High"}
+{"errorCode":"P0A14","description":"Engine Mount Control Circuit/Open"}
+{"errorCode":"P0A15","description":"Engine Mount Control Circuit Low"}
+{"errorCode":"P0A16","description":"Engine Mount Control Circuit High"}
+{"errorCode":"P0A17","description":"Motor Torque Sensor Circuit"}
+{"errorCode":"P0A18","description":"Motor Torque Sensor Circuit Range/Performance"}
+{"errorCode":"P0A19","description":"Motor Torque Sensor Circuit Low"}
+{"errorCode":"P0A20","description":"Motor Torque Sensor Circuit High"}
+{"errorCode":"P0A21","description":"Motor Torque Sensor Circuit Intermittent"}
+{"errorCode":"P0A22","description":"Generator Torque Sensor Circuit"}
+{"errorCode":"P0A23","description":"Generator Torque Sensor Circuit Range/Performance"}
+{"errorCode":"P0A24","description":"Generator Torque Sensor Circuit Low"}
+{"errorCode":"P0A25","description":"Generator Torque Sensor Circuit High"}
+{"errorCode":"P0A26","description":"Generator Torque Sensor Circuit Intermittent"}
+{"errorCode":"P0A27","description":"Battery Power Off Circuit"}
+{"errorCode":"P0A28","description":"Battery Power Off Circuit Low"}
+{"errorCode":"P0A29","description":"Battery Power Off Circuit High"}
+{"errorCode":"P1083","description":"Fuel Control Mixture Lean (Bank 1 Sensor 1)"}
+{"errorCode":"P1084","description":"Fuel Control Mixture Rich (Bank 1 Sensor 1)"}
+{"errorCode":"P1085","description":"Fuel Control Mixture Lean (Bank 2 Sensor 1)"}
+{"errorCode":"P1086","description":"Fuel Control Mixture Rich (Bank 2 Sensor 1)"}
+{"errorCode":"P1087","description":"O2 Sensor Circuit Slow Response in Lean Control Range (Bank 1 Sensor 1)"}
+{"errorCode":"P1088","description":"O2 Sensor Circuit Slow Response in Rich Control Range (Bank 1 Sensor 1)"}
+{"errorCode":"P1089","description":"O2 Sensor Circuit Slow Response in Lean Control Range (Bank 1 Sensor 2)"}
+{"errorCode":"P1090","description":"Pre-Catalyst Fuel Trim Too Lean Bank 1"}
+{"errorCode":"P1091","description":"Pre-Catalyst Fuel Trim Too Rich Bank 1"}
+{"errorCode":"P1092","description":"Pre-Catalyst Fuel Trim Too Lean Bank 2"}
+{"errorCode":"P1093","description":"Pre-Catalyst Fuel Trim Too Rich Bank 2"}
+{"errorCode":"P1094","description":"O2 Sensor Circuit Slow Response in Rich Control Range (Bank 2 Sensor 1)"}
+{"errorCode":"P1095","description":"O2 Sensor Circuit Slow Switching From Lean to Rich (Bank 1 Sensor 1)"}
+{"errorCode":"P1096","description":"O2 Sensor Circuit Slow Switching From Lean to Rich (Bank 2 Sensor 1)"}
+{"errorCode":"P1097","description":"O2 Sensor Circuit Slow Response after Coast Down Fuel Cutoff (Bank 1 Sensor 1)"}
+{"errorCode":"P1098","description":"O2 Sensor Circuit Slow Response after Coast Down Fuel Cutoff (Bank 2 Sensor 2)"}
+{"errorCode":"P1111","description":"Engine Coolant Temperature Radiator Outlet Sensor Low Input"}
+{"errorCode":"P1112","description":"Engine Coolant Temperature Radiator Outlet Sensor High Input"}
+{"errorCode":"P1115","description":"Coolant Temperature Sensor Plausibility"}
+{"errorCode":"P1116","description":"Mass Or Volume Air Flow Circuit Range/Performance Problem (Bank 2)"}
+{"errorCode":"P1117","description":"Mass Or Volume Air Flow Circuit Low Input (Bank 2)"}
+{"errorCode":"P1118","description":"Mass Or Volume Air Flow Circuit High Input (Bank 2)"}
+{"errorCode":"P1120","description":"Pedal Position Sensor Circuit"}
+{"errorCode":"P1121","description":"Pedal Position 1 Range/Performance Problem"}
+{"errorCode":"P1122","description":"Pedal Position 1 Low Input"}
+{"errorCode":"P1123","description":"Pedal Position 1 High Input"}
+{"errorCode":"P1132","description":"O2 Sensor Heater Control Circuit (Bank 1 Sensor 1)"}
+{"errorCode":"P1133","description":"O2 Sensor Heater Control Circuit (Bank 2 Sensor 1)"}
+{"errorCode":"P1134","description":"O2 Sensor Heater Circuit Signal Intermittent (Bank 1 Sensor 2)"}
+{"errorCode":"P1135","description":"O2 Sensor Heater Circuit Low Voltage (Bank 1 Sensor 1)"}
+{"errorCode":"P1136","description":"O2 Sensor Heater Circuit High Voltage (Bank 1 Sensor 1)"}
+{"errorCode":"P1137","description":"O2 Sensor Heater Circuit Signal Intermittant (Bank 1 Sensor 2)"}
+{"errorCode":"P1138","description":"O2 Sensor Heater Circuit Low Voltage (Bank 1 Sensor 2)"}
+{"errorCode":"P1139","description":"O2 Sensor Heater Circuit High Voltage (Bank 1 Sensor 2)"}
+{"errorCode":"P1140","description":"Mass or Volume Air Flow Circuit Range/Performance Problem"}
+{"errorCode":"P1145","description":"Solenoid Valve Running Losses Control Circuit Electrical"}
+{"errorCode":"P1151","description":"O2 Sensor Heater Circuit Signal Intermittant (Bank 2 Sensor 1)"}
+{"errorCode":"P1152","description":"O2 Sensor Heater Circuit Low Voltage (Bank 2 Sensor 1)"}
+{"errorCode":"P1153","description":"O2 Sensor Heater Circuit High Voltage (Bank 2 Sensor 1)"}
+{"errorCode":"P1155","description":"O2 Sensor Heater Circuit Intermittant (Bank 2 Sensor 2)"}
+{"errorCode":"P1156","description":"O2 Sensor Heater Circuit Low Voltage (Bank 2 Sensor 2)"}
+{"errorCode":"P1157","description":"O2 Sensor Heater Circuit High Voltage (Bank 2 Sensor 2)"}
+{"errorCode":"P1158","description":"Fuel Trim Additve Bank 1 Low"}
+{"errorCode":"P1159","description":"Fuel Trim Additve Bank 1 High"}
+{"errorCode":"P1160","description":"Fuel Trim Additve Bank 2 Low"}
+{"errorCode":"P1161","description":"Fuel Trim Additve Bank 2 High"}
+{"errorCode":"P1162","description":"Fuel Trim Additve Per Ignition Bank 1 Low"}
+{"errorCode":"P1163","description":"Fuel Trim Additve Per Ignition Bank 1 High"}
+{"errorCode":"P1164","description":"Fuel Trim Additve Per Ignition Bank 2 Low"}
+{"errorCode":"P1165","description":"Fuel Trim Additve Per Ignition Bank 2 High"}
+{"errorCode":"P1174","description":"Fuel Trim Adaptation Additve Bank 1 Malfunction"}
+{"errorCode":"P1175","description":"Fuel Trim Adaptation Additve Bank 2 Malfunction"}
+{"errorCode":"P1176","description":"O2 Sensor Slow Response Bank 1"}
+{"errorCode":"P1177","description":"O2 Sensor Slow Response Bank 2"}
+{"errorCode":"P1178","description":"O2 Sensor Signal Circuit Slow Switching From Rich to Lean (Bank 1 Sensor 1)"}
+{"errorCode":"P1179","description":"O2 Sensor Signal Circuit Slow Switching From Rich to Lean (Bank 2 Sensor 1)"}
+{"errorCode":"P1180","description":"O2 Sensor Signal Circuit Slow Switching From Rich to Lean (Bank 1 Sensor 2)"}
+{"errorCode":"P1181","description":"O2 Sensor Signal Circuit Slow Switching From Rich to Lean (Bank 2 Sensor 2)"}
+{"errorCode":"P1182","description":"O2 Sensor (Bank 1 Sensor 2) Open Circuit During Coast Down Fuel Cut-off"}
+{"errorCode":"P1183","description":"O2 Sensor (Bank 2 Sensor 2) Open Circuit During Coast Down Fuel Cut-off"}
+{"errorCode":"P1186","description":"O2 Sensor Heater Control Circuit (Bank 1 Sensor 2)"}
+{"errorCode":"P1187","description":"O2 Sensor Heater Control Circuit (Bank 2 Sensor 2)"}
+{"errorCode":"P1188","description":"Fuel Control (Bank 1 Sensor 1)"}
+{"errorCode":"P1189","description":"Fuel Control (Bank 2 Sensor 1)"}
+{"errorCode":"P1190","description":"Pre-catalyst Fuel Trim System Bank 1"}
+{"errorCode":"P1191","description":"Pre-catalyst Fuel Trim System Bank 2"}
+{"errorCode":"P1192","description":"Post-catalyst Fuel Trim System Bank 1"}
+{"errorCode":"P1193","description":"Post-catalyst Fuel Trim System Bank 2"}
+{"errorCode":"P1221","description":"Pedal Position Sensor 2 Range/Performance Problem"}
+{"errorCode":"P1222","description":"Pedal Position Sensor 2 Low Input"}
+{"errorCode":"P1223","description":"Pedal Position Sensor 2 High Input"}
+{"errorCode":"P1270","description":"Control Module Self-Test, Torque Monitoring"}
+{"errorCode":"P1271","description":"Ambient Air Pressure Sensor Electrical"}
+{"errorCode":"P1283","description":"Switching Solenoid for Air Assisted Injection Valves Bank 1 Control Circuit Electrical"}
+{"errorCode":"P1284","description":"Switching Solenoid for Air Assisted Injection Valves Bank 1 Control Circuit Signal Low"}
+{"errorCode":"P1285","description":"Switching Solenoid for Air Assisted Injection Valves Bank 1 Control Circuit Signal High"}
+{"errorCode":"P1287","description":"Switching Solenoid for Air Assisted Injection Valves Bank 2 Control Circuit Electrical"}
+{"errorCode":"P1288","description":"Switching Solenoid for Air Assisted Injection Valves Bank 2 Control Circuit Signal Low"}
+{"errorCode":"P1289","description":"Switching Solenoid for Air Assisted Injection Valves Bank 2 Control Circuit Signal High"}
+{"errorCode":"P1313","description":"1 Camshaft Position Plausibility"}
+{"errorCode":"P1317","description":"1 Camshaft Position Plausibility"}
+{"errorCode":"P1327","description":"Knock Sensor 2 (Bank 1) Low Input"}
+{"errorCode":"P1328","description":"Knock Sensor 2 (Bank 1) High Input"}
+{"errorCode":"P1332","description":"Knock Sensor 4 Low Input"}
+{"errorCode":"P1333","description":"Knock Sensor 4 High Input"}
+{"errorCode":"P1340","description":"Multiple Cylinder Misfire During Start"}
+{"errorCode":"P1341","description":"Multiple Cylinder Misfire With Fuel Cut-off"}
+{"errorCode":"P1342","description":"Misfire During Start Cylinder 1"}
+{"errorCode":"P1343","description":"Misfire Cylinder 1 With Fuel Cut-off"}
+{"errorCode":"P1344","description":"Misfire During Start Cylinder 2"}
+{"errorCode":"P1345","description":"Misfire Cylinder 2 With Fuel Cut-off"}
+{"errorCode":"P1346","description":"Misfire During Start Cylinder 3"}
+{"errorCode":"P1347","description":"Misfire Cylinder 3 With Fuel Cut-off"}
+{"errorCode":"P1348","description":"Misfire During Start Cylinder 4"}
+{"errorCode":"P1349","description":"Misfire Cylinder 4 With Fuel Cut-off"}
+{"errorCode":"P1350","description":"Misfire During Start Cylinder 5"}
+{"errorCode":"P1351","description":"Misfire Cylinder 5 With Fuel Cut-off"}
+{"errorCode":"P1352","description":"Misfire During Start Cylinder 6"}
+{"errorCode":"P1353","description":"Misfire Cylinder 6 With Fuel Cut-off"}
+{"errorCode":"P1354","description":"Misfire During Start Cylinder 7"}
+{"errorCode":"P1355","description":"Misfire Cylinder 7 With Fuel Cut-off"}
+{"errorCode":"P1356","description":"Misfire During Start Cylinder 8"}
+{"errorCode":"P1357","description":"Misfire Cylinder 8 With Fuel Cut-off"}
+{"errorCode":"P1358","description":"Misfire During Start Cylinder 9"}
+{"errorCode":"P1359","description":"Misfire Cylinder 9 With Fuel Cut-off"}
+{"errorCode":"P1360","description":"Misfire During Start Cylinder 10"}
+{"errorCode":"P1361","description":"Misfire Cylinder 10 With Fuel Cut-off"}
+{"errorCode":"P1362","description":"Misfire During Start Cylinder 11"}
+{"errorCode":"P1363","description":"Misfire Cylinder 11 With Fuel Cut-off"}
+{"errorCode":"P1364","description":"Misfire During Start Cylinder 12"}
+{"errorCode":"P1365","description":"Misfire Cylinder 12 With Fuel Cut-off"}
+{"errorCode":"P1384","description":"Knock Sensor 3 Circuit"}
+{"errorCode":"P1385","description":"Knock Sensor 4 Circuit"}
+{"errorCode":"P1386","description":"Control Module Self-test, Knock Control Baseline Test Bank 1"}
+{"errorCode":"P1396","description":"Crankshaft Position Sensor Segment Timing Plausibility"}
+{"errorCode":"P1397","description":"Camshaft Position Sensor 1 Circuit (Bank 1)"}
+{"errorCode":"P1400","description":"Heated Catalyst Battery Voltage or Current too Low During Heating (Bank 1)"}
+{"errorCode":"P1401","description":"Heated Catalyst Current too High During Heating (Bank 1)"}
+{"errorCode":"P1402","description":"Heated Catalyst Power Switch Overtemperature Condition (Bank 1)"}
+{"errorCode":"P1403","description":"Carbon Canister Shut Off valve Control Circuit Electrical"}
+{"errorCode":"P1404","description":"Heated Catalyst Current too High During Heating (Bank 2)"}
+{"errorCode":"P1405","description":"Heated Catalyst Power Switch Overtemperature Condition (Bank 2)"}
+{"errorCode":"P1406","description":"Heated Catalyst Internal Control Module Checksum/ROM Error"}
+{"errorCode":"P1413","description":"Secondary Air Injection Pump Relay Control Circuit Signal Low"}
+{"errorCode":"P1414","description":"Secondary Air Injection System Monitor Circuit High"}
+{"errorCode":"P1420","description":"Secondary Air Valve Control Circuit Electrical"}
+{"errorCode":"P1421","description":"Secondary Air System Bank 1"}
+{"errorCode":"P1422","description":"Secondary Air System Bank 2"}
+{"errorCode":"P1432","description":"Secondary Air Injection System Incorrect Flow Detected"}
+{"errorCode":"P1438","description":"Purge Control Valve Control Open Circuit"}
+{"errorCode":"P1439","description":"Purge Control Valve Control Circuit Signal Low"}
+{"errorCode":"P1440","description":"Purge Control Valve Control Circuit Signal High"}
+{"errorCode":"P1441","description":"Leakage Diagnostic Pump Control Open Circuit"}
+{"errorCode":"P1442","description":"Leakage Diagnostic Pump Control Circuit Signal Low"}
+{"errorCode":"P1443","description":"Leakage Diagnostic Pump Control Circuit Signal High"}
+{"errorCode":"P1444","description":"Diagnostic Module Tank Leakage (DM-TL) Pump Control Open Circuit"}
+{"errorCode":"P1445","description":"Diagnostic Module Tank Leakage (DM-TL) Pump Control Circuit Signal Low"}
+{"errorCode":"P1446","description":"Diagnostic Module Tank Leakage (DM-TL) Pump Control Circuit Signal High"}
+{"errorCode":"P1447","description":"Diagnostic Module Tank Leakage (DM-TL) Pump Too High During Switching"}
+{"errorCode":"P1448","description":"Diagnostic Module Tank Leakage (DM-TL) Pump Too Low During Switching"}
+{"errorCode":"P1449","description":"Diagnostic Module Tank Leakage (DM-TL) Pump Too High"}
+{"errorCode":"P1450","description":"Diagnostic Module Tank Leakage (DM-TL) Switching Solenoid Open Circuit"}
+{"errorCode":"P1451","description":"Diagnostic Module Tank Leakage (DM-TL) Switching Solenoid Control Circuit Signal Low"}
+{"errorCode":"P1452","description":"Diagnostic Module Tank Leakage (DM-TL) Switching Solenoid Control Circuit Signal High"}
+{"errorCode":"P1453","description":"Secondary Air Injection Pump Relay Control Circuit Electrical"}
+{"errorCode":"P1454","description":"Secondary Air Injection Pump With Series Resistor Control Circuit Electrical"}
+{"errorCode":"P1456","description":"Heated Catalyst Heater Power Supply Open Circuit (Bank 1)"}
+{"errorCode":"P1457","description":"Heated Catalyst Heater Power Switch Temperature Sensor Electrical (Bank 1)"}
+{"errorCode":"P1459","description":"Heated Catalyst Heater Power Supply Open Circuit (Bank 2)"}
+{"errorCode":"P1460","description":"Heated Catalyst Heater Power Switch Temperature Sensor Electrical (Bank 2)"}
+{"errorCode":"P1461","description":"Heated Catalyst Gate Voltage Signal Low"}
+{"errorCode":"P1462","description":"Heated Catalyst Internal Control Module Checksum/ROM Error"}
+{"errorCode":"P1463","description":"Heated Catalyst Battery Temperature Sensor 1 Electrical"}
+{"errorCode":"P1464","description":"Heated Catalyst Battery Temperature Sensor 2 Electrical"}
+{"errorCode":"P1465","description":"Heated Catalyst Battery Temperature Sensor 1 or 2 Plausibility"}
+{"errorCode":"P1466","description":"Heated Catalyst Power Switch Temperature Sensor Plausibility"}
+{"errorCode":"P1467","description":"Heated Catalyst Comparison Battery Voltages of Power Switches Plausibility"}
+{"errorCode":"P1468","description":"Heated Catalyst Battery Disconnecting Switch Plausibility"}
+{"errorCode":"P1470","description":"Leakage Diagnostic Pump Control Circuit Electrical"}
+{"errorCode":"P1472","description":"Diagnostic Module Tank leakage (DM-TL) Switching Solenoid Control Circuit Electrical"}
+{"errorCode":"P1473","description":"Diagnostic Module Tank leakage (DM-TL) Pump Current Plausibility"}
+{"errorCode":"P1475","description":"Leakage Diagnostic Pump Reed Switch Did Not Close"}
+{"errorCode":"P1476","description":"Leakage Diagnostic Pump Clamped Tube"}
+{"errorCode":"P1477","description":"Leakage Diagnostic Pump Reed Switch Did Not Open"}
+{"errorCode":"P1500","description":"Idle Speed Control Valve Stuck Open"}
+{"errorCode":"P1501","description":"Idle Speed Control Valve Stuck Closed"}
+{"errorCode":"P1502","description":"Idle Speed Control Valve Closing Solenoid Control Circuit Signal High or Low"}
+{"errorCode":"P1503","description":"Idle Speed Control Valve Closing Solenoid Control Circuit Signal Low"}
+{"errorCode":"P1504","description":"Idle Speed Control Valve Closing Solenoid Control Open Circuit"}
+{"errorCode":"P1505","description":"Idle Speed Control Valve Closing Solenoid Control Circuit Electrial"}
+{"errorCode":"P1506","description":"Idle Speed Control Valve Open Solenoid Control Circuit Signal High"}
+{"errorCode":"P1507","description":"Idle Speed Control Valve Open Solenoid Control Circuit Signal Low"}
+{"errorCode":"P1508","description":"Idle Speed Control Valve Opening Solenoid Control Open Circuit"}
+{"errorCode":"P1509","description":"Idle Speed Control Valve Opening Solenoid Control Circuit Electrial"}
+{"errorCode":"P1510","description":"Idle Speed Control Valve Stuck"}
+{"errorCode":"P1511","description":"DISA Control Circuit Electrical"}
+{"errorCode":"P1512","description":"DISA Control Circuit Signal Low"}
+{"errorCode":"P1513","description":"DISA Control Circuit Signal High"}
+{"errorCode":"P1519","description":"1 Camshaft Position Actuator Bank 1"}
+{"errorCode":"P1520","description":"1 Camshaft Position Actuator Bank 1"}
+{"errorCode":"P1522","description":"1 Camshaft Position Actuator Bank 2"}
+{"errorCode":"P1523","description":"1 Camshaft Position Actuator Signal Low Bank 1"}
+{"errorCode":"P1524","description":"1 Camshaft Position Actuator Signal High Bank 1"}
+{"errorCode":"P1525","description":"1 Camshaft Position Actuator Control Open Circuit Bank 1"}
+{"errorCode":"P1526","description":"1 Camshaft Position Actuator Control Open Circuit Bank 2"}
+{"errorCode":"P1527","description":"1 Camshaft Position Actuator Control Circuit Signal Low Bank 1"}
+{"errorCode":"P1528","description":"1 Camshaft Position Actuator Control Circuit Signal High Bank 1"}
+{"errorCode":"P1529","description":"1 Camshaft Position Actuator Control Circuit Signal Low Bank 1"}
+{"errorCode":"P1530","description":"1 Camshaft Position Actuator Control Circuit Signal High Bank 1"}
+{"errorCode":"P1531","description":"1 Camshaft Position Actuator Control Open Circuit Bank 1"}
+{"errorCode":"P1532","description":"1 Camshaft Position Actuator Control Open Circuit Bank 2"}
+{"errorCode":"P1533","description":"1 Camshaft Position Actuator Control Circuit Signal Low Bank 2"}
+{"errorCode":"P1534","description":"1 Camshaft Position Actuator Control Circuit Signal High Bank 2"}
+{"errorCode":"P1540","description":"Pedal Position Sensor"}
+{"errorCode":"P1541","description":"Pedal Position Sensor Double Error"}
+{"errorCode":"P1542","description":"Pedal Position Sensor Electrical"}
+{"errorCode":"P1546","description":"Pedal Position Sensor"}
+{"errorCode":"P1550","description":"Idle Speed Control valve Closing Solenoid Control Circuit Electrical"}
+{"errorCode":"P1556","description":"1 Camshaft Position Actuator Control Open Circuit Bank 1"}
+{"errorCode":"P1560","description":"1 Camshaft Position Actuator Control Open Circuit Bank 1"}
+{"errorCode":"P1564","description":"Control Module Selection"}
+{"errorCode":"P1565","description":"1 Camshaft Position Actuator Control Open Circuit Bank 1"}
+{"errorCode":"P1569","description":"1 Camshaft Position Actuator Control Open Circuit Bank 2"}
+{"errorCode":"P1580","description":"Throttle Valve Mechanically Stuck"}
+{"errorCode":"P1581","description":"1 Camshaft Position Actuator Control Open Circuit Bank 2"}
+{"errorCode":"P1589","description":"Control Module Self Test, Knock Control Test Pulse Bank 1"}
+{"errorCode":"P1593","description":"DISA Control Circuit Electrical"}
+{"errorCode":"P1594","description":"1 Camshaft Position Actuator Control Open Circuit Bank 2"}
+{"errorCode":"P1602","description":"Control Module Self Test, Control Module Defective"}
+{"errorCode":"P1603","description":"Control Module Self Test, Torque Monitoring"}
+{"errorCode":"P1604","description":"Control Module Self Test, Speed Monitoring"}
+{"errorCode":"P1607","description":"CAN Version"}
+{"errorCode":"P1608","description":"Serial Communicating Link Control Module"}
+{"errorCode":"P1609","description":"Serial Communicating Link EML"}
+{"errorCode":"P1611","description":"Serial Communicating Link Transmission Control Module"}
+{"errorCode":"P1619","description":"MAP Cooling Control Circuit Signal Low"}
+{"errorCode":"P1620","description":"MAP Cooling Control Circuit Signal High"}
+{"errorCode":"P1622","description":"MAP Cooling Control Circuit Electrical"}
+{"errorCode":"P1623","description":"Pedal Position Sensor Potentiometer Supply"}
+{"errorCode":"P1624","description":"Pedal Position Sensor Potentiometer Supply Channel 1 Electrical"}
+{"errorCode":"P1625","description":"Pedal Position Sensor Potentiometer Supply Channel 2 Electrical"}
+{"errorCode":"P1632","description":"Throttle Valve Adaptation; Adaptation Condition Not Met"}
+{"errorCode":"P1633","description":"Throttle Valve Adaptation; Limp Home Position"}
+{"errorCode":"P1634","description":"Throttle Valve Adaptation; Spring Test Failed"}
+{"errorCode":"P1635","description":"Throttle Valve Adaptation; Lower Mechanical Stop Not Adapted"}
+{"errorCode":"P1636","description":"Throttle Valve Control Circuit"}
+{"errorCode":"P1637","description":"Throttle Valve Position Control; Control Deviation"}
+{"errorCode":"P1638","description":"Throttle Valve Position Control; Throttle Stuck Temporarily"}
+{"errorCode":"P1639","description":"Throttle Valve Position Control; Throttle Stuck Permanently"}
+{"errorCode":"P1640","description":"Internal Control Module (ROM/RAM) Error"}
+{"errorCode":"P1690","description":"Malfunction Indicator Lamp (MIL) Electrical"}
+{"errorCode":"P1734","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P1738","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P1743","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P1744","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P1746","description":"Transmission Control Module Output Stage"}
+{"errorCode":"P1747","description":"CAN Bus Monitoring"}
+{"errorCode":"P1748","description":"Transmission Control Module Self Test"}
+{"errorCode":"P1749","description":"Secondary Pressure Solenoid Communication Error"}
+{"errorCode":"P1750","description":"Secondary Pressure Solenoid Circuit Range/Performance"}
+{"errorCode":"P1751","description":"Secondary Pressure Solenoid Open Circuit"}
+{"errorCode":"P1761","description":"Shift Solenoid Malfunction"}
+{"errorCode":"P1765","description":"CAN Throttle Valve"}
+{"errorCode":"P1770","description":"CAN Torque Interface"}
+{"errorCode":"P1780","description":"CAN Torque Reduction"}
+{"errorCode":"P2001","description":"NOx Trap Efficiency Below Threshold"}
+{"errorCode":"P2003","description":"Particulate Trap Efficiency Below Threshold"}
+{"errorCode":"P2005","description":"Intake Manifold Runner Control Stuck Open"}
+{"errorCode":"P2007","description":"Intake Manifold Runner Control Stuck Closed"}
+{"errorCode":"P2008","description":"Intake Manifold Runner Control Circuit/Open"}
+{"errorCode":"P2009","description":"Intake Manifold Runner Control Circuit Low"}
+{"errorCode":"P2010","description":"Intake Manifold Runner Control Circuit High"}
+{"errorCode":"P2011","description":"Intake Manifold Runner Control Circuit/Open"}
+{"errorCode":"P2012","description":"Intake Manifold Runner Control Circuit Low"}
+{"errorCode":"P2013","description":"Intake Manifold Runner Control Circuit High"}
+{"errorCode":"P2014","description":"Intake Manifold Runner Position Sensor/Switch Circuit"}
+{"errorCode":"P2015","description":"Intake Manifold Runner Position Sensor/Switch Circuit Range/Performance"}
+{"errorCode":"P2016","description":"Intake Manifold Runner Position Sensor/Switch Circuit Low"}
+{"errorCode":"P2017","description":"Intake Manifold Runner Position Sensor/Switch Circuit High"}
+{"errorCode":"P2018","description":"Intake Manifold Runner Position Sensor/Switch Circuit Intermittent"}
+{"errorCode":"P2019","description":"Intake Manifold Runner Position Sensor/Switch Circuit"}
+{"errorCode":"P2020","description":"Intake Manifold Runner Position Sensor/Switch Circuit Range/Performance"}
+{"errorCode":"P2021","description":"Intake Manifold Runner Position Sensor/Switch Circuit Low"}
+{"errorCode":"P2022","description":"Intake Manifold Runner Position Sensor/Switch Circuit High"}
+{"errorCode":"P2023","description":"Intake Manifold Runner Position Sensor/Switch Circuit Intermittent"}
+{"errorCode":"P2024","description":"Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Circuit"}
+{"errorCode":"P2025","description":"Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Performance"}
+{"errorCode":"P2026","description":"Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Circuit Low Voltage"}
+{"errorCode":"P2027","description":"Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Circuit High Voltage"}
+{"errorCode":"P2028","description":"Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P2029","description":"Fuel Fired Heater Disabled"}
+{"errorCode":"P2030","description":"Fuel Fired Heater Performance"}
+{"errorCode":"P2031","description":"Exhaust Gas Temperature Sensor Circuit"}
+{"errorCode":"P2032","description":"Exhaust Gas Temperature Sensor Circuit Low"}
+{"errorCode":"P2033","description":"Exhaust Gas Temperature Sensor Circuit High"}
+{"errorCode":"P2034","description":"Exhaust Gas Temperature Sensor Circuit"}
+{"errorCode":"P2035","description":"Exhaust Gas Temperature Sensor Circuit Low"}
+{"errorCode":"P2036","description":"Exhaust Gas Temperature Sensor Circuit High"}
+{"errorCode":"P2037","description":"Reductant Injection Air Pressure Sensor Circuit"}
+{"errorCode":"P2038","description":"Reductant Injection Air Pressure Sensor Circuit Range/Performance"}
+{"errorCode":"P2039","description":"Reductant Injection Air Pressure Sensor Circuit Low Input"}
+{"errorCode":"P2040","description":"Reductant Injection Air Pressure Sensor Circuit High Input"}
+{"errorCode":"P2041","description":"Reductant Injection Air Pressure Sensor Circuit Intermittent"}
+{"errorCode":"P2042","description":"Reductant Temperature Sensor Circuit"}
+{"errorCode":"P2043","description":"Reductant Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P2044","description":"Reductant Temperature Sensor Circuit Low Input"}
+{"errorCode":"P2045","description":"Reductant Temperature Sensor Circuit High Input"}
+{"errorCode":"P2046","description":"Reductant Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P2047","description":"Reductant Injector Circuit/Open"}
+{"errorCode":"P2048","description":"Reductant Injector Circuit Low"}
+{"errorCode":"P2049","description":"Reductant Injector Circuit High"}
+{"errorCode":"P2050","description":"Reductant Injector Circuit/Open"}
+{"errorCode":"P2051","description":"Reductant Injector Circuit Low"}
+{"errorCode":"P2052","description":"Reductant Injector Circuit High"}
+{"errorCode":"P2053","description":"Reductant Injector Circuit/Open"}
+{"errorCode":"P2054","description":"Reductant Injector Circuit Low"}
+{"errorCode":"P2055","description":"Reductant Injector Circuit High"}
+{"errorCode":"P2056","description":"Reductant Injector Circuit/Open"}
+{"errorCode":"P2057","description":"Reductant Injector Circuit Low"}
+{"errorCode":"P2058","description":"Reductant Injector Circuit High"}
+{"errorCode":"P2059","description":"Reductant Injection Air Pump Control Circuit/Open"}
+{"errorCode":"P2060","description":"Reductant Injection Air Pump Control Circuit Low"}
+{"errorCode":"P2061","description":"Reductant Injection Air Pump Control Circuit High"}
+{"errorCode":"P2062","description":"Reductant Supply Control Circuit/Open"}
+{"errorCode":"P2063","description":"Reductant Supply Control Circuit Low"}
+{"errorCode":"P2064","description":"Reductant Supply Control Circuit High"}
+{"errorCode":"P2065","description":"Fuel Level Sensor 1 Circuit"}
+{"errorCode":"P2066","description":"Fuel Level Sensor 1 Performance"}
+{"errorCode":"P2067","description":"Fuel Level Sensor 1 Circuit Low"}
+{"errorCode":"P2068","description":"Fuel Level Sensor 1 Circuit High"}
+{"errorCode":"P2069","description":"Fuel Level Sensor 1 Circuit Intermittent"}
+{"errorCode":"P2070","description":"Intake Manifold Tuning (IMT) Valve Stuck Open"}
+{"errorCode":"P2071","description":"Intake Manifold Tuning (IMT) Valve Stuck Closed"}
+{"errorCode":"P2075","description":"Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit"}
+{"errorCode":"P2076","description":"Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Range/Performance"}
+{"errorCode":"P2077","description":"Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Low"}
+{"errorCode":"P2078","description":"Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit High"}
+{"errorCode":"P2079","description":"Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Intermittent"}
+{"errorCode":"P2080","description":"Exhaust Gas Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P2081","description":"Exhaust Gas Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P2082","description":"Exhaust Gas Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P2083","description":"Exhaust Gas Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P2084","description":"Exhaust Gas Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P2085","description":"Exhaust Gas Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P2086","description":"Exhaust Gas Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P2087","description":"Exhaust Gas Temperature Sensor Circuit Intermittent"}
+{"errorCode":"P2088","description":"1 Camshaft Position Actuator Control Circuit Low"}
+{"errorCode":"P2089","description":"1 Camshaft Position Actuator Control Circuit High"}
+{"errorCode":"P2090","description":"1 Camshaft Position Actuator Control Circuit Low"}
+{"errorCode":"P2091","description":"1 Camshaft Position Actuator Control Circuit High"}
+{"errorCode":"P2092","description":"1 Camshaft Position Actuator Control Circuit Low"}
+{"errorCode":"P2093","description":"1 Camshaft Position Actuator Control Circuit High"}
+{"errorCode":"P2094","description":"1 Camshaft Position Actuator Control Circuit Low"}
+{"errorCode":"P2095","description":"1 Camshaft Position Actuator Control Circuit High"}
+{"errorCode":"P2096","description":"Post Catalyst Fuel Trim System Too Lean"}
+{"errorCode":"P2097","description":"Post Catalyst Fuel Trim System Too Rich"}
+{"errorCode":"P2098","description":"Post Catalyst Fuel Trim System Too Lean"}
+{"errorCode":"P2099","description":"Post Catalyst Fuel Trim System Too Rich"}
+{"errorCode":"P2100","description":"Throttle Actuator Control Motor Circuit/Open"}
+{"errorCode":"P2101","description":"Throttle Actuator Control Motor Circuit Range/Performance"}
+{"errorCode":"P2102","description":"Throttle Actuator Control Motor Circuit Low"}
+{"errorCode":"P2103","description":"Throttle Actuator Control Motor Circuit High"}
+{"errorCode":"P2104","description":"Throttle Actuator Control System - Forced Idle"}
+{"errorCode":"P2105","description":"Throttle Actuator Control System - Forced Engine Shutdown"}
+{"errorCode":"P2106","description":"Throttle Actuator Control System - Forced Limited Power"}
+{"errorCode":"P2107","description":"Throttle Actuator Control Module Processor"}
+{"errorCode":"P2108","description":"Throttle Actuator Control Module Performance"}
+{"errorCode":"P2109","description":"Throttle/Pedal Position Sensor 1 Minimum Stop Performance"}
+{"errorCode":"P2110","description":"Throttle Actuator Control System - Forced Limited RPM"}
+{"errorCode":"P2111","description":"Throttle Actuator Control System - Stuck Open"}
+{"errorCode":"P2112","description":"Throttle Actuator Control System - Stuck Closed"}
+{"errorCode":"P2113","description":"Throttle/Pedal Position Sensor 1 Minimum Stop Performance"}
+{"errorCode":"P2114","description":"Throttle/Pedal Position Sensor 1 Minimum Stop Performance"}
+{"errorCode":"P2115","description":"Throttle/Pedal Position Sensor 1 Minimum Stop Performance"}
+{"errorCode":"P2116","description":"Throttle/Pedal Position Sensor 1 Minimum Stop Performance"}
+{"errorCode":"P2117","description":"Throttle/Pedal Position Sensor 1 Minimum Stop Performance"}
+{"errorCode":"P2118","description":"Throttle Actuator Control Motor Current Range/Performance"}
+{"errorCode":"P2119","description":"Throttle Actuator Control Throttle Body Range/Performance"}
+{"errorCode":"P2120","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit"}
+{"errorCode":"P2121","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P2122","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Low Input"}
+{"errorCode":"P2123","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit High Input"}
+{"errorCode":"P2124","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P2125","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit"}
+{"errorCode":"P2126","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Range/Performance"}
+{"errorCode":"P2127","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Low Input"}
+{"errorCode":"P2128","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit High Input"}
+{"errorCode":"P2129","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P2130","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit"}
+{"errorCode":"P2131","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Range Performance"}
+{"errorCode":"P2132","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Low Input"}
+{"errorCode":"P2133","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit High Input"}
+{"errorCode":"P2134","description":"Throttle/Pedal Position Sensor/Switch 1 Circuit Intermittent"}
+{"errorCode":"P2135","description":"Throttle/Pedal Position Sensor/Switch 1 / 1 Voltage Correlation"}
+{"errorCode":"P2136","description":"Throttle/Pedal Position Sensor/Switch 1 / 1 Voltage Correlation"}
+{"errorCode":"P2137","description":"Throttle/Pedal Position Sensor/Switch 1 / 1 Voltage Correlation"}
+{"errorCode":"P2138","description":"Throttle/Pedal Position Sensor/Switch 1 / 1 Voltage Correlation"}
+{"errorCode":"P2139","description":"Throttle/Pedal Position Sensor/Switch 1 / 1 Voltage Correlation"}
+{"errorCode":"P2140","description":"Throttle/Pedal Position Sensor/Switch 1 / 1 Voltage Correlation"}
+{"errorCode":"P2141","description":"Exhaust Gas Recirculation Throttle Control Circuit Low"}
+{"errorCode":"P2142","description":"Exhaust Gas Recirculation Throttle Control Circuit High"}
+{"errorCode":"P2143","description":"Exhaust Gas Recirculation Vent Control Circuit/Open"}
+{"errorCode":"P2144","description":"Exhaust Gas Recirculation Vent Control Circuit Low"}
+{"errorCode":"P2145","description":"Exhaust Gas Recirculation Vent Control Circuit High"}
+{"errorCode":"P2146","description":"Fuel Injector Group 1 Supply Voltage Circuit/Open"}
+{"errorCode":"P2147","description":"Fuel Injector Group 1 Supply Voltage Circuit Low"}
+{"errorCode":"P2148","description":"Fuel Injector Group 1 Supply Voltage Circuit High"}
+{"errorCode":"P2149","description":"Fuel Injector Group 1 Supply Voltage Circuit/Open"}
+{"errorCode":"P2150","description":"Fuel Injector Group 1 Supply Voltage Circuit Low"}
+{"errorCode":"P2151","description":"Fuel Injector Group 1 Supply Voltage Circuit High"}
+{"errorCode":"P2152","description":"Fuel Injector Group 1 Supply Voltage Circuit/Open"}
+{"errorCode":"P2153","description":"Fuel Injector Group 1 Supply Voltage Circuit Low"}
+{"errorCode":"P2154","description":"Fuel Injector Group 1 Supply Voltage Circuit High"}
+{"errorCode":"P2155","description":"Fuel Injector Group 1 Supply Voltage Circuit/Open"}
+{"errorCode":"P2156","description":"Fuel Injector Group 1 Supply Voltage Circuit Low"}
+{"errorCode":"P2157","description":"Fuel Injector Group 1 Supply Voltage Circuit High"}
+{"errorCode":"P2158","description":"Vehicle Speed Sensor 1"}
+{"errorCode":"P2159","description":"Vehicle Speed Sensor 1 Range/Performance"}
+{"errorCode":"P2160","description":"Vehicle Speed Sensor 1 Circuit Low"}
+{"errorCode":"P2161","description":"Vehicle Speed Sensor 1 Intermittent/Erratic"}
+{"errorCode":"P2162","description":"Vehicle Speed Sensor 1 / 1 Correlation"}
+{"errorCode":"P2163","description":"Throttle/Pedal Position Sensor 1 Maximum Stop Performance"}
+{"errorCode":"P2164","description":"Throttle/Pedal Position Sensor 1 Maximum Stop Performance"}
+{"errorCode":"P2165","description":"Throttle/Pedal Position Sensor 1 Maximum Stop Performance"}
+{"errorCode":"P2166","description":"Throttle/Pedal Position Sensor 1 Maximum Stop Performance"}
+{"errorCode":"P2167","description":"Throttle/Pedal Position Sensor 1 Maximum Stop Performance"}
+{"errorCode":"P2168","description":"Throttle/Pedal Position Sensor 1 Maximum Stop Performance"}
+{"errorCode":"P2169","description":"Exhaust Pressure Regulator Vent Solenoid Control Circuit/Open"}
+{"errorCode":"P2170","description":"Exhaust Pressure Regulator Vent Solenoid Control Circuit Low"}
+{"errorCode":"P2171","description":"Exhaust Pressure Regulator Vent Solenoid Control Circuit High"}
+{"errorCode":"P2172","description":"Throttle Actuator Control System - Sudden High Airflow Detected"}
+{"errorCode":"P2173","description":"Throttle Actuator Control System - High Airflow Detected"}
+{"errorCode":"P2174","description":"Throttle Actuator Control System - Sudden Low Airflow Detected"}
+{"errorCode":"P2175","description":"Throttle Actuator Control System - Low Airflow Detected"}
+{"errorCode":"P2176","description":"Throttle Actuator Control System - Idle Position Not Learned"}
+{"errorCode":"P2177","description":"System Too Lean Off Idle"}
+{"errorCode":"P2178","description":"System Too Rich Off Idle"}
+{"errorCode":"P2179","description":"System Too Lean Off Idle"}
+{"errorCode":"P2180","description":"System Too Rich Off Idle"}
+{"errorCode":"P2181","description":"Cooling System Performance"}
+{"errorCode":"P2182","description":"Engine Coolant Temperature Sensor 2 Circuit"}
+{"errorCode":"P2183","description":"Engine Coolant Temperature Sensor 2 Circuit Range/Performance"}
+{"errorCode":"P2184","description":"Engine Coolant Temperature Sensor 2 Circuit Low"}
+{"errorCode":"P2185","description":"Engine Coolant Temperature Sensor 2 Circuit High"}
+{"errorCode":"P2186","description":"Engine Coolant Temperature Sensor 2 Circuit Intermittent/Erratic"}
+{"errorCode":"P2187","description":"System Too Lean at Idle"}
+{"errorCode":"P2188","description":"System Too Rich at Idle"}
+{"errorCode":"P2189","description":"System Too Lean at Idle"}
+{"errorCode":"P2190","description":"System Too Rich at Idle"}
+{"errorCode":"P2191","description":"System Too Lean at Higher Load"}
+{"errorCode":"P2192","description":"System Too Rich at Higher Load"}
+{"errorCode":"P2193","description":"System Too Lean at Higher Load"}
+{"errorCode":"P2194","description":"System Too Rich at Higher Load"}
+{"errorCode":"P2195","description":"O2 Sensor Signal Stuck Lean"}
+{"errorCode":"P2196","description":"O2 Sensor Signal Stuck Rich"}
+{"errorCode":"P2197","description":"O2 Sensor Signal Stuck Lean"}
+{"errorCode":"P2198","description":"O2 Sensor Signal Stuck Rich"}
+{"errorCode":"P2199","description":"Intake Air Temperature Sensor 1 / 2 Correlation"}
+{"errorCode":"P2200","description":"NOx Sensor Circuit"}
+{"errorCode":"P2201","description":"NOx Sensor Circuit Range/Performance"}
+{"errorCode":"P2202","description":"NOx Sensor Circuit Low Input"}
+{"errorCode":"P2203","description":"NOx Sensor Circuit High Input"}
+{"errorCode":"P2204","description":"NOx Sensor Circuit Intermittent Input"}
+{"errorCode":"P2205","description":"NOx Sensor Heater Control Circuit/Open"}
+{"errorCode":"P2206","description":"NOx Sensor Heater Control Circuit Low"}
+{"errorCode":"P2207","description":"NOx Sensor Heater Control Circuit High"}
+{"errorCode":"P2208","description":"NOx Sensor Heater Sense Circuit"}
+{"errorCode":"P2209","description":"NOx Sensor Heater Sense Circuit Range/Performance"}
+{"errorCode":"P2210","description":"NOx Sensor Heater Sense Circuit Low Input"}
+{"errorCode":"P2211","description":"NOx Sensor Heater Sense Circuit High Input"}
+{"errorCode":"P2212","description":"NOx Sensor Heater Sense Circuit Intermittent"}
+{"errorCode":"P2213","description":"NOx Sensor Circuit"}
+{"errorCode":"P2214","description":"NOx Sensor Circuit Range/Performance"}
+{"errorCode":"P2215","description":"NOx Sensor Circuit Low Input"}
+{"errorCode":"P2216","description":"NOx Sensor Circuit High Input"}
+{"errorCode":"P2217","description":"NOx Sensor Circuit Intermittent Input"}
+{"errorCode":"P2218","description":"NOx Sensor Heater Control Circuit/Open"}
+{"errorCode":"P2219","description":"NOx Sensor Heater Control Circuit Low"}
+{"errorCode":"P2220","description":"NOx Sensor Heater Control Circuit High"}
+{"errorCode":"P2221","description":"NOx Sensor Heater Sense Circuit"}
+{"errorCode":"P2222","description":"NOx Sensor Heater Sense Circuit Range/Performance"}
+{"errorCode":"P2223","description":"NOx Sensor Heater Sense Circuit Low"}
+{"errorCode":"P2224","description":"NOx Sensor Heater Sense Circuit High"}
+{"errorCode":"P2225","description":"NOx Sensor Heater Sense Circuit Intermittent"}
+{"errorCode":"P2226","description":"Barometric Pressure Circuit"}
+{"errorCode":"P2227","description":"Barometric Pressure Circuit Range/Performance"}
+{"errorCode":"P2228","description":"Barometric Pressure Circuit Low"}
+{"errorCode":"P2229","description":"Barometric Pressure Circuit High"}
+{"errorCode":"P2230","description":"Barometric Pressure Circuit Intermittent"}
+{"errorCode":"P2236","description":"O2 Sensor Signal Circuit Shorted to Heater Circuit"}
+{"errorCode":"P2237","description":"O2 Sensor Positive Current Control Circuit/Open"}
+{"errorCode":"P2238","description":"O2 Sensor Positive Current Control Circuit Low"}
+{"errorCode":"P2239","description":"O2 Sensor Positive Current Control Circuit High"}
+{"errorCode":"P2240","description":"O2 Sensor Positive Current Control Circuit/Open"}
+{"errorCode":"P2241","description":"O2 Sensor Positive Current Control Circuit Low"}
+{"errorCode":"P2242","description":"O2 Sensor Positive Current Control Circuit High"}
+{"errorCode":"P2243","description":"O2 Sensor Reference Voltage Circuit/Open"}
+{"errorCode":"P2244","description":"O2 Sensor Reference Voltage Performance"}
+{"errorCode":"P2245","description":"O2 Sensor Reference Voltage Circuit Low"}
+{"errorCode":"P2246","description":"O2 Sensor Reference Voltage Circuit High"}
+{"errorCode":"P2247","description":"O2 Sensor Reference Voltage Circuit/Open"}
+{"errorCode":"P2248","description":"O2 Sensor Reference Voltage Performance"}
+{"errorCode":"P2249","description":"O2 Sensor Reference Voltage Circuit Low"}
+{"errorCode":"P2250","description":"O2 Sensor Reference Voltage Circuit High"}
+{"errorCode":"P2251","description":"O2 Sensor Negative Current Control Circuit/Open"}
+{"errorCode":"P2252","description":"O2 Sensor Negative Current Control Circuit Low"}
+{"errorCode":"P2253","description":"O2 Sensor Negative Current Control Circuit High"}
+{"errorCode":"P2254","description":"O2 Sensor Negative Current Control Circuit/Open"}
+{"errorCode":"P2255","description":"O2 Sensor Negative Current Control Circuit Low"}
+{"errorCode":"P2256","description":"O2 Sensor Negative Current Control Circuit High"}
+{"errorCode":"P2257","description":"Secondary Air Injection System Control 1 Circuit Low"}
+{"errorCode":"P2258","description":"Secondary Air Injection System Control 1 Circuit High"}
+{"errorCode":"P2259","description":"Secondary Air Injection System Control 1 Circuit Low"}
+{"errorCode":"P2260","description":"Secondary Air Injection System Control 1 Circuit High"}
+{"errorCode":"P2261","description":"Turbo/Super Charger Bypass Valve - Mechanical"}
+{"errorCode":"P2262","description":"Turbo Boost Pressure Not Detected - Mechanical"}
+{"errorCode":"P2263","description":"Turbo/Super Charger Boost System Performance"}
+{"errorCode":"P2264","description":"Water in Fuel Sensor Circuit"}
+{"errorCode":"P2265","description":"Water in Fuel Sensor Circuit Range/Performance"}
+{"errorCode":"P2266","description":"Water in Fuel Sensor Circuit Low"}
+{"errorCode":"P2267","description":"Water in Fuel Sensor Circuit High"}
+{"errorCode":"P2268","description":"Water in Fuel Sensor Circuit Intermittent"}
+{"errorCode":"P2269","description":"Water in Fuel Condition"}
+{"errorCode":"P2270","description":"O2 Sensor Signal Stuck Lean"}
+{"errorCode":"P2271","description":"O2 Sensor Signal Stuck Rich"}
+{"errorCode":"P2272","description":"O2 Sensor Signal Stuck Lean"}
+{"errorCode":"P2273","description":"O2 Sensor Signal Stuck Rich"}
+{"errorCode":"P2274","description":"O2 Sensor Signal Stuck Lean"}
+{"errorCode":"P2275","description":"O2 Sensor Signal Stuck Rich"}
+{"errorCode":"P2276","description":"O2 Sensor Signal Stuck Lean"}
+{"errorCode":"P2277","description":"O2 Sensor Signal Stuck Rich"}
+{"errorCode":"P2278","description":"O2 Sensor Signals Swapped Bank 1 Sensor 3 / Bank 2 Sensor 3"}
+{"errorCode":"P2279","description":"Intake Air System Leak"}
+{"errorCode":"P2280","description":"Air Flow Restriction / Air Leak Between Air Filter and MAF"}
+{"errorCode":"P2281","description":"Air Leak Between MAF and Throttle Body"}
+{"errorCode":"P2282","description":"Air Leak Between Throttle Body and Intake Valves"}
+{"errorCode":"P2283","description":"Injector Control Pressure Sensor Circuit"}
+{"errorCode":"P2284","description":"Injector Control Pressure Sensor Circuit Range/Performance"}
+{"errorCode":"P2285","description":"Injector Control Pressure Sensor Circuit Low"}
+{"errorCode":"P2286","description":"Injector Control Pressure Sensor Circuit High"}
+{"errorCode":"P2287","description":"Injector Control Pressure Sensor Circuit Intermittent"}
+{"errorCode":"P2288","description":"Injector Control Pressure Too High"}
+{"errorCode":"P2289","description":"Injector Control Pressure Too High - Engine Off"}
+{"errorCode":"P2290","description":"Injector Control Pressure Too Low"}
+{"errorCode":"P2291","description":"Injector Control Pressure Too Low - Engine Cranking"}
+{"errorCode":"P2292","description":"Injector Control Pressure Erratic"}
+{"errorCode":"P2293","description":"Fuel Pressure Regulator 2 Performance"}
+{"errorCode":"P2294","description":"Fuel Pressure Regulator 2 Control Circuit"}
+{"errorCode":"P2295","description":"Fuel Pressure Regulator 2 Control Circuit Low"}
+{"errorCode":"P2296","description":"Fuel Pressure Regulator 2 Control Circuit High"}
+{"errorCode":"P2298","description":"O2 Sensor Out of Range During Deceleration"}
+{"errorCode":"P2299","description":"Brake Pedal Position / Accelerator Pedal Position Incompatible"}
+{"errorCode":"P2300","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2301","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2302","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2303","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2304","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2305","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2306","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2307","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2308","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2309","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2310","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2311","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2312","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2313","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2314","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2315","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2316","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2317","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2318","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2319","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2320","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2321","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2322","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2323","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2324","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2325","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2326","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2327","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2328","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2329","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2330","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2331","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2332","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2333","description":"Ignition Coil 1 Primary Control Circuit Low"}
+{"errorCode":"P2334","description":"Ignition Coil 1 Primary Control Circuit High"}
+{"errorCode":"P2335","description":"Ignition Coil 1 Secondary Circuit"}
+{"errorCode":"P2336","description":"Cylinder #1 Above Knock Threshold"}
+{"errorCode":"P2337","description":"Cylinder #2 Above Knock Threshold"}
+{"errorCode":"P2338","description":"Cylinder #3 Above Knock Threshold"}
+{"errorCode":"P2339","description":"Cylinder #4 Above Knock Threshold"}
+{"errorCode":"P2340","description":"Cylinder #5 Above Knock Threshold"}
+{"errorCode":"P2341","description":"Cylinder #6 Above Knock Threshold"}
+{"errorCode":"P2342","description":"Cylinder #7 Above Knock Threshold"}
+{"errorCode":"P2343","description":"Cylinder #8 Above Knock Threshold"}
+{"errorCode":"P2344","description":"Cylinder #9 Above Knock Threshold"}
+{"errorCode":"P2345","description":"Cylinder #10 Above Knock Threshold"}
+{"errorCode":"P2346","description":"Cylinder #11 Above Knock Threshold"}
+{"errorCode":"P2347","description":"Cylinder #12 Above Knock Threshold"}
+{"errorCode":"P2400","description":"Evaporative Emission System Leak Detection Pump Control Circuit/Open"}
+{"errorCode":"P2401","description":"Evaporative Emission System Leak Detection Pump Control Circuit Low"}
+{"errorCode":"P2402","description":"Evaporative Emission System Leak Detection Pump Control Circuit High"}
+{"errorCode":"P2403","description":"Evaporative Emission System Leak Detection Pump Sense Circuit/Open"}
+{"errorCode":"P2404","description":"Evaporative Emission System Leak Detection Pump Sense Circuit Range/Performance"}
+{"errorCode":"P2405","description":"Evaporative Emission System Leak Detection Pump Sense Circuit Low"}
+{"errorCode":"P2406","description":"Evaporative Emission System Leak Detection Pump Sense Circuit High"}
+{"errorCode":"P2407","description":"Evaporative Emission System Leak Detection Pump Sense Circuit Intermittent/Erratic"}
+{"errorCode":"P2408","description":"Fuel Cap Sensor/Switch Circuit"}
+{"errorCode":"P2409","description":"Fuel Cap Sensor/Switch Circuit Range/Performance"}
+{"errorCode":"P2410","description":"Fuel Cap Sensor/Switch Circuit Low"}
+{"errorCode":"P2411","description":"Fuel Cap Sensor/Switch Circuit High"}
+{"errorCode":"P2412","description":"Fuel Cap Sensor/Switch Circuit Intermittent/Erratic"}
+{"errorCode":"P2413","description":"Exhaust Gas Recirculation System Performance"}
+{"errorCode":"P2415","description":"O2 Sensor Exhaust Sample Error"}
+{"errorCode":"P2416","description":"O2 Sensor Signals Swapped Bank 1 Sensor 2 / Bank 1 Sensor 3"}
+{"errorCode":"P2417","description":"O2 Sensor Signals Swapped Bank 2 Sensor 2 / Bank 2 Sensor 3"}
+{"errorCode":"P2418","description":"Evaporative Emission System Switching Valve Control Circuit / Open"}
+{"errorCode":"P2419","description":"Evaporative Emission System Switching Valve Control Circuit Low"}
+{"errorCode":"P2420","description":"Evaporative Emission System Switching Valve Control Circuit High"}
+{"errorCode":"P2421","description":"Evaporative Emission System Vent Valve Stuck Open"}
+{"errorCode":"P2422","description":"Evaporative Emission System Vent Valve Stuck Closed"}
+{"errorCode":"P2424","description":"HC Adsorption Catalyst Efficiency Below Threshold"}
+{"errorCode":"P2425","description":"Exhaust Gas Recirculation Cooling Valve Control Circuit/Open"}
+{"errorCode":"P2426","description":"Exhaust Gas Recirculation Cooling Valve Control Circuit Low"}
+{"errorCode":"P2427","description":"Exhaust Gas Recirculation Cooling Valve Control Circuit High"}
+{"errorCode":"P2429","description":"Exhaust Gas Temperature Too High"}
+{"errorCode":"P2430","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit"}
+{"errorCode":"P2431","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit Range/Performance"}
+{"errorCode":"P2432","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit Low"}
+{"errorCode":"P2433","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit High"}
+{"errorCode":"P2434","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit Intermittent/Erratic"}
+{"errorCode":"P2435","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit"}
+{"errorCode":"P2436","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit Range/Performance"}
+{"errorCode":"P2437","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit Low"}
+{"errorCode":"P2438","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit High"}
+{"errorCode":"P2439","description":"Secondary Air Injection System Air Flow/Pressure Sensor Circuit Intermittent/Erratic"}
+{"errorCode":"P2440","description":"Secondary Air Injection System Switching Valve Stuck Open"}
+{"errorCode":"P2441","description":"Secondary Air Injection System Switching Valve Stuck Closed"}
+{"errorCode":"P2442","description":"Secondary Air Injection System Switching Valve Stuck Open"}
+{"errorCode":"P2443","description":"Secondary Air Injection System Switching Valve Stuck Closed"}
+{"errorCode":"P2444","description":"Secondary Air Injection System Pump Stuck On"}
+{"errorCode":"P2445","description":"Secondary Air Injection System Pump Stuck Off"}
+{"errorCode":"P2446","description":"Secondary Air Injection System Pump Stuck On"}
+{"errorCode":"P2447","description":"Secondary Air Injection System Pump Stuck Off"}
+{"errorCode":"P2500","description":"Generator Lamp/L-Terminal Circuit Low"}
+{"errorCode":"P2501","description":"Generator Lamp/L-Terminal Circuit High"}
+{"errorCode":"P2502","description":"Charging System Voltage"}
+{"errorCode":"P2503","description":"Charging System Voltage Low"}
+{"errorCode":"P2504","description":"Charging System Voltage High"}
+{"errorCode":"P2505","description":"ECM/PCM Power Input Signal"}
+{"errorCode":"P2506","description":"ECM/PCM Power Input Signal Range/Performance"}
+{"errorCode":"P2507","description":"ECM/PCM Power Input Signal Low"}
+{"errorCode":"P2508","description":"ECM/PCM Power Input Signal High"}
+{"errorCode":"P2509","description":"ECM/PCM Power Input Signal Intermittent"}
+{"errorCode":"P2510","description":"ECM/PCM Power Relay Sense Circuit Range/Performance"}
+{"errorCode":"P2511","description":"ECM/PCM Power Relay Sense Circuit Intermittent"}
+{"errorCode":"P2512","description":"Event Data Recorder Request Circuit/ Open"}
+{"errorCode":"P2513","description":"Event Data Recorder Request Circuit Low"}
+{"errorCode":"P2514","description":"Event Data Recorder Request Circuit High"}
+{"errorCode":"P2515","description":"A/C Refrigerant Pressure Sensor 1 Circuit"}
+{"errorCode":"P2516","description":"A/C Refrigerant Pressure Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P2517","description":"A/C Refrigerant Pressure Sensor 1 Circuit Low"}
+{"errorCode":"P2518","description":"A/C Refrigerant Pressure Sensor 1 Circuit High"}
+{"errorCode":"P2519","description":"A/C Request 1 Circuit"}
+{"errorCode":"P2520","description":"A/C Request 1 Circuit Low"}
+{"errorCode":"P2521","description":"A/C Request 1 Circuit High"}
+{"errorCode":"P2522","description":"A/C Request 1 Circuit"}
+{"errorCode":"P2523","description":"A/C Request 1 Circuit Low"}
+{"errorCode":"P2524","description":"A/C Request 1 Circuit High"}
+{"errorCode":"P2525","description":"Vacuum Reservoir Pressure Sensor Circuit"}
+{"errorCode":"P2526","description":"Vacuum Reservoir Pressure Sensor Circuit Range/Performance"}
+{"errorCode":"P2527","description":"Vacuum Reservoir Pressure Sensor Circuit Low"}
+{"errorCode":"P2528","description":"Vacuum Reservoir Pressure Sensor Circuit High"}
+{"errorCode":"P2529","description":"Vacuum Reservoir Pressure Sensor Circuit Intermittent"}
+{"errorCode":"P2530","description":"Ignition Switch Run Position Circuit"}
+{"errorCode":"P2531","description":"Ignition Switch Run Position Circuit Low"}
+{"errorCode":"P2532","description":"Ignition Switch Run Position Circuit High"}
+{"errorCode":"P2533","description":"Ignition Switch Run/Start Position Circuit"}
+{"errorCode":"P2534","description":"Ignition Switch Run/Start Position Circuit Low"}
+{"errorCode":"P2535","description":"Ignition Switch Run/Start Position Circuit High"}
+{"errorCode":"P2536","description":"Ignition Switch Accessory Position Circuit"}
+{"errorCode":"P2537","description":"Ignition Switch Accessory Position Circuit Low"}
+{"errorCode":"P2538","description":"Ignition Switch Accessory Position Circuit High"}
+{"errorCode":"P2539","description":"Low Pressure Fuel System Sensor Circuit"}
+{"errorCode":"P2540","description":"Low Pressure Fuel System Sensor Circuit Range/Performance"}
+{"errorCode":"P2541","description":"Low Pressure Fuel System Sensor Circuit Low"}
+{"errorCode":"P2542","description":"Low Pressure Fuel System Sensor Circuit High"}
+{"errorCode":"P2543","description":"Low Pressure Fuel System Sensor Circuit Intermittent"}
+{"errorCode":"P2544","description":"Torque Management Request Input Signal 1"}
+{"errorCode":"P2545","description":"Torque Management Request Input Signal 1 Range/Performance"}
+{"errorCode":"P2546","description":"Torque Management Request Input Signal 1 Low"}
+{"errorCode":"P2547","description":"Torque Management Request Input Signal 1 High"}
+{"errorCode":"P2548","description":"Torque Management Request Input Signal 1"}
+{"errorCode":"P2549","description":"Torque Management Request Input Signal 1 Range/Performance"}
+{"errorCode":"P2550","description":"Torque Management Request Input Signal 1 Low"}
+{"errorCode":"P2551","description":"Torque Management Request Input Signal 1 High"}
+{"errorCode":"P2552","description":"Throttle/Fuel Inhibit Circuit"}
+{"errorCode":"P2553","description":"Throttle/Fuel Inhibit Circuit Range/Performance"}
+{"errorCode":"P2554","description":"Throttle/Fuel Inhibit Circuit Low"}
+{"errorCode":"P2555","description":"Throttle/Fuel Inhibit Circuit High"}
+{"errorCode":"P2556","description":"Engine Coolant Level Sensor/Switch Circuit"}
+{"errorCode":"P2557","description":"Engine Coolant Level Sensor/Switch Circuit Range/Performance"}
+{"errorCode":"P2558","description":"Engine Coolant Level Sensor/Switch Circuit Low"}
+{"errorCode":"P2559","description":"Engine Coolant Level Sensor/Switch Circuit High"}
+{"errorCode":"P2560","description":"Engine Coolant Level Low"}
+{"errorCode":"P2561","description":"A/C Control Module Requested MIL Illumination"}
+{"errorCode":"P2562","description":"Turbocharger Boost Control Position Sensor Circuit"}
+{"errorCode":"P2563","description":"Turbocharger Boost Control Position Sensor Circuit Range/Performance"}
+{"errorCode":"P2564","description":"Turbocharger Boost Control Position Sensor Circuit Low"}
+{"errorCode":"P2565","description":"Turbocharger Boost Control Position Sensor Circuit High"}
+{"errorCode":"P2566","description":"Turbocharger Boost Control Position Sensor Circuit Intermittent"}
+{"errorCode":"P2567","description":"Direct Ozone Reduction Catalyst Temperature Sensor Circuit"}
+{"errorCode":"P2568","description":"Direct Ozone Reduction Catalyst Temperature Sensor Circuit Range/Performance"}
+{"errorCode":"P2569","description":"Direct Ozone Reduction Catalyst Temperature Sensor Circuit Low"}
+{"errorCode":"P2570","description":"Direct Ozone Reduction Catalyst Temperature Sensor Circuit High"}
+{"errorCode":"P2571","description":"Direct Ozone Reduction Catalyst Temperature Sensor Circuit Intermittent/Erratic"}
+{"errorCode":"P2572","description":"Direct Ozone Reduction Catalyst Deterioration Sensor Circuit"}
+{"errorCode":"P2573","description":"Direct Ozone Reduction Catalyst Deterioration Sensor Circuit Range/Performance"}
+{"errorCode":"P2574","description":"Direct Ozone Reduction Catalyst Deterioration Sensor Circuit Low"}
+{"errorCode":"P2575","description":"Direct Ozone Reduction Catalyst Deterioration Sensor Circuit High"}
+{"errorCode":"P2576","description":"Direct Ozone Reduction Catalyst Deterioration Sensor Circuit Intermittent/Erratic"}
+{"errorCode":"P2577","description":"Direct Ozone Reduction Catalyst Efficiency Below Threshold"}
+{"errorCode":"P2600","description":"Coolant Pump Control Circuit/Open"}
+{"errorCode":"P2600","description":"Coolant Pump Control Circuit/Open"}
+{"errorCode":"P2601","description":"Coolant Pump Control Circuit Range/Performance"}
+{"errorCode":"P2602","description":"Coolant Pump Control Circuit Low"}
+{"errorCode":"P2603","description":"Coolant Pump Control Circuit High"}
+{"errorCode":"P2604","description":"Intake Air Heater 1 Circuit Range/Performance"}
+{"errorCode":"P2605","description":"Intake Air Heater 1 Circuit/Open"}
+{"errorCode":"P2606","description":"Intake Air Heater 1 Circuit Range/Performance"}
+{"errorCode":"P2607","description":"Intake Air Heater 1 Circuit Low"}
+{"errorCode":"P2608","description":"Intake Air Heater 1 Circuit High"}
+{"errorCode":"P2609","description":"Intake Air Heater System Performance"}
+{"errorCode":"P2610","description":"ECM/PCM Internal Engine Off Timer Performance"}
+{"errorCode":"P2611","description":"A/C Refrigerant Distribution Valve Control Circuit/Open"}
+{"errorCode":"P2612","description":"A/C Refrigerant Distribution Valve Control Circuit Low"}
+{"errorCode":"P2613","description":"A/C Refrigerant Distribution Valve Control Circuit High"}
+{"errorCode":"P2614","description":"Camshaft Position Signal Output Circuit/Open"}
+{"errorCode":"P2615","description":"Camshaft Position Signal Output Circuit Low"}
+{"errorCode":"P2616","description":"Camshaft Position Signal Output Circuit High"}
+{"errorCode":"P2617","description":"Crankshaft Position Signal Output Circuit/Open"}
+{"errorCode":"P2618","description":"Crankshaft Position Signal Output Circuit Low"}
+{"errorCode":"P2619","description":"Crankshaft Position Signal Output Circuit High"}
+{"errorCode":"P2620","description":"Throttle Position Output Circuit/Open"}
+{"errorCode":"P2621","description":"Throttle Position Output Circuit Low"}
+{"errorCode":"P2622","description":"Throttle Position Output Circuit High"}
+{"errorCode":"P2623","description":"Injector Control Pressure Regulator Circuit/Open"}
+{"errorCode":"P2624","description":"Injector Control Pressure Regulator Circuit Low"}
+{"errorCode":"P2625","description":"Injector Control Pressure Regulator Circuit High"}
+{"errorCode":"P2626","description":"O2 Sensor Pumping Current Trim Circuit/Open"}
+{"errorCode":"P2627","description":"O2 Sensor Pumping Current Trim Circuit Low"}
+{"errorCode":"P2628","description":"O2 Sensor Pumping Current Trim Circuit High"}
+{"errorCode":"P2629","description":"O2 Sensor Pumping Current Trim Circuit/Open"}
+{"errorCode":"P2630","description":"O2 Sensor Pumping Current Trim Circuit Low"}
+{"errorCode":"P2631","description":"O2 Sensor Pumping Current Trim Circuit High"}
+{"errorCode":"P2632","description":"Fuel Pump 1 Control Circuit /Open"}
+{"errorCode":"P2633","description":"Fuel Pump 1 Control Circuit Low"}
+{"errorCode":"P2634","description":"Fuel Pump 1 Control Circuit High"}
+{"errorCode":"P2635","description":"Fuel Pump 1 Low Flow / Performance"}
+{"errorCode":"P2636","description":"Fuel Pump 1 Low Flow / Performance"}
+{"errorCode":"P2637","description":"Torque Management Feedback Signal 1"}
+{"errorCode":"P2638","description":"Torque Management Feedback Signal 1 Range/Performance"}
+{"errorCode":"P2639","description":"Torque Management Feedback Signal 1 Low"}
+{"errorCode":"P2640","description":"Torque Management Feedback Signal 1 High"}
+{"errorCode":"P2641","description":"Torque Management Feedback Signal 1"}
+{"errorCode":"P2642","description":"Torque Management Feedback Signal 1 Range/Performance"}
+{"errorCode":"P2643","description":"Torque Management Feedback Signal 1 Low"}
+{"errorCode":"P2644","description":"Torque Management Feedback Signal 1 High"}
+{"errorCode":"P2645","description":"1 Rocker Arm Actuator Control Circuit/Open"}
+{"errorCode":"P2646","description":"1 Rocker Arm Actuator System Performance or Stuck Off"}
+{"errorCode":"P2647","description":"1 Rocker Arm Actuator System Stuck On"}
+{"errorCode":"P2648","description":"1 Rocker Arm Actuator Control Circuit Low"}
+{"errorCode":"P2649","description":"1 Rocker Arm Actuator Control Circuit High"}
+{"errorCode":"P2650","description":"1 Rocker Arm Actuator Control Circuit/Open"}
+{"errorCode":"P2651","description":"1 Rocker Arm Actuator System Performance or Stuck Off"}
+{"errorCode":"P2652","description":"1 Rocker Arm Actuator System Stuck On"}
+{"errorCode":"P2653","description":"1 Rocker Arm Actuator Control Circuit Low"}
+{"errorCode":"P2654","description":"1 Rocker Arm Actuator Control Circuit High"}
+{"errorCode":"P2655","description":"1 Rocker Arm Actuator Control Circuit/Open"}
+{"errorCode":"P2656","description":"1 Rocker Arm Actuator System Performance or Stuck Off"}
+{"errorCode":"P2657","description":"1 Rocker Arm Actuator System Stuck On"}
+{"errorCode":"P2658","description":"1 Rocker Arm Actuator Control Circuit Low"}
+{"errorCode":"P2659","description":"1 Rocker Arm Actuator Control Circuit High"}
+{"errorCode":"P2660","description":"1 Rocker Arm Actuator Control Circuit/Open"}
+{"errorCode":"P2661","description":"1 Rocker Arm Actuator System Performance or Stuck Off"}
+{"errorCode":"P2662","description":"1 Rocker Arm Actuator System Stuck On"}
+{"errorCode":"P2663","description":"1 Rocker Arm Actuator Control Circuit Low"}
+{"errorCode":"P2664","description":"1 Rocker Arm Actuator Control Circuit High"}
+{"errorCode":"P2665","description":"Fuel Shutoff Valve 1 Control Circuit/Open"}
+{"errorCode":"P2666","description":"Fuel Shutoff Valve 1 Control Circuit Low"}
+{"errorCode":"P2667","description":"Fuel Shutoff Valve 1 Control Circuit High"}
+{"errorCode":"P2668","description":"Fuel Mode Indicator Lamp Control Circuit"}
+{"errorCode":"P2669","description":"Actuator Supply Voltage 1 Circuit /Open"}
+{"errorCode":"P2670","description":"Actuator Supply Voltage 1 Circuit Low"}
+{"errorCode":"P2671","description":"Actuator Supply Voltage 1 Circuit High"}
+{"errorCode":"P2700","description":"Transmission Friction Element 1 Apply Time Range/Performance"}
+{"errorCode":"P2701","description":"Transmission Friction Element 1 Apply Time Range/Performance"}
+{"errorCode":"P2702","description":"Transmission Friction Element 1 Apply Time Range/Performance"}
+{"errorCode":"P2703","description":"Transmission Friction Element 1 Apply Time Range/Performance"}
+{"errorCode":"P2704","description":"Transmission Friction Element 1 Apply Time Range/Performance"}
+{"errorCode":"P2705","description":"Transmission Friction Element 1 Apply Time Range/Performance"}
+{"errorCode":"P2706","description":"Shift Solenoid 1"}
+{"errorCode":"P2707","description":"Shift Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P2708","description":"Shift Solenoid 1 Stuck On"}
+{"errorCode":"P2709","description":"Shift Solenoid 1 Electrical"}
+{"errorCode":"P2710","description":"Shift Solenoid 1 Intermittent"}
+{"errorCode":"P2711","description":"Unexpected Mechanical Gear Disengagement"}
+{"errorCode":"P2712","description":"Hydraulic Power Unit Leakage"}
+{"errorCode":"P2713","description":"Pressure Control Solenoid 1"}
+{"errorCode":"P2714","description":"Pressure Control Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P2715","description":"Pressure Control Solenoid 1 Stuck On"}
+{"errorCode":"P2716","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P2717","description":"Pressure Control Solenoid 1 Intermittent"}
+{"errorCode":"P2718","description":"Pressure Control Solenoid 1 Control Circuit / Open"}
+{"errorCode":"P2719","description":"Pressure Control Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P2720","description":"Pressure Control Solenoid 1 Control Circuit Low"}
+{"errorCode":"P2721","description":"Pressure Control Solenoid 1 Control Circuit High"}
+{"errorCode":"P2722","description":"Pressure Control Solenoid 1"}
+{"errorCode":"P2723","description":"Pressure Control Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P2724","description":"Pressure Control Solenoid 1 Stuck On"}
+{"errorCode":"P2725","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P2726","description":"Pressure Control Solenoid 1 Intermittent"}
+{"errorCode":"P2727","description":"Pressure Control Solenoid 1 Control Circuit / Open"}
+{"errorCode":"P2728","description":"Pressure Control Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P2729","description":"Pressure Control Solenoid 1 Control Circuit Low"}
+{"errorCode":"P2730","description":"Pressure Control Solenoid 1 Control Circuit High"}
+{"errorCode":"P2731","description":"Pressure Control Solenoid 1"}
+{"errorCode":"P2732","description":"Pressure Control Solenoid 1 Performance or Stuck Off"}
+{"errorCode":"P2733","description":"Pressure Control Solenoid 1 Stuck On"}
+{"errorCode":"P2734","description":"Pressure Control Solenoid 1 Electrical"}
+{"errorCode":"P2735","description":"Pressure Control Solenoid 1 Intermittent"}
+{"errorCode":"P2736","description":"Pressure Control Solenoid 1 Control Circuit/Open"}
+{"errorCode":"P2737","description":"Pressure Control Solenoid 1 Control Circuit Range/Performance"}
+{"errorCode":"P2738","description":"Pressure Control Solenoid 1 Control Circuit Low"}
+{"errorCode":"P2739","description":"Pressure Control Solenoid 1 Control Circuit High"}
+{"errorCode":"P2740","description":"Transmission Fluid Temperature Sensor 1 Circuit"}
+{"errorCode":"P2741","description":"Transmission Fluid Temperature Sensor 1 Circuit Range Performance"}
+{"errorCode":"P2742","description":"Transmission Fluid Temperature Sensor 1 Circuit Low"}
+{"errorCode":"P2743","description":"Transmission Fluid Temperature Sensor 1 Circuit High"}
+{"errorCode":"P2744","description":"Transmission Fluid Temperature Sensor 1 Circuit Intermittent"}
+{"errorCode":"P2745","description":"Intermediate Shaft Speed Sensor 1 Circuit"}
+{"errorCode":"P2746","description":"Intermediate Shaft Speed Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P2747","description":"Intermediate Shaft Speed Sensor 1 Circuit No Signal"}
+{"errorCode":"P2748","description":"Intermediate Shaft Speed Sensor 1 Circuit Intermittent"}
+{"errorCode":"P2749","description":"Intermediate Shaft Speed Sensor 1 Circuit"}
+{"errorCode":"P2750","description":"Intermediate Shaft Speed Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P2751","description":"Intermediate Shaft Speed Sensor 1 Circuit No Signal"}
+{"errorCode":"P2752","description":"Intermediate Shaft Speed Sensor 1 Circuit Intermittent"}
+{"errorCode":"P2753","description":"Transmission Fluid Cooler Control Circuit/Open"}
+{"errorCode":"P2754","description":"Transmission Fluid Cooler Control Circuit Low"}
+{"errorCode":"P2755","description":"Transmission Fluid Cooler Control Circuit High"}
+{"errorCode":"P2756","description":"Torque Converter Clutch Pressure Control Solenoid"}
+{"errorCode":"P2757","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit Performance or Stuck Off"}
+{"errorCode":"P2758","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit Stuck On"}
+{"errorCode":"P2759","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit Electrical"}
+{"errorCode":"P2760","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit Intermittent"}
+{"errorCode":"P2761","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit/Open"}
+{"errorCode":"P2762","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit Range/Performance"}
+{"errorCode":"P2763","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit High"}
+{"errorCode":"P2764","description":"Torque Converter Clutch Pressure Control Solenoid Control Circuit Low"}
+{"errorCode":"P2765","description":"Input/Turbine Speed Sensor 1 Circuit"}
+{"errorCode":"P2766","description":"Input/Turbine Speed Sensor 1 Circuit Range/Performance"}
+{"errorCode":"P2767","description":"Input/Turbine Speed Sensor 1 Circuit No Signal"}
+{"errorCode":"P2768","description":"Input/Turbine Speed Sensor 1 Circuit Intermittent"}
+{"errorCode":"P2769","description":"Torque Converter Clutch Circuit Low"}
+{"errorCode":"P2770","description":"Torque Converter Clutch Circuit High"}
+{"errorCode":"P2771","description":"Four Wheel Drive (4WD) Low Switch Circuit"}
+{"errorCode":"P2772","description":"Four Wheel Drive (4WD) Low Switch Circuit Range/Performance"}
+{"errorCode":"P2773","description":"Four Wheel Drive (4WD) Low Switch Circuit Low"}
+{"errorCode":"P2774","description":"Four Wheel Drive (4WD) Low Switch Circuit High"}
+{"errorCode":"P2775","description":"Upshift Switch Circuit Range/Performance"}
+{"errorCode":"P2776","description":"Upshift Switch Circuit Low"}
+{"errorCode":"P2777","description":"Upshift Switch Circuit High"}
+{"errorCode":"P2778","description":"Upshift Switch Circuit Intermittent/Erratic"}
+{"errorCode":"P2779","description":"Downshift Switch Circuit Range/Performance"}
+{"errorCode":"P2780","description":"Downshift Switch Circuit Low"}
+{"errorCode":"P2781","description":"Downshift Switch Circuit High"}
+{"errorCode":"P2782","description":"Downshift Switch Circuit Intermittent/Erratic"}
+{"errorCode":"P2783","description":"Torque Converter Temperature Too High"}
+{"errorCode":"P2784","description":"Input/Turbine Speed Sensor 1/1 Correlation"}
+{"errorCode":"P2785","description":"Clutch Actuator Temperature Too High"}
+{"errorCode":"P2786","description":"Gear Shift Actuator Temperature Too High"}
+{"errorCode":"P2787","description":"Clutch Temperature Too High"}
+{"errorCode":"P2788","description":"Auto Shift Manual Adaptive Learning at Limit"}
+{"errorCode":"P2789","description":"Clutch Adaptive Learning at Limit"}
+{"errorCode":"P2790","description":"Gate Select Direction Circuit"}
+{"errorCode":"P2791","description":"Gate Select Direction Circuit Low"}
+{"errorCode":"P2792","description":"Gate Select Direction Circuit High"}
+{"errorCode":"P2793","description":"Gear Shift Direction Circuit"}
+{"errorCode":"P2794","description":"Gear Shift Direction Circuit Low"}
+{"errorCode":"P2795","description":"Gear Shift Direction Circuit High"}
+{"errorCode":"P2A05","description":"O2 Sensor Circuit Range/Performance"}
+{"errorCode":"P3400","description":"Cylinder Deactivation System"}
+{"errorCode":"P3401","description":"Cylinder 1 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3402","description":"Cylinder 1 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3403","description":"Cylinder 1 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3404","description":"Cylinder 1 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3405","description":"Cylinder 1 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3406","description":"Cylinder 1 Exhaust Valve Control Performance"}
+{"errorCode":"P3407","description":"Cylinder 1 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3408","description":"Cylinder 1 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3409","description":"Cylinder 2 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3410","description":"Cylinder 2 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3411","description":"Cylinder 2 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3412","description":"Cylinder 2 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3413","description":"Cylinder 2 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3414","description":"Cylinder 2 Exhaust Valve Control Performance"}
+{"errorCode":"P3415","description":"Cylinder 2 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3416","description":"Cylinder 2 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3417","description":"Cylinder 3 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3418","description":"Cylinder 3 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3419","description":"Cylinder 3 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3420","description":"Cylinder 3 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3421","description":"Cylinder 3 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3422","description":"Cylinder 3 Exhaust Valve Control Performance"}
+{"errorCode":"P3423","description":"Cylinder 3 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3424","description":"Cylinder 3 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3425","description":"Cylinder 4 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3426","description":"Cylinder 4 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3427","description":"Cylinder 4 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3428","description":"Cylinder 4 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3429","description":"Cylinder 4 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3430","description":"Cylinder 4 Exhaust Valve Control Performance"}
+{"errorCode":"P3431","description":"Cylinder 4 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3432","description":"Cylinder 4 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3433","description":"Cylinder 5 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3434","description":"Cylinder 5 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3435","description":"Cylinder 5 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3436","description":"Cylinder 5 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3437","description":"Cylinder 5 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3438","description":"Cylinder 5 Exhaust Valve Control Performance"}
+{"errorCode":"P3439","description":"Cylinder 5 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3440","description":"Cylinder 5 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3441","description":"Cylinder 6 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3442","description":"Cylinder 6 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3443","description":"Cylinder 6 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3444","description":"Cylinder 6 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3445","description":"Cylinder 6 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3446","description":"Cylinder 6 Exhaust Valve Control Performance"}
+{"errorCode":"P3447","description":"Cylinder 6 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3448","description":"Cylinder 6 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3449","description":"Cylinder 7 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3450","description":"Cylinder 7 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3451","description":"Cylinder 7 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3452","description":"Cylinder 7 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3453","description":"Cylinder 7 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3454","description":"Cylinder 7 Exhaust Valve Control Performance"}
+{"errorCode":"P3455","description":"Cylinder 7 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3456","description":"Cylinder 7 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3457","description":"Cylinder 8 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3458","description":"Cylinder 8 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3459","description":"Cylinder 8 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3460","description":"Cylinder 8 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3461","description":"Cylinder 8 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3462","description":"Cylinder 8 Exhaust Valve Control Performance"}
+{"errorCode":"P3463","description":"Cylinder 8 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3464","description":"Cylinder 8 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3465","description":"Cylinder 9 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3466","description":"Cylinder 9 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3467","description":"Cylinder 9 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3468","description":"Cylinder 9 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3469","description":"Cylinder 9 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3470","description":"Cylinder 9 Exhaust Valve Control Performance"}
+{"errorCode":"P3471","description":"Cylinder 9 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3472","description":"Cylinder 9 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3473","description":"Cylinder 10 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3474","description":"Cylinder 10 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3475","description":"Cylinder 10 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3476","description":"Cylinder 10 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3477","description":"Cylinder 10 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3478","description":"Cylinder 10 Exhaust Valve Control Performance"}
+{"errorCode":"P3479","description":"Cylinder 10 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3480","description":"Cylinder 10 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3481","description":"Cylinder 11 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3482","description":"Cylinder 11 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3483","description":"Cylinder 11 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3484","description":"Cylinder 11 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3485","description":"Cylinder 11 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3486","description":"Cylinder 11 Exhaust Valve Control Performance"}
+{"errorCode":"P3487","description":"Cylinder 11 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3488","description":"Cylinder 11 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3489","description":"Cylinder 12 Deactivation/lntake Valve Control Circuit/Open"}
+{"errorCode":"P3490","description":"Cylinder 12 Deactivation/lntake Valve Control Performance"}
+{"errorCode":"P3491","description":"Cylinder 12 Deactivation/lntake Valve Control Circuit Low"}
+{"errorCode":"P3492","description":"Cylinder 12 Deactivation/lntake Valve Control Circuit High"}
+{"errorCode":"P3493","description":"Cylinder 12 Exhaust Valve Control Circuit/Open"}
+{"errorCode":"P3494","description":"Cylinder 12 Exhaust Valve Control Performance"}
+{"errorCode":"P3495","description":"Cylinder 12 Exhaust Valve Control Circuit Low"}
+{"errorCode":"P3496","description":"Cylinder 12 Exhaust Valve Control Circuit High"}
+{"errorCode":"P3497","description":"Cylinder Deactivation System [/B] Power rain codes continued"}
+{"errorCode":"U0001","description":"High Speed CAN Communication Bus"}
+{"errorCode":"U0002","description":"High Speed CAN Communication Bus Performance"}
+{"errorCode":"U0003","description":"High Speed CAN Communication Bus (+) Open"}
+{"errorCode":"U0004","description":"High Speed CAN Communication Bus (+) Low"}
+{"errorCode":"U0005","description":"High Speed CAN Communication Bus (+) High"}
+{"errorCode":"U0006","description":"High Speed CAN Communication Bus (-) Open"}
+{"errorCode":"U0007","description":"High Speed CAN Communication Bus (-) Low"}
+{"errorCode":"U0008","description":"High Speed CAN Communication Bus (-) High"}
+{"errorCode":"U0009","description":"High Speed CAN Communication Bus (-) shorted to Bus (+)"}
+{"errorCode":"U0010","description":"Medium Speed CAN Communication Bus"}
+{"errorCode":"U0011","description":"Medium Speed CAN Communication Bus Performance"}
+{"errorCode":"U0012","description":"Medium Speed CAN Communication Bus (+) Open"}
+{"errorCode":"U0013","description":"Medium Speed CAN Communication Bus (+) Low"}
+{"errorCode":"U0014","description":"Medium Speed CAN Communication Bus (+) High"}
+{"errorCode":"U0015","description":"Medium Speed CAN Communication Bus (-) Open"}
+{"errorCode":"U0016","description":"Medium Speed CAN Communication Bus (-) Low"}
+{"errorCode":"U0017","description":"Medium Speed CAN Communication Bus (-) High"}
+{"errorCode":"U0018","description":"Medium Speed CAN Communication Bus (-) shorted to Bus (+)"}
+{"errorCode":"U0019","description":"Low Speed CAN Communication Bus"}
+{"errorCode":"U0020","description":"Low Speed CAN Communication Bus Performance"}
+{"errorCode":"U0021","description":"Low Speed CAN Communication Bus (+) Open"}
+{"errorCode":"U0022","description":"Low Speed CAN Communication Bus (+) Low"}
+{"errorCode":"U0023","description":"Low Speed CAN Communication Bus (+) High"}
+{"errorCode":"U0024","description":"Low Speed CAN Communication Bus (-) Open"}
+{"errorCode":"U0025","description":"Low Speed CAN Communication Bus (-) Low"}
+{"errorCode":"U0026","description":"Low Speed CAN Communication Bus (-) High"}
+{"errorCode":"U0027","description":"Low Speed CAN Communication Bus (-) shorted to Bus (+)"}
+{"errorCode":"U0028","description":"Vehicle Communication Bus A"}
+{"errorCode":"U0029","description":"Vehicle Communication Bus A Performance"}
+{"errorCode":"U0030","description":"Vehicle Communication Bus A (+) Open"}
+{"errorCode":"U0031","description":"Vehicle Communication Bus A (+) Low"}
+{"errorCode":"U0032","description":"Vehicle Communication Bus A (+) High"}
+{"errorCode":"U0033","description":"Vehicle Communication Bus A (-) Open"}
+{"errorCode":"U0034","description":"Vehicle Communication Bus A (-) Low"}
+{"errorCode":"U0035","description":"Vehicle Communication Bus A (-) High"}
+{"errorCode":"U0036","description":"Vehicle Communication Bus A (-) shorted to Bus A (+)"}
+{"errorCode":"U0037","description":"Vehicle Communication Bus B"}
+{"errorCode":"U0038","description":"Vehicle Communication Bus B Performance"}
+{"errorCode":"U0039","description":"Vehicle Communication Bus B (+) Open"}
+{"errorCode":"U0040","description":"Vehicle Communication Bus B (+) Low"}
+{"errorCode":"U0041","description":"Vehicle Communication Bus B (+) High"}
+{"errorCode":"U0042","description":"Vehicle Communication Bus B (-) Open"}
+{"errorCode":"U0043","description":"Vehicle Communication Bus B (-) Low"}
+{"errorCode":"U0044","description":"Vehicle Communication Bus B (-) High"}
+{"errorCode":"U0045","description":"Vehicle Communication Bus B (-) shorted to Bus B (+)"}
+{"errorCode":"U0046","description":"Vehicle Communication Bus C"}
+{"errorCode":"U0047","description":"Vehicle Communication Bus C Performance"}
+{"errorCode":"U0048","description":"Vehicle Communication Bus C (+) Open"}
+{"errorCode":"U0049","description":"Vehicle Communication Bus C (+) Low"}
+{"errorCode":"U0050","description":"Vehicle Communication Bus C (+) High"}
+{"errorCode":"U0051","description":"Vehicle Communication Bus C (-) Open"}
+{"errorCode":"U0052","description":"Vehicle Communication Bus C (-) Low"}
+{"errorCode":"U0053","description":"Vehicle Communication Bus C (-) High"}
+{"errorCode":"U0054","description":"Vehicle Communication Bus C (-) shorted to Bus C (+)"}
+{"errorCode":"U0055","description":"Vehicle Communication Bus D"}
+{"errorCode":"U0056","description":"Vehicle Communication Bus D Performance"}
+{"errorCode":"U0057","description":"Vehicle Communication Bus D (+) Open"}
+{"errorCode":"U0058","description":"Vehicle Communication Bus D (+) Low"}
+{"errorCode":"U0059","description":"Vehicle Communication Bus D (+) High"}
+{"errorCode":"U0060","description":"Vehicle Communication Bus D (-) Open"}
+{"errorCode":"U0061","description":"Vehicle Communication Bus D (-) Low"}
+{"errorCode":"U0062","description":"Vehicle Communication Bus D (-) High"}
+{"errorCode":"U0063","description":"Vehicle Communication Bus D (-) shorted to Bus D (+)"}
+{"errorCode":"U0064","description":"Vehicle Communication Bus E"}
+{"errorCode":"U0065","description":"Vehicle Communication Bus E Performance"}
+{"errorCode":"U0066","description":"Vehicle Communication Bus E (+) Open"}
+{"errorCode":"U0067","description":"Vehicle Communication Bus E (+) Low"}
+{"errorCode":"U0068","description":"Vehicle Communication Bus E (+) High"}
+{"errorCode":"U0069","description":"Vehicle Communication Bus E (-) Open"}
+{"errorCode":"U0070","description":"Vehicle Communication Bus E (-) Low"}
+{"errorCode":"U0071","description":"Vehicle Communication Bus E (-) High"}
+{"errorCode":"U0072","description":"Vehicle Communication Bus E (-) shorted to Bus E (+)"}
+{"errorCode":"U0073","description":"Control Module Communication Bus Off"}
+{"errorCode":"U0099","description":"Reserved by Document"}
+{"errorCode":"U0100","description":"Lost Communication With ECM/PCM 1"}
+{"errorCode":"U0101","description":"Lost Communication with TCM"}
+{"errorCode":"U0102","description":"Lost Communication with Transfer Case Control Module"}
+{"errorCode":"U0103","description":"Lost Communication With Gear Shift Module"}
+{"errorCode":"U0104","description":"Lost Communication With Cruise Control Module"}
+{"errorCode":"U0105","description":"Lost Communication With Fuel Injector Control Module"}
+{"errorCode":"U0106","description":"Lost Communication With Glow Plug Control Module"}
+{"errorCode":"U0107","description":"Lost Communication With Throttle Actuator Control Module"}
+{"errorCode":"U0108","description":"Lost Communication With Alternative Fuel Control Module"}
+{"errorCode":"U0109","description":"Lost Communication With Fuel Pump Control Module"}
+{"errorCode":"U0110","description":"Lost Communication With Drive Motor Control Module"}
+{"errorCode":"U0111","description":"Lost Communication With Battery Energy Control Module 1"}
+{"errorCode":"U0112","description":"Lost Communication With Battery Energy Control Module 1"}
+{"errorCode":"U0113","description":"Lost Communication With Emissions Critical Control Information"}
+{"errorCode":"U0114","description":"Lost Communication With Four-Wheel Drive Clutch Control Module"}
+{"errorCode":"U0115","description":"Lost Communication With ECM/PCM 1"}
+{"errorCode":"U0120","description":"Reserved by Document"}
+{"errorCode":"U0121","description":"Lost Communication With Anti-Lock Brake System (ABS) Control Module"}
+{"errorCode":"U0122","description":"Lost Communication With Vehicle Dynamics Control Module"}
+{"errorCode":"U0123","description":"Lost Communication With Yaw Rate Sensor Module"}
+{"errorCode":"U0124","description":"Lost Communication With Lateral Acceleration Sensor Module"}
+{"errorCode":"U0125","description":"Lost Communication With Multi-axis Acceleration Sensor Module"}
+{"errorCode":"U0126","description":"Lost Communication With Steering Angle Sensor Module"}
+{"errorCode":"U0127","description":"Lost Communication With Tire Pressure Monitor Module"}
+{"errorCode":"U0128","description":"Lost Communication With Park Brake Control Module"}
+{"errorCode":"U0129","description":"Lost Communication With Brake System Control Module"}
+{"errorCode":"U0130","description":"Lost Communication With Steering Effort Control Module"}
+{"errorCode":"U0131","description":"Lost Communication With Power Steering Control Module"}
+{"errorCode":"U0132","description":"Lost Communication With Ride Level Control Module"}
+{"errorCode":"U0139","description":"Reserved by Document"}
+{"errorCode":"U0140","description":"Lost Communication With Body Control Module"}
+{"errorCode":"U0141","description":"Lost Communication With Body Control Module 1"}
+{"errorCode":"U0142","description":"Lost Communication With Body Control Module 1"}
+{"errorCode":"U0143","description":"Lost Communication With Body Control Module 1"}
+{"errorCode":"U0144","description":"Lost Communication With Body Control Module 1"}
+{"errorCode":"U0145","description":"Lost Communication With Body Control Module 1"}
+{"errorCode":"U0146","description":"Lost Communication With Gateway 1"}
+{"errorCode":"U0147","description":"Lost Communication With Gateway 1"}
+{"errorCode":"U0148","description":"Lost Communication With Gateway 1"}
+{"errorCode":"U0149","description":"Lost Communication With Gateway 1"}
+{"errorCode":"U0150","description":"Lost Communication With Gateway 1"}
+{"errorCode":"U0151","description":"Lost Communication With Restraints Control Module"}
+{"errorCode":"U0153","description":"Lost Communication With Side Restraints Control Module"}
+{"errorCode":"U0154","description":"Lost Communication With Restraints Occupant Sensing Control Module"}
+{"errorCode":"U0155","description":"Lost Communication With Instrument Panel Cluster (IPC) Control Module"}
+{"errorCode":"U0156","description":"Lost Communication With Information Center 1"}
+{"errorCode":"U0157","description":"Lost Communication With Information Center 1"}
+{"errorCode":"U0158","description":"Lost Communication With Head Up Display"}
+{"errorCode":"U0159","description":"Lost Communication With Parking Assist Control Module"}
+{"errorCode":"U0160","description":"Lost Communication With Audible Alert Control Module"}
+{"errorCode":"U0161","description":"Lost Communication With Compass Module"}
+{"errorCode":"U0162","description":"Lost Communication With Navigation Display Module"}
+{"errorCode":"U0163","description":"Lost Communication With Navigation Control Module"}
+{"errorCode":"U0165","description":"Lost Communication With HVAC Control Module"}
+{"errorCode":"U0166","description":"Lost Communication With Auxiliary Heater Control Module"}
+{"errorCode":"U0167","description":"Lost Communication With Vehicle Immobilizer Control Module"}
+{"errorCode":"U0168","description":"Lost Communication With Vehicle Security Control Module"}
+{"errorCode":"U0169","description":"Lost Communication With Sunroof Control Module"}
+{"errorCode":"U0170","description":"Lost Communication With Restraints System Sensor A"}
+{"errorCode":"U0171","description":"Lost Communication With Restraints System Sensor B"}
+{"errorCode":"U0172","description":"Lost Communication With Restraints System Sensor C"}
+{"errorCode":"U0173","description":"Lost Communication With Restraints System Sensor D"}
+{"errorCode":"U0174","description":"Lost Communication With Restraints System Sensor E"}
+{"errorCode":"U0175","description":"Lost Communication With Restraints System Sensor F"}
+{"errorCode":"U0176","description":"Lost Communication With Restraints System Sensor G"}
+{"errorCode":"U0177","description":"Lost Communication With Restraints System Sensor H"}
+{"errorCode":"U0178","description":"Lost Communication With Restraints System Sensor I"}
+{"errorCode":"U0179","description":"Lost Communication With Restraints System Sensor J"}
+{"errorCode":"U0180","description":"Lost Communication With Automatic Lighting Control Module"}
+{"errorCode":"U0181","description":"Lost Communication With Headlamp Leveling Control Module"}
+{"errorCode":"U0183","description":"Lost Communication With Lighting Control Module"}
+{"errorCode":"U0184","description":"Lost Communication With Radio"}
+{"errorCode":"U0185","description":"Lost Communication With Antenna Control Module"}
+{"errorCode":"U0186","description":"Lost Communication With Audio Amplifier"}
+{"errorCode":"U0187","description":"Lost Communication With Digital Disc Player/Changer Module 1"}
+{"errorCode":"U0188","description":"Lost Communication With Digital Disc Player/Changer Module 1"}
+{"errorCode":"U0189","description":"Lost Communication With Digital Disc Player/Changer Module 1"}
+{"errorCode":"U0190","description":"Lost Communication With Digital Disc Player/Changer Module 1"}
+{"errorCode":"U0191","description":"Lost Communication With Television"}
+{"errorCode":"U0192","description":"Lost Communication With Personal Computer"}
+{"errorCode":"U0193","description":"Lost Communication With Digital Audio Control Module A"}
+{"errorCode":"U0194","description":"Lost Communication With Digital Audio Control Module B"}
+{"errorCode":"U0195","description":"Lost Communication With Subscription Entertainment Receiver Module"}
+{"errorCode":"U0196","description":"Lost Communication With Rear Seat Entertainment Control Module"}
+{"errorCode":"U0197","description":"Lost Communication With Telephone Control Module"}
+{"errorCode":"U0198","description":"Lost Communication With Telematic Control Module"}
+{"errorCode":"U0199","description":"Lost Communication With Door Control Module A"}
+{"errorCode":"U0200","description":"Lost Communication With Door Control Module B"}
+{"errorCode":"U0201","description":"Lost Communication With Door Control Module C"}
+{"errorCode":"U0202","description":"Lost Communication With Door Control Module D"}
+{"errorCode":"U0203","description":"Lost Communication With Door Control Module E"}
+{"errorCode":"U0204","description":"Lost Communication With Door Control Module F"}
+{"errorCode":"U0205","description":"Lost Communication With Door Control Module G"}
+{"errorCode":"U0206","description":"Lost Communication With Folding Top Control Module"}
+{"errorCode":"U0207","description":"Lost Communication With Movable Roof Control Module"}
+{"errorCode":"U0208","description":"Lost Communication With Seat Control Module A"}
+{"errorCode":"U0209","description":"Lost Communication With Seat Control Module B"}
+{"errorCode":"U0210","description":"Lost Communication With Seat Control Module C"}
+{"errorCode":"U0211","description":"Lost Communication With Seat Control Module D"}
+{"errorCode":"U0212","description":"Lost Communication With Steering Column Control Module"}
+{"errorCode":"U0213","description":"Lost Communication With Mirror Control Module"}
+{"errorCode":"U0214","description":"Lost Communication With Remote Function Actuation"}
+{"errorCode":"U0215","description":"Lost Communication With Door Switch A"}
+{"errorCode":"U0216","description":"Lost Communication With Door Switch B"}
+{"errorCode":"U0217","description":"Lost Communication With Door Switch C"}
+{"errorCode":"U0218","description":"Lost Communication With Door Switch D"}
+{"errorCode":"U0219","description":"Lost Communication With Door Switch E"}
+{"errorCode":"U0220","description":"Lost Communication With Door Switch F"}
+{"errorCode":"U0221","description":"Lost Communication With Door Switch G"}
+{"errorCode":"U0222","description":"Lost Communication With Door Window Motor A"}
+{"errorCode":"U0223","description":"Lost Communication With Door Window Motor B"}
+{"errorCode":"U0224","description":"Lost Communication With Door Window Motor C"}
+{"errorCode":"U0225","description":"Lost Communication With Door Window Motor D"}
+{"errorCode":"U0226","description":"Lost Communication With Door Window Motor E"}
+{"errorCode":"U0227","description":"Lost Communication With Door Window Motor F"}
+{"errorCode":"U0228","description":"Lost Communication With Door Window Motor G"}
+{"errorCode":"U0229","description":"Lost Communication With Heated Steering Wheel Module"}
+{"errorCode":"U0230","description":"Lost Communication With Rear Gate Module"}
+{"errorCode":"U0231","description":"Lost Communication With Rain Sensing Module"}
+{"errorCode":"U0233","description":"Lost Communication With Side Obstacle Detection Control Module"}
+{"errorCode":"U0234","description":"Lost Communication With Convenience Recall Module"}
+{"errorCode":"U0235","description":"Lost Communication With Cruise Control Front Distance Range Sensor"}
+{"errorCode":"U0300","description":"Internal Control Module Software Incompatibility"}
+{"errorCode":"U0301","description":"Software Incompatibility with ECM/PCM"}
+{"errorCode":"U0302","description":"Software Incompatibility with Transmission Control Module"}
+{"errorCode":"U0303","description":"Software Incompatibility with Transfer Case Control Module"}
+{"errorCode":"U0304","description":"Software Incompatibility with Gear Shift Control Module"}
+{"errorCode":"U0305","description":"Software Incompatibility with Cruise Control Module"}
+{"errorCode":"U0306","description":"Software Incompatibility with Fuel Injector Control Module"}
+{"errorCode":"U0307","description":"Software Incompatibility with Glow Plug Control Module"}
+{"errorCode":"U0308","description":"Software Incompatibility with Throttle Actuator Control Module"}
+{"errorCode":"U0309","description":"Software Incompatibility with Alternative Fuel Control Module"}
+{"errorCode":"U0310","description":"Software Incompatibility with Fuel Pump Control Module"}
+{"errorCode":"U0311","description":"Software Incompatibility with Drive Motor Control Module"}
+{"errorCode":"U0312","description":"Software Incompatibility with Battery Energy Control Module A"}
+{"errorCode":"U0313","description":"Software Incompatibility with Battery Energy Control Module B"}
+{"errorCode":"U0314","description":"Software Incompatibility with Four-Wheel Drive Clutch Control Module"}
+{"errorCode":"U0315","description":"Software Incompatibility with Anti-Lock Brake System Control Module"}
+{"errorCode":"U0316","description":"Software Incompatibility with Vehicle Dynamics Control Module"}
+{"errorCode":"U0317","description":"Software Incompatibility with Park Brake Control Module"}
+{"errorCode":"U0318","description":"Software Incompatibility with Brake System Control Module"}
+{"errorCode":"U0319","description":"Software Incompatibility with Steering Effort Control Module"}
+{"errorCode":"U0320","description":"Software Incompatibility with Power Steering Control Module"}
+{"errorCode":"U0321","description":"Software Incompatibility with Ride Level Control Module"}
+{"errorCode":"U0322","description":"Software Incompatibility with Body Control Module"}
+{"errorCode":"U0323","description":"Software Incompatibility with Instrument Panel Control Module"}
+{"errorCode":"U0324","description":"Software Incompatibility with HVAC Control Module"}
+{"errorCode":"U0325","description":"Software Incompatibility with Auxiliary Heater Control Module"}
+{"errorCode":"U0326","description":"Software Incompatibility with Vehicle Immobilizer Control Module"}
+{"errorCode":"U0327","description":"Software Incompatibility with Vehicle Security Control Module"}
+{"errorCode":"U0328","description":"Software Incompatibility with Steering Angle Sensor Module"}
+{"errorCode":"U0329","description":"Software Incompatibility with Steering Column Control Module"}
+{"errorCode":"U0330","description":"Software Incompatibility with Tire Pressure Monitor Module"}
+{"errorCode":"U0331","description":"Software Incompatibility with Body Control Module 1"}
+{"errorCode":"U0400","description":"Invalid Data Received"}
+{"errorCode":"U0401","description":"Invalid Data Received From ECM/PCM"}
+{"errorCode":"U0402","description":"Invalid Data Received From Transmission Control Module"}
+{"errorCode":"U0403","description":"Invalid Data Received From Transfer Case Control Module"}
+{"errorCode":"U0404","description":"Invalid Data Received From Gear Shift Control Module"}
+{"errorCode":"U0405","description":"Invalid Data Received From Cruise Control Module"}
+{"errorCode":"U0406","description":"Invalid Data Received From Fuel Injector Control Module"}
+{"errorCode":"U0407","description":"Invalid Data Received From Glow Plug Control Module"}
+{"errorCode":"U0408","description":"Invalid Data Received From Throttle Actuator Control Module"}
+{"errorCode":"U0409","description":"Invalid Data Received From Alternative Fuel Control Module"}
+{"errorCode":"U0410","description":"Invalid Data Received From Fuel Pump Control Module"}
+{"errorCode":"U0411","description":"Invalid Data Received From Drive Motor Control Module"}
+{"errorCode":"U0412","description":"Invalid Data Received From Battery Energy Control Module A"}
+{"errorCode":"U0413","description":"Invalid Data Received From Battery Energy Control Module B"}
+{"errorCode":"U0414","description":"Invalid Data Received From Four-Wheel Drive Clutch Control Module"}
+{"errorCode":"U0415","description":"Invalid Data Received From Anti-Lock Brake System Control Module"}
+{"errorCode":"U0416","description":"Invalid Data Received From Vehicle Dynamics Control Module"}
+{"errorCode":"U0417","description":"Invalid Data Received From Park Brake Control Module"}
+{"errorCode":"U0418","description":"Invalid Data Received From Brake System Control Module"}
+{"errorCode":"U0419","description":"Invalid Data Received From Steering Effort Control Module"}
+{"errorCode":"U0420","description":"Invalid Data Received From Power Steering Control Module"}
+{"errorCode":"U0421","description":"Invalid Data Received From Ride Level Control Module"}
+{"errorCode":"U0422","description":"Invalid Data Received From Body Control Module"}
+{"errorCode":"U0423","description":"Invalid Data Received From Instrument Panel Control Module"}
+{"errorCode":"U0424","description":"Invalid Data Received From HVAC Control Module"}
+{"errorCode":"U0425","description":"Invalid Data Received From Auxiliary Heater Control Module"}
+{"errorCode":"U0426","description":"Invalid Data Received From Vehicle Immobilizer Control Module"}
+{"errorCode":"U0427","description":"Invalid Data Received From Vehicle Security Control Module"}
+{"errorCode":"U0428","description":"Invalid Data Received From Steering Angle Sensor Module"}
+{"errorCode":"U0429","description":"Invalid Data Received From Steering Column Control Module"}
+{"errorCode":"U0430","description":"Invalid Data Received From Tire Pressure Monitor Module"}
+{"errorCode":"U0431","description":"Invalid Data Received From Body Control Module 1"}
