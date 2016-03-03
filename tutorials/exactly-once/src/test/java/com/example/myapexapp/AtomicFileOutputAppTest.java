@@ -1,7 +1,6 @@
 package com.example.myapexapp;
 
 import java.io.File;
-import java.util.HashSet;
 
 import javax.validation.ConstraintViolationException;
 
@@ -16,7 +15,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 
 import com.datatorrent.api.LocalMode;
 import com.datatorrent.contrib.kafka.KafkaOperatorTestBase;
@@ -74,15 +72,15 @@ public class AtomicFileOutputAppTest
       LocalMode.Controller lc = lma.getController();
       lc.runAsync(); // test will terminate after results are available
 
-      long timeout = System.currentTimeMillis() + 60000; // 30s timeout
+      long timeout = System.currentTimeMillis() + 60000; // 60s timeout
 
-      File outputFile = new File(TARGET_DIR, AtomicFileOutputApp.FileWriter.FILE_NAME);
+      File outputFile = new File(TARGET_DIR, AtomicFileOutputApp.FileWriter.FILE_NAME_PREFIX);
       while (!outputFile.exists() && timeout > System.currentTimeMillis()) {
         Thread.sleep(1000);
         LOG.debug("Waiting for {}", outputFile);
       }
 
-      Assert.assertTrue("output file exists " + AtomicFileOutputApp.FileWriter.FILE_NAME, outputFile.exists() &&
+      Assert.assertTrue("output file exists " + AtomicFileOutputApp.FileWriter.FILE_NAME_PREFIX, outputFile.exists() &&
           outputFile.isFile());
 
       lc.shutdown();

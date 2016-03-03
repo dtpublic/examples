@@ -4,16 +4,10 @@
  */
 package com.example.myapexapp;
 
-import org.joda.time.Duration;
-
 import org.apache.hadoop.conf.Configuration;
-
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
-import com.esotericsoftware.kryo.serializers.JavaSerializer;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
-import com.datatorrent.api.Operator;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.contrib.kafka.KafkaSinglePortStringInputOperator;
@@ -28,7 +22,8 @@ public class AtomicFileOutputApp implements StreamingApplication
   @Override
   public void populateDAG(DAG dag, Configuration configuration)
   {
-    KafkaSinglePortStringInputOperator kafkaInput = dag.addOperator("kafkaInput", new KafkaSinglePortStringInputOperator());
+    KafkaSinglePortStringInputOperator kafkaInput = dag.addOperator("kafkaInput",
+        new KafkaSinglePortStringInputOperator());
     kafkaInput.setIdempotentStorageManager(new IdempotentStorageManager.FSIdempotentStorageManager());
 
     Application.UniqueCounterFlat count = dag.addOperator("count", new Application.UniqueCounterFlat());
@@ -40,66 +35,67 @@ public class AtomicFileOutputApp implements StreamingApplication
     dag.addStream("counts", count.counts, fileWriter.input, cons.input);
   }
 
+  /**
+   * This implementation of {@link AbstractFileOutputOperator} writes to a single file. However when it doesn't
+   * receive any tuples in an application window then it finalizes the file, i.e., the file is completed and will not
+   * be opened again.
+   * <p/>
+   * If more tuples are received after a hiatus then they will be written to a part file -
+   * {@link #FILE_NAME_PREFIX}.{@link #part}
+   */
   public static class FileWriter extends AbstractFileOutputOperator<KeyValPair<String, Integer>>
-      implements Operator.IdleTimeHandler
   {
-    static final String FILE_NAME = "filestore";
+    static final String FILE_NAME_PREFIX = "filestore";
 
-    @FieldSerializer.Bind(value = JavaSerializer.class)
-    private Duration idleTimeDuration = Duration.standardSeconds(10);
+    private int part;
+    private transient String currentFileName;
 
-    private long lastProcessedTime;
+    private transient boolean receivedTuples;
 
     @Override
     public void setup(Context.OperatorContext context)
     {
-      lastProcessedTime = System.currentTimeMillis();
+      currentFileName = (part == 0) ? FILE_NAME_PREFIX : FILE_NAME_PREFIX + "." + part;
       super.setup(context);
     }
 
     @Override
     protected String getFileName(KeyValPair<String, Integer> keyValPair)
     {
-      return FILE_NAME;
+      return currentFileName;
     }
 
     @Override
     protected byte[] getBytesForTuple(KeyValPair<String, Integer> keyValPair)
     {
-      return (keyValPair.toString()+"\n").getBytes();
+      return (keyValPair.toString() + "\n").getBytes();
+    }
+
+    @Override
+    public void beginWindow(long windowId)
+    {
+      super.beginWindow(windowId);
+      receivedTuples = false;
     }
 
     @Override
     protected void processTuple(KeyValPair<String, Integer> tuple)
     {
       super.processTuple(tuple);
-      lastProcessedTime = System.currentTimeMillis();
+      receivedTuples = true;
     }
 
     @Override
-    public void handleIdleTime()
+    public void endWindow()
     {
-      //request for finalization once there is no input. This is done automatically if the file is rotated periodically or has a size threshold.
-      if (System.currentTimeMillis() - lastProcessedTime > idleTimeDuration.getMillis()) {
-        requestFinalize(FILE_NAME);
-        lastProcessedTime = System.currentTimeMillis();
-      } else {
-        try {
-          Thread.sleep(500L);
-        } catch (InterruptedException e) {
-          throw new RuntimeException("interrupted");
-        }
+      super.endWindow();
+      //request for finalization if there is no input. This is done automatically if the file is rotated periodically
+      // or has a size threshold.
+      if (!receivedTuples && !endOffsets.isEmpty()) {
+        requestFinalize(currentFileName);
+        part++;
+        currentFileName = FILE_NAME_PREFIX + "." + part;
       }
-    }
-
-    public Duration getIdleTimeDuration()
-    {
-      return idleTimeDuration;
-    }
-
-    public void setIdleTimeDuration(Duration idleTimeDuration)
-    {
-      this.idleTimeDuration = idleTimeDuration;
     }
   }
 }
