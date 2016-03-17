@@ -76,6 +76,7 @@ public class FileReader extends AbstractFileInputOperator<String>
   {
     if ( ! stop ) {        // normal processing
       super.emitTuples();
+      return;
     }
 
     // we have end-of-file, so emit no further tuples till next window; relax for a bit
