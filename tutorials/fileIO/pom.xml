@@ -12,30 +12,10 @@
   <description>Simple application illustrating use of file input and output operators</description>
 
   <properties>
-    <!-- change this if you desire to use a different version of DataTorrent -->
-    <apex.version>3.2.0-incubating</apex.version>
-    <datatorrent.apppackage.classpath>lib/*.jar</datatorrent.apppackage.classpath>
+    <!-- change this if you desire to use a different version of Apex Core -->
+    <apex.version>3.3.0-incubating</apex.version>
+    <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
   </properties>
-
-  <!-- repository to provide the DataTorrent artifacts -->
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>Datatorrent-Releases</id>
-      <name>DataTorrent Release Repository</name>
-      <url>https://www.datatorrent.com/maven/content/repositories/releases/</url>
-    </repository>
-    <repository>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <id>DataTorrent-Snapshots</id>
-      <name>DataTorrent Early Access Program Snapshot Repository</name>
-      <url>https://www.datatorrent.com/maven/content/repositories/snapshots/</url>
-    </repository>
-  </repositories>
 
   <build>
     <plugins>
@@ -98,8 +78,9 @@
                </archiverConfig>                  
                <archive>
                  <manifestEntries>
-                   <Class-Path>${datatorrent.apppackage.classpath}</Class-Path>
+                   <Class-Path>${apex.apppackage.classpath}</Class-Path>
                    <DT-Engine-Version>${apex.version}</DT-Engine-Version>
+                   <DT-App-Package-Group-Id>${project.groupId}</DT-App-Package-Group-Id>
                    <DT-App-Package-Name>${project.artifactId}</DT-App-Package-Name>
                    <DT-App-Package-Version>${project.version}</DT-App-Package-Version>
                    <DT-App-Package-Display-Name>${project.name}</DT-App-Package-Display-Name>
@@ -254,16 +235,9 @@
   <dependencies>
     <!-- add your dependencies here -->
     <dependency>
-      <groupId>com.datatorrent</groupId>
+      <groupId>org.apache.apex</groupId>
       <artifactId>malhar-library</artifactId>
-      <version>3.1.1</version>
-      <!-- remove when switching to malhar version that depends on apex-common as shown below -->
-      <exclusions>
-        <exclusion>
-          <groupId>com.datatorrent</groupId>
-          <artifactId>dt-common</artifactId>
-        </exclusion>
-      </exclusions>
+      <version>3.3.1-incubating</version>
       <!-- 
            If you know that your application does not need transitive dependencies pulled in by malhar-library,
            uncomment the following to reduce the size of your app package.
