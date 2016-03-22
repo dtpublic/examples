@@ -15,8 +15,8 @@ public class FileWriter extends AbstractFileOutputOperator<String>
 {
   private static final Logger LOG = LoggerFactory.getLogger(com.example.fileIO.FileWriter.class);
   private static final String CHARSET_NAME = "UTF-8";
-  private static final String nl = System.lineSeparator();
-  private static final char startFile = FileReader.startFile, finishFile = FileReader.finishFile;
+  private static final String NL = System.lineSeparator();
+  private static final char START_FILE = FileReader.START_FILE, FINISH_FILE = FileReader.FINISH_FILE;
 
   private String fileName;    // current file name
 
@@ -39,7 +39,7 @@ public class FileWriter extends AbstractFileOutputOperator<String>
 
   private void processControlTuple(final String tuple)
   {
-    if (startFile == tuple.charAt(0)) {                          // start of file
+    if (START_FILE == tuple.charAt(0)) {                          // start of file
       LOG.debug("start tuple = {}", tuple);
 
       // sanity check
@@ -62,7 +62,7 @@ public class FileWriter extends AbstractFileOutputOperator<String>
     }
 
     final int last = tuple.length() - 1;
-    if (finishFile == tuple.charAt(last)) {        // end of file
+    if (FINISH_FILE == tuple.charAt(last)) {        // end of file
       LOG.debug("finish tuple = {}", tuple);
       String name = tuple.substring(0, last);
 
@@ -123,7 +123,7 @@ public class FileWriter extends AbstractFileOutputOperator<String>
 
     byte result[] = null;
     try {
-      result = (line + nl).getBytes(CHARSET_NAME);
+      result = (line + NL).getBytes(CHARSET_NAME);
     } catch (Exception e) {
       LOG.info("Error: got exception {}", e);
       throw new RuntimeException(e);

@@ -26,7 +26,7 @@ public class FileReader extends AbstractFileInputOperator<String>
   /**
    * prefix for file start and finish control tuples
    */
-  public static final char startFile = '(', finishFile = ')';
+  public static final char START_FILE = '(', FINISH_FILE = ')';
 
   /**
    * output port for file data
@@ -95,7 +95,7 @@ public class FileReader extends AbstractFileInputOperator<String>
     filePathStr = filePath.toString();
 
     // new file started, send control tuple on control port
-    control.emit(startFile + filePath.getName());
+    control.emit(START_FILE + filePath.getName());
 
     InputStream is = super.openFile(filePath);
     br = new BufferedReader(new InputStreamReader(is));
@@ -109,7 +109,7 @@ public class FileReader extends AbstractFileInputOperator<String>
     super.closeFile(is);
 
     // reached end-of-file, send control tuple on control port
-    control.emit(filePath.getName() + finishFile);
+    control.emit(filePath.getName() + FINISH_FILE);
 
     br.close();
     br = null;
