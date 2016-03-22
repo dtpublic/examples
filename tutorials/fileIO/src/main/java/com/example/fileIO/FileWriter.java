@@ -14,7 +14,7 @@ import com.datatorrent.lib.io.fs.AbstractFileOutputOperator;
 public class FileWriter extends AbstractFileOutputOperator<String>
 {
   private static final Logger LOG = LoggerFactory.getLogger(com.example.fileIO.FileWriter.class);
-  private static final String charsetName = "UTF-8";
+  private static final String CHARSET_NAME = "UTF-8";
   private static final String nl = System.lineSeparator();
   private static final char startFile = FileReader.startFile, finishFile = FileReader.finishFile;
 
@@ -123,7 +123,7 @@ public class FileWriter extends AbstractFileOutputOperator<String>
 
     byte result[] = null;
     try {
-      result = (line + nl).getBytes(charsetName);
+      result = (line + nl).getBytes(CHARSET_NAME);
     } catch (Exception e) {
       LOG.info("Error: got exception {}", e);
       throw new RuntimeException(e);
