@@ -1,0 +1,19 @@
+{
+  "tags":["geo"],
+  "keys":
+  [
+    {"name":"zipcode","type":"string"},
+    {"name":"region","type":"string"},
+  ],
+ "timeBuckets":["1m","1h"],
+ "values":
+  [
+    {"name":"wait","type":"long","aggregators":["AVG"]},
+    {"name":"lat","type":"float","aggregators":["FIRST"],"tags":["geo"]},
+    {"name":"lon","type":"float","aggregators":["FIRST"],"tags":["geo"]},
+  ],
+ "dimensions":
+  [
+    {"combination":["zipcode","region"]},
+  ]
+}

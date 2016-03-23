@@ -1,0 +1,19 @@
+{"keys":
+  [
+    {"name":"region","type":"string"},
+    {"name":"deviceModel","type":"string"}
+  ],
+ "timeBuckets":["1m","1h"],
+ "values":
+  [
+    {"name":"disconnectCount","type":"long","aggregators":["SUM"]},
+    {"name":"downloadBytes","type":"long","aggregators":["SUM"]},
+    {"name":"called","type":"long","aggregators":["SUM","COUNT","AVG"]}
+  ],
+ "dimensions":
+  [
+  	{"combination":[]},
+    {"combination":["deviceModel"]},
+    {"combination":["region"]},
+  ]
+}

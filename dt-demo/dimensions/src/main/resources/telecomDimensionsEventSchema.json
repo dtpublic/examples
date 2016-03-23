@@ -1,0 +1,16 @@
+{"keys":[{"name":"imsi","type":"string"},
+         {"name":"carrier","type":"string","enumValues":["ATT","VZN","TMO","SPR"]},
+         {"name":"imei","type":"string"}],
+ "timeBuckets":["1m","1h","1d"],
+ "values":
+  [{"name":"duration","type":"long","aggregators":["SUM","COUNT","AVG"]},
+   {"name":"terminatedAbnomally","type":"long","aggregators":["SUM","COUNT","AVG"]},
+   {"name":"terminatedNomally","type":"long","aggregators":["SUM","COUNT","AVG"]},
+   {"name":"called","type":"long","aggregators":["SUM","COUNT","AVG"]}],
+ "dimensions":
+  [{"combination":[]},
+   {"combination":["imsi"]},
+   {"combination":["imsi","imei"]},
+   {"combination":["carrier"]},
+  ]
+}
