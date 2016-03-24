@@ -1,0 +1,19 @@
+{"keys":
+  [
+    {"name":"zipCode","type":"string"},
+    {"name":"issueType","type":"string"}
+  ],
+ "timeBuckets":["1m", "1h"],
+ "values":
+  [
+    {"name":"serviceCall","type":"long","aggregators":["COUNT","SUM","AVG"]},
+    {"name":"wait","type":"long","aggregators":["SUM","COUNT","AVG"]},
+    {"name":"satisfaction","type":"long","aggregators":["AVG"]},
+  ],
+ "dimensions":
+  [
+    {"combination":[]},
+    {"combination":["zipCode"]},
+    {"combination":["issueType"]},
+  ]
+}
