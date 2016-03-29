@@ -18,6 +18,26 @@
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
   </properties>
 
+  <!-- repository to provide the DataTorrent artifacts -->
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>Datatorrent-Releases</id>
+      <name>DataTorrent Release Repository</name>
+      <url>https://www.datatorrent.com/maven/content/repositories/releases/</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <id>DataTorrent-Snapshots</id>
+      <name>DataTorrent Early Access Program Snapshot Repository</name>
+      <url>https://www.datatorrent.com/maven/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
+
   <profiles>
   <profile>
     <id>demo-plugin-activation</id>
