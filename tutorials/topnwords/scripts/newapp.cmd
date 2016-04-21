@@ -3,11 +3,10 @@
 
 setlocal
 
-mvn archetype:generate ^
--DarchetypeRepository=https://www.datatorrent.com/maven/content/repositories/releases ^
-  -DarchetypeGroupId=com.datatorrent ^
+mvn -B archetype:generate ^
+  -DarchetypeGroupId=org.apache.apex ^
   -DarchetypeArtifactId=apex-app-archetype ^
-  -DarchetypeVersion=3.1.1 ^
+  -DarchetypeVersion=3.3.0-incubating ^
   -DgroupId=com.example ^
   -Dpackage=com.example.myapexapp ^
   -DartifactId=myapexapp ^

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# script to check status of various Hadoop services
+
+# NOTE: If machine was shutdown improperly, or if HDFS continues to show red
+# not-ready status, some of these may not be running; just start them if needed with:
+#    sudo service <name> start
+# where <name> is the name of the service you want to start
+#
+services="hadoop-hdfs-namenode hadoop-hdfs-datanode hadoop-yarn-resourcemanager \
+hadoop-yarn-nodemanager dtdemos"
+for s in $services; do
+    sudo service $s status
+done
+
+# gateway service
+sudo service dtgateway status
+
