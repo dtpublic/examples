@@ -6,11 +6,10 @@ package com.datatorrent.demos.dimensions.telecom.app;
 
 import java.util.Map;
 
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
 import org.apache.commons.lang.mutable.MutableLong;
 import org.apache.hadoop.conf.Configuration;
-
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.Context.OperatorContext;
@@ -25,11 +24,11 @@ import com.datatorrent.demos.dimensions.telecom.operator.EnrichedCDRHbaseInputOp
 import com.datatorrent.lib.appdata.schemas.SchemaUtils;
 import com.datatorrent.lib.counters.BasicCounters;
 import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaPOJO;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.dimensions.DimensionsEvent.InputEvent;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
 import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Maps;
 
 @ApplicationAnnotation(name=TelecomDimensionsDemo.APP_NAME)
 public class TelecomDimensionsDemo implements StreamingApplication

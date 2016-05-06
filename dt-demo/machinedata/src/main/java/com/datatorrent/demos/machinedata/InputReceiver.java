@@ -4,22 +4,26 @@
  */
 package com.datatorrent.demos.machinedata;
 
-import com.datatorrent.common.util.BaseOperator;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Random;
+import java.util.TimeZone;
+
+import javax.validation.constraints.NotNull;
+
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DefaultOutputPort;
 import com.datatorrent.api.InputOperator;
+import com.datatorrent.common.util.BaseOperator;
 import com.datatorrent.demos.machinedata.data.MachineInfo;
 import com.datatorrent.demos.machinedata.data.MachineKey;
 import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import javax.validation.constraints.NotNull;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * <p>

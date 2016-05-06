@@ -4,11 +4,16 @@
  */
 package com.datatorrent.demos.dimensions.sales.generic;
 
-import com.google.common.collect.Lists;
+import java.util.List;
+import java.util.Map;
+import java.util.NavigableMap;
+import java.util.Random;
+import java.util.TreeMap;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-import java.util.*;
+import com.google.common.collect.Lists;
 
 /**
  * Provides a mechanism for selecting from a fixed set of objects at random.  Each object's

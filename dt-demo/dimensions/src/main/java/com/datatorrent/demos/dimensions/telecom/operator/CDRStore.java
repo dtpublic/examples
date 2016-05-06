@@ -6,9 +6,10 @@ package com.datatorrent.demos.dimensions.telecom.operator;
 
 import java.util.List;
 
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+
 import com.datatorrent.api.DefaultOutputPort;
 import com.datatorrent.api.annotation.OutputPortFieldAnnotation;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
 
 public class CDRStore extends AppDataSingleSchemaDimensionStoreHDHTUpdateWithList
 {

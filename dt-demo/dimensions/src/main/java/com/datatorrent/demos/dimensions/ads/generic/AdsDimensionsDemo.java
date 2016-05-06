@@ -4,42 +4,34 @@
  */
 package com.datatorrent.demos.dimensions.ads.generic;
 
-import java.net.URI;
-
 import java.util.List;
 import java.util.Map;
 
-
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Maps;
-
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
 import org.apache.commons.lang.mutable.MutableLong;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-
-import com.datatorrent.lib.appdata.schemas.SchemaUtils;
-import com.datatorrent.lib.counters.BasicCounters;
-import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaPOJO;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.dimensions.DimensionsEvent.InputEvent;
-import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
-import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
-import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
-
-import com.datatorrent.contrib.dimensions.AppDataSingleSchemaDimensionStoreHDHT;
-import com.datatorrent.contrib.hdht.tfile.TFileImpl;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.DAG.Locality;
-import com.datatorrent.api.Operator;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-
+import com.datatorrent.contrib.dimensions.AppDataSingleSchemaDimensionStoreHDHT;
+import com.datatorrent.contrib.hdht.tfile.TFileImpl;
 import com.datatorrent.demos.dimensions.InputGenerator;
 import com.datatorrent.demos.dimensions.ads.AdInfo;
 import com.datatorrent.demos.dimensions.ads.InputItemGenerator;
+import com.datatorrent.lib.appdata.schemas.SchemaUtils;
+import com.datatorrent.lib.counters.BasicCounters;
+import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaPOJO;
+import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
+import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
+import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Maps;
 
 
 /**

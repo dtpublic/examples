@@ -4,18 +4,19 @@
  */
 package com.datatorrent.demos.dimensions.ads;
 
-import com.datatorrent.demos.dimensions.InputGenerator;
-import com.datatorrent.api.Context.OperatorContext;
-import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.api.InputOperator;
-import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
+import java.util.List;
+import java.util.Random;
+
 import javax.validation.constraints.Min;
+
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
-import java.util.Random;
+import com.datatorrent.api.Context.OperatorContext;
+import com.datatorrent.api.DefaultOutputPort;
+import com.datatorrent.demos.dimensions.InputGenerator;
+import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
 
 /**
  * @category Test Bench

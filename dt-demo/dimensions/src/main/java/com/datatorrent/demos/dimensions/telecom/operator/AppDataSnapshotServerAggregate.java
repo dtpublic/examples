@@ -6,12 +6,11 @@ package com.datatorrent.demos.dimensions.telecom.operator;
 
 import java.util.Map;
 
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
+import org.apache.commons.lang3.tuple.MutablePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.apache.commons.lang3.tuple.MutablePair;
-
-import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.lib.appdata.gpo.GPOMutable;
@@ -19,8 +18,7 @@ import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
 import com.datatorrent.lib.appdata.schemas.FieldsDescriptor;
 import com.datatorrent.lib.appdata.schemas.Type;
 import com.datatorrent.lib.appdata.snapshot.AbstractAppDataSnapshotServer;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
+import com.google.common.collect.Maps;
 
 public class AppDataSnapshotServerAggregate extends AbstractAppDataSnapshotServer<Aggregate>
 {

@@ -6,37 +6,36 @@ package com.datatorrent.demos.dimensions.ads.benchmark;
 
 import java.util.Map;
 
-import com.google.common.collect.Maps;
-
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
 import org.apache.hadoop.conf.Configuration;
 
-import com.datatorrent.lib.appdata.schemas.SchemaUtils;
-import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaPOJO;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.dimensions.DimensionsEvent.InputEvent;
-import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
-import com.datatorrent.lib.stream.DevNull;
+import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.DAG.Locality;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-
 import com.datatorrent.demos.dimensions.ads.InputItemGenerator;
+import com.datatorrent.lib.appdata.schemas.SchemaUtils;
+import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaPOJO;
+import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
+import com.datatorrent.lib.stream.DevNull;
+
 
 /**
  * @since 3.1.0
  */
-
-@ApplicationAnnotation(name="AdsDimensionsGenericBenchmark")
+@ApplicationAnnotation(name = "AdsDimensionsGenericBenchmark")
 public class AdsDimensionsGenericBenchmark implements StreamingApplication
 {
   @Override
   public void populateDAG(DAG dag, Configuration conf)
   {
     InputItemGenerator input = dag.addOperator("InputGenerator", InputItemGenerator.class);
-    DimensionsComputationFlexibleSingleSchemaPOJO dimensions = dag.addOperator("DimensionsComputation", DimensionsComputationFlexibleSingleSchemaPOJO.class);
+    DimensionsComputationFlexibleSingleSchemaPOJO dimensions = dag.addOperator("DimensionsComputation",
+        DimensionsComputationFlexibleSingleSchemaPOJO.class);
     dag.getMeta(dimensions).getAttributes().put(Context.OperatorContext.APPLICATION_WINDOW_COUNT, 10);
     DevNull<Object> devNull = dag.addOperator("DevNull", new DevNull<Object>());
 

@@ -4,16 +4,16 @@
  */
 package com.datatorrent.demos.machinedata.data;
 
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AbstractIncrementalAggregator;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorCount;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.datatorrent.api.annotation.Name;
 import com.datatorrent.lib.appdata.schemas.FieldsDescriptor;
 import com.datatorrent.lib.appdata.schemas.Type;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.dimensions.DimensionsEvent.InputEvent;
-import com.datatorrent.lib.dimensions.aggregator.AbstractIncrementalAggregator;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorCount;
 
 /**
  * This is a custom aggregator to speed up computation for the machine demo.

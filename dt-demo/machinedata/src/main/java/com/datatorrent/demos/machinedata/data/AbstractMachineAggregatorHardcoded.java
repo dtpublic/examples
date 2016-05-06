@@ -6,9 +6,10 @@ package com.datatorrent.demos.machinedata.data;
 
 import java.util.Objects;
 
+import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregateEvent.Aggregator;
+
 import com.datatorrent.demos.machinedata.data.MachineKey.KeySelector;
-import com.datatorrent.lib.dimensions.DimensionsDescriptor;
-import com.datatorrent.lib.statistics.DimensionsComputation.Aggregator;
 
 /**
  * @since 3.2.0
@@ -119,7 +120,7 @@ public abstract class AbstractMachineAggregatorHardcoded implements Aggregator<M
   public abstract void aggregate(MachineHardCodedAggregate dest, MachineHardCodedAggregate src);
 
   @Override
-  public int computeHashCode(MachineInfo t)
+  public int hashCode(MachineInfo t)
   {
     MachineKey key = t.getMachineKey();
     int hash = key.hashCode(ks);

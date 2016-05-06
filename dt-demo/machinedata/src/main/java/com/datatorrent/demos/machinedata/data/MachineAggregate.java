@@ -6,15 +6,16 @@ package com.datatorrent.demos.machinedata.data;
 
 import java.util.Map;
 
-import com.google.common.collect.Maps;
+import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.EventKey;
 
 import com.datatorrent.lib.appdata.gpo.GPOMutable;
 import com.datatorrent.lib.appdata.gpo.GPOUtils;
 import com.datatorrent.lib.appdata.schemas.FieldsDescriptor;
 import com.datatorrent.lib.appdata.schemas.Type;
-import com.datatorrent.lib.dimensions.DimensionsDescriptor;
-import com.datatorrent.lib.dimensions.DimensionsEvent;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
+import com.google.common.collect.Maps;
 
 /**
  * This is a custom aggregate to speed up computation for the machine demo.

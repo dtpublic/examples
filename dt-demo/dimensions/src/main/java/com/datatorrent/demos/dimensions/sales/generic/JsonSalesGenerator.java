@@ -4,22 +4,22 @@
  */
 package com.datatorrent.demos.dimensions.sales.generic;
 
-import com.datatorrent.api.Context;
-import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.api.InputOperator;
-import com.datatorrent.demos.dimensions.InputGenerator;
-import com.datatorrent.demos.dimensions.ads.AdInfo;
-import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
-import com.datatorrent.lib.appdata.schemas.DimensionalSchema;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
-import com.google.common.collect.Maps;
+import java.util.Map;
+import java.util.Random;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
-import java.util.Map;
-import java.util.Random;
+import com.datatorrent.api.Context;
+import com.datatorrent.api.DefaultOutputPort;
+import com.datatorrent.demos.dimensions.InputGenerator;
+import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
+import com.datatorrent.lib.appdata.schemas.DimensionalSchema;
+import com.google.common.collect.Maps;
 
 /**
  * Generates sales events data and sends them out as JSON encoded byte arrays.

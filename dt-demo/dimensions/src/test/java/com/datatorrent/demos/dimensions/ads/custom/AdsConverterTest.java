@@ -4,25 +4,24 @@
  */
 package com.datatorrent.demos.dimensions.ads.custom;
 
+import static com.datatorrent.demos.dimensions.ads.stats.AdsDimensionsDemoPerformant.EVENT_SCHEMA;
+
 import java.util.concurrent.TimeUnit;
 
-import junit.framework.Assert;
-
+import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
 import org.junit.Test;
-
-import com.datatorrent.lib.appdata.gpo.GPOMutable;
-import com.datatorrent.lib.appdata.schemas.SchemaUtils;
-import com.datatorrent.lib.appdata.schemas.TimeBucket;
-import com.datatorrent.lib.dimensions.DimensionsDescriptor;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.testbench.CollectorTestSink;
-import com.datatorrent.lib.util.TestUtils;
 
 import com.datatorrent.demos.dimensions.ads.AdInfo.AdInfoAggregateEvent;
 import com.datatorrent.demos.dimensions.ads.InputItemGenerator;
 import com.datatorrent.demos.dimensions.ads.stats.AdsConverter;
+import com.datatorrent.lib.appdata.gpo.GPOMutable;
+import com.datatorrent.lib.appdata.schemas.SchemaUtils;
+import com.datatorrent.lib.appdata.schemas.TimeBucket;
+import com.datatorrent.lib.testbench.CollectorTestSink;
+import com.datatorrent.lib.util.TestUtils;
 
-import static com.datatorrent.demos.dimensions.ads.stats.AdsDimensionsDemoPerformant.EVENT_SCHEMA;
+import junit.framework.Assert;
 
 public class AdsConverterTest
 {
