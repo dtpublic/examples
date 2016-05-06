@@ -82,9 +82,8 @@ public class CustomerEnrichedInfoCassandraRepo implements CustomerEnrichedInfoPr
     List<SingleRecord> customerInfoList = Lists.newArrayList();
 
     try {
-      ResultSet rs = session
-          .execute("select id, imsi, isdn, imei, operatorName, operatorCode, deviceBrand, deviceModel from "
-              + dataWarehouseConfig.getDatabase() + "." + dataWarehouseConfig.getTableName());
+      ResultSet rs = session.execute("select id, imsi, isdn, imei, operatorName, operatorCode, deviceBrand, deviceModel from "
+          + dataWarehouseConfig.getDatabase() + "." + dataWarehouseConfig.getTableName());
 
       Map<String, String> nameValueMap = new HashMap<String, String>();
 
@@ -107,8 +106,9 @@ public class CustomerEnrichedInfoCassandraRepo implements CustomerEnrichedInfoPr
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      if (session != null)
+      if (session != null) {
         session.close();
+      }
     }
 
     customerInfoArray = customerInfoList.toArray(new SingleRecord[0]);

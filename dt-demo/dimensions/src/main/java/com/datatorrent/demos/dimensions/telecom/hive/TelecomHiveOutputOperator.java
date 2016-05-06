@@ -22,18 +22,17 @@ import com.datatorrent.demos.dimensions.telecom.model.BytesSupport;
 import com.datatorrent.lib.io.fs.AbstractFileInputOperator.DirectoryScanner;
 import com.datatorrent.lib.io.fs.AbstractSingleFileOutputOperator;
 
-
 public class TelecomHiveOutputOperator<T extends BytesSupport> extends AbstractSingleFileOutputOperator<T> //AbstractFileOutputOperator<byte[]>
 {
   private static final transient Logger logger = LoggerFactory.getLogger(TelecomHiveOutputOperator.class);
-      
+
   public final transient DefaultOutputPort<FilePartitionMapping> hiveCmdOutput = new DefaultOutputPort<FilePartitionMapping>();
   protected static final String NON_TMP_PATTERN = "\\S+\\.\\d+$";
-  
+
   public TelecomHiveOutputOperator()
   {
   }
-  
+
   @Override
   protected void processTuple(T tuple)
   {
@@ -51,60 +50,63 @@ public class TelecomHiveOutputOperator<T extends BytesSupport> extends AbstractS
   {
     return t.toBytes();
   }
-  
+
   @Override
   public void endWindow()
   {
     super.endWindow();
     sendLoadDataToHiveCmd();
   }
-  
+
   /**
    * send tuple to Hive to move the file to the Hive
    */
   protected final ArrayList<String> emptyPartition = Lists.newArrayList();
+
   protected void sendLoadDataToHiveCmd()
   {
     Set<Path> pathes = getFilePathes();
-    for(Path path : pathes)
-    {
+    for (Path path : pathes) {
       FilePartitionMapping mapping = new FilePartitionMapping();
       //use relative path.
       //mapping.setFilename(path.getName());
       //use absolute path
-      mapping.setFilename(path.toUri().getPath()); 
+      mapping.setFilename(path.toUri().getPath());
       mapping.setPartition(emptyPartition);
       hiveCmdOutput.emit(mapping);
       logger.info("loadding data from file: {}", mapping.getFilename());
     }
     logger.debug("{} files loaded.", pathes.size());
   }
-  
+
   protected transient DirectoryScanner scanner;
   protected transient Path scanPath;
-  
+
   protected Set<Path> getFilePathes()
   {
-    if(scanner == null)
+    if (scanner == null) {
       scanner = buildScanner();
-    if(scanPath == null)
+    }
+    if (scanPath == null) {
       scanPath = new Path(filePath);
+    }
     return scanner.scan(fs, scanPath, Collections.<String>emptySet());
   }
-  
-  protected transient String filePatternRegexp;   // = ".*cdr\\.\\d+\\z";
+
+  protected transient String filePatternRegexp; // = ".*cdr\\.\\d+\\z";
+
   protected DirectoryScanner buildScanner()
   {
-    if(filePatternRegexp == null)
+    if (filePatternRegexp == null) {
       filePatternRegexp = buildFilePatternRegexp();
-    if(scanner == null)
-    {
+    }
+    if (scanner == null) {
       scanner = new DirectoryScanner();
       scanner.setFilePatternRegexp(filePatternRegexp);
     }
     return scanner;
   }
-  
+
   protected String buildFilePatternRegexp()
   {
     filePatternRegexp = NON_TMP_PATTERN;

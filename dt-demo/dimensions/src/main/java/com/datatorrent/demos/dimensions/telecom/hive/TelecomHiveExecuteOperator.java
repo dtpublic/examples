@@ -28,15 +28,15 @@ import com.datatorrent.demos.dimensions.telecom.conf.DataWarehouseConfig;
 public class TelecomHiveExecuteOperator extends HiveOperator
 {
   private static final Logger logger = LoggerFactory.getLogger(TelecomHiveExecuteOperator.class);
-  
+
   protected DataWarehouseConfig hiveConfig;
   protected String createTableSql;
   protected int timeToLiveInMinutes = -1;
   protected int dataCleanupSpanInSeconds = 120;
-  
+
   protected transient String localString = "";
   protected transient Connection conn;
-  
+
   @Override
   public void setup(OperatorContext context)
   {
@@ -49,23 +49,24 @@ public class TelecomHiveExecuteOperator extends HiveOperator
       checkIsHDFS();
 
       //syn tablename
-      if (tablename == null || tablename.isEmpty())
+      if (tablename == null || tablename.isEmpty()) {
         tablename = hiveConfig.getTableName();
-      else
+      } else {
         hiveConfig.setTableName(tablename);
+      }
     } catch (IOException e) {
       logger.error("Got exception in setup.", e);
       throw new RuntimeException(e);
     }
   }
-  
+
   @Override
   public void teardown()
   {
     closeConnection();
     super.teardown();
   }
-  
+
   /**
    * need to remove the data
    */
@@ -73,10 +74,11 @@ public class TelecomHiveExecuteOperator extends HiveOperator
   public void endWindow()
   {
     super.endWindow();
-    if(timeToLiveInMinutes >= 0)
+    if (timeToLiveInMinutes >= 0) {
       removeOutOfLiveData();
+    }
   }
-  
+
   protected boolean checkIsHDFS() throws IOException
   {
     FileSystem tempFS = FileSystem.newInstance(new Path(hivestore.filepath).toUri(), new Configuration());
@@ -86,53 +88,53 @@ public class TelecomHiveExecuteOperator extends HiveOperator
     }
     return true;
   }
-  
+
   protected void createBusinessTables()
   {
-    if(createTableSql == null || createTableSql.isEmpty())
+    if (createTableSql == null || createTableSql.isEmpty()) {
       return;
+    }
 
     try {
       logger.info("creating table using sql: ");
       logger.info(createTableSql);
-      Statement stmt = getConnection().createStatement(); 
+      Statement stmt = getConnection().createStatement();
       stmt.execute(createTableSql);
       logger.info("table created.");
-    }
-    catch (SQLException ex) {
+    } catch (SQLException ex) {
       logger.warn("create table failed. sql is '{}'; exception: {}", createTableSql, ex.getMessage());
     }
   }
-  
+
   @Override
   public void processTuple(FilePartitionMapping tuple)
   {
     String command = getHiveCommand(tuple);
-    logger.debug("command is {}",command);
-    
+    logger.debug("command is {}", command);
+
     //should not put comma and the end of the sql
     executeSqlCommand(command);
-    
+
     String filePath = getFilePath(tuple);
     handleProcessedFile(filePath);
   }
-  
+
   protected void executeSqlCommand(String sqlCommand)
   {
-    if(sqlCommand == null || sqlCommand.isEmpty())
+    if (sqlCommand == null || sqlCommand.isEmpty()) {
       return;
-    
-      Statement stmt;
-      try {
-        //The HiveStore has problem with user.
-        stmt = getConnection().createStatement(); 
-        stmt.execute(sqlCommand);
-      }
-      catch (SQLException ex) {
-        logger.warn("execute sql command '{}' failed. reason: {}", sqlCommand, ex.getMessage());
-      }
+    }
+
+    Statement stmt;
+    try {
+      //The HiveStore has problem with user.
+      stmt = getConnection().createStatement();
+      stmt.execute(sqlCommand);
+    } catch (SQLException ex) {
+      logger.warn("execute sql command '{}' failed. reason: {}", sqlCommand, ex.getMessage());
+    }
   }
-  
+
   protected void handleProcessedFile(String filePath)
   {
     //just remove it;
@@ -142,25 +144,25 @@ public class TelecomHiveExecuteOperator extends HiveOperator
       logger.error("delete file exception. ", e);
     }
   }
-  
+
   /**
    * The HiveStore has problem with user.
    */
   protected Connection getConnection()
   {
-    if(conn == null)
+    if (conn == null) {
       try {
-        conn = DriverManager.getConnection( getJdbcUrl(), hiveConfig.getUserName(), hiveConfig.getPassword());
+        conn = DriverManager.getConnection(getJdbcUrl(), hiveConfig.getUserName(), hiveConfig.getPassword());
       } catch (SQLException e) {
-        logger.error("connection",e);
+        logger.error("connection", e);
       }
+    }
     return conn;
   }
-  
+
   protected void closeConnection()
   {
-    if(conn != null)
-    {
+    if (conn != null) {
       try {
         conn.close();
       } catch (SQLException e) {
@@ -168,17 +170,17 @@ public class TelecomHiveExecuteOperator extends HiveOperator
       }
     }
   }
-  
+
   protected String getJdbcUrl()
   {
     return HiveUtil.getUrl(hiveConfig.getHost(), hiveConfig.getPort(), hiveConfig.getDatabase());
   }
-  
+
   protected boolean isAbsolutePath(String filePath)
   {
     return (filePath.length() > 0 && filePath.startsWith(File.separator));
   }
-  
+
   protected String getFilePath(FilePartitionMapping tuple)
   {
     String filename = tuple.getFilename();
@@ -187,56 +189,57 @@ public class TelecomHiveExecuteOperator extends HiveOperator
     logger.info("processing file '{}'.", filepath);
     return filepath;
   }
-  
+
   protected String getHiveCommand(FilePartitionMapping tuple)
   {
     String filepath = getFilePath(tuple);
-    
+
     ArrayList<String> partition = tuple.getPartition();
     int numPartitions = partition.size();
-    
+
     String command = null;
     try {
       if (fs.exists(new Path(filepath))) {
-        String partitionString = createPartitionString(); 
-        if (partitionString != null && !partitionString.isEmpty() ) {
-          command = "load data " + localString + " inpath '" + filepath + "' into table " + tablename + " PARTITION" + "( " + partitionString + " )";
-        }
-        else {
+        String partitionString = createPartitionString();
+        if (partitionString != null && !partitionString.isEmpty()) {
+          command = "load data " + localString + " inpath '" + filepath + "' into table " + tablename + " PARTITION"
+              + "( " + partitionString + " )";
+        } else {
           command = "load data " + localString + " inpath '" + filepath + "' into table " + tablename;
         }
-      }
-      else
+      } else {
         logger.warn("Path '{}' not exists.", filepath);
-    }
-    catch (IOException e) {
+      }
+    } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    logger.info("command is {}" , command);
+    logger.info("command is {}", command);
     return command;
   }
-  
+
   protected String createPartitionString()
   {
     return "createdtime=" + Calendar.getInstance().getTimeInMillis();
   }
-  
+
   /**
    * the data was stored partitioned by 'createdtime'
    */
   protected transient long dataCleanupTime = 0;
+
   protected void removeOutOfLiveData()
   {
     long curTime = Calendar.getInstance().getTimeInMillis();
-    if(curTime < dataCleanupTime + 1000*dataCleanupSpanInSeconds )
+    if (curTime < dataCleanupTime + 1000 * dataCleanupSpanInSeconds) {
       return;
-    
-    String cleanupSql = "alter table %s drop partition(createdtime<%d)".format(tablename, curTime - timeToLiveInMinutes*60*1000);
+    }
+
+    String cleanupSql = "alter table %s drop partition(createdtime<%d)".format(tablename,
+        curTime - timeToLiveInMinutes * 60 * 1000);
     this.executeSqlCommand(cleanupSql);
-    
-    dataCleanupTime = curTime; 
+
+    dataCleanupTime = curTime;
   }
-  
 
   public DataWarehouseConfig getHiveConfig()
   {
@@ -267,5 +270,5 @@ public class TelecomHiveExecuteOperator extends HiveOperator
   {
     this.timeToLiveInMinutes = timeToLiveHour;
   }
-  
+
 }

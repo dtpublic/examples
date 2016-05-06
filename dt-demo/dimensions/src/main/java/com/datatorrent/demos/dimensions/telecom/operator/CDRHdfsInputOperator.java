@@ -19,7 +19,6 @@ public class CDRHdfsInputOperator extends AbstractFileInputOperator<String>
   public final transient DefaultOutputPort<String> output = new DefaultOutputPort<String>();
   private transient BufferedReader br = null;
 
-
   @Override
   protected InputStream openFile(Path path) throws IOException
   {
@@ -36,7 +35,8 @@ public class CDRHdfsInputOperator extends AbstractFileInputOperator<String>
     br = null;
   }
 
-  @Override protected InputStream retryFailedFile(FailedFile ff) throws IOException
+  @Override
+  protected InputStream retryFailedFile(FailedFile ff) throws IOException
   {
     return super.retryFailedFile(ff);
   }

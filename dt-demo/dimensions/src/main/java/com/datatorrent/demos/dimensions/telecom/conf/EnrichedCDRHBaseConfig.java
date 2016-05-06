@@ -4,24 +4,23 @@
  */
 package com.datatorrent.demos.dimensions.telecom.conf;
 
-public class EnrichedCDRHBaseConfig extends DataWarehouseConfig{
+public class EnrichedCDRHBaseConfig extends DataWarehouseConfig
+{
 
   private static EnrichedCDRHBaseConfig instance;
-  
+
   public static EnrichedCDRHBaseConfig instance()
   {
-    if(instance == null)
-    {
-      synchronized(EnrichedCDRHBaseConfig.class)
-      {
-        if(instance == null)
+    if (instance == null) {
+      synchronized (EnrichedCDRHBaseConfig.class) {
+        if (instance == null) {
           instance = new EnrichedCDRHBaseConfig();
+        }
       }
     }
     return instance;
   }
-  
-  
+
   protected EnrichedCDRHBaseConfig()
   {
     host = TelecomDemoConf.instance.getHbaseHost();

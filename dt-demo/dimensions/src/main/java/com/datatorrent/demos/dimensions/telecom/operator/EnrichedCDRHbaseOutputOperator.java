@@ -10,16 +10,18 @@ import org.apache.hadoop.hbase.util.Bytes;
 import com.datatorrent.demos.dimensions.telecom.conf.EnrichedCDRHBaseConfig;
 import com.datatorrent.demos.dimensions.telecom.model.EnrichedCDR;
 
-public class EnrichedCDRHbaseOutputOperator extends TelecomDemoHBaseOutputOperator<EnrichedCDR>{
+public class EnrichedCDRHbaseOutputOperator extends TelecomDemoHBaseOutputOperator<EnrichedCDR>
+{
   private static byte[] familyName = Bytes.toBytes("f1");
-  
+
   public EnrichedCDRHbaseOutputOperator()
   {
     setHbaseConfig(EnrichedCDRHBaseConfig.instance());
   }
 
   @Override
-  public Put operationPut(EnrichedCDR ecdr) {
+  public Put operationPut(EnrichedCDR ecdr)
+  {
     Put put = new Put(Bytes.toBytes(ecdr.getImsi()));
     put.add(familyName, Bytes.toBytes("isdn"), Bytes.toBytes(ecdr.getIsdn()));
     put.add(familyName, Bytes.toBytes("imei"), Bytes.toBytes(ecdr.getImei()));
@@ -34,13 +36,14 @@ public class EnrichedCDRHbaseOutputOperator extends TelecomDemoHBaseOutputOperat
     put.add(familyName, Bytes.toBytes("lon"), Bytes.toBytes(ecdr.getLon()));
     put.add(familyName, Bytes.toBytes("date"), Bytes.toBytes(ecdr.getDate()));
     put.add(familyName, Bytes.toBytes("time"), Bytes.toBytes(ecdr.getTimeInDay()));
-    if(ecdr.getDrLabel() != null )
+    if (ecdr.getDrLabel() != null) {
       put.add(familyName, Bytes.toBytes("drLabel"), Bytes.toBytes(ecdr.getDrLabel()));
+    }
     put.add(familyName, Bytes.toBytes("operatorCode"), Bytes.toBytes(ecdr.getOperatorCode()));
     put.add(familyName, Bytes.toBytes("deviceBrand"), Bytes.toBytes(ecdr.getDeviceBrand()));
     put.add(familyName, Bytes.toBytes("deviceModel"), Bytes.toBytes(ecdr.getDeviceModel()));
     put.add(familyName, Bytes.toBytes("zipCode"), Bytes.toBytes(ecdr.getZipCode()));
     return put;
-    
+
   }
 }

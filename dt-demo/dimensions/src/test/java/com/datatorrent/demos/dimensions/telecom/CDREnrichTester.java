@@ -4,6 +4,7 @@
  */
 package com.datatorrent.demos.dimensions.telecom;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.datatorrent.demos.dimensions.telecom.generate.CallDetailRecordCustomerInfoGenerator;
@@ -20,7 +21,7 @@ public class CDREnrichTester
       CallDetailRecord cdr = generator.next();
       EnrichedCDR enriched = EnrichedCDR.fromCallDetailRecord(cdr.toLine());
       String line = enriched.toLine();
-      System.out.println(line);
+      Assert.assertTrue(line != null && !line.isEmpty());
     }
   }
 }

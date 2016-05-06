@@ -4,9 +4,10 @@
  */
 package com.datatorrent.demos.dimensions.telecom;
 
-import org.apache.hadoop.conf.Configuration;
 import org.junit.Before;
 import org.junit.Test;
+
+import org.apache.hadoop.conf.Configuration;
 
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.LocalMode;

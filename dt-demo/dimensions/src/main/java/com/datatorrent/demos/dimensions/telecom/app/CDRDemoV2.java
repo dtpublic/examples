@@ -8,14 +8,19 @@ import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
 import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorIncrementalType;
 import org.apache.commons.lang.mutable.MutableLong;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.hadoop.conf.Configuration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.Context.OperatorContext;
@@ -47,9 +52,6 @@ import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaP
 import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
 import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 
 /**
  * Only need compute maximum Disconnects by Location (Latitude and Longitude)
@@ -58,14 +60,14 @@ import com.google.common.collect.Maps;
  *
  */
 @ApplicationAnnotation(name = CDRDemoV2.APP_NAME)
-public class CDRDemoV2 implements StreamingApplication {
+public class CDRDemoV2 implements StreamingApplication
+{
   private static final transient Logger logger = LoggerFactory.getLogger(CDRDemoV2.class);
 
   public static final String APP_NAME = "CDRDemoV2";
   public static final String CDR_DIMENSION_SCHEMA = "cdrDemoV2EventSchema.json";
   public static final String SNAPSHOT_SCHEMA = "cdrDemoV2SnapshotSchema.json";
   public static final String CDR_GEO_SCHEMA = "cdrGeoSchema.json";
-
 
   public final String appName;
   protected String PROP_STORE_PATH;
@@ -94,12 +96,10 @@ public class CDRDemoV2 implements StreamingApplication {
   //use absolute path or rename from tmp files will be failed due to different directory.
   protected String hiveTmpPath = "/user/cdrtmp";
   protected String hiveTmpFile = "cdr";
-  protected String enrichedCDRTableSchema
-    = "CREATE TABLE IF NOT EXISTS %s ( isdn string, imsi string, imei string, plan string, callType string, correspType string, " +
-      " correspIsdn string, duration string, bytes string, dr string, lat string, lon string, " +
-      " drLable string, operatorCode string, deviceBrand string, deviceModel string, zipCode string ) " +
-      " PARTITIONED BY( createdtime long ) " +
-      " ROW FORMAT DELIMITED FIELDS TERMINATED BY \",\"";
+  protected String enrichedCDRTableSchema = "CREATE TABLE IF NOT EXISTS %s ( isdn string, imsi string, imei string, plan string, callType string, correspType string, "
+      + " correspIsdn string, duration string, bytes string, dr string, lat string, lon string, "
+      + " drLable string, operatorCode string, deviceBrand string, deviceModel string, zipCode string ) "
+      + " PARTITIONED BY( createdtime long ) " + " ROW FORMAT DELIMITED FIELDS TERMINATED BY \",\"";
 
   protected int cdrStorePartitionCount = 2;
   protected int cdrGeoStorePartitionCount = 2;
@@ -117,7 +117,8 @@ public class CDRDemoV2 implements StreamingApplication {
     PROP_HIVE_HOST = "dt.application." + appName + ".hive.host";
 
     PROP_STORE_PATH = "dt.application." + appName + ".operator.StoreEnrichedCDRKPIs.fileStore.basePathPrefix";
-    PROP_GEO_STORE_PATH = "dt.application." + appName + ".operator.StoreNetworkTaggedGeoLocations.fileStore.basePathPrefix";
+    PROP_GEO_STORE_PATH = "dt.application." + appName
+        + ".operator.StoreNetworkTaggedGeoLocations.fileStore.basePathPrefix";
     PROP_OUTPUT_MASK = "dt.application." + appName + ".cdroutputmask";
     PROP_HIVE_TEMP_PATH = "dt.application." + appName + ".cdrhivetmppath";
     PROP_HIVE_TEMP_FILE = "dt.application." + appName + ".cdrhivetmpfile";
@@ -126,20 +127,15 @@ public class CDRDemoV2 implements StreamingApplication {
     PROP_CDRGEOSTORE_PARTITIONCOUNT = "dt.application." + appName + ".cdrGeoStorePartitionCount";
   }
 
-
   protected void populateConfig(Configuration conf)
   {
     {
       final String sOutputMask = conf.get(PROP_OUTPUT_MASK);
-      if(sOutputMask != null)
-      {
-        try
-        {
+      if (sOutputMask != null) {
+        try {
           outputMask = Integer.valueOf(sOutputMask);
           logger.info("outputMask: {}", outputMask);
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
           logger.error("Invalid outputmask: {}", sOutputMask);
         }
       }
@@ -147,8 +143,7 @@ public class CDRDemoV2 implements StreamingApplication {
 
     {
       final String cassandraHost = conf.get(PROP_CASSANDRA_HOST);
-      if(cassandraHost != null)
-      {
+      if (cassandraHost != null) {
         TelecomDemoConf.instance.setCassandraHost(cassandraHost);
       }
       logger.info("CassandraHost: {}", TelecomDemoConf.instance.getCassandraHost());
@@ -156,8 +151,7 @@ public class CDRDemoV2 implements StreamingApplication {
 
     {
       final String hbaseHost = conf.get(PROP_HBASE_HOST);
-      if(hbaseHost != null)
-      {
+      if (hbaseHost != null) {
         TelecomDemoConf.instance.setHbaseHost(hbaseHost);
       }
       logger.info("HbaseHost: {}", TelecomDemoConf.instance.getHbaseHost());
@@ -165,8 +159,7 @@ public class CDRDemoV2 implements StreamingApplication {
 
     {
       final String hiveHost = conf.get(PROP_HIVE_HOST);
-      if(hiveHost != null)
-      {
+      if (hiveHost != null) {
         TelecomDemoConf.instance.setHiveHost(hiveHost);
       }
       logger.info("HiveHost: {}", TelecomDemoConf.instance.getHiveHost());
@@ -174,14 +167,16 @@ public class CDRDemoV2 implements StreamingApplication {
 
     {
       final String hiveTmpPath = conf.get(PROP_HIVE_TEMP_PATH);
-      if(hiveTmpPath != null )
+      if (hiveTmpPath != null) {
         this.hiveTmpPath = hiveTmpPath;
+      }
       logger.info("hiveTmpPath: {}", hiveTmpPath);
     }
     {
       final String hiveTmpFile = conf.get(PROP_HIVE_TEMP_FILE);
-      if(hiveTmpFile != null )
+      if (hiveTmpFile != null) {
         this.hiveTmpFile = hiveTmpFile;
+      }
       logger.info("hiveTmpFile: {}", hiveTmpFile);
     }
 
@@ -190,7 +185,8 @@ public class CDRDemoV2 implements StreamingApplication {
   }
 
   @Override
-  public void populateDAG(DAG dag, Configuration conf) {
+  public void populateDAG(DAG dag, Configuration conf)
+  {
 
     populateConfig(conf);
     String eventSchema = SchemaUtils.jarResourceFileToString(cdrDimensionSchemaLocation);
@@ -203,31 +199,29 @@ public class CDRDemoV2 implements StreamingApplication {
     CDREnrichOperator enrichOperator = new CDREnrichOperator();
     dag.addOperator("EnrichCDR", enrichOperator);
 
-    dag.addStream("InputStream", cdrGenerator.cdrOutputPort, enrichOperator.cdrInputPort)
-    .setLocality(Locality.CONTAINER_LOCAL);
+    dag.addStream("InputStream", cdrGenerator.cdrOutputPort, enrichOperator.cdrInputPort).setLocality(Locality.CONTAINER_LOCAL);
 
     List<DefaultInputPort<? super EnrichedCDR>> enrichedStreamSinks = Lists.newArrayList();
     // CDR persist
-    if((outputMask & outputMask_HBase) != 0)
-    {
+    if ((outputMask & outputMask_HBase) != 0) {
       // HBase
       EnrichedCDRHbaseOutputOperator cdrPersist = new EnrichedCDRHbaseOutputOperator();
       dag.addOperator("CDRHBasePersist", cdrPersist);
       enrichedStreamSinks.add(cdrPersist.input);
     }
-    if((outputMask & outputMask_Cassandra) != 0)
-    {
+    if ((outputMask & outputMask_Cassandra) != 0) {
       EnrichedCDRCassandraOutputOperator cdrPersist = new EnrichedCDRCassandraOutputOperator();
       dag.addOperator("CDRCanssandraPersist", cdrPersist);
       enrichedStreamSinks.add(cdrPersist.input);
     }
-    if((outputMask & outputMask_Hive) != 0)
-    {
+    if ((outputMask & outputMask_Hive) != 0) {
       TelecomHiveOutputOperator hiveOutput = new TelecomHiveOutputOperator();
-      if(hiveTmpPath != null)
+      if (hiveTmpPath != null) {
         hiveOutput.setFilePath(hiveTmpPath);
-      if(hiveTmpFile != null)
+      }
+      if (hiveTmpFile != null) {
         hiveOutput.setOutputFileName(hiveTmpFile);
+      }
       hiveOutput.setFilePermission((short)511);
 
       dag.addOperator("CDRHiveOutput", hiveOutput);
@@ -237,12 +231,14 @@ public class CDRDemoV2 implements StreamingApplication {
 
       {
         HiveStore hiveStore = new HiveStore();
-        if(hiveTmpPath != null)
+        if (hiveTmpPath != null) {
           hiveStore.setFilepath(hiveTmpPath);
+        }
         hiveExecute.setHivestore(hiveStore);
       }
       hiveExecute.setHiveConfig(EnrichedCDRHiveConfig.instance());
-      String createTableSql = String.format( enrichedCDRTableSchema,  EnrichedCDRHiveConfig.instance().getDatabase() + "." + EnrichedCDRHiveConfig.instance().getTableName() );
+      String createTableSql = String.format(enrichedCDRTableSchema,
+          EnrichedCDRHiveConfig.instance().getDatabase() + "." + EnrichedCDRHiveConfig.instance().getTableName());
       hiveExecute.setCreateTableSql(createTableSql);
       dag.addOperator("CDRHiveExecute", hiveExecute);
       dag.addStream("CDRHiveLoadData", hiveOutput.hiveCmdOutput, hiveExecute.input);
@@ -251,8 +247,7 @@ public class CDRDemoV2 implements StreamingApplication {
     DimensionsComputationFlexibleSingleSchemaPOJO dimensions = null;
     if (enableDimension) {
       // dimension
-      dimensions = dag.addOperator("ComputeKPIs",
-          DimensionsComputationFlexibleSingleSchemaPOJO.class);
+      dimensions = dag.addOperator("ComputeKPIs", DimensionsComputationFlexibleSingleSchemaPOJO.class);
       dag.getMeta(dimensions).getAttributes().put(Context.OperatorContext.APPLICATION_WINDOW_COUNT, 4);
       dag.getMeta(dimensions).getAttributes().put(Context.OperatorContext.CHECKPOINT_WINDOW_COUNT, 4);
 
@@ -289,7 +284,7 @@ public class CDRDemoV2 implements StreamingApplication {
       CDRStore store = dag.addOperator("StoreEnrichedCDRKPIs", CDRStore.class);
       store.setUpdateEnumValues(true);
       String basePath = Preconditions.checkNotNull(conf.get(PROP_STORE_PATH),
-            "base path should be specified in the properties.xml");
+          "base path should be specified in the properties.xml");
       TFileImpl hdsFile = new TFileImpl.DTFileImpl();
       basePath += System.currentTimeMillis();
       hdsFile.setBasePath(basePath);
@@ -306,8 +301,7 @@ public class CDRDemoV2 implements StreamingApplication {
       logger.info("QueryUri: {}", queryUri);
       query.setUri(queryUri);
       store.setEmbeddableQueryInfoProvider(query);
-      if(cdrStorePartitionCount > 1)
-      {
+      if (cdrStorePartitionCount > 1) {
         store.setPartitionCount(cdrStorePartitionCount);
         store.setQueryResultUnifier(new DimensionStoreHDHTNonEmptyQueryResultUnifier());
       }
@@ -323,7 +317,6 @@ public class CDRDemoV2 implements StreamingApplication {
       dag.addStream("CDRDimensionalStream", dimensions.output, store.input);
       dag.addStream("CDRQueryResult", store.queryResult, wsOut.input);
 
-
       //snapshot server
       AppDataSnapshotServerAggregate snapshotServer = new AppDataSnapshotServerAggregate();
       String snapshotServerJSON = SchemaUtils.jarResourceFileToString(snapshotSchemaLocation);
@@ -331,7 +324,8 @@ public class CDRDemoV2 implements StreamingApplication {
       snapshotServer.setEventSchema(eventSchema);
       {
         Map<MutablePair<String, Type>, MutablePair<String, Type>> keyValueMap = Maps.newHashMap();
-        keyValueMap.put(new MutablePair<String, Type>("deviceModel", Type.STRING), new MutablePair<String, Type>("downloadBytes", Type.LONG));
+        keyValueMap.put(new MutablePair<String, Type>("deviceModel", Type.STRING),
+            new MutablePair<String, Type>("downloadBytes", Type.LONG));
         snapshotServer.setKeyValueMap(keyValueMap);
       }
       dag.addOperator("ComputeBandwidthUsageByDevice", snapshotServer);
@@ -343,20 +337,21 @@ public class CDRDemoV2 implements StreamingApplication {
       snapshotServer.setEmbeddableQueryInfoProvider(snapShotQuery);
       //dag.addStream("SnapshotQuery", snapShotQuery.outputPort, snapshotServer.query);
 
-
       PubSubWebSocketAppDataResult snapShotQueryResult = new PubSubWebSocketAppDataResult();
       snapShotQueryResult.setUri(queryUri);
       dag.addOperator("BandwidthQueryResult", snapShotQueryResult);
       dag.addStream("BandwidthQueryResult", snapshotServer.queryResult, snapShotQueryResult.input);
     }
-    if(enableGeo)
+    if (enableGeo) {
       populateCdrGeoDAG(dag, conf, enrichedStreamSinks);
+    }
 
     dag.addStream("CDREnriched", enrichOperator.outputPort, enrichedStreamSinks.toArray(new DefaultInputPort[0]));
 
   }
 
-  protected void populateCdrGeoDAG(DAG dag, Configuration conf, List<DefaultInputPort<? super EnrichedCDR>> enrichedStreamSinks)
+  protected void populateCdrGeoDAG(DAG dag, Configuration conf,
+      List<DefaultInputPort<? super EnrichedCDR>> enrichedStreamSinks)
   {
     // dimension
     DimensionsComputationFlexibleSingleSchemaPOJO dimensions = dag.addOperator("TagNetworkGeoLocations",
@@ -399,7 +394,7 @@ public class CDRDemoV2 implements StreamingApplication {
     GeoDimensionStore store = dag.addOperator("StoreNetworkTaggedGeoLocations", GeoDimensionStore.class);
     store.setUpdateEnumValues(true);
     String basePath = Preconditions.checkNotNull(conf.get(PROP_GEO_STORE_PATH),
-          "GEO base path should be specified in the properties.xml");
+        "GEO base path should be specified in the properties.xml");
     TFileImpl hdsFile = new TFileImpl.DTFileImpl();
     basePath += System.currentTimeMillis();
     hdsFile.setBasePath(basePath);
@@ -409,13 +404,11 @@ public class CDRDemoV2 implements StreamingApplication {
     dag.setAttribute(store, Context.OperatorContext.COUNTERS_AGGREGATOR,
         new BasicCounters.LongAggregator<MutableLong>());
 
-
     PubSubWebSocketAppDataQuery query = createAppDataQuery();
     URI queryUri = ConfigUtil.getAppDataQueryPubSubURI(dag, conf);
     query.setUri(queryUri);
     store.setEmbeddableQueryInfoProvider(query);
-    if(cdrGeoStorePartitionCount > 1)
-    {
+    if (cdrGeoStorePartitionCount > 1) {
       store.setPartitionCount(cdrGeoStorePartitionCount);
       store.setQueryResultUnifier(new DimensionStoreHDHTNonEmptyQueryResultUnifier());
     }
@@ -433,20 +426,23 @@ public class CDRDemoV2 implements StreamingApplication {
     dag.addStream("CDRGeoQueryResult", store.queryResult, wsOut.input);
   }
 
-  public boolean isEnableDimension() {
+  public boolean isEnableDimension()
+  {
     return enableDimension;
   }
 
-  public void setEnableDimension(boolean enableDimension) {
+  public void setEnableDimension(boolean enableDimension)
+  {
     this.enableDimension = enableDimension;
   }
 
-
-  protected PubSubWebSocketAppDataQuery createAppDataQuery() {
+  protected PubSubWebSocketAppDataQuery createAppDataQuery()
+  {
     return new PubSubWebSocketAppDataQuery();
   }
 
-  protected PubSubWebSocketAppDataResult createAppDataResult() {
+  protected PubSubWebSocketAppDataResult createAppDataResult()
+  {
     return new PubSubWebSocketAppDataResult();
   }
 

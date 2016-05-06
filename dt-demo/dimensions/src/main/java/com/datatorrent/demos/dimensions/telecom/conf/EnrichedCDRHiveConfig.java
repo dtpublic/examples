@@ -12,8 +12,9 @@ public class EnrichedCDRHiveConfig extends DataWarehouseConfig
   {
     if (instance == null) {
       synchronized (EnrichedCDRHiveConfig.class) {
-        if (instance == null)
+        if (instance == null) {
           instance = new EnrichedCDRHiveConfig();
+        }
       }
     }
     return instance;

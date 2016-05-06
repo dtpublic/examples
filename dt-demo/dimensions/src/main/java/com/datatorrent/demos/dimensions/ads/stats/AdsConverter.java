@@ -6,12 +6,13 @@ package com.datatorrent.demos.dimensions.ads.stats;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.EventKey;
 import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DefaultInputPort;
@@ -44,7 +45,8 @@ public class AdsConverter implements Operator
 
   private Int2IntOpenHashMap prevDdIDToThisDdID = new Int2IntOpenHashMap();
 
-  public final transient DefaultInputPort<AdInfoAggregateEvent> inputPort = new DefaultInputPort<AdInfoAggregateEvent>() {
+  public final transient DefaultInputPort<AdInfoAggregateEvent> inputPort = new DefaultInputPort<AdInfoAggregateEvent>()
+  {
 
     @Override
     public void process(AdInfoAggregateEvent tuple)
@@ -54,14 +56,12 @@ public class AdsConverter implements Operator
 
       GPOMutable key = new GPOMutable(keyDescriptor);
 
-      for(String field: keyDescriptor.getFieldList()) {
-        if(field.equals(InputItemGenerator.PUBLISHER)) {
+      for (String field : keyDescriptor.getFieldList()) {
+        if (field.equals(InputItemGenerator.PUBLISHER)) {
           key.setField(InputItemGenerator.PUBLISHER, tuple.publisher);
-        }
-        else if(field.equals(InputItemGenerator.ADVERTISER)) {
+        } else if (field.equals(InputItemGenerator.ADVERTISER)) {
           key.setField(InputItemGenerator.ADVERTISER, tuple.advertiser);
-        }
-        else if(field.equals(InputItemGenerator.LOCATION)) {
+        } else if (field.equals(InputItemGenerator.LOCATION)) {
           key.setField(InputItemGenerator.LOCATION, tuple.location);
         }
       }
@@ -69,15 +69,12 @@ public class AdsConverter implements Operator
       key.setField(DimensionsDescriptor.DIMENSION_TIME, tuple.time);
       key.setField(DimensionsDescriptor.DIMENSION_TIME_BUCKET, tuple.timeBucket);
 
-      EventKey eventKey = new EventKey(schemaID,
-                                       ddID,
-                                       sumAggregatorIndex,
-                                       key);
+      EventKey eventKey = new EventKey(schemaID, ddID, sumAggregatorIndex, key);
 
       GPOMutable aggregates = new GPOMutable(aggregateFieldsDescriptor);
       aggregates.setField(InputItemGenerator.IMPRESSIONS, tuple.impressions);
       aggregates.setField(InputItemGenerator.COST, tuple.cost);
-      aggregates.setField(InputItemGenerator.REVENUE,tuple.revenue);
+      aggregates.setField(InputItemGenerator.REVENUE, tuple.revenue);
       aggregates.setField(InputItemGenerator.CLICKS, tuple.clicks);
 
       outputPort.emit(new Aggregate(eventKey, aggregates));
@@ -101,20 +98,15 @@ public class AdsConverter implements Operator
 
     List<DimensionsDescriptor> dimensionsDescriptorList = dimensionsConfigurationSchema.getDimensionsDescriptorIDToDimensionsDescriptor();
 
-    for(int ddID = 0;
-        ddID < dimensionsDescriptorList.size();
-        ddID++) {
+    for (int ddID = 0; ddID < dimensionsDescriptorList.size(); ddID++) {
       DimensionsDescriptor dimensionsDescriptor = dimensionsDescriptorList.get(ddID);
       dimensionsDescriptorToID.put(dimensionsDescriptor, ddID);
     }
 
     sumAggregatorIndex = aggregatorRegistry.getIncrementalAggregatorNameToID().get("SUM");
-    aggregateFieldsDescriptor = dimensionsConfigurationSchema.getDimensionsDescriptorIDToAggregatorIDToOutputAggregatorDescriptor().
-                                get(0).get(sumAggregatorIndex);
+    aggregateFieldsDescriptor = dimensionsConfigurationSchema.getDimensionsDescriptorIDToAggregatorIDToOutputAggregatorDescriptor().get(0).get(sumAggregatorIndex);
 
-    for(int index = 0;
-        index < dimensionSpecs.length;
-        index++) {
+    for (int index = 0; index < dimensionSpecs.length; index++) {
       DimensionsDescriptor dimensionsDescriptor = new DimensionsDescriptor(dimensionSpecs[index]);
       LOG.debug("{}", dimensionsDescriptor);
       int newID = dimensionsDescriptorToID.get(dimensionsDescriptor);

@@ -19,32 +19,29 @@ import com.datatorrent.demos.dimensions.telecom.model.CustomerEnrichedInfo.Singl
 public class CustomerEnrichedInfoCassandraOutputOperator extends TelecomDemoCassandraOutputOperator<SingleRecord>
 {
   private static final transient Logger logger = LoggerFactory.getLogger(CustomerEnrichedInfoCassandraOutputOperator.class);
-  
+
   public CustomerEnrichedInfoCassandraOutputOperator()
   {
     cassandraConfig = CustomerEnrichedInfoCassandraConfig.instance();
   }
-  
-  
+
   @Override
   protected void createBusinessTables(Session session)
   {
-    String createTable = "CREATE TABLE IF NOT EXISTS " + cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName()
+    String createTable = "CREATE TABLE IF NOT EXISTS " + cassandraConfig.getDatabase() + "."
+        + cassandraConfig.getTableName()
         + " (id text PRIMARY KEY, imsi text, isdn text, imei text, operatorName text, operatorCode text, deviceBrand text, deviceModel text);";
     session.execute(createTable);
-    logger.info("created table: {}",cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName());
+    logger.info("created table: {}", cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName());
   }
-  
+
   protected String createSqlFormat()
   {
-    sqlCommand = "INSERT INTO " + cassandraConfig.getDatabase() + "."
-        + cassandraConfig.getTableName()
+    sqlCommand = "INSERT INTO " + cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName()
         + " ( id, imsi, isdn, imei, operatorName, operatorCode, deviceBrand, deviceModel ) "
         + "VALUES ( ?, ?, ?, ?, ?, ?, ?, ? );";
     return sqlCommand;
   }
-  
-
 
   @Override
   protected Statement setStatementParameters(PreparedStatement updateCommand, SingleRecord tuple) throws DriverException
@@ -58,7 +55,7 @@ public class CustomerEnrichedInfoCassandraOutputOperator extends TelecomDemoCass
     boundStmnt.setString(5, tuple.operatorCode);
     boundStmnt.setString(6, tuple.deviceBrand);
     boundStmnt.setString(7, tuple.deviceModel);
-    
+
     //or boundStatement.bind();
     return boundStmnt;
   }

@@ -40,10 +40,12 @@ import com.datatorrent.netlet.util.DTThrowable;
  */
 
 @Stateless
-public class JsonToMapConverter extends BaseOperator {
-
+public class JsonToMapConverter extends BaseOperator
+{
   private static final ObjectMapper mapper = new ObjectMapper();
-  private static final ObjectReader reader = mapper.reader(new TypeReference<Map<String,Object>>() { });
+  private static final ObjectReader reader = mapper.reader(new TypeReference<Map<String,Object>>()
+  {
+  });
   private static final Logger logger = LoggerFactory.getLogger(JsonToMapConverter.class);
 
   /**
@@ -58,8 +60,7 @@ public class JsonToMapConverter extends BaseOperator {
         // Convert byte array JSON representation to HashMap
         Map<String, Object> tuple = reader.readValue(message);
         outputMap.emit(tuple);
-      }
-      catch (Throwable ex) {
+      } catch (Throwable ex) {
         DTThrowable.rethrow(ex);
       }
     }

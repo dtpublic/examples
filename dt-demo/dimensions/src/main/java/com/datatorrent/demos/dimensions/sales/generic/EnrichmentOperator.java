@@ -24,11 +24,6 @@ import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileStatus;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectReader;
@@ -36,14 +31,21 @@ import org.codehaus.jackson.type.TypeReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.datatorrent.api.Context;
-import com.datatorrent.api.DefaultInputPort;
-import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.common.util.BaseOperator;
+import org.apache.commons.io.IOUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+
+import com.datatorrent.api.Context;
+import com.datatorrent.api.DefaultInputPort;
+import com.datatorrent.api.DefaultOutputPort;
+import com.datatorrent.common.util.BaseOperator;
 
 /**
  * Enrichment
@@ -78,9 +80,11 @@ public class EnrichmentOperator extends BaseOperator
 {
   public transient DefaultOutputPort<Map<String, Object>> outputPort = new DefaultOutputPort<Map<String, Object>>();
 
-  private transient static final ObjectMapper mapper = new ObjectMapper();
-  private transient static final ObjectReader reader = mapper.reader(new TypeReference<Map<String, Object>>(){});
-  private transient static final Logger logger = LoggerFactory.getLogger(EnrichmentOperator.class);
+  private static final transient ObjectMapper mapper = new ObjectMapper();
+  private static final transient ObjectReader reader = mapper.reader(new TypeReference<Map<String, Object>>()
+  {
+  });
+  private static final transient Logger logger = LoggerFactory.getLogger(EnrichmentOperator.class);
 
   /**
    * Location of the mapping file.

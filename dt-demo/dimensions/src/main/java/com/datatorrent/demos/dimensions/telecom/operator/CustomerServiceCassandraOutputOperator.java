@@ -29,27 +29,26 @@ public class CustomerServiceCassandraOutputOperator extends TelecomDemoCassandra
   @Override
   protected void createBusinessTables(Session session)
   {
-    
-    String createTable = "CREATE TABLE IF NOT EXISTS " + cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName()
+
+    String createTable = "CREATE TABLE IF NOT EXISTS " + cassandraConfig.getDatabase() + "."
+        + cassandraConfig.getTableName()
         + " (id bigint PRIMARY KEY, imsi text, totalDuration int, wait int, zipCode text, issueType text, satisfied boolean);";
     session.execute(createTable);
-    
 
   }
-  
+
   protected String createSqlFormat()
   {
-    sqlCommand = "INSERT INTO " + cassandraConfig.getDatabase() + "."
-        + cassandraConfig.getTableName()
-        + " ( id, imsi, totalDuration, wait, zipCode, issueType, satisfied ) "
-        + "VALUES ( ?, ?, ?, ?, ?, ?, ?, ? );";
+    sqlCommand = "INSERT INTO " + cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName()
+        + " ( id, imsi, totalDuration, wait, zipCode, issueType, satisfied ) " + "VALUES ( ?, ?, ?, ?, ?, ?, ?, ? );";
     return sqlCommand;
   }
-  
 
   private long id = GeneratorUtil.getRecordId();
+
   @Override
-  protected Statement setStatementParameters(PreparedStatement updateCommand, CustomerService tuple) throws DriverException
+  protected Statement setStatementParameters(PreparedStatement updateCommand, CustomerService tuple)
+      throws DriverException
   {
     final BoundStatement boundStmnt = new BoundStatement(updateCommand);
     boundStmnt.setLong(0, ++id);
@@ -59,9 +58,9 @@ public class CustomerServiceCassandraOutputOperator extends TelecomDemoCassandra
     boundStmnt.setString(4, tuple.zipCode);
     boundStmnt.setString(5, tuple.issueType.name());
     boundStmnt.setBool(6, tuple.satisfied);
-    
+
     //or boundStatement.bind();
     return boundStmnt;
-    
+
   }
 }

@@ -24,8 +24,7 @@ import com.datatorrent.lib.stream.DevNull;
 /**
  * @since 3.1.0
  */
-
-@ApplicationAnnotation(name="AdsDimensionsStatsBenchmark")
+@ApplicationAnnotation(name = "AdsDimensionsStatsBenchmark")
 public class AdsDimensionsStatsBenchmark implements StreamingApplication
 {
   @Override
@@ -39,18 +38,17 @@ public class AdsDimensionsStatsBenchmark implements StreamingApplication
     input.setEventSchemaJSON(SchemaUtils.jarResourceFileToString("adsBenchmarkSchema.json"));
 
     String[] dimensionSpecs = new String[] {
-      "time=" + TimeUnit.MINUTES,
-      "time=" + TimeUnit.MINUTES + ":location",
-      "time=" + TimeUnit.MINUTES + ":advertiser",
-      "time=" + TimeUnit.MINUTES + ":publisher",
-      "time=" + TimeUnit.MINUTES + ":advertiser:location",
-      "time=" + TimeUnit.MINUTES + ":publisher:location",
-      "time=" + TimeUnit.MINUTES + ":publisher:advertiser",
-      "time=" + TimeUnit.MINUTES + ":publisher:advertiser:location"
-    };
+        "time=" + TimeUnit.MINUTES, 
+        "time=" + TimeUnit.MINUTES + ":location",
+        "time=" + TimeUnit.MINUTES + ":advertiser", 
+        "time=" + TimeUnit.MINUTES + ":publisher",
+        "time=" + TimeUnit.MINUTES + ":advertiser:location", 
+        "time=" + TimeUnit.MINUTES + ":publisher:location",
+        "time=" + TimeUnit.MINUTES + ":publisher:advertiser",
+        "time=" + TimeUnit.MINUTES + ":publisher:advertiser:location" };
 
     AdInfoAggregator[] aggregators = new AdInfoAggregator[dimensionSpecs.length];
-    for(int index = 0; index < dimensionSpecs.length; index++) {
+    for (int index = 0; index < dimensionSpecs.length; index++) {
       AdInfoAggregator aggregator = new AdInfoAggregator();
       aggregator.init(dimensionSpecs[index], index);
       aggregators[index] = aggregator;
