@@ -1,14 +1,13 @@
 package com.example.fileOutput;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.datatorrent.api.Context;
-import com.datatorrent.api.DefaultInputPort;
-import com.esotericsoftware.kryo.NotNull;
+import javax.validation.constraints.NotNull;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.datatorrent.api.Context;
 import com.datatorrent.lib.io.fs.AbstractFileOutputOperator;
 
 /**
@@ -21,40 +20,21 @@ public class FileWriter extends AbstractFileOutputOperator<Long[]>
   private static final String NL = System.lineSeparator();
 
   @NotNull
-  private String fileName;       // current file name
+  private String fileName;           // current base file name
 
-  private transient long id;         // operator id
   private transient String fName;    // per partition file name
 
   @Override
   public void setup(Context.OperatorContext context)
   {
-
-
-    long startWindowId = context.getValue(Context.OperatorContext.ACTIVATION_WINDOW_ID);
-    id = context.getId();
+    // create file name for this partition by appending the operator id to
+    // the base name
+    //
+    long id = context.getId();
     fName = fileName + "_p" + id;
     super.setup(context);
 
-    LOG.debug("Leaving setup, fName = {}, id = {}, startWindowId = {}", fName, id, startWindowId);
-  }
-
-  @Override
-  public void beginWindow(long windowId)
-  {
-    LOG.debug("beginWindow: windowId = {}", windowId);
-  }
-
-  @Override
-  public void processTuple(Long[] tuple)
-  {
-    super.processTuple(tuple);
-  }
-
-  @Override
-  public void endWindow()
-  {
-    super.endWindow();
+    LOG.debug("Leaving setup, fName = {}, id = {}", fName, id);
   }
 
   @Override
@@ -66,12 +46,9 @@ public class FileWriter extends AbstractFileOutputOperator<Long[]>
   @Override
   protected byte[] getBytesForTuple(Long[] pair)
   {
-    String s = Arrays.toString(pair);
-    LOG.debug("getBytesForTuple: pair = {}", s);
-
     byte result[] = null;
     try {
-      result = (s + NL).getBytes(CHARSET_NAME);
+      result = (Arrays.toString(pair) + NL).getBytes(CHARSET_NAME);
     } catch (Exception e) {
       LOG.info("Error: got exception {}", e);
       throw new RuntimeException(e);

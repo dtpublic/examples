@@ -33,7 +33,6 @@ public class SequenceGenerator extends BaseOperator implements InputOperator
 
   private transient int numTuples = 0;    // number emitted in current window
   private transient long id;              // operator id
-  private transient long curWindowId;     // current window id
 
   public final transient DefaultOutputPort<Long[]> out = new DefaultOutputPort<>();
 
@@ -42,40 +41,31 @@ public class SequenceGenerator extends BaseOperator implements InputOperator
   {
     super.setup(context);
 
-    long startWindowId = context.getValue(OperatorContext.ACTIVATION_WINDOW_ID);
     id = context.getId();
     sleepTime = context.getValue(OperatorContext.SPIN_MILLIS);
-    LOG.debug("Leaving setup, id = {}, startWindowId = {}, sleepTime = {}, divisor = {}",
-              id, startWindowId, sleepTime, divisor);
+    LOG.debug("Leaving setup, id = {}, sleepTime = {}, divisor = {}",
+              id, sleepTime, divisor);
   }
 
   @Override
   public void beginWindow(long windowId)
   {
     numTuples = 0;
-    curWindowId = windowId;
-    LOG.debug("windowId = {}, divisor = {}, numTuples = {}, maxTuples = {}",
-            curWindowId, divisor, numTuples, maxTuples);
     super.beginWindow(windowId);
-  }
-
-  @Override
-  public void endWindow() {
-    LOG.debug("windowId = {}, divisor = {}, numTuples = {}, maxTuples = {}",
-            curWindowId, divisor, numTuples, maxTuples);
-    super.endWindow();
   }
 
   @Override
   public void emitTuples()
   {
-    LOG.debug("numTuples = {}, curWindowId = {}", numTuples, curWindowId);
     if (numTuples < maxTuples) {
       // nextValue will normally be divisible by divisor but the divisor can be changed
-      // externally (e.g. after a repartition) so find next value that is divisible by divisor
+      // externally (e.g. after a repartition) so find next value that is divisible by
+      // divisor
       //
       final long rem = nextValue % divisor;
-      if (0 != rem) nextValue += (divisor - rem);
+      if (0 != rem) {
+        nextValue += (divisor - rem);
+      }
       ++numTuples;
       out.emit(new Long[]{id, nextValue});
       nextValue += divisor;

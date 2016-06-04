@@ -1,6 +1,3 @@
-/**
- * Put your copyright and license info here.
- */
 package com.example.fileOutput;
 
 import com.datatorrent.api.DAG;
@@ -8,7 +5,7 @@ import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import org.apache.hadoop.conf.Configuration;
 
-@ApplicationAnnotation(name="MyFirstApplication")
+@ApplicationAnnotation(name="fileOutput")
 public class Application implements StreamingApplication
 {
 
@@ -19,11 +16,12 @@ public class Application implements StreamingApplication
     SequenceGenerator generator = dag.addOperator("generator", SequenceGenerator.class);
 
     FileWriter writer = dag.addOperator("writer", FileWriter.class);
+
+    // properties can be set here or from properties file
     writer.setMaxLength(1 << 10);
     writer.setFilePath("/tmp/fileOutput");
     writer.setFileName("sequence");
 
-    //Add if needed: .setLocality(Locality.CONTAINER_LOCAL);
     dag.addStream("data", generator.out, writer.input);
   }
 }
