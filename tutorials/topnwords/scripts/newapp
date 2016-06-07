@@ -3,14 +3,13 @@
  
 # change project name and archetype version as needed
 name=myapexapp
-version=3.2.0-incubating
+version=3.3.0-incubating
 
-mvn archetype:generate \
+mvn -B archetype:generate \
   -DarchetypeGroupId=org.apache.apex \
   -DarchetypeArtifactId=apex-app-archetype \
   -DarchetypeVersion=$version  \
   -DgroupId=com.example \
   -Dpackage=com.example.$name \
   -DartifactId=$name \
-  -Dversion=1.0-SNAPSHOT \
-  -DinteractiveMode=false
+  -Dversion=1.0-SNAPSHOT

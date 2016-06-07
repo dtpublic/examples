@@ -83,7 +83,7 @@ public class Application implements StreamingApplication
 
     //Set store properties
     String basePath = Preconditions.checkNotNull(conf.get(propStorePath),
-                                                 "a base path should be specified in the properties.xml");
+        "a base path should be specified in the properties.xml");
     TFileImpl hdsFile = new TFileImpl.DTFileImpl();
     basePath += Path.SEPARATOR + System.currentTimeMillis();
     hdsFile.setBasePath(basePath);
@@ -115,8 +115,8 @@ public class Application implements StreamingApplication
 
   public static class PassThroughOperator extends BaseOperator
   {
-    public final transient DefaultInputPort<Aggregate> input = new DefaultInputPort<Aggregate>() {
-
+    public final transient DefaultInputPort<Aggregate> input = new DefaultInputPort<Aggregate>()
+    {
       @Override
       public void process(Aggregate tuple)
       {

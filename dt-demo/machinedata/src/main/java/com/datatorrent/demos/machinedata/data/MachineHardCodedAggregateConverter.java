@@ -135,13 +135,9 @@ public class MachineHardCodedAggregateConverter implements Operator, Partitioner
       }
 
       EventKey eventKey = new EventKey((int)AppDataSingleSchemaDimensionStoreHDHT.DEFAULT_BUCKET_ID,
-                                       AbstractDimensionsComputationFlexibleSingleSchema.DEFAULT_SCHEMA_ID,
-                                       ddID,
-                                       aggregatorID,
-                                       key);
+          AbstractDimensionsComputationFlexibleSingleSchema.DEFAULT_SCHEMA_ID, ddID, aggregatorID, key);
 
-      output.emit(new Aggregate(eventKey,
-                                aggregate));
+      output.emit(new Aggregate(eventKey, aggregate));
     }
 
     @Override

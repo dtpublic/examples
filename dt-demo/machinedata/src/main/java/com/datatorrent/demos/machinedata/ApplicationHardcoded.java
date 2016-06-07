@@ -56,7 +56,7 @@ public class ApplicationHardcoded implements StreamingApplication
 
     AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY.setup();
     DimensionalConfigurationSchema configurationSchema = new DimensionalConfigurationSchema(eventSchema,
-                                                                                            AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY);
+        AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY);
 
     List<DimensionsDescriptor> dimensionsDescriptors = Lists.newArrayList();
 
@@ -99,7 +99,7 @@ public class ApplicationHardcoded implements StreamingApplication
 
     //Set store properties
     String basePath = Preconditions.checkNotNull(conf.get(propStorePath),
-                                                 "a base path should be specified in the properties.xml");
+        "a base path should be specified in the properties.xml");
     TFileImpl hdsFile = new TFileImpl.DTFileImpl();
     basePath += Path.SEPARATOR + System.currentTimeMillis();
     hdsFile.setBasePath(basePath);

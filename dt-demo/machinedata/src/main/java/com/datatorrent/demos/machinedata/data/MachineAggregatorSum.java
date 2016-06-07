@@ -40,16 +40,11 @@ public class MachineAggregatorSum extends AbstractIncrementalAggregator
       keys[counter] = src.getKeys().getFieldsString()[stringIndexSubset[counter]];
     }
 
-    MachineAggregate machineAggregate = new MachineAggregate(keys,
-                                                             0,
-                                                             context.schemaID,
-                                                             context.dimensionsDescriptorID,
-                                                             context.aggregatorID,
-                                                             src.getAggregates().getFieldsLong()[0],
-                                                             src.getAggregates().getFieldsLong()[2],
-                                                             src.getAggregates().getFieldsLong()[1],
-                                                             this.context.dd.getCustomTimeBucket().roundDown(src.getEventKey().getKey().getFieldsLong()[0]),
-                                                             this.context.customTimeBucketRegistry.getTimeBucketId(this.context.dd.getCustomTimeBucket()));
+    MachineAggregate machineAggregate = new MachineAggregate(keys, 0, context.schemaID, context.dimensionsDescriptorID,
+        context.aggregatorID, src.getAggregates().getFieldsLong()[0], src.getAggregates().getFieldsLong()[2],
+        src.getAggregates().getFieldsLong()[1],
+        this.context.dd.getCustomTimeBucket().roundDown(src.getEventKey().getKey().getFieldsLong()[0]),
+        this.context.customTimeBucketRegistry.getTimeBucketId(this.context.dd.getCustomTimeBucket()));
 
     machineAggregate.setAggregatorIndex(aggregatorIndex);
     return machineAggregate;

@@ -6,11 +6,12 @@ package com.datatorrent.demos.machinedata.data;
 
 import java.util.List;
 
-import com.datatorrent.api.annotation.Name;
-import com.google.common.collect.ImmutableList;
-
 import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorAverage;
 import org.apache.apex.malhar.lib.dimensions.aggregator.IncrementalAggregator;
+
+import com.google.common.collect.ImmutableList;
+
+import com.datatorrent.api.annotation.Name;
 
 @Name("AVG")
 /**

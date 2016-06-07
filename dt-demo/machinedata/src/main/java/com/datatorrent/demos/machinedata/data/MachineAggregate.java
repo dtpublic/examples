@@ -83,16 +83,8 @@ public class MachineAggregate extends Aggregate
     //for kryo
   }
 
-  public MachineAggregate(String[] keysArray,
-                          int bucketID,
-                          int schemaID,
-                          int dimensionDescriptorID,
-                          int aggregatorID,
-                          long cpuUsage,
-                          long ramUsage,
-                          long hddUsage,
-                          long timestamp,
-                          int timeBucket)
+  public MachineAggregate(String[] keysArray, int bucketID, int schemaID, int dimensionDescriptorID, int aggregatorID,
+      long cpuUsage, long ramUsage, long hddUsage, long timestamp, int timeBucket)
   {
     this.keysArray = keysArray;
     this.bucketID = bucketID;
