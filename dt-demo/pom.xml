@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.datatorrent</groupId>
     <artifactId>dt-megh</artifactId>
-    <version>3.4.0-SNAPSHOT</version>
+    <version>3.4.0</version>
   </parent>
 
   <groupId>com.datatorrent</groupId>
@@ -17,7 +17,7 @@
   <properties>
     <semver.plugin.skip>true</semver.plugin.skip>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <malhar.version>3.4.0-SNAPSHOT</malhar.version>
+    <malhar.version>3.4.0</malhar.version>
   </properties>
 
   <!-- repository to provide the DataTorrent artifacts -->

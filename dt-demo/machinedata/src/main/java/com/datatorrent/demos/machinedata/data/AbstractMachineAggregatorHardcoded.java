@@ -124,7 +124,7 @@ public abstract class AbstractMachineAggregatorHardcoded implements Aggregator<M
   {
     MachineKey key = t.getMachineKey();
     int hash = key.hashCode(ks);
-    hash = hash * 67 + (int) dimensionsDescriptor.getCustomTimeBucket().roundDown(key.getTimestamp());
+    hash = hash * 67 + (int)dimensionsDescriptor.getCustomTimeBucket().roundDown(key.getTimestamp());
     return hash;
   }
 

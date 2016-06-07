@@ -4,12 +4,13 @@
  */
 package com.datatorrent.demos.machinedata.data;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
 import org.apache.apex.malhar.lib.dimensions.aggregator.AbstractIncrementalAggregator;
 import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorCount;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.datatorrent.api.annotation.Name;
 import com.datatorrent.lib.appdata.schemas.FieldsDescriptor;

@@ -11,11 +11,12 @@ import org.apache.apex.malhar.lib.dimensions.DimensionsEvent;
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
 import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.EventKey;
 
+import com.google.common.collect.Maps;
+
 import com.datatorrent.lib.appdata.gpo.GPOMutable;
 import com.datatorrent.lib.appdata.gpo.GPOUtils;
 import com.datatorrent.lib.appdata.schemas.FieldsDescriptor;
 import com.datatorrent.lib.appdata.schemas.Type;
-import com.google.common.collect.Maps;
 
 /**
  * This is a custom aggregate to speed up computation for the machine demo.
@@ -45,18 +46,22 @@ public class MachineAggregate extends Aggregate
 
   public static final int NUM_COMBINATIONS = 6;
 
-  public static final FieldsDescriptor AGGREGATES_DESCRIPTOR;
-  public static final Map<Integer, FieldsDescriptor> COUNT_TO_DESCRIPTOR;
+  public static final FieldsDescriptor AGGREGATES_DESCRIPTOR = initAggregatesDescriptor();
+  public static final Map<Integer, FieldsDescriptor> COUNT_TO_DESCRIPTOR = initCountToDescriptor();
 
-  static {
+  private static FieldsDescriptor initAggregatesDescriptor()
+  {
     Map<String, Type> fieldToType = Maps.newHashMap();
     fieldToType.put(CPU_USAGE, Type.LONG);
     fieldToType.put(RAM_USAGE, Type.LONG);
     fieldToType.put(HDD_USAGE, Type.LONG);
 
-    AGGREGATES_DESCRIPTOR = new FieldsDescriptor(fieldToType);
-
-    COUNT_TO_DESCRIPTOR = Maps.newHashMap();
+    return new FieldsDescriptor(fieldToType);
+  }
+  
+  private static Map<Integer, FieldsDescriptor> initCountToDescriptor()
+  {
+    Map<Integer, FieldsDescriptor> COUNT_TO_DESCRIPTOR = Maps.newHashMap();
 
     StringBuilder currentField = new StringBuilder("a");
     Map<String, Type> fieldToTypeTemp = Maps.newHashMap();
@@ -70,6 +75,7 @@ public class MachineAggregate extends Aggregate
 
       currentField.append("a");
     }
+    return COUNT_TO_DESCRIPTOR;
   }
 
   protected MachineAggregate()

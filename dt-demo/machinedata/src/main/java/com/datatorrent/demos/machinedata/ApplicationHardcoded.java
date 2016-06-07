@@ -7,13 +7,17 @@ package com.datatorrent.demos.machinedata;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
 import org.apache.apex.malhar.lib.dimensions.aggregator.AggregateEvent.Aggregator;
 import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
 
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DAG;
@@ -34,8 +38,6 @@ import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
 import com.datatorrent.lib.statistics.DimensionsComputation;
 import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
 
 @ApplicationAnnotation(name = ApplicationHardcoded.APP_NAME)
 /**

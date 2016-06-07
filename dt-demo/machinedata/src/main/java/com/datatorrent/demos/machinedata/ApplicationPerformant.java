@@ -26,9 +26,10 @@ public class ApplicationPerformant extends Application
 {
   public static final String APP_NAME = "MachineDataDemoPerformant";
 
-  public static final AggregatorRegistry MACHINE_REGISTRY;
+  public static final AggregatorRegistry MACHINE_REGISTRY = initRegistry();
 
-  static {
+  static private AggregatorRegistry initRegistry()
+  {
     Map<String, IncrementalAggregator> nameToIncrementalAggregator = Maps.newHashMap();
     nameToIncrementalAggregator.put("SUM", new MachineAggregatorSum());
     nameToIncrementalAggregator.put("COUNT", new MachineAggregatorCount());
@@ -40,9 +41,7 @@ public class ApplicationPerformant extends Application
     Map<String, OTFAggregator> nameToOTFAggregator = Maps.newHashMap();
     nameToOTFAggregator.put("AVG", MachineAggregatorAverage.INSTANCE);
 
-    MACHINE_REGISTRY = new AggregatorRegistry(nameToIncrementalAggregator,
-                                              nameToOTFAggregator,
-                                              incrementalAggregatorNameToID);
+    return new AggregatorRegistry(nameToIncrementalAggregator, nameToOTFAggregator, incrementalAggregatorNameToID);
   }
 
   @Override

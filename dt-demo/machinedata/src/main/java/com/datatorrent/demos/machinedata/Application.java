@@ -11,6 +11,9 @@ import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Maps;
+
 import com.datatorrent.api.Context;
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DAG;
@@ -28,10 +31,8 @@ import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaP
 import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
 import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Maps;
 
-@ApplicationAnnotation(name=Application.APP_NAME)
+@ApplicationAnnotation(name = Application.APP_NAME)
 /**
  * @since 3.2.0
  */
