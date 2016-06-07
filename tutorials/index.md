@@ -7,4 +7,5 @@
 | fileIO | Shows how to implement high-performance file copy using partitioning and the file input and output operators. Also shows the use of a second port to send control information. |
 | hdht | Shows how to use the HDHT operator. |
 | operatorTutorial | Simple example of a word-count operator and a unit test for it |
+| dynamic-partition | Example showing use of StatsListener with dynamic paritioning |
 | topnwords | The Top-N words example. |
