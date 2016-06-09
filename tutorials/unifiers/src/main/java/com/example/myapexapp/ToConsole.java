@@ -23,8 +23,11 @@ public class ToConsole extends BaseOperator
     {
       // tuple.toString() throws NPE if either value is null
       String t = null == tuple.getLow() ? "null" : tuple.toString();
+
+      // timestamp in seconds
+      long ts = (1000 + System.currentTimeMillis()) / 1000;
       String msg = String.format("tuple = %s, window = %d, time = %d (s)%n",
-                                 t, curWindowId, System.currentTimeMillis());
+                                 t, curWindowId, ts);
       System.out.println(msg);
     }
   };
