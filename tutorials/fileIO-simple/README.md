@@ -1,9 +1,9 @@
 Sample application to show how to use the file input and output operators.
 
 During a typical run on a Hadoop cluster, when input files are dropped into the
-configured input directory (e.g. /tmp/SimpleFileIO/input-dir), the application
+configured input directory (e.g. `/tmp/SimpleFileIO/input-dir`), the application
 will create temporary files like this at the configured output location in
-HDFS (e.g. /tmp/SimpleFileIO/output-dir) and copy all input file data to it:
+HDFS (e.g. `/tmp/SimpleFileIO/output-dir`) and copy all input file data to it:
 
     /tmp/SimpleFileIO/output-dir/myfile_p2.0.1465929407447.tmp
 
