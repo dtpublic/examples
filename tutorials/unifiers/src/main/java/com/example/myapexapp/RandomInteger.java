@@ -7,7 +7,7 @@ import com.datatorrent.api.InputOperator;
 import com.datatorrent.common.util.BaseOperator;
 
 /**
- * Simple operator that emits random number.
+ * Simple operator that emits random numbers in a fixed range.
  */
 public class RandomInteger extends BaseOperator implements InputOperator
 {
@@ -15,6 +15,7 @@ public class RandomInteger extends BaseOperator implements InputOperator
 
   private int numTuples = 1000;
   private transient int count = 0;
+  private int rangeMax = 1 << 11;
 
   public final transient DefaultOutputPort<Integer> out = new DefaultOutputPort<>();
 
@@ -29,7 +30,7 @@ public class RandomInteger extends BaseOperator implements InputOperator
   {
     if (count < numTuples) {
       ++count;
-      out.emit(rand.nextInt());
+      out.emit(rand.nextInt() % rangeMax);
     }
   }
 
