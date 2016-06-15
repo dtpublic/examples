@@ -1,5 +1,12 @@
 package com.example.myapexapp;
 
+import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DefaultInputPort;
 import com.datatorrent.api.DefaultOutputPort;
 import com.datatorrent.api.Operator.Unifier;
@@ -13,6 +20,10 @@ import com.datatorrent.lib.util.UnifierRange;
  */
 public class ToConsole extends BaseOperator
 {
+  // for checking tuple counts in unit tests
+  static Map<Long, List<HighLow<Integer>>> tuples;
+  private boolean saveTuples;
+
   private long curWindowId;
 
   public final transient DefaultInputPort<HighLow<Integer>> in
@@ -29,8 +40,26 @@ public class ToConsole extends BaseOperator
       String msg = String.format("tuple = %s, window = %d, time = %d (s)%n",
                                  t, curWindowId, ts);
       System.out.println(msg);
+
+      // for unit tests
+      if (saveTuples) {
+        List<HighLow<Integer>> list = tuples.get(curWindowId);
+        if (null == list) {
+          list = new ArrayList<>();
+          tuples.put(curWindowId, list);
+        }
+        list.add(tuple);
+      }
     }
   };
+
+  @Override
+  public void setup(OperatorContext context)
+  {
+    if (saveTuples) {
+      tuples = new ConcurrentHashMap<>();
+    }
+  }
 
   @Override
   public void beginWindow(long windowId)
@@ -38,9 +67,7 @@ public class ToConsole extends BaseOperator
     curWindowId = windowId;
   }
 
-  @Override
-  public void endWindow()
-  {
-  }
-
+  // getters and setters
+  public boolean getSaveTuples() { return saveTuples; }
+  public void setSaveTuples(boolean v) { saveTuples = v; }
 }
