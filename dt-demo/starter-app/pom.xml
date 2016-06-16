@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.datatorrent</groupId>
     <artifactId>dt-demos</artifactId>
-    <version>3.3.0</version>
+    <version>3.4.0-SNAPSHOT</version>
   </parent>
  
   <artifactId>starter-app</artifactId>
@@ -14,7 +14,7 @@
   <description>Empty Application Package that includes the Malhar and Megh operator libraries for basis of DT AppBuilder</description>
 
   <properties>
-    <megh.version>3.3.0</megh.version>
+    <megh.version>3.4.0</megh.version>
   </properties>
 
   <dependencies>
