@@ -6,6 +6,10 @@ package com.datatorrent.demos.machinedata;
 
 import java.util.Map;
 
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
+import org.apache.apex.malhar.lib.dimensions.aggregator.IncrementalAggregator;
+import org.apache.apex.malhar.lib.dimensions.aggregator.OTFAggregator;
+
 import com.google.common.collect.Maps;
 
 import com.datatorrent.api.annotation.ApplicationAnnotation;
@@ -14,9 +18,6 @@ import com.datatorrent.demos.machinedata.data.MachineAggregatorAverage;
 import com.datatorrent.demos.machinedata.data.MachineAggregatorCount;
 import com.datatorrent.demos.machinedata.data.MachineAggregatorSum;
 import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaPOJO;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
-import com.datatorrent.lib.dimensions.aggregator.IncrementalAggregator;
-import com.datatorrent.lib.dimensions.aggregator.OTFAggregator;
 
 @ApplicationAnnotation(name = ApplicationPerformant.APP_NAME)
 /**
@@ -26,9 +27,10 @@ public class ApplicationPerformant extends Application
 {
   public static final String APP_NAME = "MachineDataDemoPerformant";
 
-  public static final AggregatorRegistry MACHINE_REGISTRY;
+  public static final AggregatorRegistry MACHINE_REGISTRY = initRegistry();
 
-  static {
+  private static AggregatorRegistry initRegistry()
+  {
     Map<String, IncrementalAggregator> nameToIncrementalAggregator = Maps.newHashMap();
     nameToIncrementalAggregator.put("SUM", new MachineAggregatorSum());
     nameToIncrementalAggregator.put("COUNT", new MachineAggregatorCount());
@@ -40,9 +42,7 @@ public class ApplicationPerformant extends Application
     Map<String, OTFAggregator> nameToOTFAggregator = Maps.newHashMap();
     nameToOTFAggregator.put("AVG", MachineAggregatorAverage.INSTANCE);
 
-    MACHINE_REGISTRY = new AggregatorRegistry(nameToIncrementalAggregator,
-                                              nameToOTFAggregator,
-                                              incrementalAggregatorNameToID);
+    return new AggregatorRegistry(nameToIncrementalAggregator, nameToOTFAggregator, incrementalAggregatorNameToID);
   }
 
   @Override

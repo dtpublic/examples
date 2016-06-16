@@ -12,10 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DefaultOutputPort;
-
 import com.datatorrent.demos.dimensions.InputGenerator;
-
-import static com.datatorrent.demos.dimensions.sales.generic.JsonSalesGenerator.*;
 
 public class MockGenerator implements InputGenerator<byte[]>
 {
@@ -37,7 +34,7 @@ public class MockGenerator implements InputGenerator<byte[]>
   @Override
   public void emitTuples()
   {
-    if(sent) {
+    if (sent) {
       return;
     }
 
@@ -56,8 +53,7 @@ public class MockGenerator implements InputGenerator<byte[]>
 
     try {
       jsonBytes.emit(mapper.writeValueAsBytes(salesEvent));
-    }
-    catch(IOException ex) {
+    } catch (IOException ex) {
       throw new RuntimeException(ex);
     }
   }

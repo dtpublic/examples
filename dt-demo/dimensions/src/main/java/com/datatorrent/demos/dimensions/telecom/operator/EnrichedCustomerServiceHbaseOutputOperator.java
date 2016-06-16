@@ -10,16 +10,18 @@ import org.apache.hadoop.hbase.util.Bytes;
 import com.datatorrent.demos.dimensions.telecom.conf.EnrichedCustomerServiceHBaseConf;
 import com.datatorrent.demos.dimensions.telecom.model.EnrichedCustomerService;
 
-public class EnrichedCustomerServiceHbaseOutputOperator extends TelecomDemoHBaseOutputOperator<EnrichedCustomerService>{
+public class EnrichedCustomerServiceHbaseOutputOperator extends TelecomDemoHBaseOutputOperator<EnrichedCustomerService>
+{
   private static byte[] familyName = Bytes.toBytes("f1");
-  
+
   public EnrichedCustomerServiceHbaseOutputOperator()
   {
     setHbaseConfig(EnrichedCustomerServiceHBaseConf.instance());
   }
-  
+
   @Override
-  public Put operationPut(EnrichedCustomerService ecs) {
+  public Put operationPut(EnrichedCustomerService ecs)
+  {
     Put put = new Put(Bytes.toBytes(ecs.imsi));
     put.add(familyName, Bytes.toBytes("totalDuration"), Bytes.toBytes(ecs.totalDuration));
     put.add(familyName, Bytes.toBytes("wait"), Bytes.toBytes(ecs.wait));

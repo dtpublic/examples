@@ -10,6 +10,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.google.common.collect.Maps;
+
+import com.datatorrent.demos.dimensions.telecom.generate.LocationRepo;
+import com.datatorrent.demos.dimensions.telecom.generate.LocationRepo.Point;
+
 /**
  * test cases
 "95008", "CA", " 37.278843", "-121.95446", "Campbell", "California"
@@ -28,9 +33,7 @@ import org.junit.Test;
 "95037", "CA", " 37.137595", "-121.66211", "Morgan Hill", "California"
 
  */
-import com.datatorrent.demos.dimensions.telecom.generate.LocationRepo;
-import com.datatorrent.demos.dimensions.telecom.generate.LocationRepo.Point;
-import com.google.common.collect.Maps;
+
 
 public class PointZipCodeRepoTester
 {

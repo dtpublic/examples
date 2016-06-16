@@ -4,6 +4,8 @@
  */
 package com.datatorrent.demos.hdht.benchmark;
 
+import org.apache.hadoop.conf.Configuration;
+
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
@@ -11,17 +13,16 @@ import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.contrib.hdht.HDHTWriter;
 import com.datatorrent.contrib.hdht.tfile.TFileImpl;
 
-import org.apache.hadoop.conf.Configuration;
-
 /**
  * HDHTBenchmarkApplication
  *
  * @since 2.0.0
  */
-@ApplicationAnnotation(name="HDHTBenchmarkApplication")
+@ApplicationAnnotation(name = "HDHTBenchmarkApplication")
 public class HDHTBenchmarkApplication implements StreamingApplication
 {
-  @Override public void populateDAG(DAG dag, Configuration conf)
+  @Override
+  public void populateDAG(DAG dag, Configuration conf)
   {
     dag.setAttribute(DAG.APPLICATION_NAME, "HDHTBenchmarkApplication");
     Generator gen = dag.addOperator("Generator", new Generator());

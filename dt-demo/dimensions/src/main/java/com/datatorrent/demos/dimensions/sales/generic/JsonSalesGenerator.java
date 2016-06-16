@@ -4,22 +4,24 @@
  */
 package com.datatorrent.demos.dimensions.sales.generic;
 
-import com.datatorrent.api.Context;
-import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.api.InputOperator;
-import com.datatorrent.demos.dimensions.InputGenerator;
-import com.datatorrent.demos.dimensions.ads.AdInfo;
-import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
-import com.datatorrent.lib.appdata.schemas.DimensionalSchema;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
-import com.google.common.collect.Maps;
+import java.util.Map;
+import java.util.Random;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
-import java.util.Map;
-import java.util.Random;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
+
+import com.google.common.collect.Maps;
+
+import com.datatorrent.api.Context;
+import com.datatorrent.api.DefaultOutputPort;
+import com.datatorrent.demos.dimensions.InputGenerator;
+import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
+import com.datatorrent.lib.appdata.schemas.DimensionalSchema;
 
 /**
  * Generates sales events data and sends them out as JSON encoded byte arrays.
@@ -67,8 +69,8 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
 
   private double minAmount = 0.99;
   private double maxAmount = 100.0;
-  private double taxTiers[] = new double[] { 0.0, 0.04, 0.055, 0.0625, 0.0725, 0.085};
-  private double discountTiers[] = new double[] {0.0, 0.025, 0.05, 0.10, 0.15, 0.50};
+  private double[] taxTiers = new double[] {0.0, 0.04, 0.055, 0.0625, 0.0725, 0.085};
+  private double[] discountTiers = new double[] {0.0, 0.025, 0.05, 0.10, 0.15, 0.50};
   private double maxDiscountPercent = 0.75;
 
   // Limit number of emitted tuples per window
@@ -185,14 +187,15 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
   /**
    * Initialize regional and channel data generators
    */
-  void initializeDataGenerators() {
+  void initializeDataGenerators()
+  {
     // Channels - with increased level of change
     channelGenerator.setMoveDeviation(channelGenerator.getMoveDeviation() * 2);
-    for (int i=0; i < getMaxChannelId(); i++) {
+    for (int i = 0; i < getMaxChannelId(); i++) {
       channelGenerator.add(i);
     }
     // Regions - default level of change
-    for (int i=0; i < getMaxRegionId(); i++) {
+    for (int i = 0; i < getMaxRegionId(); i++) {
       regionalGenerator.add(i);
     }
   }
@@ -200,14 +203,15 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
   /**
    * Generate discounts per sales channel and region based on discount tiers
    */
-  void generateDiscounts() {
+  void generateDiscounts()
+  {
     // Discounts per sales channel
-    for (int i=0; i < getMaxChannelId(); i++) {
+    for (int i = 0; i < getMaxChannelId(); i++) {
       // 50% chance of applying discount to a channel
       channelDiscount.put(i, (random.nextBoolean()) ? discountTiers[random.nextInt(discountTiers.length)] : 0.0);
     }
     // Discounts per region
-    for (int i=0; i < getMaxRegionId(); i++) {
+    for (int i = 0; i < getMaxRegionId(); i++) {
       // 50% chance of applying discount to a region
       regionalDiscount.put(i, (random.nextBoolean()) ? discountTiers[random.nextInt(discountTiers.length)] : 0.0);
     }
@@ -216,13 +220,15 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
   /**
    * Generate taxes based on each region
    */
-  void generateRegionalTax() {
-    for (int i=0; i < getMaxRegionId(); i++) {
+  void generateRegionalTax()
+  {
+    for (int i = 0; i < getMaxRegionId(); i++) {
       regionalTax.put(i, taxTiers[random.nextInt(taxTiers.length)]);
     }
   }
 
-  SalesEvent generateSalesEvent() throws Exception {
+  SalesEvent generateSalesEvent() throws Exception
+  {
     int regionId = regionalGenerator.next();
     int productId = randomId(maxProductId);
     int channelId = channelGenerator.next();
@@ -230,8 +236,8 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
     SalesEvent salesEvent = new SalesEvent();
     salesEvent.time = System.currentTimeMillis();
     salesEvent.productId = productId;
-    salesEvent.channel = (String) schema.getDimensionalConfigurationSchema().getKeysToEnumValuesList().get(KEY_CHANNEL).get(channelId);
-    salesEvent.region = (String) schema.getDimensionalConfigurationSchema().getKeysToEnumValuesList().get(KEY_REGION).get(regionId);
+    salesEvent.channel = (String)schema.getDimensionalConfigurationSchema().getKeysToEnumValuesList().get(KEY_CHANNEL).get(channelId);
+    salesEvent.region = (String)schema.getDimensionalConfigurationSchema().getKeysToEnumValuesList().get(KEY_REGION).get(regionId);
     salesEvent.sales = randomAmount(minAmount, maxAmount);
     salesEvent.tax = calculateTax(salesEvent.sales, regionId);
     salesEvent.discount = calculateDiscount(salesEvent.sales, channelId, regionId);
@@ -239,34 +245,44 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
     return salesEvent;
   }
 
-  private int randomId(int max) {
+  private int randomId(int max)
+  {
     // Provide safe default for invalid max
-    if (max < 1) return 1;
+    if (max < 1) {
+      return 1;
+    }
     return 1 + random.nextInt(max);
   }
 
-  private int randomCustomerByRegion(int regionId) {
+  private int randomCustomerByRegion(int regionId)
+  {
     int regionMultiplier = getMaxCustomerId() / getMaxRegionId();
     return (regionId * regionMultiplier) - random.nextInt(regionMultiplier);
   }
 
-  private double calculateTax(double amount, int regionId) {
-    double rawAmount =  amount * regionalTax.get(regionId);
+  private double calculateTax(double amount, int regionId)
+  {
+    double rawAmount = amount * regionalTax.get(regionId);
     return Math.floor(rawAmount * 100) / 100;
   }
 
-  private double calculateDiscount(double amount, int channelId, int regionId) {
+  private double calculateDiscount(double amount, int channelId, int regionId)
+  {
     // Total discount is combination of channel and region discounts up to maximum allowed discount percentage
-    double rawAmount = amount * Math.min(channelDiscount.get(channelId) + regionalDiscount.get(regionId), maxDiscountPercent);
+    double rawAmount = amount
+        * Math.min(channelDiscount.get(channelId) + regionalDiscount.get(regionId), maxDiscountPercent);
     return Math.floor(rawAmount * 100) / 100;
   }
 
   // Generate random double with gaussian distribution between min and max and two decimal places
-  private double randomAmount(double min, double max) {
+  private double randomAmount(double min, double max)
+  {
     // Provide safe default for invalid min/max relationships
-    if (max <= min) return Math.floor(min * 100) / 100;
-    double mean = (min + max)/2.0;
-    double deviation = (max - min)/2.0/3.0;
+    if (max <= min) {
+      return Math.floor(min * 100) / 100;
+    }
+    double mean = (min + max) / 2.0;
+    double deviation = (max - min) / 2.0 / 3.0;
     double rawAmount;
     do {
       rawAmount = random.nextGaussian() * deviation + mean;
@@ -275,86 +291,106 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
   }
 
   // Generate random tax given transaction sales
-  private double randomPercent(double amount, double percent) {
-    double tax = amount * ( random.nextDouble() * percent);
+  private double randomPercent(double amount, double percent)
+  {
+    double tax = amount * (random.nextDouble() * percent);
     return Math.floor(tax * 100) / 100;
   }
 
-
-  public long getMaxTuplesPerWindow() {
+  public long getMaxTuplesPerWindow()
+  {
     return maxTuplesPerWindow;
   }
 
-  public void setMaxTuplesPerWindow(long maxTuplesPerWindow) {
+  public void setMaxTuplesPerWindow(long maxTuplesPerWindow)
+  {
     this.maxTuplesPerWindow = maxTuplesPerWindow;
   }
 
-  public int getMaxProductId() {
+  public int getMaxProductId()
+  {
     return maxProductId;
   }
 
-  public int getMaxCustomerId() {
+  public int getMaxCustomerId()
+  {
     return maxCustomerId;
   }
 
-  public int getMaxChannelId() {
+  public int getMaxChannelId()
+  {
     return maxChannelId;
   }
 
-  public double getMinAmount() {
+  public double getMinAmount()
+  {
     return minAmount;
   }
 
-  public void setMinAmount(double minAmount) {
+  public void setMinAmount(double minAmount)
+  {
     this.minAmount = minAmount;
   }
 
-  public double getMaxAmount() {
+  public double getMaxAmount()
+  {
     return maxAmount;
   }
 
-  public void setMaxAmount(double maxAmount) {
+  public void setMaxAmount(double maxAmount)
+  {
     this.maxAmount = maxAmount;
   }
 
-  public int getTuplesPerWindowDeviation() {
+  public int getTuplesPerWindowDeviation()
+  {
     return tuplesPerWindowDeviation;
   }
 
-  public void setTuplesPerWindowDeviation(int tuplesPerWindowDeviation) {
+  public void setTuplesPerWindowDeviation(int tuplesPerWindowDeviation)
+  {
     this.tuplesPerWindowDeviation = tuplesPerWindowDeviation;
   }
 
-  public int getTuplesRateCycle() {
+  public int getTuplesRateCycle()
+  {
     return tuplesRateCycle;
   }
 
-  public void setTuplesRateCycle(int tuplesRateCycle) {
+  public void setTuplesRateCycle(int tuplesRateCycle)
+  {
     this.tuplesRateCycle = tuplesRateCycle;
   }
 
-  public int getMaxRegionId() {
+  public int getMaxRegionId()
+  {
     return maxRegionId;
   }
 
-  public void setMaxRegionId(int maxRegionId) {
-    if (maxRegionId >= 1)
+  public void setMaxRegionId(int maxRegionId)
+  {
+    if (maxRegionId >= 1) {
       this.maxRegionId = maxRegionId;
+    }
   }
 
-  public double getMaxDiscountPercent() {
+  public double getMaxDiscountPercent()
+  {
     return maxDiscountPercent;
   }
 
-  public void setMaxDiscountPercent(double maxDiscountPercent) {
+  public void setMaxDiscountPercent(double maxDiscountPercent)
+  {
     this.maxDiscountPercent = maxDiscountPercent;
   }
 
-  public int getDiscountCycle() {
+  public int getDiscountCycle()
+  {
     return discountCycle;
   }
 
-  public void setDiscountCycle(int discountCycle) {
+  public void setDiscountCycle(int discountCycle)
+  {
     this.discountCycle = discountCycle;
   }
 
@@ -367,7 +403,8 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
   }
 
   /**
-   * @param eventSchemaJSON the eventSchemaJSON to set
+   * @param eventSchemaJSON
+   *          the eventSchemaJSON to set
    */
   public void setEventSchemaJSON(String eventSchemaJSON)
   {
@@ -379,21 +416,4 @@ public class JsonSalesGenerator implements InputGenerator<byte[]>
   {
     return jsonBytes;
   }
-}
-
-/**
- * A single sales event
- */
-class SalesEvent {
-
-  /* dimension keys */
-  public long time;
-  public int productId;
-  public String customer;
-  public String channel;
-  public String region;
-  /* metrics */
-  public double sales;
-  public double discount;
-  public double tax;
 }

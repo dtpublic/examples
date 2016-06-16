@@ -11,7 +11,8 @@ import com.datatorrent.common.util.BaseOperator;
 import com.datatorrent.demos.dimensions.telecom.model.CallDetailRecord;
 import com.datatorrent.demos.dimensions.telecom.model.EnrichedCDR;
 
-public class CDREnrichOperator extends BaseOperator {
+public class CDREnrichOperator extends BaseOperator
+{
 
   @InputPortFieldAnnotation(optional = true)
   public final transient DefaultInputPort<String> stringInputPort = new DefaultInputPort<String>()

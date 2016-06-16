@@ -13,22 +13,22 @@ import com.datatorrent.lib.appdata.gpo.GPOMutable;
 
 /**
  * The tuple is a List of MutablePair<String, Long>
+ * 
  * @author bright
  *
  */
 public class AppDataSimpleConfigurableSnapshotServer extends AppDataConfigurableSnapshotServer<Map<String, Long>>
 {
   private static final transient Logger logger = LoggerFactory.getLogger(AppDataSimpleConfigurableSnapshotServer.class);
-  
+
   @Override
   protected void convertTo(Map<String, Long> row, GPOMutable gpo)
   {
-    for(Map.Entry<String, Long> entry : row.entrySet())
-    {
+    for (Map.Entry<String, Long> entry : row.entrySet()) {
       gpo.setField(entry.getKey(), entry.getValue());
       logger.info("field: {}; value: {}", entry.getKey(), entry.getValue());
     }
-    
+
   }
 
 }

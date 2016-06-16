@@ -25,8 +25,8 @@ import com.datatorrent.lib.appdata.schemas.Type;
 
 public class RegionZipDimensionalExpanderTester
 {
-  public final static String KEY_REGION = "region";
-  public final static String KEY_ZIP = "zipcode";
+  public static final String KEY_REGION = "region";
+  public static final String KEY_ZIP = "zipcode";
 
   protected Map<String, Set<Object>> seenEnumValues;
   protected RegionZipCombinationFilter filter = new RegionZipCombinationFilter();
@@ -55,8 +55,7 @@ public class RegionZipDimensionalExpanderTester
   @Test
   public void test()
   {
-    CombinationDimensionalExpander expander = new CombinationDimensionalExpander((Map)seenEnumValues)
-        .withCombinationFilter(filter).withCombinationValidator((CombinationValidator)validator);
+    CombinationDimensionalExpander expander = new CombinationDimensionalExpander((Map)seenEnumValues).withCombinationFilter(filter).withCombinationValidator((CombinationValidator)validator);
 
     final FieldsDescriptor fd = new FieldsDescriptor(fieldToType);
     Map<String, Set<Object>> keyToValues = Maps.newHashMap();

@@ -8,6 +8,7 @@ public interface BytesSupport
 {
   /**
    * convert this object to bytes
+   * 
    * @return
    */
   public byte[] toBytes();

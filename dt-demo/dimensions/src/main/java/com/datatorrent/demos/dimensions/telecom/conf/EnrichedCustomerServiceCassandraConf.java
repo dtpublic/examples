@@ -4,22 +4,22 @@
  */
 package com.datatorrent.demos.dimensions.telecom.conf;
 
-public class EnrichedCustomerServiceCassandraConf extends DataWarehouseConfig{
+public class EnrichedCustomerServiceCassandraConf extends DataWarehouseConfig
+{
   private static EnrichedCustomerServiceCassandraConf instance;
-  
+
   public static EnrichedCustomerServiceCassandraConf instance()
   {
-    if(instance == null)
-    {
-      synchronized(EnrichedCustomerServiceCassandraConf.class)
-      {
-        if(instance == null)
+    if (instance == null) {
+      synchronized (EnrichedCustomerServiceCassandraConf.class) {
+        if (instance == null) {
           instance = new EnrichedCustomerServiceCassandraConf();
+        }
       }
     }
     return instance;
   }
-    
+
   protected EnrichedCustomerServiceCassandraConf()
   {
     host = TelecomDemoConf.instance.getCassandraHost();

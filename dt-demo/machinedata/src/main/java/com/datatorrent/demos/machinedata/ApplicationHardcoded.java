@@ -10,6 +10,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregateEvent.Aggregator;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 
@@ -31,8 +34,6 @@ import com.datatorrent.demos.machinedata.data.MachineHardCodedAggregateConverter
 import com.datatorrent.demos.machinedata.data.MachineInfo;
 import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
 import com.datatorrent.lib.appdata.schemas.SchemaUtils;
-import com.datatorrent.lib.dimensions.DimensionsDescriptor;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
 import com.datatorrent.lib.statistics.DimensionsComputation;
@@ -55,7 +56,7 @@ public class ApplicationHardcoded implements StreamingApplication
 
     AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY.setup();
     DimensionalConfigurationSchema configurationSchema = new DimensionalConfigurationSchema(eventSchema,
-                                                                                            AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY);
+        AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY);
 
     List<DimensionsDescriptor> dimensionsDescriptors = Lists.newArrayList();
 
@@ -68,8 +69,8 @@ public class ApplicationHardcoded implements StreamingApplication
     }
 
     @SuppressWarnings({"unchecked", "MismatchedReadAndWriteOfArray", "rawtypes"})
-    DimensionsComputation.Aggregator<MachineInfo, MachineHardCodedAggregate>[] aggregators
-      = (DimensionsComputation.Aggregator<MachineInfo, MachineHardCodedAggregate>[])new DimensionsComputation.Aggregator[dimensionsDescriptors.size() * 2];
+    Aggregator<MachineInfo, MachineHardCodedAggregate>[] aggregators
+      = (Aggregator<MachineInfo, MachineHardCodedAggregate>[])new Aggregator[dimensionsDescriptors.size() * 2];
     for (int ddID = 0, aggregatorIndex = 0; ddID < dimensionsDescriptors.size(); ddID++) {
       DimensionsDescriptor dimensionsDescriptor = dimensionsDescriptors.get(ddID);
       aggregators[aggregatorIndex] = new MachineAggregatorHardCodedSum(ddID, dimensionsDescriptor);
@@ -98,7 +99,7 @@ public class ApplicationHardcoded implements StreamingApplication
 
     //Set store properties
     String basePath = Preconditions.checkNotNull(conf.get(propStorePath),
-                                                 "a base path should be specified in the properties.xml");
+        "a base path should be specified in the properties.xml");
     TFileImpl hdsFile = new TFileImpl.DTFileImpl();
     basePath += Path.SEPARATOR + System.currentTimeMillis();
     hdsFile.setBasePath(basePath);

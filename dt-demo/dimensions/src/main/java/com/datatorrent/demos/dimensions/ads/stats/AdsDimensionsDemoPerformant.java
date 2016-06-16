@@ -4,11 +4,7 @@
  */
 package com.datatorrent.demos.dimensions.ads.stats;
 
-import java.net.URI;
-
 import java.util.concurrent.TimeUnit;
-
-import com.google.common.base.Preconditions;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +13,19 @@ import org.apache.commons.lang.mutable.MutableLong;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 
+import com.google.common.base.Preconditions;
+
+import com.datatorrent.api.Context;
+import com.datatorrent.api.Context.OperatorContext;
+import com.datatorrent.api.DAG;
+import com.datatorrent.api.DAG.Locality;
+import com.datatorrent.api.StreamingApplication;
+import com.datatorrent.api.annotation.ApplicationAnnotation;
+import com.datatorrent.contrib.dimensions.AppDataSingleSchemaDimensionStoreHDHT;
+import com.datatorrent.contrib.hdht.tfile.TFileImpl;
+import com.datatorrent.demos.dimensions.ads.AdInfo;
+import com.datatorrent.demos.dimensions.ads.AdInfo.AdInfoAggregator;
+import com.datatorrent.demos.dimensions.ads.InputItemGenerator;
 import com.datatorrent.lib.appdata.schemas.SchemaUtils;
 import com.datatorrent.lib.counters.BasicCounters;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
@@ -24,26 +33,10 @@ import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
 import com.datatorrent.lib.statistics.DimensionsComputation;
 import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
 
-import com.datatorrent.contrib.dimensions.AppDataSingleSchemaDimensionStoreHDHT;
-import com.datatorrent.contrib.hdht.tfile.TFileImpl;
-
-import com.datatorrent.api.Context;
-import com.datatorrent.api.Context.OperatorContext;
-import com.datatorrent.api.DAG;
-import com.datatorrent.api.DAG.Locality;
-import com.datatorrent.api.Operator;
-import com.datatorrent.api.StreamingApplication;
-import com.datatorrent.api.annotation.ApplicationAnnotation;
-
-import com.datatorrent.demos.dimensions.ads.AdInfo;
-import com.datatorrent.demos.dimensions.ads.AdInfo.AdInfoAggregator;
-import com.datatorrent.demos.dimensions.ads.InputItemGenerator;
-
 /**
  * @since 3.1.0
  */
-
-@ApplicationAnnotation(name=AdsDimensionsDemoPerformant.APP_NAME)
+@ApplicationAnnotation(name = AdsDimensionsDemoPerformant.APP_NAME)
 public class AdsDimensionsDemoPerformant implements StreamingApplication
 {
   public static final String EVENT_SCHEMA = "adsBenchmarkSchema.json";
@@ -68,15 +61,11 @@ public class AdsDimensionsDemoPerformant implements StreamingApplication
     input.setEventSchemaJSON(eventSchema);
 
     String[] dimensionSpecs = new String[] {
-      "time=" + TimeUnit.MINUTES,
-      "time=" + TimeUnit.MINUTES + ":location",
-      "time=" + TimeUnit.MINUTES + ":advertiser",
-      "time=" + TimeUnit.MINUTES + ":publisher",
-      "time=" + TimeUnit.MINUTES + ":advertiser:location",
-      "time=" + TimeUnit.MINUTES + ":publisher:location",
-      "time=" + TimeUnit.MINUTES + ":publisher:advertiser",
-      "time=" + TimeUnit.MINUTES + ":publisher:advertiser:location"
-    };
+        "time=" + TimeUnit.MINUTES, "time=" + TimeUnit.MINUTES + ":location",
+        "time=" + TimeUnit.MINUTES + ":advertiser", "time=" + TimeUnit.MINUTES + ":publisher",
+        "time=" + TimeUnit.MINUTES + ":advertiser:location", "time=" + TimeUnit.MINUTES + ":publisher:location",
+        "time=" + TimeUnit.MINUTES + ":publisher:advertiser",
+        "time=" + TimeUnit.MINUTES + ":publisher:advertiser:location" };
 
     //Set operator properties
     AdInfoAggregator[] aggregators = new AdInfoAggregator[dimensionSpecs.length];
@@ -84,9 +73,7 @@ public class AdsDimensionsDemoPerformant implements StreamingApplication
     //Set input properties
     input.setEventSchemaJSON(eventSchema);
 
-    for(int index = 0;
-        index < dimensionSpecs.length;
-        index++) {
+    for (int index = 0; index < dimensionSpecs.length; index++) {
       String dimensionSpec = dimensionSpecs[index];
       AdInfoAggregator aggregator = new AdInfoAggregator();
       aggregator.init(dimensionSpec, index);
@@ -103,7 +90,7 @@ public class AdsDimensionsDemoPerformant implements StreamingApplication
 
     //Set store properties
     String basePath = Preconditions.checkNotNull(conf.get(PROP_STORE_PATH),
-                                                 "a base path should be specified in the properties.xml");
+        "a base path should be specified in the properties.xml");
     TFileImpl hdsFile = new TFileImpl.DTFileImpl();
     basePath += Path.SEPARATOR + System.currentTimeMillis();
     hdsFile.setBasePath(basePath);

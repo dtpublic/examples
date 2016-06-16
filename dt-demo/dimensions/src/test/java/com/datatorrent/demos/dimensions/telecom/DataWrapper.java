@@ -43,16 +43,14 @@ public class DataWrapper<T>
    */
   public static DataWrapper getOrCreateInstanceOfId(String id)
   {
-    if(id == null || id.isEmpty())
+    if (id == null || id.isEmpty()) {
       throw new IllegalArgumentException("Input parameter id should NOT null or empty.");
+    }
     
     DataWrapper instance = idToInstance.get(id);
-    if(instance == null)
-    {
-      synchronized(DataWrapper.class)
-      {
-        if(instance == null)
-        {
+    if (instance == null) {
+      synchronized (DataWrapper.class) {
+        if (instance == null) {
           instance = new DataWrapper();
           instance.setId(id);
           idToInstance.put(id, instance);
@@ -69,8 +67,7 @@ public class DataWrapper<T>
   
   public synchronized T getOrSetData(T data)
   {
-    if(this.data == null)
-    {
+    if (this.data == null) {
       this.data = data;
     }
     return this.data;
@@ -83,13 +80,14 @@ public class DataWrapper<T>
    */
   public T syncData()
   {
-    if(data == null)
+    if (data == null) {
       throw new IllegalArgumentException("Data should be already set when syncData().");
-    
-    for( DataWrapper clonedInstance : clonedInstances)
-    {
-      if(id.equals(clonedInstance.id))
+    }
+
+    for (DataWrapper clonedInstance : clonedInstances) {
+      if (id.equals(clonedInstance.id)) {
         clonedInstance.data = data;
+      }
     }
     return data;
   }
@@ -98,6 +96,7 @@ public class DataWrapper<T>
   {
     return id;
   }
+  
   public void setId(String id)
   {
     this.id = id;
@@ -107,6 +106,7 @@ public class DataWrapper<T>
   {
     this.data = data;
   }
+
   public T getData()
   {
     return this.data;

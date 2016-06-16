@@ -6,13 +6,14 @@ package com.datatorrent.demos.dimensions.telecom;
 
 import java.util.List;
 
+import com.google.common.collect.Lists;
+
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DefaultInputPort;
 import com.datatorrent.api.DefaultOutputPort;
 import com.datatorrent.api.annotation.InputPortFieldAnnotation;
 import com.datatorrent.api.annotation.OutputPortFieldAnnotation;
 import com.datatorrent.common.util.BaseOperator;
-import com.google.common.collect.Lists;
 
 public class TupleCacheOperator<T> extends BaseOperator
 {
@@ -63,8 +64,9 @@ public class TupleCacheOperator<T> extends BaseOperator
   protected void processTuple(T tuple)
   {
     dataList.add(tuple);
-    if(outputPort.isConnected())
+    if (outputPort.isConnected()) {
       outputPort.emit(tuple);
+    }
   }
 
   @SuppressWarnings("unchecked")

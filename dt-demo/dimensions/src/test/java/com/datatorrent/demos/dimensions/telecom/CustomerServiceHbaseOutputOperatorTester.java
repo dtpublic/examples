@@ -9,11 +9,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.apache.hadoop.conf.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.apache.hadoop.conf.Configuration;
+
+import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DAG;
@@ -32,7 +35,6 @@ import com.datatorrent.demos.dimensions.telecom.operator.CustomerServiceHbaseOut
 import com.datatorrent.lib.testbench.ArrayListTestSink;
 import com.datatorrent.lib.util.FieldInfo.SupportType;
 import com.datatorrent.lib.util.TableInfo;
-import com.google.common.collect.Maps;
 
 
 public class CustomerServiceHbaseOutputOperatorTester
@@ -72,10 +74,10 @@ public class CustomerServiceHbaseOutputOperatorTester
       
       //main thread wait for signal
       final int checkTimePeriod = 200;
-      for(int index = 0; index < timeOutTime/checkTimePeriod + timeOutTime % checkTimePeriod; ++index)
-      {
-        if(customerServiceGenerator.isTerminated())
+      for (int index = 0; index < timeOutTime / checkTimePeriod + timeOutTime % checkTimePeriod; ++index) {
+        if (customerServiceGenerator.isTerminated()) {
           break;
+        }
         waitMills(checkTimePeriod);
       }
       logger.info("Send Tuples done. going to terminate the application.");
@@ -99,13 +101,13 @@ public class CustomerServiceHbaseOutputOperatorTester
       
       int readSize = 0;
       final int checkTimePeriod = 1000;
-      for(int index = 0; index < timeOutTime/checkTimePeriod + timeOutTime % checkTimePeriod; ++index)
-      {
+      for (int index = 0; index < timeOutTime / checkTimePeriod + timeOutTime % checkTimePeriod; ++index) {
         waitMills(checkTimePeriod);
         readDataList = hbaseInputCacheOperator.getCacheData();
         //the startup probably take a while
-        if(readSize == readDataList.size() && readSize != 0)
+        if (readSize == readDataList.size() && readSize != 0) {
           break;
+        }
         readSize = readDataList.size();
       }
       lc.shutdown();
@@ -197,16 +199,14 @@ public class CustomerServiceHbaseOutputOperatorTester
     
     //the data saved to the HBase is key value.
     Map<String, CustomerService> imsiToCsMap = Maps.newHashMap();
-    for(CustomerService cs : generatedDataList)
-    {
+    for (CustomerService cs : generatedDataList) {
       imsiToCsMap.put(cs.imsi, cs);
     }
     
     logger.info("expected dataSet size: {}", imsiToCsMap.size());
     
     int fetchedCount = 0;
-    for(Object readData: readDataList)
-    {
+    for (Object readData : readDataList) {
       LoadedCustomerService lcs = (LoadedCustomerService)readData;
       Assert.assertTrue("Don't have data: " + lcs, lcs.equals(imsiToCsMap.get(lcs.imsi)));
       fetchedCount++;
@@ -217,14 +217,12 @@ public class CustomerServiceHbaseOutputOperatorTester
   
   public static void waitMills(int millSeconds)
   {
-    if(millSeconds <= 0)
+    if (millSeconds <= 0) {
       return;
-    try
-    {
-      Thread.sleep(millSeconds);
     }
-    catch(Exception e)
-    {
+    try {
+      Thread.sleep(millSeconds);
+    } catch (Exception e) {
       //ignore
     }
   }
@@ -256,8 +254,7 @@ public class CustomerServiceHbaseOutputOperatorTester
     @Override
     public void emitTuples()
     {
-      if(size >= capacity)
-      {
+      if (size >= capacity) {
         terminateFlag.set(true);
         waitMills(2);
         return;
