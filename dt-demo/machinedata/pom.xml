@@ -17,7 +17,7 @@
 
   <properties>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <megh.version>3.4.0-SNAPSHOT</megh.version>
+    <megh.version>3.4.0</megh.version>
   </properties>
 
   <!-- repository to provide the DataTorrent artifacts -->
