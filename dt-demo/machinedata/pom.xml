@@ -12,12 +12,12 @@
   <parent>
     <artifactId>dt-demos</artifactId>
     <groupId>com.datatorrent</groupId>
-    <version>3.4.0-SNAPSHOT</version>
+    <version>3.4.0</version>
   </parent>
 
   <properties>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <megh.version>3.4.0-SNAPSHOT</megh.version>
+    <megh.version>3.4.0</megh.version>
   </properties>
 
   <!-- repository to provide the DataTorrent artifacts -->
