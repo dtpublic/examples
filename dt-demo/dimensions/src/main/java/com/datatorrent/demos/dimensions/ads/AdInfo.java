@@ -64,8 +64,7 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param publisher
-   *          the publisher to set
+   * @param publisher the publisher to set
    */
   public void setPublisher(String publisher)
   {

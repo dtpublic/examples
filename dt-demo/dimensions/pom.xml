@@ -15,7 +15,7 @@
   </parent>
 
   <properties>
-    <megh.version>3.4.0-SNAPSHOT</megh.version>
+    <megh.version>3.4.0</megh.version>
     <skipTests>true</skipTests>
   </properties>
 
