@@ -1,0 +1,51 @@
+<configuration>
+  <property>
+    <name>dt.application.CassandraTestApplication.operator.*.attr.MEMORY_MB</name>
+    <value>1024</value>
+  </property>
+  <property>
+    <name>dt.application.CassandraTestApplication.attr.MASTER_MEMORY_MB</name>
+    <value>2048</value>
+  </property>
+  <property>
+    <name>dt.application.CassandraTestApplication.prop.rowsCount</name>
+    <value>4000</value>
+  </property>
+  <property>
+    <name>dt.operator.*.prop.tablename</name>
+    <value>TestUsers</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataReader.prop.query</name>
+    <value>select * from testapp.%t where token(%p) > %v</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataReader.prop.limit</name>
+    <value>50</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataReader.prop.primaryKeyColumn</name>
+    <value>id</value>
+  </property>
+  <property>
+    <name>dt.operator.*.prop.store.node</name>
+    <value>localhost</value>
+  </property>
+  <property>
+    <name>dt.operator.*.prop.store.keyspace</name>
+    <value>testapp</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataPopulator.port.tuplesInput.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.cassandra.TestUsers</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataReader.port.outputPort.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.cassandra.TestUsers</value>
+  </property>
+  <property>
+    <name>dt.loggers.level</name>
+    <value>com.datatorrent.contrib.*:DEBUG</value>
+  </property>
+</configuration>
+
