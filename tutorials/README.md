@@ -17,5 +17,6 @@
 | operatorTutorial  | Simple example of a word-count operator and a unit test for it |
 | parser            | Examples showing how to use different parsers and formatters |
 | partition         | Shows use of custom partitioning with a stream codec.
+| recordReader      | Shows use of FSRecordReaderModule to read newline delimited records from a file. |
 | topnwords         | The Top-N words example. |
 
