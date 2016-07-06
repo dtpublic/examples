@@ -13,8 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import com.datatorrent.api.annotation.OutputPortFieldAnnotation;
 import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.lib.io.fs.AbstractFileInputOperator;
-//import com.datatorrent.lib.io.fs.FileReaderMultiDir;
 
 
 /**

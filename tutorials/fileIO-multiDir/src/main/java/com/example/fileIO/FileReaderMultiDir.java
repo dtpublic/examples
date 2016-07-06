@@ -5,33 +5,18 @@
 //package com.datatorrent.lib.io.fs;
 package com.example.fileIO;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-import java.lang.reflect.Field;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Set;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import org.apache.apex.malhar.lib.wal.WindowDataManager;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.mutable.MutableLong;
-import org.apache.hadoop.fs.FileStatus;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,19 +25,9 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-
-import com.datatorrent.api.AutoMetric;
-import com.datatorrent.api.DefaultOutputPort;
 import com.datatorrent.api.DefaultPartition;
-import com.datatorrent.api.Stats;
-import com.datatorrent.api.StatsListener;
 
-import com.datatorrent.lib.counters.BasicCounters;
 import com.datatorrent.lib.io.fs.AbstractFileInputOperator;
-import com.datatorrent.lib.io.IdempotentStorageManager;
-import com.datatorrent.lib.util.KryoCloneUtils;
 
 public abstract class FileReaderMultiDir extends AbstractFileInputOperator<String>
 {
@@ -178,7 +153,7 @@ public abstract class FileReaderMultiDir extends AbstractFileInputOperator<Strin
       = new ArrayList(nPartitions);
 
     // parallel list of storage managers
-    Collection<IdempotentStorageManager> newManagers
+    Collection<WindowDataManager> newManagers
       //  = Lists.newArrayListWithExpectedSize(totalCount);
       = new ArrayList(nPartitions);
 
@@ -186,7 +161,7 @@ public abstract class FileReaderMultiDir extends AbstractFileInputOperator<Strin
     LOG.info("definePartitions: setting up {} new partitoins with {} monitored directories",
              nPartitions, numDirs);
 
-    final IdempotentStorageManager ism = getIdempotentStorageManager();
+    final WindowDataManager ism = getWindowDataManager();
 
     // j is the index of current slice
     int idx = 0;        // index of partition
@@ -206,7 +181,7 @@ public abstract class FileReaderMultiDir extends AbstractFileInputOperator<Strin
 
         oper.setScanner(scn);
         newPartitions.add(new DefaultPartition<>(oper));
-        newManagers.add(oper.getIdempotentStorageManager());
+        newManagers.add(oper.getWindowDataManager());
       }
     }
 

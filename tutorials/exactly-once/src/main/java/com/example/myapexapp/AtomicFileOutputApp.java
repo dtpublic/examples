@@ -4,6 +4,7 @@
  */
 package com.example.myapexapp;
 
+import org.apache.apex.malhar.lib.wal.FSWindowDataManager;
 import org.apache.hadoop.conf.Configuration;
 
 import com.datatorrent.api.Context;
@@ -12,7 +13,6 @@ import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.contrib.kafka.KafkaSinglePortStringInputOperator;
 import com.datatorrent.lib.io.ConsoleOutputOperator;
-import com.datatorrent.lib.io.IdempotentStorageManager;
 import com.datatorrent.lib.io.fs.AbstractFileOutputOperator;
 import com.datatorrent.lib.util.KeyValPair;
 
@@ -24,7 +24,7 @@ public class AtomicFileOutputApp implements StreamingApplication
   {
     KafkaSinglePortStringInputOperator kafkaInput = dag.addOperator("kafkaInput",
         new KafkaSinglePortStringInputOperator());
-    kafkaInput.setIdempotentStorageManager(new IdempotentStorageManager.FSIdempotentStorageManager());
+    kafkaInput.setWindowDataManager(new FSWindowDataManager());
 
     Application.UniqueCounterFlat count = dag.addOperator("count", new Application.UniqueCounterFlat());
 
