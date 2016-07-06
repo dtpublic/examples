@@ -14,9 +14,9 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.3.0-incubating</apex.version>
+    <apex.version>3.4.0</apex.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <malhar.version>3.3.1-incubating</malhar.version>
+    <malhar.version>3.4.0</malhar.version>
   </properties>
 
   <build>
@@ -329,7 +329,6 @@
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
       <version>2.3.1</version>
-      <scope>test</scope>
     </dependency>
 
   </dependencies>

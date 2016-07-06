@@ -1,13 +1,11 @@
 package com.example.myapexapp;
 
+import org.apache.apex.malhar.lib.fs.LineByLineFileInputOperator;
 import org.apache.hadoop.conf.Configuration;
 
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.DAG;
-import com.datatorrent.lib.io.ConsoleOutputOperator;
-import com.datatorrent.lib.io.fs.AbstractFileInputOperator;
-import com.datatorrent.lib.io.fs.AbstractFileInputOperator.FileLineInputOperator;
 
 /**
  * Simple application illustrating file input-output
@@ -20,8 +18,8 @@ public class Application implements StreamingApplication
   public void populateDAG(DAG dag, Configuration conf)
   {
     // create operators
-    FileLineInputOperator in = dag.addOperator("input",
-                                               new FileLineInputOperator());
+    LineByLineFileInputOperator in = dag.addOperator("input",
+                                               new LineByLineFileInputOperator());
     FileOutputOperator out = dag.addOperator("output",
                                              new FileOutputOperator());
     // configure operators

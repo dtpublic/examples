@@ -16,9 +16,7 @@ import java.util.Map;
 
 import com.datatorrent.api.DefaultPartition;
 import com.datatorrent.api.Partitioner;
-import com.datatorrent.api.Partitioner.PartitioningContext;
 import com.datatorrent.api.StatsListener;
-import com.datatorrent.api.Stats.OperatorStats;
 
 import com.datatorrent.api.DefaultOutputPort;
 import com.datatorrent.api.InputOperator;
