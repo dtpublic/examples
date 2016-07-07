@@ -12,3 +12,4 @@
 | operatorTutorial  | Simple example of a word-count operator and a unit test for it |
 | partition         | Shows use of custom partitioning with a stream codec.
 | topnwords         | The Top-N words example. |
+| cassandra         | Shows how to use CassandraPOJOOutputOperator and CassandraPOJOInputOperator in a test application |
