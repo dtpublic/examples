@@ -7,6 +7,7 @@
 | fileIO-simple     | Simple example to copy data from files in an input directory to rolling files in an output directory |
 | fileOutput        | Show how to use partitioning on both the file output operator and the input operator |
 | hdht              | Shows how to use the HDHT operator. |
+| hdfs2kafka        | Shows how to read from HDFS and write to a Kafka topic. |
 | jdbcIngest        | Shows how to read rows from a table in an SQL database and write them to a file in HDFS |
 | kafka             | Shows how to read from Kafka using the new 0.9 input operator and write to HDFS using rolling output files. |
 | operatorTutorial  | Simple example of a word-count operator and a unit test for it |
