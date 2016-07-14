@@ -1,0 +1,30 @@
+<configuration>
+  <property>
+    <name>dt.application.CassandraOutputApplication.operator.*.attr.MEMORY_MB</name>
+    <value></value>
+  </property>
+  <property>
+    <name>dt.application.CassandraOutputApplication.attr.MASTER_MEMORY_MB</name>
+    <value></value>
+  </property>
+  <property>
+    <name>dt.application.CassandraOutputApplication.prop.rowsCount</name>
+    <value></value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataWriter.prop.tablename</name>
+    <value></value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataWriter.prop.store.node</name>
+    <value></value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataWriter.prop.store.keyspace</name>
+    <value></value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataWriter.port.input.attr.TUPLE_CLASS</name>
+    <value></value>
+  </property>
+</configuration>
