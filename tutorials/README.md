@@ -1,6 +1,7 @@
 | Application       | Description |
 | ----------------- | ----------- |
 | dynamic-partition | Example showing use of StatsListener with dynamic paritioning |
+| enricher          | Shows how to enrich streaming data using external source |
 | exactly-once      | Shows how to read from Kafka and write to JDBC or HDFS with exactly-once semantics |
 | fileIO            | Shows how to implement high-performance file copy using partitioning and the file input and output operators. Also shows the use of a second port to send control information. |
 | fileIO-multiDir   | Shows how to use the file input operator to monitor multiple directories by using custom partitioning |
