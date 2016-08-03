@@ -10,9 +10,10 @@
 | hdht              | Shows how to use the HDHT operator. |
 | hdfs2kafka        | Shows how to read from HDFS and write to a Kafka topic. |
 | jdbcIngest        | Shows how to read rows from a table in an SQL database and write them to a file in HDFS |
+| jdbcToJdbc        | This application reads from an input table using JDBC, converts input to user defined POJO & then writes those POJOS to another table. |
 | kafka             | Shows how to read from Kafka using the new 0.9 input operator and write to HDFS using rolling output files. |
 | operatorTutorial  | Simple example of a word-count operator and a unit test for it |
+| parser            | Examples showing how to use different parsers and formatters |
 | partition         | Shows use of custom partitioning with a stream codec.
 | topnwords         | The Top-N words example. |
-| jdbcToJdbc        | This application reads from an input table using JDBC, converts input to user defined POJO & then writes those POJOS to another table. |
-| parser            | Examples showing how to use different parsers and formatters |
+
