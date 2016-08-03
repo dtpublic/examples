@@ -7,6 +7,7 @@
 | fileIO-multiDir   | Shows how to use the file input operator to monitor multiple directories by using custom partitioning |
 | fileIO-simple     | Simple example to copy data from files in an input directory to rolling files in an output directory |
 | fileOutput        | Show how to use partitioning on both the file output operator and the input operator |
+| fileToJdbc        | Shows how to read files from HDFS, parse into POJOs and then insert into a table in MySQL.  |
 | hdht              | Shows how to use the HDHT operator. |
 | hdfs2kafka        | Shows how to read from HDFS and write to a Kafka topic. |
 | jdbcIngest        | Shows how to read rows from a table in an SQL database and write them to a file in HDFS |
