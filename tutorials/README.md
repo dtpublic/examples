@@ -15,3 +15,4 @@
 | partition         | Shows use of custom partitioning with a stream codec.
 | topnwords         | The Top-N words example. |
 | jdbcToJdbc        | This application reads from an input table using JDBC, converts input to user defined POJO & then writes those POJOS to another table. |
+| parser            | Examples showing how to use different parsers and formatters |
