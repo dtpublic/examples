@@ -1,21 +1,3 @@
-/**
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package com.example.mydtapp;
 
 import java.io.File;
@@ -29,25 +11,21 @@ import java.util.Collection;
 
 import javax.validation.ConstraintViolationException;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.hadoop.conf.Configuration;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.hadoop.conf.Configuration;
-
 import com.datatorrent.api.LocalMode;
 
-/**
- * Application test for {@link JdbcHDFSApp}
- */
-public class JdbcInputAppTest
+public class JdbcPollerApplicationTest
 {
   private static final String DB_DRIVER = "org.hsqldb.jdbcDriver";
   private static final String URL = "jdbc:hsqldb:mem:test;sql.syntax_mys=true";
   private static final String TABLE_NAME = "test_event_table";
-  private static final String FILE_NAME = "/tmp/jdbcApp";
+  private static final String OUTPUT_DIR_NAME = "/tmp/test/output";
 
   @BeforeClass
   public static void setup()
@@ -77,7 +55,7 @@ public class JdbcInputAppTest
   public static void cleanup()
   {
     try {
-      FileUtils.deleteDirectory(new File(FILE_NAME));
+      FileUtils.deleteDirectory(new File(OUTPUT_DIR_NAME));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
@@ -118,8 +96,17 @@ public class JdbcInputAppTest
     try {
       LocalMode lma = LocalMode.newInstance();
       Configuration conf = new Configuration(false);
-      conf.addResource(this.getClass().getResourceAsStream("/META-INF/properties-SimpleJdbcToHDFSApp.xml"));
-      lma.prepareDAG(new JdbcHDFSApp(), conf);
+      conf.set("dt.application.PollJdbcToHDFSApp.operator.JdbcPoller.prop.store.databaseUrl", URL);
+      conf.set("dt.application.PollJdbcToHDFSApp.operator.JdbcPoller.prop.store.databaseDriver", DB_DRIVER);
+      conf.setInt("dt.application.PollJdbcToHDFSApp.operator.JdbcPoller.prop.partitionCount", 2);
+      conf.set("dt.application.PollJdbcToHDFSApp.operator.JdbcPoller.prop.key", "ACCOUNT_NO");
+      conf.set("dt.application.PollJdbcToHDFSApp.operator.JdbcPoller.prop.columnsExpression", "ACCOUNT_NO,NAME,AMOUNT");
+      conf.set("dt.application.PollJdbcToHDFSApp.operator.JdbcPoller.prop.tableName", TABLE_NAME);
+      conf.set("dt.application.PollJdbcToHDFSApp.operator.JdbcPoller.port.outputPort.attr.TUPLE_CLASS",
+          "com.example.mydtapp.PojoEvent");
+      conf.set("dt.application.PollJdbcToHDFSApp.operator.Writer.filePath", OUTPUT_DIR_NAME);
+
+      lma.prepareDAG(new JdbcPollerApplication(), conf);
       LocalMode.Controller lc = lma.getController();
       lc.runAsync();
 
@@ -127,8 +114,12 @@ public class JdbcInputAppTest
       Thread.sleep(5000);
 
       String[] extensions = { "dat.0", "tmp" };
-      Collection<File> list = FileUtils.listFiles(new File(FILE_NAME), extensions, false);
-      Assert.assertEquals("Records in file", 10, FileUtils.readLines(list.iterator().next()).size());
+      Collection<File> list = FileUtils.listFiles(new File(OUTPUT_DIR_NAME), extensions, false);
+      int recordsCount = 0;
+      for (File file : list) {
+        recordsCount += FileUtils.readLines(file).size();
+      }
+      Assert.assertEquals("Records in file", 10, recordsCount);
 
     } catch (ConstraintViolationException e) {
       Assert.fail("constraint violations: " + e.getConstraintViolations());

@@ -7,7 +7,8 @@ USE testDev;
 CREATE TABLE IF NOT EXISTS `test_event_table` (
   `ACCOUNT_NO` int(11) NOT NULL,
   `NAME` varchar(255) DEFAULT NULL,
-  `AMOUNT` int(11) DEFAULT NULL
+  `AMOUNT` int(11) DEFAULT NULL,
+  primary key(`ACCOUNT_NO`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 INSERT INTO `test_event_table` (`ACCOUNT_NO`, `NAME`, `AMOUNT`) VALUES

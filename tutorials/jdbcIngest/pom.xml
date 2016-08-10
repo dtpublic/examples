@@ -10,13 +10,13 @@
 
   <!-- change these to the appropriate values -->
   <name>JDBC Input Operator</name>
-  <description>Example Use of JDBC Input Operator</description>
+  <description>Example Uses of JDBC Input Operator</description>
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
     <apex.version>3.4.0</apex.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <malhar.version>3.4.0</malhar.version>
+    <malhar.version>3.5.0</malhar.version>
   </properties>
 
   <build>
@@ -245,22 +245,8 @@
     <!-- add your dependencies here -->
     <dependency>
       <groupId>org.apache.apex</groupId>
-      <artifactId>malhar-kafka</artifactId>
-      <version>${malhar.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.kafka</groupId>
-          <artifactId>kafka-clients</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.apex</groupId>
       <artifactId>malhar-library</artifactId>
       <version>${malhar.version}</version>
-      <!-- If you know that your application does not need transitive dependencies 
-        pulled in by malhar-library, uncomment the following to reduce the size of 
-        your app package. -->
       <exclusions>
         <exclusion>
           <groupId>*</groupId>
@@ -268,7 +254,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-
     <dependency>
       <groupId>org.apache.apex</groupId>
       <artifactId>apex-common</artifactId>
@@ -281,50 +266,27 @@
       <version>4.10</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.apache.apex</groupId>
       <artifactId>apex-engine</artifactId>
       <version>${apex.version}</version>
       <scope>test</scope>
     </dependency>
-
-    <dependency>
-      <groupId>org.apache.kafka</groupId>
-      <artifactId>kafka_2.11</artifactId>
-      <version>0.9.0.1</version>
-    </dependency>
-
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.36</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq</artifactId>
+      <version>3.6.4</version>
+    </dependency>
     <dependency>
       <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
       <version>2.7.8</version>
     </dependency>
-
-    <dependency>
-      <groupId>org.codehaus.janino</groupId>
-      <artifactId>commons-compiler</artifactId>
-      <version>2.7.8</version>
-    </dependency>
-
-    <dependency>
-      <groupId>info.batey.kafka</groupId>
-      <artifactId>kafka-unit</artifactId>
-      <version>0.4</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
