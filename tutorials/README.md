@@ -1,5 +1,6 @@
 | Application       | Description |
 | ----------------- | ----------- |
+| dedup | Example showing use of Dedup operator |
 | dynamic-partition | Example showing use of StatsListener with dynamic paritioning |
 | enricher          | Shows how to enrich streaming data using external source |
 | exactly-once      | Shows how to read from Kafka and write to JDBC or HDFS with exactly-once semantics |
