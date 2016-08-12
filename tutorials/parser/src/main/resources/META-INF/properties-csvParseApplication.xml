@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>dt.application.csvParseApplication.operator.dataGenerator.prop.tuplesCount</name>
+    <value>10000</value>
+  </property>
+  <property>
+    <name>dt.application.csvParseApplication.operator.dataGenerator.prop.tuplesPerWindow</name>
+    <value>100</value>
+  </property>
+  <property>
+    <name>dt.application.csvParseApplication.operator.csvParser.prop.schema</name>
+    <value>{"separator": ",","quoteChar":"\"","fields": [{"name": "adId","type": "Integer","constraints": {"required": "true"}},{"name": "campaignId","type": "Integer"},{"name": "adName","type": "String","constraints": {"required": "true","pattern": "^[a-zA-Z]*$","maxLength": "10"}},{"name": "bidPrice","type": "Double","constraints": {"required": "true","minValue": "0.1","maxValue": "3.2"}},{"name": "startDate","type": "Date","constraints": {"format": "yyyy-MM-dd HH:mm:ss","locale":"en"}},{"name": "endDate","type": "Date","constraints": {"format": "dd/MM/yyyy"}},{"name": "securityCode","type": "Long","constraints": {"minValue": "10","maxValue": "30"}},{"name": "active","type": "Boolean","constraints": {"required": "true"}},{"name": "optimized","type": "Boolean","constraints": {  "trueValue":"OPTIMIZE","falseValue":"NO_OPTIMIZE"}},{"name": "parentCampaign","type": "String","constraints": {"required": "true","equals": "CAMP_add"}}]}</value>
+  </property>
+  <property>
+    <name>dt.application.csvParseApplication.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.tutorial.csvparser.Campaign</value>
+  </property>
+  <property>
+    <name>dt.application.csvParseApplication.operator.dataOutput.prop.outputFileName</name>
+    <value>parsedData</value>
+  </property>
+  <property>
+    <name>dt.application.csvParseApplication.operator.errorOutput.prop.outputFileName</name>
+    <value>errorData</value>
+  </property>
+  <property>
+    <name>dt.application.csvParseApplication.operator.*.prop.filePath</name>
+    <value>/tmp/application/parser</value>
+  </property>
+  
+</configuration>
