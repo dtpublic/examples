@@ -1,0 +1,10 @@
+{
+  "disableStockThemes": false,
+  "customDefaultTheme": "",
+  "customThemes": [
+    "dark",
+    "purple"
+  ],
+  "customLocalization": "local.json",
+  "defaultHomePage": "/ops"
+}
