@@ -25,12 +25,7 @@ public class SqsApplication implements StreamingApplication
    * AWS credential file to be used by the operator end 
    */
   public static final String SQSDEV_CREDS_FILENAME_PROPERTY = "AWS_CREDENTIALS_OPERATOR";
-  
-  /**
-   * Queue namne to use 
-   */
-  public static final String QUEUE_NAME_PROPERTY = "AWS_QUEUE_NAME";
-  
+
   static class MyConnectionFactoryBuilder implements JMSBase.ConnectionFactoryBuilder {
     
     String sqsDevCredsFilename;

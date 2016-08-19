@@ -124,7 +124,6 @@ public class ApplicationTest {
   private Configuration getConfig() {
     Configuration conf = new Configuration(false);
     conf.set(SqsApplication.SQSDEV_CREDS_FILENAME_PROPERTY, SQS_OPERATOR_CREDS_FILENAME);
-    conf.set(SqsApplication.QUEUE_NAME_PROPERTY, currentQueueName);
 
     String pre = "dt.operator.fileOut.prop.";
     conf.set(   pre + "filePath",        FILE_DIR);
