@@ -132,6 +132,12 @@ public class ApplicationTest {
     conf.setInt(pre + "maxLength",       50);
     conf.setInt(pre + "rotationWindows", 10);
 
+    pre = "dt.operator.sqsIn.prop.";
+    conf.set(   pre + "subject",        currentQueueName);
+    // for SQS ack mode should be "AUTO_ACKNOWLEDGE" and transacted = false
+    conf.set(   pre + "ackMode",        "AUTO_ACKNOWLEDGE");
+    conf.setBoolean(   pre + "transacted",        false);
+
     return conf;
   }
   

@@ -65,10 +65,6 @@ public class SqsApplication implements StreamingApplication
     factoryBuilder.sqsDevCredsFilename = conf.get(SQSDEV_CREDS_FILENAME_PROPERTY);
     
     sqsInput.setConnectionFactoryBuilder(factoryBuilder);
-    sqsInput.setSubject(conf.get(QUEUE_NAME_PROPERTY));
-    // for SQS ack mode should be "AUTO_ACKNOWLEDGE" and transacted = false
-    sqsInput.setAckMode("AUTO_ACKNOWLEDGE");  
-    sqsInput.setTransacted(false);
     
     LineOutputOperator out = dag.addOperator("fileOut", new LineOutputOperator());
 
