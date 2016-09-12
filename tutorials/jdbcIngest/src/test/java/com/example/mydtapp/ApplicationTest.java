@@ -45,7 +45,7 @@ public class ApplicationTest
     try {
       LocalMode lma = LocalMode.newInstance();
       Configuration conf = new Configuration(false);
-      conf.addResource(this.getClass().getResourceAsStream("/META-INF/properties.xml"));
+      conf.addResource(this.getClass().getResourceAsStream("/META-INF/properties-SimpleJdbcToHDFSApp.xml"));
       lma.prepareDAG(new JdbcHDFSApp(), conf);
       LocalMode.Controller lc = lma.getController();
       lc.run(10000); // runs for 10 seconds and quits
