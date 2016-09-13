@@ -1,0 +1,18 @@
+<configuration>
+  <property>
+    <name>dt.operator.CassandraDataWriter.prop.tablename</name>
+    <value>TestUser</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataWriter.prop.store.node</name>
+    <value>localhost</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataWriter.prop.store.keyspace</name>
+    <value>testapp</value>
+  </property>
+  <property>
+    <name>dt.operator.CassandraDataWriter.port.input.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.cassandra.TestUser</value>
+  </property>
+</configuration>
