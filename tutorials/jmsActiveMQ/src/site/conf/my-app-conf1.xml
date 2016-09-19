@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+  <property>
+    <name>dt.operator.fileOut.prop.filePath</name>
+  <value>target/</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOut.prop.baseName</name>
+    <value>jmsTestClstr</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOut.prop.maxLength</name>
+    <value>45</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOut.prop.rotationWindows</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dt.operator.amqIn.prop.connectionFactoryProperties.brokerURL
+    </name>
+    <value>tcp://192.168.128.142:61616</value>
+  </property>
+  <property>
+    <name>dt.operator.amqIn.prop.subject</name>
+    <value>test1</value>
+  </property>
+</configuration>
