@@ -16,6 +16,7 @@
 | jdbcIngest        | Shows how to read rows from a table in an SQL database, polling and non-polling fashion, and write them to a file in HDFS. |
 | jdbcToJdbc        | This application reads from an input table using JDBC, converts input to user defined POJO & then writes those POJOS to another table. |
 | jmsActiveMQ       | Shows how to use the JMS input operator to read from an ActiveMQ queue |
+| jmsSqs            | Shows how to use the JMS input operator to read from an SQS queue |
 | kafka             | Shows how to read from Kafka using the new 0.9 input operator and write to HDFS using rolling output files. |
 | operatorTutorial  | Simple example of a word-count operator and a unit test for it |
 | parser            | Examples showing how to use different parsers and formatters |
