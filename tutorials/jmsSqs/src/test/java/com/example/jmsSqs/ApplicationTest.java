@@ -33,7 +33,7 @@ public class ApplicationTest {
   private static final Logger LOG = LoggerFactory.getLogger(ApplicationTest.class);
   
   private static final String FILE_NAME = "test";
-  private static final String FILE_DIR  = "/tmp/FromSQS";
+  private static final String FILE_DIR  = "target/jmsSQS";
   private static final String FILE_PATH = FILE_DIR + "/" + FILE_NAME + ".0";     // first part     
   
   /**
@@ -77,7 +77,7 @@ public class ApplicationTest {
       
       createSQSClient();
       
-      // write messages to SQS Queue                                                                                                            
+      // write messages to the SQS Queue                                                                                                            
       writeToQueue();
 
       // run app asynchronously; terminate after results are checked                                                                              
@@ -123,19 +123,19 @@ public class ApplicationTest {
 
   private Configuration getConfig() {
     Configuration conf = new Configuration(false);
+    
     conf.set(SqsApplication.SQSDEV_CREDS_FILENAME_PROPERTY, SQS_OPERATOR_CREDS_FILENAME);
-
+    
+    // read config values from the properties.xml file
+    conf.addResource(this.getClass().getResourceAsStream("/META-INF/properties.xml"));
+    
+    // one can also set or override values in code as below
     String pre = "dt.operator.fileOut.prop.";
     conf.set(   pre + "filePath",        FILE_DIR);
-    conf.set(   pre + "baseName",        FILE_NAME);
-    conf.setInt(pre + "maxLength",       50);
-    conf.setInt(pre + "rotationWindows", 10);
 
     pre = "dt.operator.sqsIn.prop.";
+    // set the subject here since it is dynamically generated
     conf.set(   pre + "subject",        currentQueueName);
-    // for SQS ack mode should be "AUTO_ACKNOWLEDGE" and transacted = false
-    conf.set(   pre + "ackMode",        "AUTO_ACKNOWLEDGE");
-    conf.setBoolean(   pre + "transacted",        false);
 
     return conf;
   }

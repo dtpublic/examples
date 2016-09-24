@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
   <property>
-    <name>dt.attr.MASTER_MEMORY_MB</name>
-    <value>1024</value>
+    <name>dt.operator.fileOut.prop.filePath</name>
+    <value>terget/</value>
   </property>
   <property>
-    <name>dt.application.MyFirstApplication.operator.randomGenerator.prop.numTuples</name>
-    <value>1000</value>
+    <name>dt.operator.fileOut.prop.baseName</name>
+    <value>test</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOut.prop.maxLength</name>
+    <value>50</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOut.prop.rotationWindows</name>
+    <value>10</value>
+  </property>
+  <property>
+    <name>dt.operator.sqsIn.prop.ackMode</name>
+    <value>AUTO_ACKNOWLEDGE</value>
+  </property>
+  <property>
+    <name>dt.operator.sqsIn.prop.transacted</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>dt.operator.sqsIn.prop.subject</name>
+    <value>DtQueue</value>
+  </property>
+  <property>
+    <name>dt.operator.sqsIn.prop.aws.key.id</name>
+    <value>awsKeyId</value>
+  </property>
+  <property>
+    <name>dt.operator.sqsIn.prop.aws.key.secret</name>
+    <value>awsKeySecret</value>
+  </property>
+  <property>
+    <name>dt.operator.sqsIn.prop.aws.key.region</name>
+    <value>us-east-1</value>
   </property>
 </configuration>
