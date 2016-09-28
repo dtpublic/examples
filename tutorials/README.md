@@ -1,5 +1,6 @@
 | Application       | Description |
 | ----------------- | ----------- |
+| cassandra-input-app | Example to show how to use Cassandra Input Operator.|
 | cassandra-output-app | Example to show how to use Cassandra Output Operator.|
 | dedup | Example showing use of Dedup operator |
 | dynamic-partition | Example showing use of StatsListener with dynamic paritioning |
