@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<configuration>
+    <!-- Static partitioning, specify the partition count, this decides how 
+        many ranges would be initiated -->
+  <property>
+      <name>dt.operator.JdbcPoller.prop.partitionCount</name>
+      <value>4</value>
+  </property>
+  
+  <!-- Batch size for poller -->
+  <property>
+      <name>dt.operator.JdbcPoller.prop.batchSize</name>
+      <value>300</value>
+  </property>
+
+  <!-- look-up key for forming range queries, this would be the column name 
+      on which the table is sorted -->
+  <property>
+      <name>dt.operator.JdbcPoller.prop.key</name>
+      <value>ACCOUNT_NO</value>
+  </property>
+
+  <property>
+      <name>dt.operator.JdbcPoller.prop.columnsExpression</name>
+      <value>ACCOUNT_NO,NAME,AMOUNT</value>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.port.outputPort.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+
+  <property>
+      <name>dt.operator.JdbcPoller.prop.pollInterval</name>
+      <value>1000</value>
+  </property>
+
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>{
+    "separator": "|",
+    "quoteChar": "\"",
+    "lineDelimiter": "",
+    "fields": [
+        {
+            "name": "accountNumber",
+            "type": "Integer"
+        },
+        {
+            "name": "name",
+            "type": "String"
+        },
+        {
+            "name": "amount",
+            "type": "Integer"
+        }
+      ]
+  }
+  </value>
+  </property>
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  
+  <!--Uncomment this block to use transform operator-->
+  <!--property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property-->
+</configuration>

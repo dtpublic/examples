@@ -1,14 +1,13 @@
 ## Sample mysql implementation
 
-This project contains two applications to read records from a table in `MySQL`, create POJOs and write them to a file
+This application reads records from a table in `MySQL`, create POJOs and write them to a file
 in the user specified directory in HDFS.
 
 1. SimpleJdbcToHDFSApp: Reads table records as per given query and emits them as POJOs.
-2. PollJdbcToHDFSApp: Reads table records using partitions in parallel fashion also polls for newly **appended** records and emits them as POJOs.
 
 Follow these steps to run these applications:
 
-**Step 1**: Update these properties in the file `src/main/resources/META_INF/properties-<applicationName>.xml`:
+**Step 1**: Update these properties in the file `src/main/resources/META_INF/properties.xml`:
 
 | Property Name  | Description |
 | -------------  | ----------- |
@@ -32,7 +31,7 @@ After this, please verify that `testDev.test_event_table` is created and has 10 
     |       10 |
     +----------+
 
-**Step 3**: Create HDFS output directory if not already present (_{path}_ should be the same as specified in `META_INF/properties-<applicationName>.xml`):
+**Step 3**: Create HDFS output directory if not already present (_{path}_ should be the same as specified in `META_INF/properties.xml`):
 
     hadoop fs -mkdir -p {path}
 
@@ -43,7 +42,7 @@ After this, please verify that `testDev.test_event_table` is created and has 10 
 Upload the `target/jdbcInput-1.0-SNAPSHOT.apa` to the UI console if available or launch it from
 the commandline using `apexcli`.
 
-**Step 5**: During launch use `src/main/resources/META_INF/properties-<applicationName>.xml` as a custom configuration file; then verify
+**Step 5**: During launch use `src/main/resources/META_INF/properties.xml` as a custom configuration file; then verify
 that the output directory has the expected output:
 
     shell> hadoop fs -cat <hadoop directory path>/2_op.dat.* | wc -l
