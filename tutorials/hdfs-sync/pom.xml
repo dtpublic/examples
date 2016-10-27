@@ -34,14 +34,12 @@
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <skipTests>false</skipTests>
     <semver.plugin.skip>true</semver.plugin.skip>
+    <apex.apppackage.tags>app-template, hdfs, sync</apex.apppackage.tags>
   </properties>
 
   <name>HDFS Sync App</name>
   <description>
-    Ingest and backup Hadoop HDFS data from one cluster to another in a fault tolerant way for use cases such as disaster recovery. 
-    This application transfers files from the configured source path to the destination path. 
-    The source code is available at: https://github.com/DataTorrent/examples/tree/master/tutorials/hdfs-sync. 
-    Send feedback or feature requests to feedback@datatorrent.com
+    Ingest and backup hadoop HDFS data from one cluster to another in a fault tolerant way for use cases such as disaster recovery.
   </description>
   
 
