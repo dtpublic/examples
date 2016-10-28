@@ -35,6 +35,7 @@
     <skipTests>false</skipTests>
     <semver.plugin.skip>true</semver.plugin.skip>
     <apex.apppackage.tags>app-template, hdfs, sync</apex.apppackage.tags>
+    <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
   </properties>
 
   <name>HDFS Sync App</name>
