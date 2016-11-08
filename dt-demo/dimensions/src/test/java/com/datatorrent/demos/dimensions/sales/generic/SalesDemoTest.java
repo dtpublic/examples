@@ -15,14 +15,13 @@ import org.junit.Test;
 
 import org.apache.hadoop.conf.Configuration;
 
+import com.datatorrent.api.LocalMode;
 import com.datatorrent.lib.appdata.schemas.SchemaUtils;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
 import com.datatorrent.lib.io.PubSubWebSocketOutputOperator;
 import com.datatorrent.lib.testbench.CollectorTestSink;
 import com.datatorrent.lib.util.TestUtils;
 import com.datatorrent.lib.util.TestUtils.TestInfo;
-
-import com.datatorrent.api.LocalMode;
 
 /**
  * This test requires a gateway running on the local machine.
@@ -47,9 +46,8 @@ public class SalesDemoTest
     conf.addResource("META-INF/properties.xml");
     conf.set("dt.attr.GATEWAY_CONNECT_ADDRESS", gatewayConnectAddress);
     conf.set("dt.application.SalesDemo.operator.DimensionsComputation.attr.PARTITIONER",
-             "com.datatorrent.common.partitioner.StatelessPartitioner:1");
-    conf.set("dt.application.SalesDemo.operator.Store.fileStore.basePathPrefix",
-             testMeta.getDir());
+        "com.datatorrent.common.partitioner.StatelessPartitioner:1");
+    conf.set("dt.application.SalesDemo.operator.Store.fileStore.basePathPrefix", testMeta.getDir());
 
     LocalMode lma = LocalMode.newInstance();
     lma.prepareDAG(salesDemo, conf);

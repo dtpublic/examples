@@ -25,18 +25,21 @@ public class ZipCodeHelper
   public String toString(int zipCode)
   {
     String zip = String.valueOf(zipCode);
-    if (zip.length() == zipCodeLength)
+    if (zip.length() == zipCodeLength) {
       return zip;
-    if (zip.length() < zipCodeLength)
+    }
+    if (zip.length() < zipCodeLength) {
       return ZEROS.substring(0, zipCodeLength - zip.length()) + zip;
+    }
     throw new IllegalArgumentException(
         "The length of zip (" + zipCode + ") is large than expected length (" + zipCodeLength + ")");
   }
 
   public boolean isZip(String str)
   {
-    if (str == null || str.length() != zipCodeLength)
+    if (str == null || str.length() != zipCodeLength) {
       return false;
+    }
     try {
       Integer.parseInt(str);
     } catch (Exception e) {

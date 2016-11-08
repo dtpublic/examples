@@ -20,36 +20,35 @@ import com.datatorrent.demos.dimensions.telecom.model.EnrichedCDR;
 public class EnrichedCDRCassandraOutputOperator extends TelecomDemoCassandraOutputOperator<EnrichedCDR>
 {
   private static final transient Logger logger = LoggerFactory.getLogger(EnrichedCDRCassandraOutputOperator.class);
-  private int ttl = 24*60*60;   //default one day
-  
+  private int ttl = 24 * 60 * 60; //default one day
+
   public EnrichedCDRCassandraOutputOperator()
   {
     cassandraConfig = EnrichedCDRCassandraConfig.instance();
   }
-  
+
   @Override
   protected void createBusinessTables(Session session)
   {
-    String createTable = "CREATE TABLE IF NOT EXISTS " + cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName()
+    String createTable = "CREATE TABLE IF NOT EXISTS " + cassandraConfig.getDatabase() + "."
+        + cassandraConfig.getTableName()
         + " (id bigint PRIMARY KEY, imsi text, isdn text, imei text, plan text, callType text, correspType text, correspIsdn text, duration int, "
         + "bytes int, dr int, lat float, lon float, date text, time text, drLabel text, operatorCode text, deviceBrand text, "
         + "deviceModel text, zipcode text );";
     session.execute(createTable);
-   
+
   }
-  
+
   protected String createSqlFormat()
   {
-    sqlCommand = "INSERT INTO " + cassandraConfig.getDatabase() + "."
-        + cassandraConfig.getTableName()
+    sqlCommand = "INSERT INTO " + cassandraConfig.getDatabase() + "." + cassandraConfig.getTableName()
         + " ( id, imsi, isdn, imei, plan, callType, correspType, correspIsdn, duration, bytes, dr, lat, lon, date, time, drLabel, operatorCode, deviceBrand, deviceModel, zipcode ) "
         + "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) USING TTL " + ttl + ";";
     return sqlCommand;
   }
-  
 
   private long id = GeneratorUtil.getRecordId();
-  
+
   @Override
   protected Statement setStatementParameters(PreparedStatement updateCommand, EnrichedCDR tuple) throws DriverException
   {
@@ -75,7 +74,7 @@ public class EnrichedCDRCassandraOutputOperator extends TelecomDemoCassandraOutp
     boundStmnt.setString(index++, tuple.getDeviceBrand());
     boundStmnt.setString(index++, tuple.getDeviceModel());
     boundStmnt.setString(index++, tuple.getZipCode());
-    
+
     //or boundStatement.bind();
     return boundStmnt;
   }
@@ -84,9 +83,10 @@ public class EnrichedCDRCassandraOutputOperator extends TelecomDemoCassandraOutp
   {
     return ttl;
   }
+
   public void setTtl(int ttl)
   {
     this.ttl = ttl;
   }
-  
+
 }

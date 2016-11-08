@@ -6,23 +6,23 @@ package com.datatorrent.demos.dimensions.ads.custom;
 
 import java.util.concurrent.TimeUnit;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
-import com.datatorrent.lib.appdata.gpo.GPOMutable;
-import com.datatorrent.lib.appdata.schemas.SchemaUtils;
-import com.datatorrent.lib.appdata.schemas.TimeBucket;
-import com.datatorrent.lib.dimensions.DimensionsDescriptor;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.testbench.CollectorTestSink;
-import com.datatorrent.lib.util.TestUtils;
+import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
 
 import com.datatorrent.demos.dimensions.ads.AdInfo.AdInfoAggregateEvent;
 import com.datatorrent.demos.dimensions.ads.InputItemGenerator;
 import com.datatorrent.demos.dimensions.ads.stats.AdsConverter;
+import com.datatorrent.lib.appdata.gpo.GPOMutable;
+import com.datatorrent.lib.appdata.schemas.SchemaUtils;
+import com.datatorrent.lib.appdata.schemas.TimeBucket;
+import com.datatorrent.lib.testbench.CollectorTestSink;
+import com.datatorrent.lib.util.TestUtils;
 
 import static com.datatorrent.demos.dimensions.ads.stats.AdsDimensionsDemoPerformant.EVENT_SCHEMA;
+
 
 public class AdsConverterTest
 {
@@ -34,15 +34,12 @@ public class AdsConverterTest
     String eventSchema = SchemaUtils.jarResourceFileToString(EVENT_SCHEMA);
 
     String[] dimensionSpecs = new String[] {
-      "time=" + TimeUnit.MINUTES,
-      "time=" + TimeUnit.MINUTES + ":location",
-      "time=" + TimeUnit.MINUTES + ":advertiser",
-      "time=" + TimeUnit.MINUTES + ":publisher",
-      "time=" + TimeUnit.MINUTES + ":advertiser:location",
-      "time=" + TimeUnit.MINUTES + ":publisher:location",
-      "time=" + TimeUnit.MINUTES + ":publisher:advertiser",
-      "time=" + TimeUnit.MINUTES + ":publisher:advertiser:location"
-    };
+        "time=" + TimeUnit.MINUTES, "time=" + TimeUnit.MINUTES + ":location",
+        "time=" + TimeUnit.MINUTES + ":advertiser", "time=" + TimeUnit.MINUTES + ":publisher",
+        "time=" + TimeUnit.MINUTES + ":advertiser:location", "time=" + TimeUnit.MINUTES + ":publisher:location",
+        "time=" + TimeUnit.MINUTES + ":publisher:advertiser",
+        "time=" + TimeUnit.MINUTES + ":publisher:advertiser:location" 
+        };
 
     AdInfoAggregateEvent aae = new AdInfoAggregateEvent();
     aae.time = 60;

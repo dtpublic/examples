@@ -4,7 +4,7 @@
  */
 package com.datatorrent.demos.machinedata.data;
 
-import com.datatorrent.lib.dimensions.DimensionsDescriptor;
+import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
 
 /**
  * @since 3.2.0

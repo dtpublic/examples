@@ -4,7 +4,6 @@
  */
 package com.datatorrent.demos.machinedata.data;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Collection;
@@ -14,6 +13,11 @@ import javax.validation.constraints.NotNull;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.apache.apex.malhar.lib.dimensions.DimensionsDescriptor;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.EventKey;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
@@ -37,11 +41,10 @@ import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
 import com.datatorrent.lib.appdata.schemas.FieldsDescriptor;
 import com.datatorrent.lib.appdata.schemas.TimeBucket;
 import com.datatorrent.lib.dimensions.AbstractDimensionsComputationFlexibleSingleSchema;
-import com.datatorrent.lib.dimensions.DimensionsDescriptor;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.dimensions.DimensionsEvent.EventKey;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
 import com.datatorrent.stram.codec.DefaultStatefulStreamCodec;
+
+
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 /**
  * @since 3.2.0
@@ -132,13 +135,9 @@ public class MachineHardCodedAggregateConverter implements Operator, Partitioner
       }
 
       EventKey eventKey = new EventKey((int)AppDataSingleSchemaDimensionStoreHDHT.DEFAULT_BUCKET_ID,
-                                       AbstractDimensionsComputationFlexibleSingleSchema.DEFAULT_SCHEMA_ID,
-                                       ddID,
-                                       aggregatorID,
-                                       key);
+          AbstractDimensionsComputationFlexibleSingleSchema.DEFAULT_SCHEMA_ID, ddID, aggregatorID, key);
 
-      output.emit(new Aggregate(eventKey,
-                                aggregate));
+      output.emit(new Aggregate(eventKey, aggregate));
     }
 
     @Override

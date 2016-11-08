@@ -4,18 +4,19 @@
  */
 package com.datatorrent.demos.dimensions.sales.generic;
 
-import com.datatorrent.common.util.BaseOperator;
-import com.datatorrent.api.DefaultInputPort;
-import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.api.annotation.Stateless;
-import com.datatorrent.netlet.util.DTThrowable;
+import java.util.Map;
+
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectReader;
 import org.codehaus.jackson.type.TypeReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Map;
+import com.datatorrent.api.DefaultInputPort;
+import com.datatorrent.api.DefaultOutputPort;
+import com.datatorrent.api.annotation.Stateless;
+import com.datatorrent.common.util.BaseOperator;
+import com.datatorrent.netlet.util.DTThrowable;
 
 
 /**
@@ -39,10 +40,12 @@ import java.util.Map;
  */
 
 @Stateless
-public class JsonToMapConverter extends BaseOperator {
-
+public class JsonToMapConverter extends BaseOperator
+{
   private static final ObjectMapper mapper = new ObjectMapper();
-  private static final ObjectReader reader = mapper.reader(new TypeReference<Map<String,Object>>() { });
+  private static final ObjectReader reader = mapper.reader(new TypeReference<Map<String,Object>>()
+  {
+  });
   private static final Logger logger = LoggerFactory.getLogger(JsonToMapConverter.class);
 
   /**
@@ -57,8 +60,7 @@ public class JsonToMapConverter extends BaseOperator {
         // Convert byte array JSON representation to HashMap
         Map<String, Object> tuple = reader.readValue(message);
         outputMap.emit(tuple);
-      }
-      catch (Throwable ex) {
+      } catch (Throwable ex) {
         DTThrowable.rethrow(ex);
       }
     }

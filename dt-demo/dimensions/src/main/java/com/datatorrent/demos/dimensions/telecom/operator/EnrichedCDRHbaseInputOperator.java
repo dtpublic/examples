@@ -30,18 +30,20 @@ import com.datatorrent.demos.dimensions.telecom.model.EnrichedCDR;
 
 /**
  * This operator read Enriched
+ * 
  * @author bright
  *
  */
-public class EnrichedCDRHbaseInputOperator implements InputOperator{
+public class EnrichedCDRHbaseInputOperator implements InputOperator
+{
   private static final transient Logger logger = LoggerFactory.getLogger(EnrichedCDRHbaseInputOperator.class);
-  
+
   public final transient DefaultOutputPort<EnrichedCDR> outputPort = new DefaultOutputPort<EnrichedCDR>();
-  
+
   protected DataWarehouseConfig hbaseConfig = EnrichedCDRHBaseConfig.instance();
   protected HBaseStore store;
   protected int batchSize = 10;
-  
+
   protected void initialize() throws IOException
   {
     //store
@@ -52,83 +54,87 @@ public class EnrichedCDRHbaseInputOperator implements InputOperator{
 
     store.connect();
   }
-  
+
   @Override
-  public void beginWindow(long windowId) {
+  public void beginWindow(long windowId)
+  {
     // TODO Auto-generated method stub
-    
+
   }
 
   @Override
-  public void endWindow() {
+  public void endWindow()
+  {
     // TODO Auto-generated method stub
-    
+
   }
 
   @Override
-  public void setup(OperatorContext context) {
-    try
-    {
+  public void setup(OperatorContext context)
+  {
+    try {
       initialize();
-    }
-    catch(Exception e)
-    {
+    } catch (Exception e) {
       logger.error("Initialize failed.", e);
     }
   }
 
   @Override
-  public void teardown() {
+  public void teardown()
+  {
     // TODO Auto-generated method stub
-    
+
   }
 
   private ResultScanner resultScanner;
+
   protected ResultScanner getResultScanner() throws IOException
   {
-    if(resultScanner != null)
+    if (resultScanner != null) {
       return resultScanner;
+    }
     HTable table = store.getTable();
     Scan scan = new Scan();
     resultScanner = table.getScanner(scan);
     return resultScanner;
   }
-  
+
   /**
    * TODO: recovery mechanism
    */
-  protected Map<String,byte[]> nameValueMap = new HashMap<String,byte[]>();
+  protected Map<String, byte[]> nameValueMap = new HashMap<String, byte[]>();
+
   @Override
-  public void emitTuples() {
+  public void emitTuples()
+  {
     try {
       ResultScanner scanner = getResultScanner();
-      
-      for(int i=0; i<batchSize; ++i)
-      {
+
+      for (int i = 0; i < batchSize; ++i) {
         Result result = scanner.next();
-        if( result == null )
+        if (result == null) {
           break;
-        
+        }
+
         nameValueMap.clear();
-        
+
         //row is imsi
         nameValueMap.put("imsi", result.getRow());
-        
+
         List<Cell> cells = result.listCells();
-        for( Cell cell : cells )
-        {
-          String columnName = Bytes.toString( CellUtil.cloneQualifier(cell) );
+        for (Cell cell : cells) {
+          String columnName = Bytes.toString(CellUtil.cloneQualifier(cell));
           byte[] value = CellUtil.cloneValue(cell);
           nameValueMap.put(columnName, value);
         }
         EnrichedCDR cdr = new EnrichedCDR(nameValueMap);
-        
+
         outputPort.emit(cdr);
       }
-      
+
     } catch (Exception e) {
       logger.error("emitTuples() exception", e);
-    }    
+    }
   }
 
 }

@@ -93,8 +93,9 @@ public class CustomerEnrichedInfoGenerateApp implements StreamingApplication
     fsRolling.setHiveColumns(new ArrayList(CustomerEnrichedInfo.SingleRecord.fields));
 
     ArrayList<FIELD_TYPE> fieldtypes = new ArrayList<FIELD_TYPE>();
-    for (int i = 0; i < CustomerEnrichedInfo.SingleRecord.fields.size(); ++i)
+    for (int i = 0; i < CustomerEnrichedInfo.SingleRecord.fields.size(); ++i) {
       fieldtypes.add(FIELD_TYPE.STRING);
+    }
     fsRolling.setHiveColumnDataTypes(fieldtypes);
 
     return fsRolling;

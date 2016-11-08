@@ -50,5 +50,4 @@ public class TelecomDemoV2 implements StreamingApplication
   {
     this.outputMask = outputMask;
   }
-
 }

@@ -27,7 +27,7 @@ public class MockGenerator implements InputGenerator<AdInfo>
   @Override
   public void emitTuples()
   {
-    if(sent) {
+    if (sent) {
       return;
     }
 

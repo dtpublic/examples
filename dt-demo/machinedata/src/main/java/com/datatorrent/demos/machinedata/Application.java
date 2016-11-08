@@ -6,6 +6,8 @@ package com.datatorrent.demos.machinedata;
 
 import java.util.Map;
 
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.Aggregate;
+import org.apache.apex.malhar.lib.dimensions.DimensionsEvent.InputEvent;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 
@@ -26,13 +28,11 @@ import com.datatorrent.contrib.dimensions.DimensionStoreHDHTNonEmptyQueryResultU
 import com.datatorrent.contrib.hdht.tfile.TFileImpl;
 import com.datatorrent.lib.appdata.schemas.SchemaUtils;
 import com.datatorrent.lib.dimensions.DimensionsComputationFlexibleSingleSchemaPOJO;
-import com.datatorrent.lib.dimensions.DimensionsEvent.Aggregate;
-import com.datatorrent.lib.dimensions.DimensionsEvent.InputEvent;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataQuery;
 import com.datatorrent.lib.io.PubSubWebSocketAppDataResult;
 import com.datatorrent.lib.statistics.DimensionsComputationUnifierImpl;
 
-@ApplicationAnnotation(name=Application.APP_NAME)
+@ApplicationAnnotation(name = Application.APP_NAME)
 /**
  * @since 3.2.0
  */
@@ -83,7 +83,7 @@ public class Application implements StreamingApplication
 
     //Set store properties
     String basePath = Preconditions.checkNotNull(conf.get(propStorePath),
-                                                 "a base path should be specified in the properties.xml");
+        "a base path should be specified in the properties.xml");
     TFileImpl hdsFile = new TFileImpl.DTFileImpl();
     basePath += Path.SEPARATOR + System.currentTimeMillis();
     hdsFile.setBasePath(basePath);
@@ -115,8 +115,8 @@ public class Application implements StreamingApplication
 
   public static class PassThroughOperator extends BaseOperator
   {
-    public final transient DefaultInputPort<Aggregate> input = new DefaultInputPort<Aggregate>() {
-
+    public final transient DefaultInputPort<Aggregate> input = new DefaultInputPort<Aggregate>()
+    {
       @Override
       public void process(Aggregate tuple)
       {

@@ -4,18 +4,20 @@
  */
 package com.datatorrent.demos.dimensions.ads;
 
-import com.datatorrent.demos.dimensions.InputGenerator;
-import com.datatorrent.api.Context.OperatorContext;
-import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.api.InputOperator;
-import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorRegistry;
+import java.util.List;
+import java.util.Random;
+
 import javax.validation.constraints.Min;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
-import java.util.Random;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorRegistry;
+
+import com.datatorrent.api.Context.OperatorContext;
+import com.datatorrent.api.DefaultOutputPort;
+import com.datatorrent.demos.dimensions.InputGenerator;
+import com.datatorrent.lib.appdata.schemas.DimensionalConfigurationSchema;
 
 /**
  * @category Test Bench
@@ -70,20 +72,18 @@ public class InputItemGenerator implements InputGenerator<AdInfo>
   {
     AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY.setup();
 
-    schema = new DimensionalConfigurationSchema(eventSchemaJSON,
-                                        AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY);
+    schema = new DimensionalConfigurationSchema(eventSchemaJSON, AggregatorRegistry.DEFAULT_AGGREGATOR_REGISTRY);
 
     publisherID = schema.getKeysToEnumValuesList().get(PUBLISHER).size();
-    if(advertiserName == null) {
+    if (advertiserName == null) {
       advertiserID = schema.getKeysToEnumValuesList().get(ADVERTISER).size();
-    }
-    else {
+    } else {
       advertiserID = advertiserName.size();
     }
     locationID = schema.getKeysToEnumValuesList().get(LOCATION).size();
 
     publisherName = schema.getKeysToEnumValuesList().get(PUBLISHER);
-    if(advertiserName == null) {
+    if (advertiserName == null) {
       advertiserName = schema.getKeysToEnumValuesList().get(ADVERTISER);
     }
     locationName = schema.getKeysToEnumValuesList().get(LOCATION);
@@ -123,19 +123,20 @@ public class InputItemGenerator implements InputGenerator<AdInfo>
     long nextMinute = time % 60000;
     long nextDay = time % (24 * 60 * 60 * 1000);
     long nextHour = time % (60 * 60 * 1000);
-    double dayTimeOffset = .2 * (Math.cos(2.0 * Math.PI / (24.0 * 60.0 * 60.0 * 1000.0) * ((double) nextDay)) *.5 + 1.0);
+    double dayTimeOffset = .2
+        * (Math.cos(2.0 * Math.PI / (24.0 * 60.0 * 60.0 * 1000.0) * ((double)nextDay)) * .5 + 1.0);
 
-    if(nextDay != currentDay) {
+    if (nextDay != currentDay) {
       currentDay = nextDay;
       dayOffset = random.nextDouble() * .05;
     }
 
-    if(nextHour != currentHour) {
+    if (nextHour != currentHour) {
       currentHour = nextHour;
       hourOffset = random.nextDouble() * .05;
     }
 
-    if(nextMinute != currentMinute) {
+    if (nextMinute != currentMinute) {
       expectedClickThruRate = random.nextDouble() * .1 + .1;
       currentMinute = nextMinute;
 
@@ -156,28 +157,25 @@ public class InputItemGenerator implements InputGenerator<AdInfo>
     }
 
     long timestamp;
-    for(int i = 0; i < blastCount && windowCount < numTuplesPerWindow; ++i, windowCount++) {
+    for (int i = 0; i < blastCount && windowCount < numTuplesPerWindow; ++i, windowCount++) {
       int advertiserId = nextRandomId(advertiserID);
       int publisherId = nextRandomId(publisherID);
       int adUnit = nextRandomId(locationID);
 
       timestamp = System.currentTimeMillis();
 
-      double tempOffset = publisherOffsetArray[publisherId]
-                          + advertiserOffsetArray[advertiserId]
-                          + locationScaleArray[adUnit];
-      double tempScale = publisherScaleArray[publisherId]
-                         * advertiserScaleArray[advertiserId]
-                         * locationScaleArray[adUnit];
+      double tempOffset = publisherOffsetArray[publisherId] + advertiserOffsetArray[advertiserId]
+          + locationScaleArray[adUnit];
+      double tempScale = publisherScaleArray[publisherId] * advertiserScaleArray[advertiserId]
+          * locationScaleArray[adUnit];
 
-      double cost = 0.05 * random.nextDouble() * tempScale
-                    + dayTimeOffset + dayOffset + hourOffset + tempOffset;
+      double cost = 0.05 * random.nextDouble() * tempScale + dayTimeOffset + dayOffset + hourOffset + tempOffset;
 
       buildAndSend(false, publisherId, advertiserId, adUnit, cost, timestamp);
 
-      if(random.nextDouble() < expectedClickThruRate) {
-        double revenue = 0.5 * random.nextDouble() * tempScale
-                         + dayTimeOffset + dayOffset + hourOffset + 5.0 * tempOffset;
+      if (random.nextDouble() < expectedClickThruRate) {
+        double revenue = 0.5 * random.nextDouble() * tempScale + dayTimeOffset + dayOffset + hourOffset
+            + 5.0 * tempOffset;
         // generate fake click
         buildAndSend(true, publisherId, advertiserId, adUnit, revenue, timestamp);
       }
@@ -188,18 +186,17 @@ public class InputItemGenerator implements InputGenerator<AdInfo>
   {
     AdInfo adInfo = new AdInfo();
 
-    adInfo.setPublisher((String) publisherName.get(publisherId));
+    adInfo.setPublisher((String)publisherName.get(publisherId));
     adInfo.publisherID = publisherId;
-    adInfo.setAdvertiser((String) advertiserName.get(advertiserId));
+    adInfo.setAdvertiser((String)advertiserName.get(advertiserId));
     adInfo.advertiserID = advertiserId;
-    adInfo.setLocation((String) locationName.get(adUnit));
+    adInfo.setLocation((String)locationName.get(adUnit));
     adInfo.locationID = adUnit;
 
     if (click) {
       adInfo.setRevenue(value);
       adInfo.setClicks(1L);
-    }
-    else {
+    } else {
       adInfo.setCost(value);
       adInfo.setImpressions(1);
     }
@@ -207,15 +204,14 @@ public class InputItemGenerator implements InputGenerator<AdInfo>
     emitTuple(adInfo);
   }
 
-  public void emitTuple(AdInfo adInfo) {
+  public void emitTuple(AdInfo adInfo)
+  {
     this.outputPort.emit(adInfo);
   }
 
   private void initializeScaleArray(double[] scaleArray)
   {
-    for(int index = 0;
-        index < scaleArray.length;
-        index++) {
+    for (int index = 0; index < scaleArray.length; index++) {
       scaleArray[index] = 1.0 + random.nextDouble() * 3;
     }
   }
@@ -224,16 +220,12 @@ public class InputItemGenerator implements InputGenerator<AdInfo>
   {
     double tempTotal = 0;
 
-    for(int index = 0;
-        index < offsetArray.length;
-        index++) {
+    for (int index = 0; index < offsetArray.length; index++) {
       offsetArray[index] = random.nextDouble() * scaleArray[index];
       tempTotal += offsetArray[index];
     }
 
-    for(int index = 0;
-        index < offsetArray.length;
-        index++) {
+    for (int index = 0; index < offsetArray.length; index++) {
       offsetArray[index] *= total / tempTotal;
     }
   }
@@ -243,8 +235,7 @@ public class InputItemGenerator implements InputGenerator<AdInfo>
     int id;
     do {
       id = (int)Math.abs(Math.round(random.nextGaussian() * max / 2));
-    }
-    while (id >= max);
+    } while (id >= max);
     return id;
   }
 

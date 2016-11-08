@@ -268,7 +268,7 @@ public class MachineKey
     hash = 67 * hash + Objects.hashCode(this.software1);
     hash = 67 * hash + Objects.hashCode(this.software2);
     hash = 67 * hash + Objects.hashCode(this.deviceId);
-    hash = 67 * hash + (int) timestamp;
+    hash = 67 * hash + (int)timestamp;
     hash = 67 * hash + Objects.hashCode(this.day);
     return hash;
   }

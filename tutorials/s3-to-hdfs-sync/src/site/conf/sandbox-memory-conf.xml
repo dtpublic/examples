@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<configuration>
+  <property>
+    <name>dt.operator.S3InputModule.prop.maxReaders</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dt.operator.S3InputModule.prop.blocksThreshold</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dt.operator.*.attr.MEMORY_MB</name>
+    <value>768</value>
+  </property>
+  <property>
+    <name>dt.application.HDFSFileCopyApp.attr.MASTER_MEMORY_MB</name>
+    <value>768</value>
+  </property>
+</configuration>

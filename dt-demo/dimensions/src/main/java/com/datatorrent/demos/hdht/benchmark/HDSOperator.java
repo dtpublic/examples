@@ -4,13 +4,13 @@
  */
 package com.datatorrent.demos.hdht.benchmark;
 
-import com.datatorrent.netlet.util.Slice;
+import java.io.IOException;
+import java.util.Arrays;
+
 import com.datatorrent.contrib.hdht.AbstractSinglePortHDHTWriter;
 import com.datatorrent.contrib.hdht.MutableKeyValue;
 import com.datatorrent.lib.codec.KryoSerializableStreamCodec;
-
-import java.io.IOException;
-import java.util.Arrays;
+import com.datatorrent.netlet.util.Slice;
 
 /**
  * HDSOperator
@@ -36,17 +36,20 @@ public class HDSOperator extends AbstractSinglePortHDHTWriter<MutableKeyValue>
 
   public static class MutableKeyValCodec extends KryoSerializableStreamCodec<MutableKeyValue> implements HDHTCodec<MutableKeyValue>
   {
-    @Override public byte[] getKeyBytes(MutableKeyValue mutableKeyValue)
+    @Override
+    public byte[] getKeyBytes(MutableKeyValue mutableKeyValue)
     {
       return mutableKeyValue.getKey();
     }
 
-    @Override public byte[] getValueBytes(MutableKeyValue mutableKeyValue)
+    @Override
+    public byte[] getValueBytes(MutableKeyValue mutableKeyValue)
     {
       return mutableKeyValue.getValue();
     }
 
-    @Override public MutableKeyValue fromKeyValue(Slice key, byte[] value)
+    @Override
+    public MutableKeyValue fromKeyValue(Slice key, byte[] value)
     {
       MutableKeyValue pair = new MutableKeyValue(null, null);
       pair.setKey(key.buffer);
@@ -54,19 +57,22 @@ public class HDSOperator extends AbstractSinglePortHDHTWriter<MutableKeyValue>
       return pair;
     }
 
-    @Override public int getPartition(MutableKeyValue tuple)
+    @Override
+    public int getPartition(MutableKeyValue tuple)
     {
       return Arrays.hashCode(tuple.getKey());
     }
   }
 
 
-  @Override protected HDHTCodec<MutableKeyValue> getCodec()
+  @Override
+  protected HDHTCodec<MutableKeyValue> getCodec()
   {
     return new MutableKeyValCodec();
   }
 
-  @Override protected void processEvent(MutableKeyValue event) throws IOException
+  @Override
+  protected void processEvent(MutableKeyValue event) throws IOException
   {
     if (readModifyWriteMode) {
       // do get and then put to simulate read-modify-write workload.
@@ -74,9 +80,11 @@ public class HDSOperator extends AbstractSinglePortHDHTWriter<MutableKeyValue>
       if (oldval != null) {
         // Modify event.
         byte[] newval = event.getValue();
-        for (int i = 0; i < newval.length; i++)
-          if (i < newval.length)
+        for (int i = 0; i < newval.length; i++) {
+          if (i < newval.length) {
             oldval[i] += newval[i];
+          }
+        }
         event.setValue(oldval);
       }
     }

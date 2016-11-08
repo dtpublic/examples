@@ -19,18 +19,15 @@ import com.datatorrent.contrib.dimensions.DimensionsQueueManager;
 public class GeoDimensionStore extends AppDataSingleSchemaDimensionStoreHDHT
 {
   private static final long serialVersionUID = 3839563720592204620L;
-  
+
   protected RegionZipCombinationFilter filter = new RegionZipCombinationFilter();
   protected RegionZipCombinationValidator validator = new RegionZipCombinationValidator();
-  
+
   @Override
   @SuppressWarnings({ "unchecked", "rawtypes" })
   protected DimensionsQueueManager getDimensionsQueueManager()
   {
-    return new DimensionsQueueManager(this, schemaRegistry, 
-        new CombinationDimensionalExpander((Map) seenEnumValues)
-        .withCombinationFilter(filter)
-        .withCombinationValidator((CombinationValidator)validator));
+    return new DimensionsQueueManager(this, schemaRegistry, new CombinationDimensionalExpander((Map)seenEnumValues).withCombinationFilter(filter).withCombinationValidator((CombinationValidator)validator));
   }
 
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<configuration>
+  <!-- 
+  <property>
+    <name>dt.application.{appName}.operator.{opName}.prop.{propName}</name>
+    <value>some-default-value (if value is not specified, it is required from the user or custom config when launching)</value>
+  </property>
+  -->
+  <!-- memory assigned to app master
+  <property>
+    <name>dt.attr.MASTER_MEMORY_MB</name>
+    <value>1024</value>
+  </property>
+  -->
+
+  <property>
+    <name>dt.application.ExactlyOnceExampleApplication.operator.kafkaInput.prop.initialPartitionCount</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dt.application.ExactlyOnceExampleApplication.operator.kafkaInput.prop.consumer.topic</name>
+    <value>exactly-once-test</value>
+  </property>
+  <property>
+    <name>dt.application.ExactlyOnceExampleApplication.operator.kafkaInput.prop.consumer.zookeeper</name>
+    <value>localhost:2182</value>
+  </property>
+  <property>
+    <name>dt.application.ExactlyOnceExampleApplication.operator.store.prop.store.databaseDriver</name>
+    <value>org.hsqldb.jdbcDriver</value>
+  </property>
+  <property>
+    <name>dt.application.ExactlyOnceExampleApplication.operator.store.prop.store.databaseUrl</name>
+    <value>jdbc:hsqldb:mem:test;sql.syntax_mys=true</value>
+  </property>
+
+  <property>
+    <name>dt.application.AtomicFileOutput.operator.kafkaInput.prop.initialPartitionCount</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dt.application.AtomicFileOutput.operator.kafkaInput.prop.consumer.topic</name>
+    <value>exactly-once-test</value>
+  </property>
+  <property>
+    <name>dt.application.AtomicFileOutput.operator.kafkaInput.prop.consumer.zookeeper</name>
+    <value>localhost:2182</value>
+  </property>
+  <property>
+    <name>dt.application.AtomicFileOutput.operator.fileWriter.prop.filePath</name>
+    <value>target/atomicFileOutput</value>
+  </property>
+
+
+</configuration>
+

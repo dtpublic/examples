@@ -12,30 +12,11 @@
   <description>My Apex Application Description</description>
 
   <properties>
-    <!-- change this if you desire to use a different version of DataTorrent -->
-    <datatorrent.version>3.1.1</datatorrent.version>
-    <datatorrent.apppackage.classpath>lib/*.jar</datatorrent.apppackage.classpath>
+    <!-- change this if you desire to use a different version of Apex Core -->
+    <apex.version>3.4.0</apex.version>
+    <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
+    <malhar.version>3.4.0</malhar.version>
   </properties>
-
-  <!-- repository to provide the DataTorrent artifacts -->
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>Datatorrent-Releases</id>
-      <name>DataTorrent Release Repository</name>
-      <url>https://www.datatorrent.com/maven/content/repositories/releases/</url>
-    </repository>
-    <repository>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <id>DataTorrent-Snapshots</id>
-      <name>DataTorrent Early Access Program Snapshot Repository</name>
-      <url>https://www.datatorrent.com/maven/content/repositories/snapshots/</url>
-    </repository>
-  </repositories>
 
   <build>
     <plugins>
@@ -98,8 +79,9 @@
                </archiverConfig>                  
                <archive>
                  <manifestEntries>
-                   <Class-Path>${datatorrent.apppackage.classpath}</Class-Path>
-                   <DT-Engine-Version>${datatorrent.version}</DT-Engine-Version>
+                   <Class-Path>${apex.apppackage.classpath}</Class-Path>
+                   <DT-Engine-Version>${apex.version}</DT-Engine-Version>
+                   <DT-App-Package-Group-Id>${project.groupId}</DT-App-Package-Group-Id>
                    <DT-App-Package-Name>${project.artifactId}</DT-App-Package-Name>
                    <DT-App-Package-Version>${project.version}</DT-App-Package-Version>
                    <DT-App-Package-Display-Name>${project.name}</DT-App-Package-Display-Name>
@@ -193,33 +175,7 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Transform xml javadoc to stripped down version containing only class/interface comments and tags-->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>xml-maven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <id>transform-xmljavadoc</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>transform</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <transformationSets>
-            <transformationSet>
-              <dir>${project.build.directory}/generated-resources/xml-javadoc</dir>
-              <includes>
-                <include>${project.artifactId}-${project.version}-javadoc.xml</include>
-              </includes>
-              <stylesheet>XmlJavadocCommentsExtractor.xsl</stylesheet>
-              <outputDir>${project.build.directory}/generated-resources/xml-javadoc</outputDir>
-            </transformationSet>
-          </transformationSets>
-        </configuration>
-      </plugin>
+
       <!-- copy xml javadoc to class jar -->
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
@@ -254,10 +210,9 @@
   <dependencies>
     <!-- add your dependencies here -->
     <dependency>
-      <groupId>com.datatorrent</groupId>
+      <groupId>org.apache.apex</groupId>
       <artifactId>malhar-library</artifactId>
-      <version>${datatorrent.version}</version>
-      <type>test-jar</type>
+      <version>${malhar.version}</version>
     <!-- 
            If you know that your application does not need transitive dependencies pulled in by malhar-library,
            uncomment the following to reduce the size of your app package.
@@ -272,14 +227,15 @@
       -->
     </dependency>
     <dependency>
-      <groupId>com.datatorrent</groupId>
-      <artifactId>malhar-library</artifactId>
-      <version>${datatorrent.version}</version>
+      <groupId>org.apache.apex</groupId>
+      <artifactId>apex-engine</artifactId>
+      <version>${apex.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.datatorrent</groupId>
-      <artifactId>dt-common</artifactId>
-      <version>${datatorrent.version}</version>
+      <groupId>org.apache.apex</groupId>
+      <artifactId>apex-common</artifactId>
+      <version>${apex.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -289,11 +245,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.datatorrent</groupId>
-      <artifactId>dt-engine</artifactId>
-      <version>${datatorrent.version}</version>
+      <groupId>org.apache.apex</groupId>
+      <artifactId>apex-engine</artifactId>
+      <version>${apex.version}</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
 </project>

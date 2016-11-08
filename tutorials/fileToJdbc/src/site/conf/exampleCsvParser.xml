@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+      <name>dt.application.FileToJdbcCsvParser.operator.CsvParser.port.out.attr.TUPLE_CLASS</name>
+      <value>com.example.FileToJdbcApp.PojoEvent</value>
+  </property>
+</configuration>
+

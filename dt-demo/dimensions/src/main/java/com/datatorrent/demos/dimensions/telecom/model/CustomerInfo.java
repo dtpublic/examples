@@ -8,18 +8,19 @@ import java.util.Collection;
 import java.util.Collections;
 
 /**
- * The information of the customer.
- * We don't care about information such as customer name etc.
- * only care about the MSISDN, IMSI and IMEI etc. We identify customer by IMSI.
+ * The information of the customer. We don't care about information such as
+ * customer name etc. only care about the MSISDN, IMSI and IMEI etc. We identify
+ * customer by IMSI.
  * 
  * @author bright
  *
  */
-public class CustomerInfo {
+public class CustomerInfo
+{
   public final String imsi;
   public final String msisdn;
-  public final Collection<String> imeis;   //one imsi can map to multiple device
-  
+  public final Collection<String> imeis; //one imsi can map to multiple device
+
   //used only by reflection
   protected CustomerInfo()
   {
@@ -27,12 +28,12 @@ public class CustomerInfo {
     msisdn = "";
     imeis = Collections.emptyList();
   }
-  
+
   public CustomerInfo(String imsi, String msisdn, Collection<String> imeis)
   {
     this.imsi = imsi;
     this.msisdn = msisdn;
     this.imeis = Collections.unmodifiableCollection(imeis);
   }
-  
+
 }

@@ -10,16 +10,18 @@ import org.apache.hadoop.hbase.util.Bytes;
 import com.datatorrent.demos.dimensions.telecom.conf.CustomerServiceHBaseConf;
 import com.datatorrent.demos.dimensions.telecom.model.CustomerService;
 
-public class CustomerServiceHbaseOutputOperator extends TelecomDemoHBaseOutputOperator<CustomerService>{
+public class CustomerServiceHbaseOutputOperator extends TelecomDemoHBaseOutputOperator<CustomerService>
+{
   private static byte[] familyName = Bytes.toBytes("f1");
-  
+
   public CustomerServiceHbaseOutputOperator()
   {
     setHbaseConfig(CustomerServiceHBaseConf.instance());
   }
-  
+
   @Override
-  public Put operationPut(CustomerService cs) {
+  public Put operationPut(CustomerService cs)
+  {
     Put put = new Put(Bytes.toBytes(cs.imsi));
     put.add(familyName, Bytes.toBytes("totalDuration"), Bytes.toBytes(cs.totalDuration));
     put.add(familyName, Bytes.toBytes("wait"), Bytes.toBytes(cs.wait));

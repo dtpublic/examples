@@ -15,19 +15,15 @@
  */
 package com.datatorrent.demos.dimensions.sales.generic;
 
-import com.datatorrent.api.*;
-import com.datatorrent.common.util.BaseOperator;
-import com.datatorrent.lib.appdata.schemas.SchemaUtils;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Predicates;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import org.apache.commons.io.IOUtils;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FSDataInputStream;
-import org.apache.hadoop.fs.FileStatus;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Map;
+
+import javax.validation.constraints.NotNull;
+
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectReader;
@@ -35,11 +31,21 @@ import org.codehaus.jackson.type.TypeReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.validation.constraints.NotNull;
-import java.io.*;
+import org.apache.commons.io.IOUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 
-import java.util.List;
-import java.util.Map;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Predicates;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+
+import com.datatorrent.api.Context;
+import com.datatorrent.api.DefaultInputPort;
+import com.datatorrent.api.DefaultOutputPort;
+import com.datatorrent.common.util.BaseOperator;
 
 /**
  * Enrichment
@@ -74,9 +80,11 @@ public class EnrichmentOperator extends BaseOperator
 {
   public transient DefaultOutputPort<Map<String, Object>> outputPort = new DefaultOutputPort<Map<String, Object>>();
 
-  private transient static final ObjectMapper mapper = new ObjectMapper();
-  private transient static final ObjectReader reader = mapper.reader(new TypeReference<Map<String, Object>>(){});
-  private transient static final Logger logger = LoggerFactory.getLogger(EnrichmentOperator.class);
+  private static final transient ObjectMapper mapper = new ObjectMapper();
+  private static final transient ObjectReader reader = mapper.reader(new TypeReference<Map<String, Object>>()
+  {
+  });
+  private static final transient Logger logger = LoggerFactory.getLogger(EnrichmentOperator.class);
 
   /**
    * Location of the mapping file.

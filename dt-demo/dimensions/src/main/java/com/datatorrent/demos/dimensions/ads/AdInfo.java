@@ -10,12 +10,15 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregateEvent;
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregateEvent.Aggregator;
+
 import com.datatorrent.lib.appdata.schemas.TimeBucket;
-import com.datatorrent.lib.statistics.DimensionsComputation;
-import com.datatorrent.lib.statistics.DimensionsComputation.Aggregator;
 
 /**
- * <p>AdInfo class.</p>
+ * <p>
+ * AdInfo class.
+ * </p>
  *
  * @since 0.3.2
  */
@@ -39,14 +42,8 @@ public class AdInfo implements Serializable
   {
   }
 
-  public AdInfo(String publisher,
-                       String advertiser,
-                       String location,
-                       double cost,
-                       double revenue,
-                       long impressions,
-                       long clicks,
-                       long time)
+  public AdInfo(String publisher, String advertiser, String location, double cost, double revenue, long impressions,
+      long clicks, long time)
   {
     this.publisher = publisher;
     this.advertiser = advertiser;
@@ -83,7 +80,8 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param advertiser the advertiser to set
+   * @param advertiser
+   *          the advertiser to set
    */
   public void setAdvertiser(String advertiser)
   {
@@ -99,7 +97,8 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param location the location to set
+   * @param location
+   *          the location to set
    */
   public void setLocation(String location)
   {
@@ -115,7 +114,8 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param cost the cost to set
+   * @param cost
+   *          the cost to set
    */
   public void setCost(double cost)
   {
@@ -131,7 +131,8 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param revenue the revenue to set
+   * @param revenue
+   *          the revenue to set
    */
   public void setRevenue(double revenue)
   {
@@ -147,7 +148,8 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param impressions the impressions to set
+   * @param impressions
+   *          the impressions to set
    */
   public void setImpressions(long impressions)
   {
@@ -163,7 +165,8 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param clicks the clicks to set
+   * @param clicks
+   *          the clicks to set
    */
   public void setClicks(long clicks)
   {
@@ -179,7 +182,8 @@ public class AdInfo implements Serializable
   }
 
   /**
-   * @param time the time to set
+   * @param time
+   *          the time to set
    */
   public void setTime(long time)
   {
@@ -208,17 +212,13 @@ public class AdInfo implements Serializable
           timeBucket = TimeBucket.TIME_UNIT_TO_TIME_BUCKET.get(time);
           timeBucketInt = timeBucket.ordinal();
           time = timeBucket.getTimeUnit();
-        }
-        else if (key.equals("publisher")) {
+        } else if (key.equals("publisher")) {
           publisherId = keyval.length == 1 || Boolean.parseBoolean(keyval[1]);
-        }
-        else if (key.equals("advertiser")) {
+        } else if (key.equals("advertiser")) {
           advertiserId = keyval.length == 1 || Boolean.parseBoolean(keyval[1]);
-        }
-        else if (key.equals("location")) {
+        } else if (key.equals("location")) {
           adUnit = keyval.length == 1 || Boolean.parseBoolean(keyval[1]);
-        }
-        else {
+        } else {
           throw new IllegalArgumentException("Unknown attribute '" + attribute + "' specified as part of dimension!");
         }
       }
@@ -229,6 +229,7 @@ public class AdInfo implements Serializable
 
     /**
      * Dimension specification for display in operator properties.
+     * 
      * @return The dimension.
      */
     public String getDimension()
@@ -262,7 +263,7 @@ public class AdInfo implements Serializable
       if (getClass() != obj.getClass()) {
         return false;
       }
-      final AdInfoAggregator other = (AdInfoAggregator) obj;
+      final AdInfoAggregator other = (AdInfoAggregator)obj;
       if (this.time != other.time) {
         return false;
       }
@@ -287,24 +288,21 @@ public class AdInfo implements Serializable
       if (publisherId) {
         event.publisher = src.publisher;
         event.publisherID = src.publisherID;
-      }
-      else {
+      } else {
         event.publisherID = -1;
       }
 
       if (advertiserId) {
         event.advertiser = src.advertiser;
         event.advertiserID = src.advertiserID;
-      }
-      else {
+      } else {
         event.advertiserID = -1;
       }
 
       if (adUnit) {
         event.location = src.location;
         event.locationID = src.locationID;
-      }
-      else {
+      } else {
         event.locationID = -1;
       }
 
@@ -333,7 +331,7 @@ public class AdInfo implements Serializable
     }
 
     @Override
-    public int computeHashCode(AdInfo event)
+    public int hashCode(AdInfo event)
     {
       int hash = 5;
 
@@ -351,7 +349,7 @@ public class AdInfo implements Serializable
 
       if (time != null) {
         long ltime = time.convert(event.time, TimeUnit.MILLISECONDS);
-        hash = 71 * hash + (int) (ltime ^ (ltime >>> 32));
+        hash = 71 * hash + (int)(ltime ^ (ltime >>> 32));
       }
 
       return hash;
@@ -372,7 +370,8 @@ public class AdInfo implements Serializable
         return false;
       }
 
-      if (time != null && time.convert(event1.time, TimeUnit.MILLISECONDS) != time.convert(event2.time, TimeUnit.MILLISECONDS)) {
+      if (time != null
+          && time.convert(event1.time, TimeUnit.MILLISECONDS) != time.convert(event2.time, TimeUnit.MILLISECONDS)) {
         return false;
       }
 
@@ -393,9 +392,10 @@ public class AdInfo implements Serializable
 
     @SuppressWarnings("FieldNameHidesFieldInSuperclass")
     private static final long serialVersionUID = 201402211829L;
+
   }
 
-  public static class AdInfoAggregateEvent extends AdInfo implements DimensionsComputation.AggregateEvent
+  public static class AdInfoAggregateEvent extends AdInfo implements AggregateEvent
   {
     private static final long serialVersionUID = 1L;
     int aggregatorIndex;
@@ -432,13 +432,13 @@ public class AdInfo implements Serializable
     }
 
     /**
-     * @param dimensionsDescriptorID the dimensionsDescriptorID to set
+     * @param dimensionsDescriptorID
+     *          the dimensionsDescriptorID to set
      */
     public void setDimensionsDescriptorID(int dimensionsDescriptorID)
     {
       this.dimensionsDescriptorID = dimensionsDescriptorID;
     }
-
 
     @Override
     public int hashCode()
@@ -456,17 +456,14 @@ public class AdInfo implements Serializable
     @Override
     public boolean equals(Object o)
     {
-      if(o == null || !(o instanceof AdInfoAggregateEvent)) {
+      if (o == null || !(o instanceof AdInfoAggregateEvent)) {
         return false;
       }
 
-      AdInfoAggregateEvent aae = (AdInfoAggregateEvent) o;
+      AdInfoAggregateEvent aae = (AdInfoAggregateEvent)o;
 
-      return this.publisherID == aae.publisherID &&
-             this.advertiserID == aae.advertiserID &&
-             this.locationID == aae.locationID &&
-             this.time == aae.time &&
-             this.timeBucket == aae.timeBucket;
+      return this.publisherID == aae.publisherID && this.advertiserID == aae.advertiserID
+          && this.locationID == aae.locationID && this.time == aae.time && this.timeBucket == aae.timeBucket;
     }
   }
 

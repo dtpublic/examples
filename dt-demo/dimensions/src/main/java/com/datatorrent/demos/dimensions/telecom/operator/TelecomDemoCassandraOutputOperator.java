@@ -22,88 +22,88 @@ import com.datatorrent.demos.dimensions.telecom.conf.DataWarehouseConfig;
 public abstract class TelecomDemoCassandraOutputOperator<T> extends BaseOperator
 {
   private static final transient Logger logger = LoggerFactory.getLogger(TelecomDemoCassandraOutputOperator.class);
-  
+
   public final transient DefaultInputPort<T> input = new DefaultInputPort<T>()
-      {
-        @Override
-        public void process(T tuple)
-        {
-          processTuple(tuple);
-        }
-      };
-  
-  
+  {
+    @Override
+    public void process(T tuple)
+    {
+      processTuple(tuple);
+    }
+  };
+
   protected DataWarehouseConfig cassandraConfig;
   protected String sqlCommand;
-  
+
   protected int batchSize = 100;
   protected transient Session session;
-  
+
   protected transient PreparedStatement preparedStatement;
   private transient BatchStatement batchStatement;
-  
+
   @Override
   public void setup(OperatorContext context)
   {
-    logger.info("setup() starting"); 
+    logger.info("setup() starting");
     configure();
     createSession();
     createTables();
     createSqlFormat();
 
     preparedStatement = prepareStatement();
-    logger.info("setup() done."); 
+    logger.info("setup() done.");
   }
-  
+
   @Override
   public void teardown()
   {
     closeSession();
     super.teardown();
   }
-  
+
   protected abstract String createSqlFormat();
-  
+
   protected void configure()
   {
   }
-  
+
   protected void createSession()
   {
     Cluster cluster = Cluster.builder().addContactPoint(cassandraConfig.getHost()).build();
     session = cluster.connect(cassandraConfig.getDatabase());
   }
-  
+
   protected void closeSession()
   {
-    if(session != null)
+    if (session != null) {
       session.close();
+    }
   }
-  
+
   protected void createTables()
   {
     createBusinessTables(session);
   }
-  
+
   protected abstract void createBusinessTables(Session session);
-  
+
   //@Override
   protected PreparedStatement prepareStatement()
   {
     return session.prepare(sqlCommand);
   }
+
   protected abstract Statement setStatementParameters(PreparedStatement updateCommand, T tuple) throws DriverException;
-  
 
   public void processTuple(T tuple)
   {
-    if(batchStatement == null)
+    if (batchStatement == null) {
       batchStatement = new BatchStatement();
-
-    batchStatement.add(setStatementParameters(preparedStatement, tuple));
+    }
     
-    if( batchStatement.size() >= batchSize )
-    {
+    batchStatement.add(setStatementParameters(preparedStatement, tuple));
+
+    if (batchStatement.size() >= batchSize) {
       session.execute(batchStatement);
       batchStatement.clear();
     }
@@ -118,5 +118,5 @@ public abstract class TelecomDemoCassandraOutputOperator<T> extends BaseOperator
   {
     this.cassandraConfig = cassandraConfig;
   }
-  
+
 }

@@ -14,48 +14,50 @@ import com.datatorrent.demos.dimensions.telecom.model.CustomerEnrichedInfo.Singl
 
 /**
  * This class generate random CDR from customer information
+ * 
  * @author bright
  *
  */
-public class CallDetailRecordCustomerInfoGenerator implements Generator<CallDetailRecord> {
+public class CallDetailRecordCustomerInfoGenerator implements Generator<CallDetailRecord>
+{
   public static enum RepoType
   {
-    Embeded,
-    HBase,
-    Cassandra
+    Embeded, HBase, Cassandra
   }
-  
+
   private static final transient Logger logger = LoggerFactory.getLogger(CallDetailRecordCustomerInfoGenerator.class);
-  
+
   protected CustomerEnrichedInfoProvider customerEnrichedInfoProvider = null;
   protected CallDetailRecordRandomGenerator cdrRandomGenerator = new CallDetailRecordRandomGenerator();
   protected RepoType repoType = RepoType.Embeded;
-  
+
   @Override
-  public CallDetailRecord next() {
-    if(customerEnrichedInfoProvider == null)
+  public CallDetailRecord next()
+  {
+    if (customerEnrichedInfoProvider == null) {
       customerEnrichedInfoProvider = createCustomerEnrichedInfoProvider();
-      
-    
+    }
     CallDetailRecord cdr = cdrRandomGenerator.next();
-    
+
     //fill with the customer info.
     SingleRecord customerInfo = customerEnrichedInfoProvider.getRandomCustomerEnrichedInfo();
     cdr.setIsdn(customerInfo.getIsdn());
     cdr.setImsi(customerInfo.getImsi());
     cdr.setImei(customerInfo.getImei());
-    
+
     return cdr;
   }
-  
+
   protected CustomerEnrichedInfoProvider createCustomerEnrichedInfoProvider()
   {
-    if(RepoType.HBase == repoType)
+    if (RepoType.HBase == repoType) {
       customerEnrichedInfoProvider = CustomerEnrichedInfoHbaseRepo.createInstance(CustomerEnrichedInfoHBaseConfig.instance());
-    else if(RepoType.Cassandra == repoType)
+    } else if (RepoType.Cassandra == repoType) { 
       customerEnrichedInfoProvider = CustomerEnrichedInfoCassandraRepo.createInstance(CustomerEnrichedInfoCassandraConfig.instance());
-    else    // default (RepoType.Embeded == repoType)
+    } else {
+      // default (RepoType.Embeded == repoType)
       customerEnrichedInfoProvider = CustomerEnrichedInfoEmbededRepo.instance();
+    }
     logger.info("repoType={}, customerEnrichedInfoProvider={}", repoType, customerEnrichedInfoProvider);
     return customerEnrichedInfoProvider;
   }
@@ -68,8 +70,9 @@ public class CallDetailRecordCustomerInfoGenerator implements Generator<CallDeta
   public void setRepoType(String repoType)
   {
     this.repoType = RepoType.valueOf(repoType);
-    if(this.repoType == null)
+    if (this.repoType == null) { 
       this.repoType = RepoType.Embeded;
+    }
   }
 
   public CustomerEnrichedInfoProvider getCustomerEnrichedInfoProvider()
@@ -82,5 +85,4 @@ public class CallDetailRecordCustomerInfoGenerator implements Generator<CallDeta
     this.customerEnrichedInfoProvider = customerEnrichedInfoProvider;
   }
 
-  
 }

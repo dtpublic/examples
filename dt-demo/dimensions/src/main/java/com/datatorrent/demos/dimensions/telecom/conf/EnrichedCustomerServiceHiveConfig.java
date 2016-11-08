@@ -4,22 +4,22 @@
  */
 package com.datatorrent.demos.dimensions.telecom.conf;
 
-public class EnrichedCustomerServiceHiveConfig extends DataWarehouseConfig{
+public class EnrichedCustomerServiceHiveConfig extends DataWarehouseConfig
+{
   private static EnrichedCustomerServiceHiveConfig instance;
-  
+
   public static EnrichedCustomerServiceHiveConfig instance()
   {
-    if(instance == null)
-    {
-      synchronized(EnrichedCustomerServiceHiveConfig.class)
-      {
-        if(instance == null)
+    if (instance == null) {
+      synchronized (EnrichedCustomerServiceHiveConfig.class) {
+        if (instance == null) {
           instance = new EnrichedCustomerServiceHiveConfig();
+        }
       }
     }
     return instance;
   }
-      
+
   protected EnrichedCustomerServiceHiveConfig()
   {
     host = TelecomDemoConf.instance.getHiveHost();

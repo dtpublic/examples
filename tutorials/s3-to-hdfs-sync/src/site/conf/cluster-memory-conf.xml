@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<configuration>
+  <property>
+    <name>dt.operator.S3InputModule.prop.maxReaders</name>
+    <value>16</value>
+  </property>
+  <property>
+    <name>dt.operator.S3InputModule.prop.blocksThreshold</name>
+    <value>16</value>
+  </property>
+</configuration>

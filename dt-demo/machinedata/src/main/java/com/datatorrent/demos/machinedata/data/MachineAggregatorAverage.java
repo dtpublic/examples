@@ -6,11 +6,12 @@ package com.datatorrent.demos.machinedata.data;
 
 import java.util.List;
 
+import org.apache.apex.malhar.lib.dimensions.aggregator.AggregatorAverage;
+import org.apache.apex.malhar.lib.dimensions.aggregator.IncrementalAggregator;
+
 import com.google.common.collect.ImmutableList;
 
 import com.datatorrent.api.annotation.Name;
-import com.datatorrent.lib.dimensions.aggregator.AggregatorAverage;
-import com.datatorrent.lib.dimensions.aggregator.IncrementalAggregator;
 
 @Name("AVG")
 /**
@@ -25,9 +26,9 @@ public class MachineAggregatorAverage extends AggregatorAverage
    */
   public static final MachineAggregatorAverage INSTANCE = new MachineAggregatorAverage();
 
-  public static final List<Class<? extends IncrementalAggregator>> MACHINE_CHILD_AGGREGATORS
-    = ImmutableList.of((Class<? extends IncrementalAggregator>)MachineAggregatorSum.class,
-                       (Class<? extends IncrementalAggregator>)MachineAggregatorCount.class);
+  public static final List<Class<? extends IncrementalAggregator>> MACHINE_CHILD_AGGREGATORS = ImmutableList.of(
+      (Class<? extends IncrementalAggregator>)MachineAggregatorSum.class,
+      (Class<? extends IncrementalAggregator>)MachineAggregatorCount.class);
 
   protected MachineAggregatorAverage()
   {

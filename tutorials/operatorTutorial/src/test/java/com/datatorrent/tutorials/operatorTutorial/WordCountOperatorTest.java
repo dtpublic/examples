@@ -1,25 +1,26 @@
 package com.datatorrent.tutorials.operatorTutorial;
 
 import java.io.IOException;
+import java.util.Map;
 
 import junit.framework.Assert;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.datatorrent.lib.testbench.CollectorTestSink;
-import com.datatorrent.lib.util.TestUtils;
 
 public class WordCountOperatorTest
 {
 
   private final static String STOP_WORD_FILE_PATH= "src/test/resources/stop-words";
   private static WordCountOperator wordCountOperator = new WordCountOperator();
-  private static CollectorTestSink<Long> sink;
+  private static CollectorTestSink<Object> sink;
 
   @Before
   public void setup()
@@ -39,8 +40,9 @@ public class WordCountOperatorTest
     wordCountOperator.setup(null);
 
     // Create a dummy sink to simulate the output port and set it as the output port of the operator
-    sink = new CollectorTestSink<Long>();
-    TestUtils.setSink(wordCountOperator.output, sink);
+    sink = new CollectorTestSink<>();
+    //TestUtils.setSink(wordCountOperator.output, sink);
+    wordCountOperator.output.setSink(sink);
   }
 
   @Test
