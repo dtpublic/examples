@@ -24,5 +24,6 @@
 | parser            | Examples showing how to use different parsers and formatters |
 | partition         | Shows use of custom partitioning with a stream codec.
 | recordReader      | Shows use of FSRecordReaderModule to read newline delimited records from a file. |
+| throttle          | Shows use of OperatorRequest and StatsListener to modulate the speed of the input operator when downstream operators are unable to keep up. |
 | topnwords         | The Top-N words example. |
 | transform         | Example for Transform Operator. |
