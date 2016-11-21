@@ -28,7 +28,7 @@ public class Application implements StreamingApplication
 
     RandomNumberGenerator randomGenerator = dag.addOperator("RandomGenerator", RandomNumberGenerator.class);
     PassThroughOperator<Double> passThrough = dag.addOperator("PassThrough", PassThroughOperator.class);
-    SlowDevNullOperator<Double> console = dag.addOperator("SlowNull", SlowDevNullOperator.class);
+    SlowDevNullOperator<Double> devNull = dag.addOperator("SlowNull", SlowDevNullOperator.class);
 
     // Important to use the same stats listener object for all operators so that we can centrally collect stats and make
     // the decision
@@ -36,16 +36,16 @@ public class Application implements StreamingApplication
     Collection<StatsListener> statsListeners = Lists.newArrayList(statsListener);
     dag.setAttribute(randomGenerator, Context.OperatorContext.STATS_LISTENERS, statsListeners);
     dag.setAttribute(passThrough, Context.OperatorContext.STATS_LISTENERS, statsListeners);
-    dag.setAttribute(console, Context.OperatorContext.STATS_LISTENERS, statsListeners);
+    dag.setAttribute(devNull, Context.OperatorContext.STATS_LISTENERS, statsListeners);
 
     // Increase timeout for the slow operator, this specifies the maximum timeout for an operator to process a window
     // It is specified in number of windows, since 1 window is 500ms, 30 minutes is 30 * 60 * 2 = 3600 windows
-    dag.setAttribute(console, Context.OperatorContext.TIMEOUT_WINDOW_COUNT, 3600);
+    dag.setAttribute(devNull, Context.OperatorContext.TIMEOUT_WINDOW_COUNT, 3600);
 
     // If there are unifiers that are slow then set timeout for them
     // dag.setUnifierAttribute(passThrough.output, Context.OperatorContext.TIMEOUT_WINDOW_COUNT, 3600);
 
     dag.addStream("randomData", randomGenerator.out, passThrough.input);
-    dag.addStream("passData", passThrough.output, console.input);
+    dag.addStream("passData", passThrough.output, devNull.input);
   }
 }

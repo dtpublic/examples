@@ -21,65 +21,61 @@ public class ThrottlingStatsListener implements StatsListener, Serializable {
 
     private static final Logger logger = LoggerFactory.getLogger(ThrottlingStatsListener.class);
 
-    // The current window ids of the different operators that the stats listener is listening to stats for
-    Map<Integer, Long> currentWindowIds = Maps.newHashMap();
     // Slowdown input if the window difference between operators increases beyond this value
     long maxThreshold = 100;
     // restore input operator to normal speed if the window difference falls below this threshold
-    long minThreshold = 100;;
-    boolean normalState = true;
+    long minThreshold = 100;
 
+    Map<Integer, ThrottleState> throttleStates = Maps.newHashMap();
+
+    static class ThrottleState {
+        // The current state of the operator, normal or throttled
+        boolean normal = true;
+        //The latest window id for which stats were received for the operator
+        long currentWindowId;
+    }
+
+    // This method runs on the app master side and is called whenever new stats are received from the operators
     @Override
     public Response processStats(BatchedOperatorStats batchedOperatorStats)
     {
         Response response = new Response();
         int operatorId = batchedOperatorStats.getOperatorId();
+
+        ThrottleState throttleState = throttleStates.get(operatorId);
+        if (throttleState == null) {
+            throttleState = new ThrottleState();
+            throttleStates.put(operatorId, throttleState);
+        }
+
         long windowId = batchedOperatorStats.getCurrentWindowId();
-        currentWindowIds.put(operatorId, windowId);
+        throttleState.currentWindowId = windowId;
 
         // Find min and max window to compute difference
         long minWindow = Long.MAX_VALUE;
         long maxWindow = Long.MIN_VALUE;
-        for (Long value : currentWindowIds.values()) {
-            if (value < minWindow) minWindow = value;
-            if (value > maxWindow) maxWindow = value;
+        for (ThrottleState state : throttleStates.values()) {
+            if (state.currentWindowId < minWindow) minWindow = state.currentWindowId;
+            if (state.currentWindowId > maxWindow) maxWindow = state.currentWindowId;
         }
         logger.debug("Operator {} min window {} max window {}", operatorId, minWindow, maxWindow);
 
-        if (normalState && ((maxWindow - minWindow) > maxThreshold)) {
-            // In future send the request here which will happen only on a state change
-            /*
+        if (throttleState.normal && ((maxWindow - minWindow) > maxThreshold)) {
             // Send request to operator to slow down
             logger.info("Sending suspend request");
             List<OperatorRequest> operatorRequests = new ArrayList<OperatorRequest>();
             operatorRequests.add(new InputSlowdownRequest());
             response.operatorRequests = operatorRequests;
-            */
-            logger.info("Setting suspend");
-            normalState = false;
-        } else if (!normalState && ((maxWindow - minWindow) <= minThreshold)) {
-            // In future send the request here which will happen only on a state change
-            /*
+            //logger.info("Setting suspend");
+            throttleState.normal = false;
+        } else if (!throttleState.normal && ((maxWindow - minWindow) <= minThreshold)) {
             // Send request to operator to get back to normal
             logger.info("Sending normal request");
             List<OperatorRequest> operatorRequests = new ArrayList<OperatorRequest>();
             operatorRequests.add(new InputNormalRequest());
             response.operatorRequests = operatorRequests;
-            */
-            logger.info("Setting normal");
-            normalState = true;
-        }
-
-        if (!normalState) {
-            // Send request to operator to slow down
-            List<OperatorRequest> operatorRequests = new ArrayList<OperatorRequest>();
-            operatorRequests.add(new InputSlowdownRequest());
-            response.operatorRequests = operatorRequests;
-        } else {
-            // Send request to operator to get back to normal
-            List<OperatorRequest> operatorRequests = new ArrayList<OperatorRequest>();
-            operatorRequests.add(new InputNormalRequest());
-            response.operatorRequests = operatorRequests;
+            //logger.info("Setting normal");
+            throttleState.normal = true;
         }
 
         return response;
