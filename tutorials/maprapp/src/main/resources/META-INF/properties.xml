@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<configuration>
+  <!-- MapR Streams properties -->
+  <property>
+    <name>dt.application.MaprStreamsToMaprDB.operator.Streams.prop.initialPartitionCount</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dt.application.MaprStreamsToMaprDB.operator.Streams.prop.topics</name>
+    <value>/data/streams/sample-stream:sample-topic</value>
+  </property>
+  <property>
+    <name>dt.application.MaprStreamsToMaprDB.operator.Streams.prop.clusters</name>
+    <value>broker1.dtlab.com:9092</value>
+  </property>
+
+  <!-- JSON Parser properties -->
+  <property>
+    <name>dt.application.MaprStreamsToMaprDB.operator.Parser.prop.sleepTime</name>
+    <value>100</value>
+  </property>
+  <property>
+    <name>dt.application.MaprStreamsToMaprDB.operator.Parser.port.out.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.maprapp.Data</value>
+  </property>
+
+  <!-- MapR DB properties -->
+  <property>
+    <name>dt.application.MaprStreamsToMaprDB.operator.Db.port.input.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.maprapp.Data</value>
+  </property>
+</configuration>
+
