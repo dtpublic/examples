@@ -14,6 +14,7 @@
 | hdht              | Shows how to use the HDHT operator. |
 | hdfs2kafka        | Shows how to read from HDFS and write to a Kafka topic. |
 | s3-to-hdfs-sync   | Copying files from Amazon S3 to HDFS |
+| s3output          | Shows how to read files from HDFS and upload into S3 bucket.|
 | innerjoin         | Shows how to use streaming innerjoin operator|
 | jdbcIngest        | Shows how to read rows from a table in an SQL database, polling and non-polling fashion, and write them to a file in HDFS. |
 | jdbcToJdbc        | This application reads from an input table using JDBC, converts input to user defined POJO & then writes those POJOS to another table. |
