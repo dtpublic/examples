@@ -15,7 +15,7 @@
     <!-- change this if you desire to use a different version of Apex Core -->
     <apex.version>3.4.0</apex.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <malhar.version>3.5.0-SNAPSHOT</malhar.version>
+    <malhar.version>3.7.0-SNAPSHOT</malhar.version>
   </properties>
 
   <build>
@@ -290,7 +290,7 @@
       <groupId>org.apache.apex</groupId>
       <artifactId>apex-engine</artifactId>
       <version>${apex.version}</version>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
