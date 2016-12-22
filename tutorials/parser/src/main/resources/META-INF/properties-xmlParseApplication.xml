@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>dt.application.xmlParserApplication.operator.xmlParser.port.out.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.tutorial.xmlparser.EmployeeBean</value>
+  </property>
+  <property>
+    <name>dt.application.xmlParserApplication.operator.dataOutput.prop.outputFileName</name>
+    <value>parsedData</value>
+  </property>
+  <property>
+    <name>dt.application.xmlParserApplication.operator.pojoOutput.prop.outputFileName</name>
+    <value>pojoData</value>
+  </property>
+  <property>
+    <name>dt.application.xmlParserApplication.operator.errorOutput.prop.outputFileName</name>
+    <value>errorData</value>
+  </property>
+  <property>
+    <name>dt.application.xmlParserApplication.operator.*.prop.filePath</name>
+    <value>/tmp/application/parser</value>
+  </property>
+  
+</configuration>
