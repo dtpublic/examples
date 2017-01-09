@@ -2,6 +2,7 @@
 | ----------------- | ----------- |
 | cassandra-input-app | Example to show how to use Cassandra Input Operator.|
 | cassandra-output-app | Example to show how to use Cassandra Output Operator.|
+| database-to-hdfs  | Ingest records from a DataBase table to hadoop HDFS.  |
 | dedup | Example showing use of Dedup operator |
 | dynamic-partition | Example showing use of StatsListener with dynamic paritioning |
 | enricher          | Shows how to enrich streaming data using external source |
