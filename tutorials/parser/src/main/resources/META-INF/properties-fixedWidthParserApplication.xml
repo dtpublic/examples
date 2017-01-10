@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <property>
+    <name>dt.application.fixedWidthParserApplication.operator.fixedWidthParser.prop.jsonSchema</name>
+    <value>{
+      "padding": "_",
+      "alignment": "left",
+      "fields": [
+      {
+      "name": "adId",
+      "type": "Integer",
+      "length": "3",
+      "padding": "0"
+      },
+      {
+      "name": "campaignId",
+      "type": "Integer",
+      "length": "3",
+      "padding": " "
+
+      },
+      {
+      "name": "adName",
+      "type": "String",
+      "length": "10",
+      "alignment":"right"
+      },
+      {
+      "name": "bidPrice",
+      "type": "Double",
+      "length": "3"
+      },
+      {
+      "name": "startDate",
+      "type": "Date",
+      "format": "yyyy-MM-dd HH:mm:ss",
+      "length": "19"
+
+      },
+      {
+      "name": "endDate",
+      "type": "Date",
+      "format": "dd/MM/yyyy",
+      "length": "10"
+      },
+      {
+      "name": "securityCode",
+      "type": "Long",
+      "length": "5"
+      },
+      {
+      "name": "active",
+      "type": "Boolean",
+      "length": "1",
+      "trueValue": "y",
+      "falseValue": "n"
+      },
+      {
+      "name": "optimized",
+      "type": "Boolean",
+      "length": "1",
+      "trueValue": "y",
+      "falseValue": "n"
+      },
+      {
+      "name": "parentCampaign",
+      "type": "String",
+      "length": "10"
+      },
+      {
+      "name": "weatherTargeted",
+      "type": "Character",
+      "length": "1"
+      },
+      {
+      "name": "valid",
+      "type": "String",
+      "length": "10",
+      "padding":" "
+      }
+      ]
+      }
+    </value>
+  </property>
+  <property>
+    <name>dt.application.fixedWidthParserApplication.operator.fixedWidthParser.port.out.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.tutorial.fixedwidthparser.Ad</value>
+  </property>
+  <property>
+    <name>dt.application.fixedWidthParserApplication.operator.dataOutput.prop.outputFileName</name>
+    <value>parsedData</value>
+  </property>
+  <property>
+    <name>dt.application.fixedWidthParserApplication.operator.pojoOutput.prop.outputFileName</name>
+    <value>pojoData</value>
+  </property>
+  <property>
+    <name>dt.application.fixedWidthParserApplication.operator.errorOutput.prop.outputFileName</name>
+    <value>errorData</value>
+  </property>
+  <property>
+    <name>dt.application.fixedWidthParserApplication.operator.*.prop.filePath</name>
+    <value>/tmp/application/parser</value>
+  </property>
+  
+</configuration>
