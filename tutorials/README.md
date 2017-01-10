@@ -2,6 +2,7 @@
 | ----------------- | ----------- |
 | cassandra-input-app | Example to show how to use Cassandra Input Operator.|
 | cassandra-output-app | Example to show how to use Cassandra Output Operator.|
+| csvformatter         | Example to show how to use CsvFormatter to format POJOs to a delimited string.|
 | dedup | Example showing use of Dedup operator |
 | dynamic-partition | Example showing use of StatsListener with dynamic paritioning |
 | enricher          | Shows how to enrich streaming data using external source |
