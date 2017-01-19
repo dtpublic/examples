@@ -3,6 +3,7 @@
 This application reads data from cassandra database using [CassandraPOJOInputOperator](https://github.com/apache/apex-malhar/blob/master/contrib/src/main/java/com/datatorrent/contrib/cassandra/CassandraPOJOInputOperator.java) 
 and writes the records to a file using [GenericFileOutputOperator](https://github.com/apache/apex-malhar/blob/master/library/src/main/java/org/apache/apex/malhar/lib/fs/GenericFileOutputOperator.java) from [Apex Malhar](https://github.com/apache/apex-malhar).
 
+NOTE: Running cassandra service necessary. Set up local cassandra service if needed.
 
 Follow these steps to run this application:
 

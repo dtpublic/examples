@@ -3,6 +3,7 @@
 This application generates tests data pojo and uses [CassandraPojoOputputOperator](https://github.com/apache/apex-malhar/blob/master/contrib/src/main/java/com/datatorrent/contrib/cassandra/CassandraPOJOOutputOperator.java) 
 from [Apex Malhar](https://github.com/apache/apex-malhar) library to write pojo input data to tables in cassandra database.
 
+NOTE: Running cassandra service necessary. Set up local cassandra service if needed.
 
 Follow these steps to run this application:
 

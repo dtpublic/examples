@@ -13,7 +13,7 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex core -->
-    <apex.version>3.4.0</apex.version>
+    <apex.version>3.6.0-dt20161215</apex.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
   </properties>
 

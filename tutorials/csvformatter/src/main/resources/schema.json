@@ -38,7 +38,7 @@
     },
     {
       "name": "securityCode",
-      "type": "Integer"
+      "type": "String"
     },
     {
       "name": "weatherTargeting",
