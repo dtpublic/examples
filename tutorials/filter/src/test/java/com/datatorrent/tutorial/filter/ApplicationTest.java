@@ -73,13 +73,12 @@ public class ApplicationTest
       conf.addResource(this.getClass().getResourceAsStream("/META-INF/properties.xml"));
       conf.set("dt.application.FilterExample.operator.selectedOutput.prop.filePath", outputDir);
       conf.set("dt.application.FilterExample.operator.rejectedOutput.prop.filePath", outputDir);
-      final File selectedfile = FileUtils.getFile(outputDir, "selected.txt_6.0");
-      final File rejectedfile = FileUtils.getFile(outputDir, "rejected.txt_8.0");
+      final File selectedfile = FileUtils.getFile(outputDir, "selected.txt_8.0");
+      final File rejectedfile = FileUtils.getFile(outputDir, "rejected.txt_6.0");
       
       lma.prepareDAG(new Application(), conf);
       LocalMode.Controller lc = lma.getController();
-        
-      lc.setHeartbeatMonitoringEnabled(false);
+
       ((StramLocalCluster)lc).setExitCondition(new Callable<Boolean>()
       {
         @Override
