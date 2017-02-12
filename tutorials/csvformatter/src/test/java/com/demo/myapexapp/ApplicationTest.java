@@ -54,7 +54,8 @@ public class ApplicationTest
 
       for (File file : list) {
         for (String line : FileUtils.readLines(file)) {
-          Assert.assertEquals("Delimiter in record", true, (line.equals("1234|SimpleCsvFormatterExample|10000.0|false|APEX")));
+          Assert.assertEquals("Delimiter in record", true, (line.equals(
+            "1234|0|SimpleCsvFormatterExample|10000.0|||APEX|false|false||")));
         }
       }
 

@@ -11,8 +11,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <apex.version>3.4.0</apex.version>
-    <malhar.version>3.5.0</malhar.version>
+    <apex.version>3.5.0</apex.version>
+    <malhar.version>3.6.0</malhar.version>
     <datatorrent.apppackage.classpath>lib/*.jar</datatorrent.apppackage.classpath>
   </properties>
   

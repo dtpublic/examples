@@ -11,7 +11,7 @@ public class PojoEvent
   private double campaignBudget;
   private Date startDate;
   private Date endDate;
-  private int securityCode;
+  private String securityCode;
   private boolean weatherTargeting;
   private boolean optimized;
   private String parentCampaign;
@@ -78,12 +78,12 @@ public class PojoEvent
     this.endDate = endDate;
   }
 
-  public int getSecurityCode()
+  public String getSecurityCode()
   {
     return securityCode;
   }
 
-  public void setSecurityCode(int securityCode)
+  public void setSecurityCode(String securityCode)
   {
     this.securityCode = securityCode;
   }

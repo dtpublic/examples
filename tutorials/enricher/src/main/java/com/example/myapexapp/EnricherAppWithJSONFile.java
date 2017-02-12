@@ -2,7 +2,7 @@ package com.example.myapexapp;
 
 import java.util.ArrayList;
 
-import com.datatorrent.contrib.enrich.FSLoader;
+import com.datatorrent.contrib.enrich.JsonFSLoader;
 import com.datatorrent.contrib.enrich.POJOEnricher;
 import com.datatorrent.contrib.parser.JsonParser;
 import com.datatorrent.lib.io.ConsoleOutputOperator;
@@ -26,7 +26,7 @@ public class EnricherAppWithJSONFile implements StreamingApplication
      * properties.xml file.
      * The format that is used to read the file is present as an example in resources/circleMapping.txt file.
      */
-    FSLoader fsLoader = new FSLoader();
+    JsonFSLoader fsLoader = new JsonFSLoader();
     POJOEnricher enrich = dag.addOperator("Enrich", POJOEnricher.class);
     enrich.setStore(fsLoader);
 
