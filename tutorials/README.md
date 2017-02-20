@@ -22,6 +22,7 @@
 | jmsActiveMQ       | Shows how to use the JMS input operator to read from an ActiveMQ queue |
 | jmsSqs            | Shows how to use the JMS input operator to read from an SQS queue |
 | kafka             | Shows how to read from Kafka using the new 0.9 input operator and write to HDFS using rolling output files. |
+| kinesisInput      | Shows how to read from Kinesis Streams using Kinesis Input Operator and write to HDFS using rolling output files. |
 | maprapp           | Shows how to read from MapR Streams using Kafka 0.9 input operator and write to MapR DB using HBase output operator. |
 | operatorTutorial  | Simple example of a word-count operator and a unit test for it |
 | parser            | Examples showing how to use different parsers and formatters |
