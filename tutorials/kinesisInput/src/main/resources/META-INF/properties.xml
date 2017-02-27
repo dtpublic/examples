@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>dt.operator.kinesisInput.prop.initialOffset</name>
+    <value>earliest</value>
+  </property>
+  <property>
+    <name>dt.operator.kinesisInput.prop.streamName</name>
+    <value>kinesisToS3</value>
+  </property>
+  <property>
+    <name>dt.operator.kinesisInput.prop.accessKey</name>
+    <value>ACCESSKEY</value>
+  </property>
+  <property>
+    <name>dt.operator.kinesisInput.prop.secretKey</name>
+    <value>SECRETKEY</value>
+  </property>
+  <property>
+    <name>dt.operator.kinesisInput.prop.endPoint</name>
+    <value>kinesis.us-east-1.amazonaws.com</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOutput.prop.filePath</name>
+    <value>/tmp</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOutput.prop.outputFileName</name>
+    <value>kinesis.txt</value>
+  </property>
+</configuration>
+
