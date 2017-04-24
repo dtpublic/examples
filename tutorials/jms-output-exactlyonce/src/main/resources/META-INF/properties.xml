@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>dt.operator.*.attr.MEMORY_MB</name>
+    <value>512</value>
+  </property>
+
+  <property>
+    <name>dt.application.JmsOutputApplication.operator.sequenceGenerator.prop.maxTuplesTotal</name>
+    <value>40</value>
+  </property>
+
+  <property>
+    <name>dt.application.JmsOutputApplication.operator.sequenceGenerator.prop.maxTuples</name>
+    <value>5</value>
+  </property>
+  <property>
+    <name>dt.application.JmsOutputApplication.operator.passthrough.prop.directoryPath</name>
+    <value>/tmp/jms-amq-output-example</value>
+  </property>
+  <property>
+    <name>dt.application.JmsOutputApplication.operator.passthrough.prop.tuplesUntilKill</name>
+    <value>8</value>
+  </property>
+
+
+  <property>
+    <name>dt.application.JmsOutputApplication.operator.(jmsOutput)|(jmsOutputFailingOp).prop.connectionFactoryProperties.brokerURL</name>
+    <value>tcp://localhost:61616</value>
+  </property>
+  <property>
+    <name>dt.application.JmsOutputApplication.operator.(jmsOutput)|(jmsOutputFailingOp).prop.subject</name>
+    <value>testSubject</value>
+  </property>
+
+<!-- ValidationApplication -->
+  <property>
+    <name>dt.application.JmsValidationApplication.operator.jmsInput.prop.connectionFactoryProperties.brokerURL</name>
+    <value>tcp://localhost:61616</value>
+  </property>
+  <property>
+    <name>dt.application.JmsValidationApplication.operator.jmsInput.prop.subject</name>
+    <value>testSubject</value>
+  </property>
+
+  <!-- ValidationToFile -->
+  <property>
+    <name>dt.application.JmsValidationApplication.operator.validationToFile.prop.outputFileName</name>
+    <value>validation.txt</value>
+  </property>
+  <property>
+    <name>dt.application.JmsValidationApplication.operator.validationToFile.prop.filePath</name>
+    <value>/tmp/jms-amq-output-example</value>
+  </property>
+</configuration>
+
