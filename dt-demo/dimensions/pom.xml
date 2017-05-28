@@ -17,6 +17,8 @@
   <properties>
     <megh.version>3.4.0</megh.version>
     <skipTests>true</skipTests>
+    <apex.apppackage.tags>demos, dimension</apex.apppackage.tags>
+    <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
   </properties>
 
   <build>
