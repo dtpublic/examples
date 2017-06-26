@@ -23,6 +23,10 @@ import javax.jms.Message;
 
 import com.datatorrent.lib.io.jms.AbstractJMSSinglePortOutputOperator;
 
+/**
+ * This implementation of AbstractJMSSinglePortOutputOperator converts incoming tuples
+ * to String and writes them to a specified JMS queue.
+ */
 public class StringMessageJMSSinglePortOutputOperator extends AbstractJMSSinglePortOutputOperator
 {
   @Override

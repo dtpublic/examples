@@ -42,7 +42,10 @@ import com.datatorrent.api.LocalMode;
 import static org.junit.Assert.fail;
 
 /**
- * Test the DAG declaration in local mode.
+ * This test case will run the JmsOutputApplication and the ValidationApplication
+ * simultaneously. An embedded ActiveMQ JMS broker is started at the beginning of the test.
+ * The ValidationApplication will be continuously put to sleep until the ValidationToFile operator
+ * is done with the validation and his 'isValidated' flag it set to true.
  */
 public class JmsApplicationTest
 {
