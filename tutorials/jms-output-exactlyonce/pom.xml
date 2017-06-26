@@ -13,8 +13,8 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.core.version>3.6.0-SNAPSHOT</apex.core.version>
-    <apex.malhar.version>3.8.0-SNAPSHOT</apex.malhar.version>
+    <apex.core.version>3.6.0</apex.core.version>
+    <apex.malhar.version>3.7.0</apex.malhar.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
   </properties>
 

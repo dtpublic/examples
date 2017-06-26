@@ -35,6 +35,8 @@ import com.datatorrent.api.DefaultInputPort;
 public class ValidationToFile extends GenericFileOutputOperator.StringFileOutputOperator
 {
   int lastMessagesSize;
+
+  //number of windows in which the message size has not changed. Validation will be executed once it becomes less than 0.
   int sameMessageSizeCount = 5;
   List<String> messages = new ArrayList();
 
@@ -53,7 +55,10 @@ public class ValidationToFile extends GenericFileOutputOperator.StringFileOutput
   @Override
   public void endWindow()
   {
-    validateJmsInput();
+    if (!isValidated);
+    {
+      validateJmsInput();
+    }
     super.endWindow();
   }
 

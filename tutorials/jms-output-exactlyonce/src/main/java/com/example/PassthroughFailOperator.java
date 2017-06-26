@@ -109,8 +109,12 @@ public class PassthroughFailOperator extends BaseOperator
         tuplesUntilKill--;
       } else {
         try {
-          hdfs.createNewFile(filePathObj);
-          LOG.info("Created file " + filePath);
+          boolean isCreated = hdfs.createNewFile(filePathObj);
+          if (isCreated) {
+            LOG.info("Created file " + filePath);
+          } else {
+            LOG.warn("Failed to create file");
+          }
         } catch (IOException e) {
           e.printStackTrace();
         }

@@ -28,7 +28,8 @@ import com.datatorrent.api.InputOperator;
 import com.datatorrent.common.util.BaseOperator;
 
 /**
- * Simple operator that emits Strings from 1 to maxTuplesTotal
+ * Simple operator that emits sequence of Strings from 1 to 'maxTuplesTotal'.
+ * The property 'maxTuples' sets the maximum number of tuples emitted per window.
  */
 public class BatchSequenceGenerator extends BaseOperator implements InputOperator
 {
