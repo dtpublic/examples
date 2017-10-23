@@ -18,7 +18,7 @@ public class TelecomDemoV2 implements StreamingApplication
 {
   private static final transient Logger logger = LoggerFactory.getLogger(TelecomDemoV2.class);
 
-  public static final String APP_NAME = "TelecomDemoV2";
+  public static final String APP_NAME = "TelecomDemoV4";
 
   public static final int outputMask_HBase = 0x01;
   public static final int outputMask_Cassandra = 0x100;

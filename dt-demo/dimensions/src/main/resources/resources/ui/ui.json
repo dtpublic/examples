@@ -3,7 +3,7 @@
     {
       "name": "Telecom Operations Summary",
       "file": "TelecomOperations.dtdashboard",
-      "appNames": ["TelecomDemoV2"]
+      "appNames": ["TelecomDemoV4"]
     }
   ]
 }
