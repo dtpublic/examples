@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>dt.operator.fileOutput.prop.filePath</name>
+    <value>/tmp</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOutput.prop.outputFileName</name>
+    <value>output.txt</value>
+  </property>
+  <property>
+    <name>dt.attr.CHECKPOINT_WINDOW_COUNT</name>
+    <value>10</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOutput.prop.maxIdleWindows</name>
+    <value>10</value>
+  </property>
+</configuration>
+
