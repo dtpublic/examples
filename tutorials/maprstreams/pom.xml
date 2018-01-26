@@ -4,12 +4,12 @@
   
   <groupId>com.datatorrent</groupId>
   <version>1.0-SNAPSHOT</version>
-  <artifactId>maprapp</artifactId>
+  <artifactId>maprstreams</artifactId>
   <packaging>jar</packaging>
 
   <!-- change these to the appropriate values -->
-  <name>MapR Streams to MapR DB</name>
-  <description>MapR Streams to MapR DB Application</description>
+  <name>MapR Streams Example App</name>
+  <description>MapR Streams Example App</description>
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
