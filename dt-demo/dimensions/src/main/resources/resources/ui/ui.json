@@ -1,0 +1,10 @@
+{
+  "dashboards": [
+    {
+      "name": "Telecom Operations Details",
+      "file": "Telecom Operations.dtdashboard",
+      "appNames": ["TelecomDemoV2"]
+    }
+
+  ]
+}
